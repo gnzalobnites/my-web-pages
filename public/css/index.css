@@ -142,7 +142,8 @@ display: block !important;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
     padding: 0 4px;
-  }
+    margin-bottom: 60px; /* Ajusta el valor de margen según tus necesidades */
+}
   
   /* Create four equal columns that sits next to each other */
   .column {
