@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+<title>Buscador JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+   article{padding-top: 60px; padding-left: 2%; padding-right: 2%; }
+  </style>
+  <!-- <script src="js/script.js"></script> -->
+  <!-- <script src="js/main.js"></script> -->
+  
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="0">
+
+</head>
+<body id="body">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<symbol id="search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</symbol>
+</svg>
+
+<nav id="navSup" class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Inicio</a>
+    <!-- botón del buscador -->
+    <button onclick="mostrarBusc()" class="btn btn-info ms-auto mx-2" id="svg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search">
+      <use xlink:href="#search"/>
+      </svg>
+    </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <button onclick="recPag()" >Recargar la página desde el servidor</button>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+  </div>
+</nav>
+  
+  <article>
+  <h1 style="text-align: center;">Principales ramas de la programación</h1>
+<h2>Fullstack</h2>
+
+<p><b>Test 17-10-15:48</b></p>
+
+<form action="/index.html" method="post">
+
+    <input type="text" name="nombre" placeholder="Nombre">
+    <input type="text" name="apellido" placeholder="Apellido">
+    <input type="email" name="correo" placeholder="Correo electrónico">
+
+    <input type="submit" value="Enviar">
+
+</form>
+<p>&#65279;Los lenguajes de programaci&oacute;n que dominan los programadores fullstack m&aacute;s demandados por las empresas argentinas en 2023 son:</p>
+<p>* Frontend: HTML, CSS, JavaScript, React, Angular, Vue.js</p>
+<p>* Backend: Python, Java, C#, PHP, Node.js</p>
+<p>Estos lenguajes son los m&aacute;s utilizados para desarrollar aplicaciones web, que son las aplicaciones m&aacute;s populares en la actualidad.</p>
+<p>Los programadores fullstack tambi&eacute;n deben tener <b>conocimientos</b> de bases de datos, frameworks, bibliotecas y herramientas de desarrollo.</p>
+<p>Aqu&iacute; hay algunos ejemplos de c&oacute;mo se utilizan estos lenguajes de programaci&oacute;n en el desarrollo fullstack:</p>
+<p>* HTML y CSS: se utilizan para crear la interfaz de usuario de una aplicaci&oacute;n web.</p>
+<p>* JavaScript: se utiliza para agregar funcionalidad a la interfaz de usuario, como la interacci&oacute;n con el usuario y la animaci&oacute;n.</p>
+<p>* React, Angular y Vue.js: son marcos de JavaScript que se utilizan para crear aplicaciones web complejas y escalables.</p>
+<p>* Python, Java, C# y PHP: son lenguajes de programaci&oacute;n de prop&oacute;sito general que se utilizan para el desarrollo de backend.</p>
+<p>* Node.js: es un entorno de ejecuci&oacute;n JavaScript que se utiliza para desarrollar aplicaciones web y m&oacute;viles.</p>
+<p>Los programadores fullstack que dominan estos lenguajes y tecnolog&iacute;as tienen una gran ventaja en el mercado laboral.</p>
+<h2>Desarrollo</h2>
+<p>Los lenguajes de programaci&oacute;n que dominan los desarrolladores de aplicaciones m&oacute;viles m&aacute;s demandados por las empresas argentinas en 2023 son:</p>
+<p>* Android: Kotlin, Java, C++</p>
+<p>* iOS: Swift, Objective-C</p>
+<p>Estos lenguajes son los m&aacute;s utilizados para desarrollar aplicaciones m&oacute;viles para las plataformas Android e iOS, que son las plataformas m&oacute;viles m&aacute;s populares en el mundo.</p>
+<p>Los desarrolladores de aplicaciones m&oacute;viles tambi&eacute;n deben tener conocimientos de bases de datos, frameworks, bibliotecas y herramientas de desarrollo.</p>
+<p>Aqu&iacute; hay algunos ejemplos de c&oacute;mo se utilizan estos lenguajes de programaci&oacute;n en el desarrollo de aplicaciones m&oacute;viles:</p>
+<p>* Kotlin y Java: son lenguajes de programaci&oacute;n de prop&oacute;sito general que se utilizan para desarrollar aplicaciones Android.</p>
+<p>* C++: es un lenguaje de programaci&oacute;n de alto rendimiento que se utiliza para desarrollar juegos y aplicaciones m&oacute;viles complejas.</p>
+<p>* Swift y Objective-C: son lenguajes de programaci&oacute;n de prop&oacute;sito general que se utilizan para desarrollar aplicaciones iOS.</p>
+<p>Los desarrolladores de aplicaciones m&oacute;viles que dominan estos lenguajes y tecnolog&iacute;as tienen una gran ventaja en el mercado laboral.</p>
+<p>Adem&aacute;s de estos lenguajes, los desarrolladores de aplicaciones m&oacute;viles tambi&eacute;n deben tener conocimientos de tecnolog&iacute;as emergentes, como la realidad aumentada y la realidad virtual. Estas tecnolog&iacute;as est&aacute;n ganando popularidad y se espera que sean cada vez m&aacute;s demandadas en el futuro.</p>
+<h2>Ciencia de datos</h2>
+<p>Los lenguajes de programaci&oacute;n que dominan los data scientists son:</p>
+<p>* Python: Python es el lenguaje de programaci&oacute;n m&aacute;s popular para la ciencia de datos. Es un lenguaje de programaci&oacute;n de prop&oacute;sito general, f&aacute;cil de aprender y usar. Python tiene una gran cantidad de bibliotecas y marcos que se utilizan para la ciencia de datos, como NumPy, Pandas y SciPy.</p>
+<p>* R: R es otro lenguaje de programaci&oacute;n popular para la ciencia de datos. Es un lenguaje de programaci&oacute;n estad&iacute;stico que se utiliza para el an&aacute;lisis estad&iacute;stico y la visualizaci&oacute;n de datos. R tiene una gran cantidad de paquetes que se utilizan para la ciencia de datos, como ggplot2 y dplyr.</p>
+<p>* SQL: SQL es un lenguaje de consulta estructurado que se utiliza para acceder y manipular datos en bases de datos relacionales. SQL es una habilidad esencial para cualquier cient&iacute;fico de datos.<br>
+Adem&aacute;s de estos lenguajes, los data scientists tambi&eacute;n deben tener conocimientos de matem&aacute;ticas, estad&iacute;sticas y visualizaci&oacute;n de datos.</p>
+<p>Aqu&iacute; hay algunos ejemplos de c&oacute;mo se utilizan estos lenguajes en la ciencia de datos:</p>
+<p>* Python: se utiliza para limpiar y preparar datos, realizar an&aacute;lisis estad&iacute;sticos y crear modelos predictivos.</p>
+<p>* R: se utiliza para realizar an&aacute;lisis estad&iacute;sticos y visualizaci&oacute;n de datos.<br>
+* SQL: se utiliza para acceder y manipular datos en bases de datos relacionales.</p>
+<p>Los data scientists que dominan estos lenguajes y tecnolog&iacute;as tienen una gran ventaja en el mercado laboral.</p>
+<h2>Ciberseguridad</h2>
+<p>Los lenguajes de programaci&oacute;n que dominan los ingenieros de ciberseguridad son:</p>
+<p>* Python: Python es el lenguaje de programaci&oacute;n m&aacute;s popular para la ciberseguridad. Es un lenguaje de programaci&oacute;n de prop&oacute;sito general, f&aacute;cil de aprender y usar. Python tiene una gran cantidad de bibliotecas y marcos que se utilizan para la ciberseguridad, como Nmap, Scapy y Metasploit.</p>
+<p>* Bash: Bash es un lenguaje de shell que se utiliza para automatizar tareas y administrar sistemas. Bash es una habilidad esencial para cualquier ingeniero de ciberseguridad.</p>
+<p>* C y C++: C y C++ son lenguajes de programaci&oacute;n de alto rendimiento que se utilizan para desarrollar software de seguridad.</p>
+<p>* Java: Java es un lenguaje de programaci&oacute;n de prop&oacute;sito general que se utiliza para desarrollar aplicaciones web y m&oacute;viles. Java es una habilidad esencial para cualquier ingeniero de ciberseguridad que trabaje en la seguridad de aplicaciones.</p>
+<p>* JavaScript: JavaScript es un lenguaje de programaci&oacute;n del lado del cliente que se utiliza para agregar funcionalidad a las aplicaciones web. JavaScript es una habilidad esencial para cualquier ingeniero de ciberseguridad que trabaje en la seguridad de aplicaciones web.</p>
+<p>Adem&aacute;s de estos lenguajes, los ingenieros de ciberseguridad tambi&eacute;n deben tener conocimientos de redes, sistemas operativos, seguridad de la informaci&oacute;n y &eacute;tica.</p>
+<p>Aqu&iacute; hay algunos ejemplos de c&oacute;mo se utilizan estos lenguajes en la ciberseguridad:</p>
+<p>* Python: se utiliza para escribir herramientas de automatizaci&oacute;n, analizar datos de seguridad y desarrollar exploits.</p>
+<p>* Bash: se utiliza para automatizar tareas de seguridad, como la recopilaci&oacute;n de informaci&oacute;n y la ejecuci&oacute;n de pruebas de penetraci&oacute;n.</p>
+<p>* C y C++: se utilizan para desarrollar malware y exploits.</p>
+<p>* Java: se utiliza para desarrollar aplicaciones web seguras.</p>
+<p>* JavaScript: se utiliza para desarrollar aplicaciones web seguras.</p>
+<p>Los ingenieros de ciberseguridad que dominan estos lenguajes y tecnolog&iacute;as tienen una gran ventaja en el mercado laboral.</p>
+<h2>Ingeniería en la nube</h2>
+<p>Los lenguajes de programaci&oacute;n que dominan los cloud engineers son:</p>
+<p>* Python: Python es el lenguaje de programaci&oacute;n m&aacute;s popular para la computaci&oacute;n en la nube. Es un lenguaje de programaci&oacute;n de prop&oacute;sito general, f&aacute;cil de aprender y usar. Python tiene una gran cantidad de bibliotecas y marcos que se utilizan para la computaci&oacute;n en la nube, como Boto3, Google Cloud SDK y Azure CLI.</p>
+<p>* Java: Java es otro lenguaje de programaci&oacute;n popular para la computaci&oacute;n en la nube. Es un lenguaje de programaci&oacute;n de prop&oacute;sito general, seguro y escalable.</p>
+<p>Java tiene una gran cantidad de bibliotecas y marcos que se utilizan para la computaci&oacute;n en la nube, como Amazon Web Services SDK for Java, Google Cloud Client Libraries for Java y Microsoft Azure SDK for Java.</p>
+<p>* JavaScript: JavaScript es un lenguaje de programaci&oacute;n del lado del cliente que se utiliza para agregar funcionalidad a las aplicaciones web. JavaScript tambi&eacute;n se puede utilizar para la computaci&oacute;n en la nube a trav&eacute;s de tecnolog&iacute;as como Node.js y Cloud Functions.</p>
+<p>* Go: Go es un lenguaje de programaci&oacute;n de sistemas que se utiliza para desarrollar aplicaciones r&aacute;pidas y eficientes. Go tambi&eacute;n se puede utilizar para la computaci&oacute;n en la nube a trav&eacute;s de tecnolog&iacute;as como Kubernetes y Docker.</p>
+<p>Adem&aacute;s de estos lenguajes, los cloud engineers tambi&eacute;n deben tener conocimientos de redes, sistemas operativos, seguridad de la informaci&oacute;n y arquitectura de la nube.</p>
+<p>Aqu&iacute; hay algunos ejemplos de c&oacute;mo se utilizan estos lenguajes en la computaci&oacute;n en la nube:</p>
+<p>* Python: se utiliza para escribir scripts para administrar recursos en la nube, desarrollar aplicaciones en la nube y analizar datos de la nube.</p>
+<p>* Java: se utiliza para desarrollar aplicaciones web y m&oacute;viles en la nube, y para crear infraestructura en la nube.</p>
+<p>* JavaScript: se utiliza para desarrollar aplicaciones web y m&oacute;viles en la nube, y para crear servicios en la nube.</p>
+<p>* Go: se utiliza para desarrollar aplicaciones en la nube y para crear infraestructura en la nube.</p>
+<p>Los cloud engineers que dominan estos lenguajes y tecnolog&iacute;as tienen una gran ventaja en el mercado laboral.</p>
+  
+</article>
+
+<nav id="nav" class="navbar bg-body-tertiary fixed-bottom">
+<div id="navDivExt" class="container-fluid">
+  <div id="divIntNav" class="d-flex mx-auto" role="search">      
+    <input id="inputBusc" type="search" placeholder="Buscar" aria-label="Search">
+    <button id="botBusc" onclick="busqueda()">Buscar</button>
+    <button id="botAnt" onclick="anterior()">Ant.</button>
+    <button id="botSig" onclick="siguiente()">Sig.</button>
+    <button id="botCerr" onclick="cerrar()">X</button>
+  </div>
+</div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script src="js/buscador.js"></script>
+<script src="/data/data/com.termux/files/home/test_1.js"></script>
+<script></script>
+
+<!-- <script src="js/auto_actualizador.js" ></script> -->
+    
+</body>
+</html>

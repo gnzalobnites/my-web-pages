@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+<title>Hello, World!</title>
+</head>
+<body>
+<h1>
+Hello, World!
+</h1>
+<p id="parrafo">Este es un párrafo</p>
+
+<button id="mostrar">Mostrar texto</button>
+
+<script>
+
+window.onload = () => {
+const parrafo = document.querySelector("p");
+parrafo.hidden = true;
+};
+
+const mostrar = document.querySelector("button#mostrar");
+mostrar.addEventListener("click", () => {
+parrafo.hidden = false;
+});
+
+</script>
+<script src="js/test_1.js"></script>
+</body>
+</html>
+

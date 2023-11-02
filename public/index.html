@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /> 
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>Mi reloj web</title>
+	<meta name="google-site-verification" content="IlwE29oPx3IJib2qhYUc07f7uJp7SpVM12hd1DnPiqE" />
+	<!-- SEO comienzo-->
+    <meta name="description" content="Reloj personalizado para tu escritorio. Elige el color y tamaño de fondo y fuente para crear un reloj único y a tu medida.">
+    <meta property="og:site_name" content="My Web Clock">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Reloj personalizado para tu escritorio">
+    <meta property="og:description" content="Reloj personalizado para tu escritorio. Elige el color y tamaño de fondo y fuente para crear un reloj único y a tu medida."">
+    <meta property="og:url" content="https://gonzalo-benites-webpages.on.drv.tw/apps/mi-reloj-web/">
+    <meta property="og:image" content="https://gonzalo-benites-webpages.on.drv.tw/apps/mi-reloj-web/og_image.jpg">
+    <!-- <meta property="article:published_time" content="2021-10-28T11:56:44.000Z">
+        <meta property="article:modified_time" content="2023-08-02T09:44:31.000Z"> -->
+    <meta property="article:tag" content="Clock">
+    <meta property="article:tag" content="Customizable">
+    <meta property="article:tag" content="App">
+    <!-- SEO final -->
+    	<!--Favicon inicio-->
+    	<link rel="apple-touch-icon" sizes="180x180" href="https://gonzalo-benites-webpages.on.drv.tw/apps/mi-reloj-web/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gonzalo-benites-webpages.on.drv.tw/apps/mi-reloj-web/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gonzalo-benites-webpages.on.drv.tw/apps/mi-reloj-web/favicon-16x16.png">
+<link rel="manifest" href="https://gonzalo-benites-webpages.on.drv.tw/apps/mi-reloj-web/site.webmanifest">
+<link rel="mask-icon" href="https://gonzalo-benites-webpages.on.drv.tw/apps/mi-reloj-web/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+	
+<style></style>
+
+</head>
+<!-- Definir el símbolo -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="arrows-fullscreen" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+  </symbol>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="fullscreen-exit" viewBox="0 0 16 16">
+    <path d="M5.5 0a.5.5 0 0 1 .5.5v4A1.5 1.5 0 0 1 4.5 6h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5zm5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 10 4.5v-4a.5.5 0 0 1 .5-.5zM0 10.5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 6 11.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zm10 1a1.5 1.5 0 0 1 1.5-1.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4z"/>
+  </symbol>
+</svg>
+<body >
+<fullscreen>
+   <header>
+	<nav class="navbar  fixed-top" id="nav1">
+  <div class="container-fluid">
+    <h1 class="navbar-brand" href="#" ><span id="marca">Mis aplicaciones web</span></h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span style="color: #fff; font-size: 2em;" id="hamburguesa" >≡</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <label>Color de fondo: <input type="color" name="color" onchange="cambiarFondo(this.value)"></label>
+          <!--<a class="nav-link active" aria-current="page" href="#">Home</a>-->
+        </li>
+        <li class="nav-item">
+          <!--<a class="nav-link" href="#">Features</a>-->
+          <label>Color de fuente: <input type="color" name="color" onchange="cambiarFuente(this.value)"></label> 
+        </li>
+        <!--<li>
+        	<label>Tamaño de la hora: <input id="max_tam_hora" type="range" name="hsize" onchange="redimHora(this.value)"></label> 
+        </li>  
+        <li>
+        	<label>Tamaño de la fecha: <input id="max_tam_fecha" type="range" name="fsize" onchange="redimFecha(this.value)"></label> 
+        </li>-->
+        <li>
+        	<label><button onclick="reset()">Reiniciar apariencia</button></label>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>-->
+      </ul>
+     <!-- <span class="navbar-text">
+        Navbar text with an inline element
+      </span>-->
+    </div>
+  </div>
+</nav>
+<!--class="d-flex align-items-center justify-content-center"  -->
+</header>
+<main>
+  
+  <div class="row">
+    <div class="column">
+      <img src="images/js.png">
+    </div>
+    <div class="column">
+      <img src="images/html.png">
+    </div>
+    <div class="column">
+      <img src="images/busc.png">
+    </div>
+    <div class="column">
+      <img src="images/reloj.jpg">
+    </div>
+  </div>  
+  
+
+  
+  
+</main>
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top fixed-bottom" style="margin-right: 20px; margin-left: 20px">
+    <div class="col-md-4 d-flex align-items-center">
+    <!--  <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      </a> -->
+      <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2023 Gonzalo Technologies, Inc</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-body-secondary" href="https://t.me/GgbCos"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" ></path> </svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="mailto:benitesgonzalogaston@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"> <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/> </svg></a></li>
+      
+      <li class="ms-3" id="my_li" onclick=""><svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen">
+  <use id="my_use" xlink:href=""/>
+</svg></li>
+    </ul>
+  </footer>
+</div> 
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/pant_comp.js"></script>
+<script src="js/test.js"></script>
+
+</fullscreen>
+</body>

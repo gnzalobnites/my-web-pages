@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'digital-7_monomono';
+    src: url('fuentes/digital_7_mono-webfont.woff2') format('woff2'),
+         url('fuentes/digital_7_mono-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'voltecregular';
+    src: url('fuentes/voltec_free_version-webfont.woff2') format('woff2'),
+         url('fuentes/voltec_free_version-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media screen and (max-width: 600px) {
+    input[id="max_tam_hora"] {
+        max:150;
+    }
+    input[id="max_tam_fecha"] {
+        max: 77;
+    }
+}
+
+@media screen and (min-width: 601px) {
+	input[id="max_tam_hora"] {
+        max: 350;
+    }
+    input[id="max_tam_fecha"] {
+        max: 150;
+    }
+}
+
+
+.fuenteDigital{
+	font-family: 'digital-7_monomono'; 
+}
+.fuenteFecha{
+	font-family: 'voltecregular';
+}
+
+body{
+  background-color: black;
+  color: greenyellow;
+  padding: 70px;
+  height: 100vh;
+  
+}
+#hamburguesa {
+	color: greenyellow;
+}
+#hora{
+  height: 80vh;
+}
+#hs_y_mins{
+	/*font-size: 90px;*/
+     /*text-align: center; */
+}
+#segundos{
+	/*font-size: 45px; */
+	/*text-align: center; */
+}
+#fecha{
+	font-size: 23px; 
+	/*text-align: center; */
+}
+.text-center{
+	//margin-top: 30px;
+	//font-weight: bold;
+}
+
+
+
+
+
