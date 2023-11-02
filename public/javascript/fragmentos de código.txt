@@ -1,0 +1,1350 @@
+p 60 <div class="snippet"><pre><code class="language-javascript"></code></pre></div>
+
+for (statement 1; statement 2; statement 3) { 
+    code block to be executed 
+}
+
+p 61
+
+for (i=1; i<=5; i++) { 
+    document.write(i + "<br />");
+}
+----
+var i = 1; 
+for (; i<=5; i++) { 
+    document.write(i + "<br />"); 
+}
+----
+for (i=1, text=""; i<=5; i++) {
+    text = i;
+    document.write(i + "<br />");
+}
+---
+p 62
+
+var i = 0; 
+for(; i < 10; ) { 
+    document.write(i); 
+    i++;
+}
+----
+p 64
+
+while (condition) { 
+  code block
+}
+----
+p 65
+
+var i=0; 
+while (i<=10) {
+  document.write(i + "<br />");
+    ++;
+}
+----
+p 68
+
+do {
+    code block
+} while (condition);
+----
+var i = 20;
+do { 
+  document.write(i + "<br />");
+  i++;
+}
+while (1 <= 25);
+----
+p 70
+
+for (i = 0; i <= 10; i++) { 
+  if (i == 5) {
+      break;
+  }
+document.write(i + "<br />");
+}
+----
+p 71
+
+for (i = 0; i <= 10; i++) {
+if (i == 5) { 
+continue;
+}
+document.write(i + "<br />");
+}
+----
+p 77
+
+function name() { 
+//code to be executed
+}
+----
+p 78
+
+function myFunction() { 
+alert("Calling a Function!"); 
+}
+myFunction();
+----
+p 79
+
+function myFunction() {
+alert("Alert box!");
+}
+myFunction(); 
+//"Alert box!"
+
+// some other code
+
+myFunction();
+//"Alert box!"
+----
+p 81
+
+functionName (param1, param2, param3) { 
+// some code
+}
+----
+p 82
+
+function sayHello(name) { 
+alert("Hi, " + name); 
+}
+sayHello("David");
+----
+p 83
+
+function sayHello(name) {
+alert("Hi, " + name);
+}
+sayHello("David"); 
+sayHello("Sarah"); 
+sayHello("John");
+----
+p 85
+
+function myFunc(x, y) { 
+// some code
+}
+----
+p 86
+
+function sayHello(name, age) { 
+  document.write(name + " is " + age + " years old."); 
+}
+----
+p 87
+
+function sayHello(name, age) { 
+document.write(name + " is " + age + " years old."); 
+} 
+sayHello("John", 20);
+----
+p 91
+
+function myFunction(a, b) { 
+  return a * b;
+} 
+
+var x = myFunction(5, 6); 
+// El valor de retorno se almacenará en x
+----
+p 92
+
+function addNumbers (a, b) { 
+  var c = a + b; 
+  return c;
+} 
+document.write(addNumbers(40, 2));
+----
+p 94
+
+alert("Do you really want to leave this page?");
+----
+alert("Hello\nHow are you?");
+----
+p 95
+
+var user = prompt ("Please enter your name"); 
+alert(user);
+----
+p 96
+
+var result = confirm("Do you really want to leave this page?"); 
+if (result == true) { 
+  alert("Thanks for visiting"); 
+} else {
+  alert("Thanks for staying with us");
+}
+----
+p 101
+
+var person = { 
+name: "John", age: 31, favColor: "green", height: 183
+};
+----
+p 102
+
+objectName.propertyName
+//or
+objectName['propertyName']
+
+var person = {
+name: "John", age: 31, favColor: "green", height: 183
+};
+var x = person.age; 
+var y = person['age'];
+----
+var course = {name: "JS", lessons: 41}; document.write(course.name.length);
+
+p 103
+
+objectName.methodName()
+
+document.write("This is some text");
+----
+p 105
+
+var person = {
+  name: "John", age: 42, favColor: "green" 
+};
+----
+function person (name, age, color) { 
+  this.name = name;
+  this.age = age;
+  this.favColor = color;
+};
+----
+p 106
+
+var p1 = new person ("John", 42, "green");
+var p2 = new person("Amy", 21, "red");
+
+document.write(p1.age); // Outputs 42
+document.write(p2.name); // Outputs "Amy"
+----
+@<div class="snippet"><pre><code class="language-javascript"></code></pre></div>
+p 107
+
+function person (name, age) {
+  this.name = name;
+  this.age = age;
+} 
+var John = new person("John", 25); 
+var James = new person("James", 21);
+----
+p 109
+
+var John = {name: "John", age: 25}; 
+var James = {name: "James", age: 21};
+----
+p 110
+
+var John = { 
+  name: "John", 
+  age: 25
+}; 
+var James = { 
+  name: "James", 
+  age: 21
+};
+----
+@<div class="snippet"><pre><code class="language-javascript"></code></pre></div>
+
+document.write(John.age);
+
+p 112
+
+methodName = function() { code lines }
+----
+objectName.methodName()
+----
+function person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.changeName = function (name) {
+    this.name = name;
+  }
+}
+
+var p = new person("David", 21);
+p.changeName("John");
+//Ahora p.name es igual a "John"
+
+p 113
+
+function person (name, age) {
+  this.name = name; 
+  this.age = age;
+  this.yearOfBirth = bornYear;
+}
+
+function bornYear() {
+  return 2016 - this.age;
+}
+
+p 114
+
+function person (name, age) {
+  this.name= name;
+  this.age = age; 
+  this.yearOfBirth = bornYear;
+}
+function bornYear() {
+  return 2016 - this.age;
+}
+var p = new person("A", 22); 
+document.write(p.yearOfBirth());
+----
+p 119
+
+var course1 = "HTML";
+var course2 = "CSS";
+var course3 = "JS";
+
+var courses = new Array("HTML", "CSS", "JS");
+----
+p 120
+
+var courses = new Array("HTML", "CSS", "JS");
+
+var course = courses[0]; // HTML 
+courses[1] = "C++"; //Cambia el segundo elemento
+----
+p 121
+
+var courses = new Array("HTML", "CSS", "JS"); document.write(courses[10]); //undefined
+----
+p 123
+
+var courses = new Array(3);
+courses[0] = "HTML"; 
+courses[1] = "CSS"; 
+courses[2] = "JS";
+----
+p 124
+
+var courses = new Array();
+courses[0] = "HTML"; 
+courses[1] = "CSS";
+courses[2] = "JS";
+courses[3] = "C++";
+----
+var courses = ["HTML", "CSS", "JS"];
+----
+p 126
+
+var courses = ["HTML", "CSS", "JS"]; 
+document.write(courses.length);
+----
+p 127
+
+var c1 = ["HTML", "CSS"]; 
+var c2 = ["JS", "C++"]; 
+var courses = c1.concat(c2);
+----
+p 129
+
+var person = []; //arreglo vacío 
+person["name"] = "John"; 
+person["age"] = 46; 
+document.write(person["age"]);
+----
+p 132
+
+document.write(Math.PI);
+----
+p 133
+
+var number = Math.sqrt(4);
+document.write(number);
+---
+p 134
+
+var n = prompt("Enter a number", ""); 
+var answer = Math.sqrt(n); 
+alert("The square root of " + n + " is " + answer);
+----
+p 136
+
+function myAlert() {
+alert("Hi");
+} 
+setInterval(myAlert, 3000);
+----
+p 137
+
+var d = new Date(); //d almacena la fecha y hora actual
+----
+new Date(milliseconds)
+new Date(dateString)
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+
+//viernes 02 de enero de 1970, 00:00:00 hs
+var d1= new Date(86400000); 
+
+//viernes 02 de enero de 2015, 10:42:00 hs
+var d2 = new Date("January 2, 2015 10:42:00");
+
+//sábado 11 de junio de 1988, 11:42:00 hs
+var d3 = new Date(88,5,11,11,42,0,0);
+----
+p 138
+
+var d = new Date();
+var hours = d.getHours();
+//hours is equal to the current hour
+
+function printTime() {
+var d= new Date();
+var hours = d.getHours();
+var mins = d.getMinutes(); 
+var secs = d.getSeconds();
+document.body.innerHTML = hours+":"+mins+":"+secs;
+}
+setInterval(printTime, 1000);
+----
+p 145
+
+document.body.innerHTML = "Some text";
+
+p 147
+
+//encontrar un elemento por su id
+document.getElementById(id)
+
+//encontrar elementos por el nombre de su clase
+document.getElementsByClassName(name)
+
+//encontrar elementos por el nombre de su etiqueta
+document.getElementsByTagName(name)
+----
+var elem = document.getElementById("demo"); elem.innerHTML = "Hello World!";
+
+p 148
+
+var arr = document.getElementsByClassName("demo"); 
+//acceder al segundo elemento
+arr[1].innerHTML = "Hi";
+
+<p>hi</p>
+<p>hello</p>
+<p>hi</p>
+<script> 
+var arr = document.getElementsByTagName("p"); 
+for (var x = 0; x < arr.length; x++) { 
+arr[x].innerHTML = "Hi there";
+} 
+</script>
+
+<p>Hi there</p> 
+<p>Hi there</p>
+<p>Hi there</p>
+
+p 149
+
+<html>
+<body>
+<div id="demo">
+<p>some text</p> 
+<p>some other text</p>
+</div>
+
+<script>
+var a = document.getElementById("demo"); 
+var arr = a.childNodes;
+for(var x=0; x<arr.length; x++) { 
+arr[x].innerHTML = "new text";
+}
+</script>
+
+</body> 
+</html>
+
+p 151
+
+<img id="myimg" src="orange.png" alt="" />
+<script>
+var el = document.getElementById("myimg");
+el.src = "apple.png";
+</script>
+
+<a href="http://www.example.com">Some link</a>
+<script>
+var el = document.getElementsByTagName("a"); el[0].href = "http://www.sololearn.com"; 
+</script>
+
+p 152
+
+<div id="demo" style="width:200px">some text</div>
+<script> 
+  var x = document.getElementById("demo");
+  x.style.color = "6600FF";
+  x.style.width = "100px";
+</script>
+----
+p 154
+
+var node = document.createTextNode("Some new text");
+
+<div id="demo">some content</div>
+
+<script>
+//crear un nuevo párrafo
+var p = document.createElement("p");
+var node = document.createTextNode("Some new text");
+//añadir el texto al párrafo 
+p.appendChild(node);
+
+var div = document.getElementById("demo"); 
+//añadir el párrafo al div
+div.appendChild(p); 
+</script>
+----
+p 155
+
+<div id="demo">
+<p id="p1">Este es un párrafo.</p>
+<p id="p2">Este es otro párrafo.</p>
+</div>
+
+<script>
+var parent = document.getElementById("demo");
+var child = document.getElementById("p1");
+parent.removeChild(child);
+</script>
+
+p 156
+
+<div id="demo">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+var p = document.createElement("p");
+var node = document.createTextNode("This is new");
+p.appendChild(node);
+
+var parent = document.getElementById("demo");
+var child = document.getElementById("p1");
+parent.replaceChild(p, child);
+</script>
+----
+p158
+
+<style>
+#container {
+    width: 200px;
+    height: 200px;
+    background: green;
+    position: relative;
+}
+#box {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+}
+</style>
+<div id="container">
+<div id="box"> </div>
+</div>
+
+p159
+
+var t = setInterval(move, 500);
+
+// Posición inicial
+var pos = 0; 
+//nuestro elemento box
+var box = document.getElementById("box");
+
+function move() {
+  pos += 1;
+  box.style.left = pos+"px"; //px = pixeles
+}
+
+pp > 159
+
+var t = setInterval(move, 10);
+
+function move() {
+  if(pos >= 150) {
+    clearInterval(t);
+  }
+  else {
+    pos += 1;
+    box.style.left = pos+"px";
+  }
+}
+
+function() {
+  var pos = 0; 
+  //our box element
+  var box = document.getElementById('box');
+  var t = setInterval(move, 10);
+
+  function move() {
+    if(pos >= 150) {
+      clearInterval(t);
+    }
+    else {
+      pos += 1;
+      box.style.left = pos+'px';
+    }
+  }
+}
+----
+<button onclick="show();">Click Me</button>
+<script>
+function show() {
+    alert("Hi there");
+}
+</script>
+----
+var x = document.getElementById('demo');
+x.onclick = function () {
+  document.body.innerHTML = Date();
+}
+
+<body onload="doSomething()">
+
+window.onload = function() {
+
+   //some code
+
+}
+
+<input type="text" id="name" onchange="change()">
+
+<script> 
+function change() {
+    var x = document.getElementById('name');
+    x.value = x.value.toUpperCase();
+}
+</script>
+
+element.addEventListener(event, function, useCapture);
+
+element.addEventListener("click", myFunction);
+
+element.addEventListener("mouseover", myFunction);
+
+
+
+function myFunction() {
+
+  alert("Hello World!");
+
+}
+
+element.removeEventListener("mouseover", myFunction);
+
+<button id="demo">Start</button>
+
+<script>
+    var btn = document.getElementById("demo");
+    btn.addEventListener("click", myFunction);
+
+    function myFunction() {
+        alert(Math.random());
+        btn.removeEventListener("click", myFunction);
+    }
+</script>
+
+addEventListener(event, function, useCapture)
+
+//Capturing propagation
+
+elem1.addEventListener("click", myFunction, true); 
+
+
+
+//Bubbling propagation
+
+elem2.addEventListener("click", myFunction, false);
+
+        <div>
+        <button> Prev </button>
+        <img src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px" />
+            <button> Next </button>
+        </div>
+
+var images = [
+
+   "http://www.sololearn.com/uploads/slider/1.jpg", 
+
+   "http://www.sololearn.com/uploads/slider/2.jpg", 
+
+   "http://www.sololearn.com/uploads/slider/3.jpg"
+
+];
+
+<div>
+
+  <button onclick="prev()"> Prev </button>
+
+  <img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" 
+
+    width="200px" height="100px"/>
+
+  <button onclick="next()"> Next </button>
+
+</div>
+
+ var images = [
+    'http://www.sololearn.com/uploads/slider/1.jpg', 
+    'http://www.sololearn.com/uploads/slider/2.jpg', 
+    'http://www.sololearn.com/uploads/slider/3.jpg'
+];
+var num = 0;
+function next() {
+    var slider = document.getElementById('slider');
+    num++;
+    if(num >= images.length) {
+        num = 0;
+    }
+    slider.src = images[num];
+}
+function prev() {
+    var slider = document.getElementById('slider');
+    num--;
+    if(num < 0) {
+        num = images.length-1;
+    }
+    slider.src = images[num];
+}
+
+<form onsubmit="return validate()" method="post">
+
+  Number: <input type="text" name="num1" id="num1" />
+
+  <br />
+
+  Repeat: <input type="text" name="num2" id="num2" />
+
+  <br />
+
+  <input type="submit" value="Submit" />
+
+</form>
+
+function validate() {
+    var n1 = document.getElementById('num1');
+    var n2 = document.getElementById('num2');
+    if(n1.value != '' && n2.value != '') {
+        if(n1.value == n2.value) {
+            return true;
+        }
+    }
+    alert("The values should be equal and not blank");
+    return false;
+}
+
+var a = 10;
+
+const b = 'hello';
+
+let c = true;
+
+if (true) {
+    let name = 'Jack';
+}
+alert(name); //Genera un error 
+
+function varTest() {
+    var x = 1;
+    if (true) {
+        var x = 2;  // same variable
+        console.log(x);  // 2
+    }
+    console.log(x);  // 2
+}
+
+function letTest() {
+    let x = 1;
+    if (true) {
+        let x = 2;  // different variable
+        console.log(x);  // 2
+    }
+    console.log(x);  // 1
+}
+
+for (let i = 0; i < 3; i++) {
+    document.write(i);
+}
+
+const a = 'Hello';
+a = 'Bye';
+
+let name = 'David';
+let msg = 'Welcome ' + name + '!';
+console.log(msg);
+
+let name = 'David';
+let msg = `Welcome ${name}!`;
+console.log(msg);
+
+let a = 8;
+let b = 34;
+let msg = `The sum is ${a+b}`;
+console.log(msg);
+
+Bucles y funciones en ES6
+
+let arr = [1, 2, 3];
+for (let k = 0; k < arr.length; k++) {
+    console.log(arr[k]);
+}
+
+let obj = {a: 1, b: 2, c: 3};
+for (let v in obj) {
+    console.log(v);
+}
+
+let list = ["x", "y", "z"];
+for (let val of list) {
+    console.log(val);
+}
+
+for (let ch of "Hello") {
+    console.log(ch);
+}
+
+function add(x, y) {
+    var sum = x+y;  
+    console.log(sum);
+}
+add(35, 7);
+
+const add = (x, y) => {
+    let sum = x + y;  
+    console.log(sum);
+}
+add(35, 7);
+
+const greet = x => "Welcome " + x;
+
+alert(greet("David"));
+
+const x = () => alert("Hi");
+x();
+
+var arr = [2, 3, 7, 8];
+
+arr.forEach(function(el) {
+    console.log(el * 2);
+});
+
+const arr = [2, 3, 7, 8];
+
+arr.forEach(v => {
+    console.log(v * 2);
+});
+
+function test(a, b = 3, c = 42) {
+  return a + b + c;
+}
+console.log(test(5));
+
+const test = (a, b = 3, c = 42) => {
+
+  return a + b + c;
+
+}
+
+console.log(test(5)); //50
+
+@Objetos en ES6
+
+let tree = {
+  height: 10,
+  color: 'green',
+  grow() {
+    this.height += 2;
+  }
+};
+tree.grow();
+console.log(tree.height); // 12
+
+let height = 5;
+let health = 100;
+
+let athlete = {
+  height,
+  health
+};
+
+var a = {x: 1, x: 2, x: 3, x: 4};
+
+let prop = 'name';
+let id = '1234';
+let mobile = '08923';
+
+let user = {
+  [prop]: 'Jack',
+  [`user_${id}`]: `${mobile}`
+};
+
+console.log(user.name); // Jack
+console.log(user.user_1234); // 08923
+
+var i = 0;
+var a = {
+  ['foo' + ++i]: i,
+  ['foo' + ++i]: i,
+  ['foo' + ++i]: i
+};
+
+console.log(a.foo1); // 1
+console.log(a.foo2); // 2
+console.log(a.foo3); // 3
+
+var param = 'size';
+var config = {
+    [param]: 12,
+    ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+};
+
+console.log(config.mobileSize); // 4
+
+let person = {
+    name: 'Jack',
+    age: 18,
+    sex: 'male'
+};
+let student = {
+    name: 'Bob',
+    age: 20,
+    xp: '2'
+};
+
+let newStudent = Object.assign({}, person, student);
+
+console.log(newStudent.name); // Bob
+console.log(newStudent.age); // 20
+console.log(newStudent.sex); // male
+console.log(newStudent.xp); // 2
+
+let person = {
+    name: 'Jack',
+    age: 18
+};
+
+let newPerson = person;
+newPerson.name = 'Bob';
+
+console.log(person.name); // Bob
+console.log(newPerson.name); // Bob
+
+let person = {
+    name: 'Jack',
+    age: 18
+};
+
+let newPerson = Object.assign({}, person);
+newPerson.name = 'Bob';
+
+console.log(person.name); // Jack
+console.log(newPerson.name); // Bob
+
+let person = {
+    name: 'Jack',
+    age: 18
+};
+
+let newPerson = Object.assign({}, person, {name: 'Bob'});
+
+console.log(newPerson.name); // Bob
+
+@Desestructuración en ES6
+
+let arr = ['1', '2', '3'];
+
+let [one, two, three] = arr;
+
+console.log(one); // 1
+console.log(two); // 2
+console.log(three); // 3
+
+let a = () => {
+    return [1, 3, 2];
+};
+
+let [one, , two] = a();
+
+console.log(one); // 1
+console.log(two); // 2
+
+let a, b, c = 4, d = 8;
+
+[a, b = 6] = [2];
+console.log(a); // 2
+console.log(b); // 6
+
+[c, d] = [d, c];
+console.log(c); // 8
+console.log(d); // 4
+
+let obj = {h:100, s: true};
+let {h, s} = obj;
+
+console.log(h);
+console.log(s);
+
+let a, b;
+({a, b} = {a: 'Hello ', b: 'Jack'});
+
+console.log(a + b);
+
+let {a, b} = {a: 'Hello ', b: 'Jack'};
+
+console.log(a + b);
+
+var o = {h: 42, s: true};
+var {h: foo, s: bar} = o;
+
+//console.log(h); // Error
+console.log(foo); // 42
+
+var obj = {id: 42, name: "Jack"};
+
+let {id = 10, age = 20} = obj;
+
+console.log(id); // 42
+console.log(age); // 20
+
+@Rest y spread
+
+function containsAll(arr) {
+  for (let k = 1; k < arguments.length; k++) {
+    let num = arguments[k];
+    if (arr.indexOf(num) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+let x = [2, 4, 6, 7];
+console.log(containsAll(x, 2, 4, 7));
+console.log(containsAll(x, 6, 4, 9));
+
+function containsAll(arr, ...nums) {
+  for (let num of nums) {
+    if (arr.indexOf(num) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function myFunction(w, x, y, z) {
+  console.log(w + x + y + z);
+}
+var args = [1, 2, 3];
+myFunction.apply(null, args.concat(4));
+
+const myFunction = (w, x, y, z) => {
+  console.log(w + x + y + z);
+};
+let args = [1, 2, 3];
+myFunction(...args, 4);
+
+var dateFields = [1970, 0, 1];  // 1 Jan 1970
+var date = new Date(...dateFields);
+console.log(date);
+
+var arr = ["One", "Two", "Five"];
+
+arr.splice(2, 0, "Three");
+arr.splice(3, 0, "Four");
+console.log(arr);
+
+let newArr = ['Three', 'Four']; 
+let arr = ['One', 'Two', ...newArr, 'Five'];
+console.log(arr);
+
+const obj1 = { foo: 'bar', x: 42 };
+const obj2 = { foo: 'baz', y: 5 };
+
+const clonedObj = {...obj1}; // { foo: "bar", x: 42 }
+const mergedObj = {...obj1, ...obj2}; // { foo: "baz", x: 42, y: 5 }
+
+const obj1 = { foo: 'bar', x: 42 };
+const obj2 = { foo: 'baz', y: 5 };
+const merge = (...objects) => ({...objects});
+
+let mergedObj = merge(obj1, obj2);
+// { 0: { foo: 'bar', x: 42 }, 1: { foo: 'baz', y: 5 } }
+
+let mergedObj2 = merge({}, obj1, obj2);
+// { 0: {}, 1: { foo: 'bar', x: 42 }, 2: { foo: 'baz', y: 5 } }
+
+@Clases en ES6
+
+class Rectangle {
+
+  constructor(height, width) {
+
+    this.height = height;
+
+    this.width = width;
+
+  }
+
+}
+
+const square = new Rectangle(5, 5);
+const poster = new Rectangle(2, 3); 
+
+var Square = class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+
+var Square = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }   
+};
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  get area() {
+    return this.calcArea();
+  }
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+const square = new Rectangle(5, 5);
+console.log(square.area); // 25
+
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    return Math.hypot(dx, dy);
+  }
+}
+const p1 = new Point(7, 2);
+const p2 = new Point(3, 8);
+
+console.log(Point.distance(p1, p2));
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(this.name + ' barks.');
+  }
+}
+let dog = new Dog('Rex');
+dog.speak(); // Rex barks.
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    super.speak(); // Super
+    console.log(this.name + ' barks.');
+  }
+}
+
+let dog = new Dog('Rex');
+dog.speak();
+// Rex makes a noise.
+// Rex barks.
+
+@Map y set
+
+let map = new Map([['k1', 'v1'], ['k2', 'v2']]);
+
+console.log(map.size); // 2
+
+let map = new Map();
+
+map.set('k1', 'v1').set('k2', 'v2');
+
+console.log(map.get('k1')); // v1
+
+console.log(map.has('k2')); // true
+
+for (let kv of map.entries())
+  console.log(kv[0] + " : " + kv[1]);
+  
+  let set = new Set([1, 2, 4, 2, 59, 9, 4, 9, 1]);
+
+console.log(set.size); // 5
+
+let set = new Set();
+set.add(5).add(9).add(59).add(9);
+
+console.log(set.has(9));
+
+for (let v of set.values())
+    console.log(v);
+    
+@Más sobre ES6
+
+setTimeout(function() {
+    console.log("Work 1");
+    setTimeout(function() {
+        console.log("Work 2");
+    }, 1000);
+}, 1000);
+console.log("End");
+
+new Promise(function(resolve, reject) {
+
+    // Work
+
+    if (success)
+
+        resolve(result);
+
+    else
+
+        reject(Error("failure"));
+
+});
+
+function asyncFunc(work) {
+    return new Promise(function(resolve, reject) {
+        if (work === "")
+            reject(Error("Nothing"));
+        setTimeout(function() {
+            resolve(work);
+        }, 1000);
+    });
+}
+
+asyncFunc("Work 1") // Task 1
+.then(function(result) {
+    console.log(result);
+    return asyncFunc("Work 2"); // Task 2
+}, function(error) {
+    console.log(error);
+})
+.then(function(result) {
+    console.log(result);
+}, function(error) {
+    console.log(error);
+});
+console.log("End");
+
+let myIterableObj = { 
+  [Symbol.iterator] : function* () {
+    yield 1; yield 2; yield 3;
+  }
+};
+console.log([...myIterableObj]); // [ 1, 2, 3 ]
+
+function* idMaker() {
+  let index = 0;
+  while (index < 5)
+    yield index++;
+}
+var gen = idMaker();
+
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+// Try to add one more console.log, just like the above see what happens.
+
+const arr = ['0', '1', '4', 'a', '9', 'c', '16'];
+const my_obj = {
+  [Symbol.iterator]: function*() {
+    for(let index of arr) {
+      yield `${index}`;
+    }
+  }
+};
+
+const all = [...my_obj] /* Here you can replace the '[...my_obj]' with 'arr'. */
+  .map(i => parseInt(i, 10))
+  .map(Math.sqrt)
+  .filter((i) => i < 5) /* try changing the value of 5 to 4 see what happens.*/
+  .reduce((i, d) => i + d); /* comment this line while you are changing the value of the line above */
+
+console.log(all);
+
+// lib/math.js
+
+export let sum = (x, y) => { return x + y; }
+
+export let pi = 3.14;
+
+
+
+// app.js
+
+import * as math from "lib/math"
+
+console.log(`2p = + ${math.sum(math.pi, math.pi)}`)
+
+let res = [4, 5, 1, 8, 2, 0].filter(function (x) {
+  return x > 3;
+})[0];
+
+console.log(res);
+
+let res =
+[4, 5, 1, 8, 2, 0].find(x => x > 3);
+
+console.log(res);
+
+let res =
+[4, 5, 1, 8, 2, 0].findIndex(x => x > 3);
+
+console.log(res);
+
+console.log(Array(3 + 1).join("foo"));
+
+console.log("foo".repeat(3));
+
+console.log("SoloLearn".indexOf("Solo") === 0); // true
+console.log("SoloLearn".indexOf("Solo") === (4 - "Solo".length)); // true
+console.log("SoloLearn".indexOf("loLe") !== -1); // true
+console.log("SoloLearn".indexOf("olo", 1) !== -1); // true
+console.log("SoloLearn".indexOf("olo", 2) !== -1); // false
+
+console.log("SoloLearn".startsWith("Solo", 0)); // true
+console.log("SoloLearn".endsWith("Solo", 4)); // true
+console.log("SoloLearn".includes("loLe")); // true
+console.log("SoloLearn".includes("olo", 1)); // true
+console.log("SoloLearn".includes("olo", 2)); // false
+
+
+
+
+
+
+

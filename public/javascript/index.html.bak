@@ -1,0 +1,3185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JavaScript desde cero</title>
+    
+    <!-- Fuente Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    <!-- CSS de highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    
+    <!-- íconos de la página -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://gonzalo-benites-webpages.on.drv.tw/cursos/javascript/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://gonzalo-benites-webpages.on.drv.tw/cursos/javascript/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- SEO comienzo-->
+    <meta name="description" content="Aprende Python desde cero con este curso gratuito. En este curso aprenderás los fundamentos de Python, como variables, tipos de datos, operaciones, flujo de control, funciones, objetos, módulos y excepciones. También aprenderás a usar librerías populares de Python, como NumPy, Pandas y Matplotlib.">
+    <meta property="og:site_name" content="JavaScript desde cero">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Aprende JavaScript Curso Desde Cero">
+    <meta property="og:description" content="Aprende Python desde cero con este curso gratuito. En este curso aprenderás los fundamentos de Python, como variables, tipos de datos, operaciones, flujo de control, funciones, objetos, módulos y excepciones. También aprenderás a usar librerías populares de Python, como NumPy, Pandas y Matplotlib.">
+    <meta property="og:url" content="https://gonzalo-benites-webpages.on.drv.tw/cursos/javascript/">
+    <meta property="og:image" content="https://gonzalo-benites-webpages.on.drv.tw/cursos/javascript/images/javascript_fondo.png">
+    <!-- <meta property="article:published_time" content="2021-10-28T11:56:44.000Z">
+        <meta property="article:modified_time" content="2023-08-02T09:44:31.000Z"> -->
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Español">
+    <meta property="article:tag" content="Curso">
+    <!-- SEO final -->
+    
+    <!-- Buscador de Google -->
+
+</head>
+<body>
+    <p id="#"></p>
+<header>
+    <!-- Comienzo de navbar offcanvas-->
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><strong>JavaScript</strong> desde cero</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><strong>JavaScript</strong> desde cero</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="https://gonzalo-benites-webpages.on.drv.tw/cursos/html/#pie">Contacto</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="https://gonzalo-benites-webpages.on.drv.tw/cursos/html/donar.html"><span
+                                    style="color: blue; background-color: gold; padding: 5px; font-weight: bolder; margin: 0px;">Donar</span></a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Tabla de contenido
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                                <li class="unidades-indice">
+                                    <a class="titulos-unidad" href="#unidad1">Descripción general</a>
+                                    <ul>
+                                        <li><a href="#lec1">Tu primera lección</a></li>
+                                        <li><a href="#lec2">Producción</a></li>
+                                        <li><a href="#lec3">Variables</a></li>
+                                        <li><a href="#lec4">Comentarios</a></li>
+                                        <li><a href="#lec5">Tipos de datos</a></li>
+                                        <li><a href="#lec6">Examen Módulo 1</a></li>
+                                    </ul>
+                                </li>
+                                <li class="unidades-indice">
+                                    <a class="titulos-unidad" href="#unidad2">Conceptos básicos</a>
+                                    <ul>
+                                        <li><a href="#lec7">Operadores matemáticos</a></li>                  
+                                        <li><a href="#lec8">Operadores de asignación</a></li>
+                                        <li><a href="#lec9">Operadores de comparación</a></li>
+                                        <li><a href="#lec10">Operadores lógicos o booleanos</a></li>
+                                        <li><a href="#lec11">Operadores de cadenas de texto</a></li>
+                                        <li><a href="#lec12">Examen Módulo 2</a></li>
+                                        <li><a href="#lec13">Proyecto de codificación: planeador de viajes</a></li>                    
+                                    </ul>
+                                </li>
+                                <li class="unidades-indice">
+                                    <a class="titulos-unidad" href="#unidad3">Condicionales y bucles</a>
+                                    <ul>
+                                        <li><a href="#lec14">La declaración if</a></li>
+                                        <li><a href="#lec15">La declaración else</a></li>
+                                        <li><a href="#lec16">La declaración else if</a></li>
+                                        <li><a href="#lec17">La declaración switch</a></li>
+                                        <li><a href="#lec18">El bucle for</a></li>
+                                        <li><a href="#lec19">El bucle while</a></li>
+                                        <li><a href="#lec20">El bucle do...while</a></li>
+                                        <li><a href="#lec21">Break y continue</a></li>
+                                        <li><a href="#lec22">Examen Módulo 3</a></li>
+                                        <li><a href="#lec23">Proyecto de codificación: El caracol en el pozo</a></li>
+                                    </ul>
+                                </li>
+                                <li class="unidades-indice">
+                                    <a class="titulos-unidad" href="#unidad4">Funciones</a>
+                                    <ul>
+                                        <li><a href="#lec24">Funciones definidas por el usuario</a></li>                  
+                                        <li><a href="#lec25">Parámetros de funciones</a></li>
+                                        <li><a href="#lec26">Utilizando múltiples parámetros con funciones</a></li>
+                                        <li><a href="#lec27">La declaración return</a></li>
+                                        <li><a href="#lec28">Alert, prompt, confirm</a></li>
+                                        <li><a href="#lec29">Examen Módulo 4</a></li>
+                                        <li><a href="#lec30">Proyecto de codificación: conversor de monedas</a></li>
+                                    </ul>
+                                </li>
+                                <li class="unidades-indice">
+                                    <a class="titulos-unidad" href="#unidad5">Objetos</a>
+                                    <ul>
+                                        <li><a href="#lec31">Introducción a los objetos</a></li>                  
+                                        <li><a href="#lec32">Creando tus propios objetos</a></li>
+                                        <li><a href="#lec33">Inicialización de objetos</a></li>
+                                        <li><a href="#lec34">Añadiendo méritos</a></li>
+                                        <li><a href="#lec35">Examen Módulo 5</a></li>
+                                        <li><a href="#lec36">Proyecto de codificación: Gestión de contactos</a></li>
+                                    </ul>
+                                </li>
+                                <li class="unidades-indice">
+                                    <a class="titulos-unidad" href="#unidad6">Objetos principales</a>
+                                    <ul>
+                                        <li><a href="#lec37">Arreglos</a></li>                  
+                                        <li><a href="#lec38">Otras formas para crear arreglos</a></li>
+                                        <li><a href="#lec39">Propiedades de arreglos y métodos</a></li>
+                                        <li><a href="#lec40">Arreglos asociativos</a></li>
+                                        <li><a href="#lec41">El objeto Math</a></li>
+                                        <li><a href="#lec42">El objeto Date</a></li>
+                                        <li><a href="#lec43">Examen Módulo 6</a></li>
+                                        <li><a href="#lec44">Proyecto de codificación: Gestión de tienda</a></li>
+                                    </ul>
+                                </li>
+                                <li class="unidades-indice">
+                                    <a class="titulos-unidad" href="#unidad7">DOM y eventos</a>
+                                    <ul>
+                                        <li><a href="#lec45">¿Qué es DOM?</a></li>                  
+                                        <li><a href="#lec46">Seleccionando elementos</a></li>
+                                        <li><a href="#lec47">Modificando elementos</a></li>
+                                        <li><a href="#lec48">Añadiendo y removiendo elementos</a></li>
+                                        <li><a href="#lec49">Creando animaciones</a></li>
+                                        <li><a href="#lec50">Manejando eventos</a></li>
+                                        <li><a href="#lec51">Propagación de Eventos</a></li>
+                                        <li><a href="#lec52">Creando un deslizador de imágenes</a></li>
+                                        <li><a href="#lec53">Validación de formularios</a></li>
+                                        <li><a href="#lec54">Examen Módulo 7</a></li>
+                                    </ul>
+                                </li>
+                                <li class="unidades-indice">
+                                    <a class="titulos-unidad" href="#unidad8">ECMAScript 6</a>
+                                    <ul>
+                                        <li><a href="#lec55">Introducción a ES6</a></li>                  
+                                        <li><a href="#lec56">Variables y strings</a></li>
+                                        <li><a href="#lec57">Bucles y funciones en ES6</a></li>
+                                        <li><a href="#lec58">Objetos en ES6</a></li>
+                                        <li><a href="#lec59">Desestructuración en ES6</a></li>
+                                        <li><a href="#lec60">Rest y Spread</a></li>
+                                        <li><a href="#lec61">Clases en ES6</a></li>
+                                        <li><a href="#lec62">Map y Set</a></li>
+                                        <li><a href="#lec63">Más sobre ES6</a></li>
+                                        <li><a href="#lec64">Examen Módulo 7</a></li>
+                                        <li><a href="#lec65">Proyecto de codificación: Palabras</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex mt-3" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+                    <div class="gcse-search"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Final de navbar offcanvas-->
+
+</header>
+<!--Tabla de contenido - comienzo-->
+<div id="fondo">
+    <div id="tdc">
+        <nav style="margin-top: 140px; margin-bottom: 0px;" role="doc-toc" aria-label="Tabla de contenidos">
+        <!-- Acordeón de Bootstrap - inicio -->
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <p class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <strong>Descripción general</strong>
+              </button>
+            </p>
+            <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="#lec1">Tu primera lección</a></li>
+                  <li><a href="#lec2">Producción</a></li>
+                  <li><a href="#lec3">Variables</a></li>
+                  <li><a href="#lec4">Comentarios</a></li>
+                  <li><a href="#lec5">Tipos de datos</a></li>
+                  <li><a href="#lec6">Examen Módulo 1</a></li>
+                </ul>  
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <p class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <strong>Conceptos básicos</strong>
+              </button>
+            </p>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="#lec7">Operadores matemáticos</a></li>                  
+                  <li><a href="#lec8">Operadores de asignación</a></li>
+                  <li><a href="#lec9">Operadores de comparación</a></li>
+                  <li><a href="#lec10">Operadores lógicos o booleanos</a></li>
+                  <li><a href="#lec11">Operadores de cadenas de texto</a></li>
+                  <li><a href="#lec12">Examen Módulo 2</a></li>
+                  <li><a href="#lec13">Proyecto de codificación: planeador de viajes</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <p class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <strong>Condicionales y bucles</strong>
+              </button>
+            </p>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="#lec14">La declaración if</a></li>
+                  <li><a href="#lec15">La declaración else</a></li>
+                  <li><a href="#lec16">La declaración else if</a></li>
+                  <li><a href="#lec17">La declaración switch</a></li>
+                  <li><a href="#lec18">El bucle for</a></li>
+                  <li><a href="#lec19">El bucle while</a></li>
+                  <li><a href="#lec20">El bucle do...while</a></li>
+                  <li><a href="#lec21">Break y continue</a></li>
+                  <li><a href="#lec22">Examen Módulo 3</a></li>
+                  <li><a href="#lec23">Proyecto de codificación: El caracol en el pozo</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <p class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <strong>Funciones</strong>
+              </button>
+            </p>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="#lec24">Funciones definidas por el usuario</a></li>                  
+                  <li><a href="#lec25">Parámetros de funciones</a></li>
+                  <li><a href="#lec26">Utilizando múltiples parámetros con funciones</a></li>
+                  <li><a href="#lec27">La declaración return</a></li>
+                  <li><a href="#lec28">Alert, prompt, confirm</a></li>
+                  <li><a href="#lec29">Examen Módulo 4</a></li>
+                  <li><a href="#lec30">Proyecto de codificación: conversor de monedas</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <p class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <strong>Objetos</strong>
+              </button>
+            </p>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="#lec31">Introducción a los objetos</a></li>                  
+                  <li><a href="#lec32">Creando tus propios objetos</a></li>
+                  <li><a href="#lec33">Inicialización de objetos</a></li>
+                  <li><a href="#lec34">Añadiendo méritos</a></li>
+                  <li><a href="#lec35">Examen Módulo 5</a></li>
+                  <li><a href="#lec36">Proyecto de codificación: Gestión de contactos</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <p class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                <strong>Objetos principales</strong>
+              </button>
+            </p>
+            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="#lec37">Arreglos</a></li>                  
+                  <li><a href="#lec38">Otras formas para crear arreglos</a></li>
+                  <li><a href="#lec39">Propiedades de arreglos y métodos</a></li>
+                  <li><a href="#lec40">Arreglos asociativos</a></li>
+                  <li><a href="#lec41">El objeto Math</a></li>
+                  <li><a href="#lec42">El objeto Date</a></li>
+                  <li><a href="#lec43">Examen Módulo 6</a></li>
+                  <li><a href="#lec44">Proyecto de codificación: Gestión de tienda</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <p class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                <strong>DOM y eventos</strong>
+              </button>
+            </p>
+            <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="#lec45">¿Qué es DOM?</a></li>                  
+                  <li><a href="#lec46">Seleccionando elementos</a></li>
+                  <li><a href="#lec47">Modificando elementos</a></li>
+                  <li><a href="#lec48">Añadiendo y removiendo elementos</a></li>
+                  <li><a href="#lec49">Creando animaciones</a></li>
+                  <li><a href="#lec50">Manejando eventos</a></li>
+                  <li><a href="#lec51">Propagación de Eventos</a></li>
+                  <li><a href="#lec52">Creando un deslizador de imágenes</a></li>
+                  <li><a href="#lec53">Validación de formularios</a></li>
+                  <li><a href="#lec54">Examen Módulo 7</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <p class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                <strong>ECMAScript 6</strong>
+              </button>
+            </p>
+            <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="#lec55">Introducción a ES6</a></li>                  
+                  <li><a href="#lec56">Variables y strings</a></li>
+                  <li><a href="#lec57">Bucles y funciones en ES6</a></li>
+                  <li><a href="#lec58">Objetos en ES6</a></li>
+                  <li><a href="#lec59">Desestructuración en ES6</a></li>
+                  <li><a href="#lec60">Rest y Spread</a></li>
+                  <li><a href="#lec61">Clases en ES6</a></li>
+                  <li><a href="#lec62">Map y Set</a></li>
+                  <li><a href="#lec63">Más sobre ES6</a></li>
+                  <li><a href="#lec64">Examen Módulo 7</a></li>
+                  <li><a href="#lec65">Proyecto de codificación: Palabras</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- Acordeón de Bootstrap - final -->
+    </nav>
+    </div>
+</div>
+
+<main>
+
+<h1>JavaScript</h1>
+
+<section>
+
+<h2 id="#unidad1">Módulo 1: Descripción general</h2>
+
+<article>
+
+<h3 id="lec1">Tu primera lección</h3>
+
+<h4>iBienvenido a
+  JavaScript!</h4>
+
+<p>¿Alguna vez has visitado un sitio web que te ha
+  hecho pensar... "Oye, este sitio web es realmente
+  genial e interactivo"? Pues bien, <b>JavaScript</b>
+  probablemente estaba haciendo que ocurriera.</p>
+
+<figure >
+  <img src="images/001.png" class="mini" alt="">
+</figure>
+
+<p>En este curso, aprenderás a programar
+  con JavaScript, uno de los lenguajes de
+  programación más populares que hace que los
+  sitios web sean dinámicos e interactivos.</p>
+
+<p>También puedes utilizar JavaScript
+  para crear aplicaciones y juegos para
+  móviles, procesar datos y mucho
+  más.</p>
+
+<h4>La consola</h4>
+
+<p>JavaScript es un lenguaje de programación que
+  se ejecuta en los navegadores web. La mayoría
+  de los sitios web utilizan JavaScript y cuando las
+  cosas van mal, los desarrolladores web utilizan
+  <b>la consola</b> para investigar los errores.</p>
+
+<p>En esta lección aprenderás sobre la principal
+  arma del desarrollador web: <b>la consola</b>.</p>
+
+<p>Los errores de programación no
+  son visibles en el navegador. Los
+  desarrolladores web utilizan <b>la
+  consola</b> para probar el código y
+  corregir errores.</p>
+
+<h4>Mensajes log</h4>
+
+<p>La consola forma parte del navegador web.
+  Escribir (o log) <b>mensajes</b> en la consola es una
+  buena manera de diagnosticar y solucionar
+  problemas menores en tu código.</p>
+
+<p>Puedes usar <b>console.log()</b> para escribir
+  mensajes (o hacer <b>log</b>) . En el código de ejemplo
+  siguiente, el mensaje "All good, no errors" se
+  envía a la consola.</p>
+
+<div class="snippet"><pre><code class="language-javascript">console.log('All good, no errors')
+</code></pre></div>
+<p>Puedes hacer <b>log</b> en mensajes para
+  informar sobre lo que estás haciendo
+  el código o alertar de que hay un
+  problema.</p>
+<h4>Mensajes de texto</h4>
+<p>El texto en JavaScript debe estar encerrado entre
+  <b>comillas</b>.</p>
+
+<div class="snippet"><pre><code class="language-javascript">console.log('Testing in progress')</code></pre></div>
+
+<p>Tu código JavaScript no funcionará
+  si no incluye un par de <b>comillas</b> en
+  torno al mensaje de texto. Puedes
+  utilizar <b>comillas simples o dobles</b>.</p>
+<h4>El Code Playground</h4>
+<p>¿Listo para escribir y ejecutar código real? EI
+  <b>Code Playground</b> te permitirá hacerlo en este
+  curso.</p>
+<p>Pulsa sobre el bloque de código para abrir el
+  <b>Code Playground</b>, luego presiona "run" para
+  ver el mensaje en Ia consola. La consola con
+  el mensaje se abrirá en Ia parte inferior de Ia
+  página.</p>
+<div class="snippet"><pre><code class="language-javascript">console.log('My first console message')
+</code></pre></div>
+<p>¿Puedes cambiar el código JavasScript para
+  enviar un mensaje diferente a la consola?</p>
+<p>El <b>Code Playground</b> tiene secciones
+  para las 3 tecnologías web
+  principales.</p>
+<ul>
+  <li>HTML controla la estructura de una
+    página web.</li>
+  <li>CSS controla Ia presentación y el
+    estilo de una página web.</li>
+</ul>
+<p>En esta lección sólo utilizarás la
+  sección de JavaScript.</p>
+<h4>Lecciones aprendidas</h4>
+<p>iEres fantástico! En esta lección, has aprendido
+  que:</p>
+<ul>
+  <li><b>JavaScript</b> es un lenguaje de programación
+    muy popular.</li>
+  <li>Los desarrolladores web utilizan Ia <b>consola</b>
+    para probar el código y corregir errores.</li>
+  <li>Puedes utilizar <b>console.log()</b> para escribir o
+    registrar mensajes en la consola.</li>
+</ul>
+<p>En las próximas lecciones, aprenderás a utilizar
+  JavaScript para crear páginas web interactivas.</p>
+</article>
+
+<article>
+<h3 id="lec2">Producción</h3>
+<h4>Salida</h4>
+<p>Usemos JavaScript para imprimir "Hello World"
+  en el navegador.</p>
+<div class="snippet"><pre><code class="language-html">&lt;script&gt;
+    document.write("Hello World!");
+&lt;/script&gt;
+</code></pre></div>
+<p>La función <b>document.write()</b> escribe el texto en
+  nuestro documento HTML.</p>
+<p>También puedes utilizar el marcado HTML en la
+  salida:</p>
+<div class="snippet"><pre><code class="language-html">&lt;script&gt;
+    document.write("&lt;h1&gt;Hello World!&lt;/h1&gt;")
+&lt;/script&gt;
+</code></pre></div>
+<p>El método <b>document.write()</b> debe
+  utilizarse sólo para las pruebas.
+  Otros mecanismos de salida
+  aparecen en las próximas lecciones.</p>
+
+<h4>Salida a la consola</h4>
+<p>Mientras que document.write() se utiliza para escribir Ia salida HTML, Ia función <strong>console.log()</strong> se utiliza para realizar la salida a la <strong>consola del navegador</strong>.</p>
+<p>La consola es parte del navegador web y te permite registrar mensajes, ejecutar código JavaScript y ver errores y advertencias.</p>
+<p><strong>Por ejemplo:</strong></p>
+<div class="snippet"><pre><code class="language-javascript">console.log("Hello from console!")
+</code></pre></div>
+<p>Los desarrolladores mayormente usan la consola para probar tu código JavaScript.</p>
+<p class="code_coach">Code Coach</p>
+<p>Tu primer programa</p>
+</article>
+<article>
+<h3 id="lec3">Variables</h3>
+<h4>Variables</h4>
+<p>Las <strong>variables</strong> son contenedores para registrar datos. El valor de una variable puede cambiar a lo largo del programa.</p>
+<p>Utilice la palabra clave <strong>var</strong> para declarar una variable:</p>
+<div class="snippet"><pre><code class="language-javascript">var x = 10;
+</code></pre></div>
+<p>En el ejemplo anterior, a la variable x le es asignado el valor <strong>10</strong>.</p>
+<p>En JavaScript, el signo igual (=) se llama el operador "<b>asignación</b>", en lugar de un operador "igual a".</p>
+<p>Por ejemplo, x = y asignará el valor de y a x.</p>
+<p>JavaScript es sensible a mayúsculas. Por ejemplo, las variables <em>lastName</em> y <em>lastname</em>, son dos variables diferentes.</p>
+<h4>Usando Variables
+</h4>
+<p>Asignemos un valor a una variable y démosle
+  salida al navegador.</p>
+<div class="snippet"><pre><code class="language-javascript">var x = 100;
+document.write(x);
+</code></pre></div>
+
+<p>El uso de variables es útil de muchas maneras.
+Puedes tener mil líneas de código que pueden
+incluir la variable x. Puedes cambiar el valor de
+las variables y usarlas varias veces en tu código:</p>
+
+<div class="snippet"><pre><code class="language-javascript">var x = 100;
+console.log(x);
+x = 42;
+console.log(x);
+</code></pre></div>
+
+<p>Cada "instrucción" escrita se llama
+  <b>declaración</b>. Las declaraciones en
+  JavaScript están separadas por
+  <b>punto y coma</b>.</p>
+
+<h4>Nombrando variables</h4>
+
+<p>Los nombres de variables en JavaScript son
+  sensibles a las mayúsculas y minúsculas.
+  En el ejemplo de abajo cambiamos x a
+  mayúsculas:</p>
+
+<div class="snippet"><pre><code class="language-javascript">var x = 100;
+document.write(X);
+</code></pre></div>
+
+<p>Este código no dará lugar a ninguna salida, ya
+que x y X son dos variables diferentes.</p>
+<p>Reglas de nombres:</p>
+<ul>
+  <li>El primer carácter debe ser una letra, un guión
+bajo (_), o un signo de dólar ($). Los caracteres
+subsiguientes pueden ser letras, dígitos,
+subrayados o signos de dólar.</li>
+<li>Los números no están permitidos como el
+primer carácter.</li>
+<li>Los nombres de variables no pueden incluir un
+  operador matemático o lógico en el nombre. Por
+  ejemplo, 2*a/go o esto+eso;</li>
+<li>Los nombres en JavaScript no deben contener
+  espacios.</li>
+<li>No debes usar ningún símbolo especial, como
+  my#num, num%, etc.</li>
+</ul>
+<p>Los guiones no están permitidos en
+  JavaScript. Están reservados para las
+  sustracciones.</p>
+</article>
+<article>
+  <h3 id="lec4">Comentarios</h3>
+  <h4>Comentarios en
+    JavaScript</h4>
+
+<p>No todas las declaraciones de JavaScript son
+  "ejecutadas".</p>
+<p>El código después de una doble barra //, o entre /
+
+  * y */ se trata como un <b>comentario</b>.</p>
+<p>Los comentarios se ignoran y no se ejecutan.</p>
+
+<p>Los comentarios en <b>una línea única</b> usan barras dobles.</p>
+
+
+<div class="snippet"><pre><code class="language-javascript">//Este es un comentario de una sola línea
+alert("This is an alert box!");
+</code></pre></div>
+
+<p><b>Resultado:</b></p>
+
+<figure >
+  <img src="images/002.png" class="mini" alt="">
+</figure>
+
+
+<p>Es una buena idea hacer un comentario sobre
+  la lógica de las grandes funciones para que tu
+  código sea más legible para los demás.</p>
+
+<p><b>alert()</b> se utiliza para crear un buzón
+  de mensajes.</p>
+
+<p class="code_coach">Code Coach</p>
+
+<p><b>Comentarios</b></p>
+
+<h4>Comentarios de líneas
+  multiples</h4>
+
+<p>Todo lo que escribes entre /* y */ será
+  considerado como un comentario de líneas
+  múltiples.</p>
+
+<p>Aqui hay un ejemplo:</p>
+
+<div class="snippet"><pre><code class="language-javascript">/*Este código 
+crea una 
+caja de alerta 
+('alert box')*/
+alert("Esto es una caja de alerta ('alert box')");
+</code></pre></div>
+
+<p>Los comentarios se usan para
+  describir y explicar lo que el codigo
+  está haciendo.
+  </p>
+</article>
+<article>
+<h3 id="lec5">Tipos de datos</h3>
+<h4>Tipos de datos</h4>
+<p>El termino <b>tipo de dato</b> se refiere a los tipos de
+valores con los que un programa puede trabajar.
+Las variables de JavaScript pueden contener
+muchos tipos de datos, como <b>números</b>, <b>cadenas</b>,
+<b>matrices</b>, y otros...
+</p>
+<p>Los números en JavaScript pueden ser escritos
+con o sin decimales.
+</p>
+<div class="snippet"><pre><code class="language-javascript">var num = 42; // Un número sin decimales
+</code></pre></div>
+<br>
+<div class="snippet"><pre><code class="language-javascript">var price = 55.55; // Un número con decimales
+document.write(price);
+</code></pre></div>
+<p>Esta variable puede cambiarse
+fácilmente a otro tipo de dato asignándole
+cualquier otro valor de un tipo de datos distinto,
+como num = 'alguna cadena al azar’.</p>
+<h4>Cadenas de texto</h4>
+<p>Las cadenas de texto en JavaScript son
+utilizadas para guardar y manipular texto.
+</p>
+<p>Una cadena de texto puede ser cualquier texto
+que aparezca entre comillas. Puedes usar
+comillas simples o dobles.
+</p>
+<div class="snippet"><pre><code class="language-javascript">var name = 'John';
+var text = "My name is John Smith";
+</code></pre></div>
+<p>Puedes utilizar comillas dentro de una cadena de
+texto, siempre y cuando no sean del mismo tipo
+que las comillas que rodean la cadena de texto.
+</p>
+<div class="snippet"><pre><code class="language-javascript">var text = "My name is 'John'";
+</code></pre></div>
+<p>Puedes introducir comillas dobles entre comillas dobles y comillas simples entre comillas simples 
+  utilizando el caracter escape (\) así: \" y así \' respectivamente.</p>
+<h4>Cadenas de texto</h4>
+<p>Como las cadenas de texto deben ser escritas entre comillas, hay que considerar cómo manejar las comillas dentro de una cadena de texto. El <b>carácter de escape barra inversa (\)</b> convierte a los caracteres especiales en caracteres de texto.</p>
+<div class="snippet"><pre><code class="language-javascript">var sayHello = 'Hello world!  \'I am a JavaScript programmer.\' '; 
+document.write(sayHello);
+</code></pre></div>
+<p><b>
+Resultado:</p></b>
+<figure >
+  <img src="images/003.png" class="mini" alt="">
+</figure>
+<p>El carácter de escape (\) puede también ser usado para insertar otros caracteres especiales dentro de una cadena de texto.</p>
+<p>Los siguientes caracteres especiales pueden ser añadidos a una cadena de texto usando el signo de barra inversa:</p>
+<figure >
+  <img src="images/004.png" class="mini" alt="">
+</figure> 
+<p>Si comienzas una cadena de texto con una comilla simple, debes terminarla también con una comilla simple. La misma regla aplica para comillas dobles. De lo contrario, JavaScript se confundiría.</p>
+<p class="code_coach">Code Coach</p>
+<p><b>Escapando caracteres en cadenas</b></p>
+<h4>Booleanos</h4>
+<p>En JavaScript, un Booleano (tipo de dato lógico) es aquel donde sólo puedes tener dos valores: <b>true (verdadero)</b> o <b>false (falso)</b>.</p>
+<p>Estos son útiles cuando necesitas un tipo de dato que sólo pueda tener uno de dos valores, tales como Sí/No, Encendido/Apagado, Verdadero/Falso.</p>
+<p><b>Ejemplo:</b></p>
+<div class="snippet"><pre><code class="language-javascript">var isActive = true; 
+var isHoliday = false;
+</code></pre></div>
+
+<p>El valor Booleano de 0 (cero), null (nulo), undefined (indefinido), cadena de texto vacía es <b>falso</b>.</p>
+<p>Todo lo que tenga un valor "real" es <b>verdadero</b>.</p>
+</article>
+<article>
+<h3 id="lec6">Examen Módulo 1</h3>
+</article>
+</section>
+
+<section>
+<h2 id="#unidad2">Módulo 2: Conceptos básicos</h2>
+<article>
+<h3 id="lec7">Operadores matematicos</h3>
+<h4>Operadores aritméticos</h4>
+<p>Los operadores aritméticos realizan funciones
+aritméticas en números (literales o variables).</p>
+<figure >
+<img src="images/005.png" class="mini" alt="">
+</figure>
+<p>En el siguiente ejemplo, el operador de adición
+es usado para determinar la suma de dos
+números.</p>
+<div class="snippet"><pre><code class="language-javascript">var x = 10 + 5;
+document.write(x);
+</code></pre></div>
+<p>Puedes añadir tantos números o variables juntas
+como quieras o sea necesario.</p>
+<div class="snippet"><pre><code class="language-javascript">var x = 10;
+var y = x + 5 + 22 + 45 + 6548;
+document.write(y) ;
+</code></pre></div>
+<p>Puedes obtener el resultado de la
+expresión de un string utilizando
+la función eval(), la cual toma el
+argumento de una expresión de
+un string como eval("10 * 20 +
+8") y devuelve el resultado. Si el
+argumento está vacío, la función
+devuelve undefined.</p>
+<h4>Multiplicación</h4>
+<p>El operador de multiplicación (*) multiplica un
+número por otro.</p>
+<div class="snippet"><pre><code class="language-javascript">var x = 10 * 5;
+document.write(x);
+</code></pre></div>
+<p>10 * '5' o '10' * '5' da el mismo
+resultado. Multiplicar un número con
+valores de string como 'sololearn' * 5
+devuelve NaN (Not a Number - no es
+un número).</p>
+<p class="code_coach">Code Coach</p>
+<p>Operadores matemáticos</p>
+<h4>División</h4>
+<p>El operador / es utilizado para realizar
+operaciones de división:</p>
+<div class="snippet"><pre><code class="language-javascript">var x = 100 / 5;
+document.write(x);
+</code></pre></div>
+<p>Recuerda gestionar los casos donde
+pueda haber una división entre 0.</p>
+<h4>El módulo</h4>
+<p>El operador módulo (%) retorna el resto de la
+división (lo que sobra).</p>
+<div class="snippet"><pre><code class="language-javascript">var myVariable = 26 % 6;
+</code></pre></div>
+<p>En JavaScript, el operador módulo
+es utilizado no sólo en enteros,
+pero también en números de punto
+flotante.</p>
+<h4>Incremento y decrementos</h4>
+<p><u>Incremento ++</u></p>
+<p>El operador de incremento, aumenta el valor
+numérico de su operando en uno. Si se
+coloca antes del operando, retorna el valor
+incrementado. Si se coloca después del
+operando, retorna el valor original y luego
+incrementa el operando.</p>
+<p><u>Decremento --</u></p>
+<p>El operador de decremento, disminuye el
+valor numérico de su operando en uno. Si se
+coloca antes del operando, retorna el valor
+decrementado. Si se coloca después del
+operando, retorna el valor original y luego
+decrementa el operando.</p>
+<p><b>Algunos ejemplos:</b></p>
+<figure >
+<img src="images/006.png" class="mini" alt="">
+</figure>
+<p>Al igual que en matemáticas de
+escuela, puedes cambiar el orden de
+las operaciones aritméticas usando
+paréntesis.
+Ejemplo: var x = (100 + 50) * 3;</p>
+</article>
+<article>
+<h3 id="lec8">Operadores de asignación</h3>
+<h4>Operadores de asignación</h4>
+<p>Los operadores de asignación asignan valores a
+variables de JavaScript.</p>
+<figure >
+<img src="images/007.png" class="mini" alt="">
+</figure>
+<p>Puedes utilizar múltiples operadores
+de asignación en una línea, como x - = y + = 9.</p>
+</article>
+<article>
+<h3 id="lec9">Operadores de comparación</h3>
+<h4>Operadores de comparación</h4>
+<p>Los operadores de comparación son utilizados
+en declaraciones lógicas para determinar la
+igualdad o diferencia entre variables o valores.
+Estos retornan <b>verdadero</b> o <b>falso</b>.</p>
+<p>El operador <b>igual que (==)</b> valida si los valores de
+los operandos son iguales.</p>
+<div class="snippet"><pre><code class="language-javascript">var num = 18;
+// num == 8 will return false
+</code></pre></div>
+<p>Puedes comprobar todo tipo
+de datos; los operadores de
+comparación siempre devuelven true
+0 false (verdadero 0 falso).</p>
+<h4>Operadores de comparación</h4>
+<p>La siguiente tabla explica los operadores de
+comparación.</p>
+<figure >
+<img src="images/008.png" class="mini" alt="">
+</figure>
+<p>Cuando uses operadores, asegúrate
+que los argumentos sean del mismo
+tipo de dato; los números deberían
+ser comparados con números,
+las cadenas de texto, con cadenas de
+texto, y así sucesivamente.</p>
+<p class="code_coach">Code Coach</p>
+<p>Operadores de comparación 2</p>
+</article>
+<article>
+<h3 id="lec10">Operadores lógicos o booleanos</h3>
+<h4>Operadores lógicos</h4>
+<p>Operadores <b>lógicos</b>, también conocidos como
+operadores <b>booleanos</b>, evalúan la expresión y
+retornan <b>verdadero</b> o <b>falso</b>.</p>
+<p>La tabla a continuación explica los operadores
+lógicos (Y, O, NO).</p>
+<figure >
+<img src="images/009.png" class="mini" alt="">
+</figure>
+<p>Puedes comprobar todo tipo
+de datos; los operadores de
+comparación siempre devuelven true
+o false (verdadero o falso).</p>
+
+<h4>Operadores lógicos</h4>
+<p>En el siguiente ejemplo, hemos conectado dos
+expresiones booleanas con el operador Y.</p>
+<div class="snippet"><pre><code class="language-javascript">(4 > 2) && (10 < 15)
+</code></pre></div>
+<p>Para que esta expresión sea <b>verdadera</b>, ambas
+condiciones deben ser <b>verdaderas</b>.</p>
+<ul>
+  <li> La primera condición determina si 4 es mayor
+que 2, lo cual es <b>verdadero</b>.</li>
+    <li>La segunda condición determina si 10 es menor
+que 15, lo cual también es <b>verdadero</b>.</li>
+</ul>
+<p>Basados en estos resultados, la expresión
+completa es evaluada como <b>verdadero</b>.</p>
+<h4>Operador condicional (ternario)</h4>
+<p>Hay otro operador condicional en JavaScript que
+asigna un valor a una variable, basado en una
+condición.</p>
+<p><b>Sintaxis:</b></p>
+<div class="snippet"><pre><code class="language-javascript">variable = (condición) ? valor1: valor2
+</code></pre></div>
+<p><b>Por ejemplo:</b></p>
+<div class="snippet"><pre><code class="language-javascript">var esAdulto = (edad &lt; 18) ? "Demasiado joven": "Lo suficientemente mayor";
+</code></pre></div>
+<p>Si la variable edad tiene un valor por debajo de 18,
+el valor de la variable <em>esAdulto</em> será "Demasiado joven".
+De lo contrario, el valor de <em>esAdulto</em> será "Lo suficientemente mayor".</p>
+<p class="code_coach">Code Coach</p>
+<p>Operadores lógicos o booleanos</p>
+<p>Los operadores lógicos permiten
+conectar tantas expresiones como
+desees.</p>
+
+<!--Parte sin articles ni sections_ Comienzo-->
+
+<!-- <div class="snippet"><pre><code class="language-javascript"></code></pre></div> -->
+
+</article>
+<article>
+<h3 id="lec11">Operadores de cadenas de texto</h3>
+<h4>Operadores de cadenas de texto</h4>
+<p>El operador para cadenas de texto más útil es concatenación, representado por el signo +. Concatenación puede ser usado para construir cadenas de texto juntando múltiples cadenas de texto, o juntando cadenas de texto con otros tipos:</p>
+<div class="snippet"><pre><code class="language-javascript">var mystring1 = "I am learning";
+var mystring2 = "JavaScript with Sololearn.";
+document.write(mystring1 + mystring2);
+</code></pre></div>
+<p>El ejemplo anterior declara e inicializa dos variables de cadena de texto, y luego las concatena.</p>
+<figure >
+  <img src="images/010.png" class="mini" alt="">
+</figure>
+<p>Los números entre comillas son tratados como cadenas de texto: "42" no es el número 42, es una cadena de texto que incluye dos caracteres, 4 y 2.</p>
+<article>
+<h3 id="lec12">Examen Módulo 2</h3>
+</article>
+<article>
+<h3 id="lec13">Proyecto de codificación: Planeador de viajes</h3>
+</article>
+</section>
+<section>
+<h2 id="#unidad3">Módulo 3: Bucles y condicionales</h2>
+</article>
+<article>
+<h3 id="lec14">La declaración if</h3>
+<h4>La declaración if</h4>
+<p>Muy a menudo cuando escribes código, deseas ejecutar diferentes acciones basados en diferentes condiciones.</p>
+<p>Puedes realizar esto utilizando declaraciones condicionales en tu código.</p>
+<p>Utiliza if para especificar un bloque de código que será ejecutado si una condición específica es verdadera.</p>
+<div class="snippet"><pre><code class="language-javascript">if (condition ) {
+  statements
+}</code></pre></div>
+
+<p>Las declaraciones serán ejecutadas sólo si la condición específica es verdadera.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var myNum1 = 7;
+var myNum2 = 70;
+if (myNum1 &lt; myNum2) {
+  alert("JavaScript is easy to learn.");
+}
+</code></pre></div>
+
+<p>Resultado:</p>
+<figure >
+  <img src="images/011.png" class="mini" alt="">
+</figure>
+<p>Tal y como se ve en el dibujo anterior, el método alert() en JavaScript es utilizado para generar una ventana de alerta emergente que contiene la información contenida entre los paréntesis.</p>
+<h4>La declaración if</h4>
+<p>Este es otro ejemplo de una declaración condicional falsa.</p>
+<div class="snippet"><pre><code class="language-javascript">var myNum1 = 7;
+var myNum2 = 10;
+if (myNum1 &gt; myNum2) {
+  alert("JavaScript is easy to learn.");
+}</code></pre></div>
+
+<p>Como la condición evalúa a falso, la declaración de alerta es omitida y el programa continúa con la línea después de la llave de cierre de la declaración if.</p>
+<p>Nota que if está en letras minúsculas. Utilizar letras mayúsculas (lf o IF) generará un error.</p>
+<p>Code Coach</p>
+<p>La declaración if</p>
+<h3 id="lec15">La declaración else</h4>
+<p>Utiliza la declaración else para especificar un bloque de código que será ejecutado si la condición es falsa.</p>
+<div class="snippet"><pre><code class="language-javascript">if (expresión) {
+  // código ejecutado si la condición es verdadera
+}
+else {
+  // código ejecutado si la condición es falsa
+}</code></pre></div>
+
+<p>Puedes evitar las llaves {} si tu código bajo la condición sólo contiene un comando.</p>
+<h4>La declaración else</h4>
+<p>El siguiente ejemplo demuestra el uso de una declaración lf... else.</p>
+<div class="snippet"><pre><code class="language-javascript">var myNum1 = 7;
+var myNum2 = 10;
+if (myNum1 &gt; myNum2) {
+  alert("This is my first condition");
+} else {
+  alert("This is my second con di tion");
+}</code></pre></div>
+
+<p>El ejemplo anterior dice:</p>
+<p>- SI myNum 1 es mayor que myNum2, alerta "This is my first condition";</p>
+<p>- SI no, alerta "This is my second condition".</p>
+<p>El navegador imprimirá la segunda condición, siendo que 7 no es mayor que 10.</p>
+<figure >
+  <img src="images/012.png" class="mini" alt="">
+</figure>
+<p>También existe otra forma de hacerlo utilizando el operador?: a &gt; b ? alert(a): alert(b).</p>
+<p>Code Coach</p>
+<p>La declaración if else</p>
+</article>
+<article>
+<h3 id="lec16">La declaración else if</h3>
+<h4>else if</h4>
+<p>Puedes utilizar la declaración else lf para especificar una nueva condición si la primera condición es falsa.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var course = 1;
+if (course == 1) {
+document.write("<h1>HTML Tutorial</h1>");
+} else if (course == 2) { 
+  document.write("<h1>CSS Tutorial</h1>");
+} else {
+  document.write("<h1>JavaScript Tutorial</h1>");
+}</code></pre></div>
+
+<p>El código anterior dice:</p>
+<p>- SI course es igual que 1, despliega "Tutorial HTML";</p>
+<p>- Si no, si course es igual que 2, despliega "Tutorial CSS";</p>
+<p>- Si ninguna de las anteriores es verdadera, entonces despliega "Tutorial JavaScript";</p>
+<p>course es igual que 1, así que obtenemos el siguiente resultado:</p>
+<figure >
+  <img src="images/013.png" class="mini" alt="">
+</figure>
+<p>La declaración else final "finaliza" la declaración else if y debería ser escrita siempre después de las declaraciones lf y else lf.</p>
+<p>Code Coach</p>
+<p>else if</p>
+<h4>else if</h4>
+<p>El bloque final else será ejecutado cuando ninguna de las condiciones sean verdadera.</p>
+<p>Vamos a cambiar el valor de la variable course de nuestro ejemplo previo.</p>
+<div class="snippet"><pre><code class="language-javascript">var course = 3;
+if (course == 1) {
+  document.write("<h1>HTML Tutorial</h1>");
+} else if (course == 2) {
+  document.write("<h1>CSS Tutorial</h1>");
+} else {
+  document.write("<h1>JavaScript Tutorial</h1>");
+}</code></pre></div>
+
+<p>El resultado</p>
+<figure >
+  <img src="images/014.png" class="mini" alt="">
+</figure>
+<p>Puedes escribir tantas declaraciones else if como necesites.</p>
+</article>
+<article>
+<h3 id="lec17">La declaración switch</h3>
+<h4>Switch</h4>
+<p>En los casos donde necesitas evaluar múltiples condiciones, utilizar declaraciones if else para cada condición podría no ser la mejor solución.</p>
+<p>La declaración switch es utilizada para ejecutar diferentes acciones basadas en diferentes condiciones. Sintaxis:</p>
+<div class="snippet"><pre><code class="language-javascript">switch (expression) {
+  case n1:
+    statements
+    break;
+  case n2:
+    statements
+    break;
+  default:
+    statements
+}</code></pre></div>
+
+<p>La expresión switch es evaluada una vez. El valor de la expresión es comparado con los valores de cada case. Si hay una coincidencia, el bloque asociado de código es ejecutado.</p>
+<p>Puedes obtener el mismo resultado con múltiples declaraciones if ... else, pero la declaración switch es más efectiva en tales situaciones.</p>
+<h4>La declaración switch</h4>
+<p>Considera el siguiente ejemplo.</p>
+<div class="snippet"><pre><code class="language-javascript">var day = 2;
+switch (day) {
+  case 1:
+    document.write("Monday");
+    break;
+  case 2:
+    document.write("Tuesday");
+    break;
+  case 3:
+    document.write("Wednesday");
+    break;
+  default:
+    document.write("Another day");
+}</code></pre></div>
+
+<p>Puedes tener tantas declaraciones case como sean necesarias.</p>
+<h4>La palabra clave break</h4>
+<p>Cuando el código JavaScript llega a un break, se rompe la secuencia de un bloque switch. Esto detendrá la ejecución de código adicional y evaluaciones de "case" dentro del bloque.</p>
+<p>Usualmente, en cada declaración de un case debería ser colocado un break.</p>
+<p>Code Coach</p>
+<p>La declaración switch</p>
+<h4>La palabra clave default</h4>
+<p>La palabra clave default especifica el código a ejecutar si no hay ninguna coincidencia.</p>
+<div class="snippet"><pre><code class="language-javascript">var color="yellow";
+switch(color) {
+  case "blue" :
+    document.write("This is blue.");
+    break;
+  case "red":
+    document.write("This is red.");
+    break;
+  case "green":
+    document.write("This is green.");
+    break;
+  case "orange":
+    document.write("This is orange.");
+    break;
+  default:
+    document.write("Color not found.");
+}</code></pre></div>
+
+<p>El bloque default puede ser omitido, si no hay necesidad de manejar el caso donde no se encuentren coincidencias.</p>
+</article>
+<article>
+<h3 id="lec18">El bucle For</h3>
+<h4>Bucles</h4>
+<p>Los bucles pueden ejecutar un bloque de código un número de veces. Son útiles en los casos en que quieras ejecutar el mismo código repetidamente, añadiendo valores diferentes cada vez.</p>
+<p>JavaScript tiene tres tipos de bucles: for, while, y do whlle.</p>
+<p>El bucle for es usado comúnmente cuando creamos un bucle.</p>
+<p>La sintaxis:</p>
+<div class="snippet"><pre><code class="language-javascript">for (statement 1; statement 2; statement 3) { 
+  code block to be executed 
+}</code></pre></div>
+
+<p>Statement 1 (Declaración 1) es ejecutada antes de que el bucle (el bloque de código) comience.</p>
+<p>Statement 2(Declaraci6n 2) determina la condición para ejecutar el bucle ( el bloque de código).</p>
+<p>Statement 3(Declaraci6n 3) es ejecutada cada vez y después que el bucle (el bloque de código) ha sido ejecutado.</p>
+<p>Como puedes ver, el bucle clásico for tiene tres componentes, o declaraciones.</p>
+<h4>El bucle For</h4>
+<p>El ejemplo a continuación crea un bucle for que imprime números del 1 al 5.</p>
+<div class="snippet"><pre><code class="language-javascript">for (i = 1; i &lt;= 5; i++) { 
+  document.write(i + "<br />");
+}</code></pre></div>
+
+<p>En este ejemplo, Declaración 1 establece una variable antes de que el bucle comience (var i = 1).</p>
+<p>Declaración 2 define la condición para que el bucle for se ejecute (i debe ser menor o igual que 5).</p>
+<p>Declaración 3 incrementa el valor (i++) cada vez que el bloque de código en el bucle ha sido ejecutado.</p>
+<p>Resultado:</p>
+<figure >
+  <img src="images/015.png" class="mini" alt="">
+</figure>
+<p>Declaración 1 es opcional, y puede ser omitida, si tus valores son fijados antes que el bucle comience.</p>
+<div class="snippet"><pre><code class="language-javascript">var i = 1; 
+for (; i &lt;= 5; i++) { 
+  document.write(i + "<br />"); 
+}
+</code></pre></div>
+
+<p>Adicionalmente, puedes inicializar más de un valor en declaración 1, usando comas, para separarlos.</p>
+<div class="snippet"><pre><code class="language-javascript">for (i = 1, text = ""; i &lt;= 5; i++) {
+  text = i;
+  document.write(i + "<br />");
+}</code></pre></div>
+
+<p>ES6 introduce otros tipos de loops for; puedes aprender sobre ellos más adelante en el curso de ES6.</p>
+<p>Code Coach</p>
+<h4>El bucle for</h4>
+<p>Si declaración 2 retorna verdadero, el bucle comenzará una y otra vez, si retorna falso, el bucle terminará. Declaración 2 es también opcional.</p>
+<p>Si omites la declaración 2, tienes que proveer un break dentro del bucle. De otra forma, el bucle nunca terminaría.</p>
+<p>Declaración 3 es utilizada para cambiar la variable inicial. Puede hacer cualquier cosa, incluyendo incrementos negativos (i--), incrementos positivos (i = i + 15), o cualquier otra cosa.</p>
+<p>Declaración 3 es también opcional, y puede ser omitida si tú incrementas tus valores dentro del bucle.</p>
+<div class="snippet"><pre><code class="language-javascript">var i = 0; 
+for(; i &lt; 10; ) { 
+  document.write(i); 
+  i++;
+}</code></pre></div>
+
+<p>Puedes tener múltiples nested loops for.</p>
+</article>
+<article>
+<h3 id="lec19">El bucle While</h3>
+<h4>El bucle While</h4>
+<p>El bucle while repite un bloque de código, mientras una condición especificada sea verdadera.</p>
+<p>Sintaxis:</p>
+<div class="snippet"><pre><code class="language-javascript">while (condition) { 
+  code block
+}</code></pre></div>
+
+<p>La condición puede ser cualquier declaración condicional que retorne verdadero o falso.</p>
+<h4>El bucle While</h4>
+<p>Considera el siguiente ejemplo.</p>
+<div class="snippet"><pre><code class="language-javascript">var i=0; 
+while (i &lt;= 10) {
+  document.write(i + "<br />");
+  i++;
+}</code></pre></div>
+
+<p>El bucle continuará siendo ejecutado mientras i sea menor o igual que 10. Cada vez que el bucle se ejecuta, i será incrementada por 1.</p>
+<p>Esto desplegará los valores desde 0 hasta 10.</p>
+<p>&nbsp;</p>
+<figure >
+  <img src="images/016.png" class="mini" alt="">
+</figure>
+<p>Ten cuidado cuando escribas condiciones. Si una condición siempre es true (verdadera), el loop se ejecutará indefinidamente.</p>
+<p>Code Coach</p>
+<h4>El bucle while</h4>
+<p>Si olvidas incrementar la variable utilizada en la condición, el bucle nunca terminará.</p>
+<p>Asegúrate que la condición en un bloque while eventualmente se vuelva falsa.</p>
+</article>
+<article>
+<h3 id="lec20">El bucle Do...While</h3>
+<h4>El bucle Do ... While</h4>
+<p>El bucle do ... while es una variante del bucle while. Este bucle ejecutará el código una vez, antes de validar si la condición es verdadera, y entonces se repetirá el bucle mientras la condición sea verdadera.</p>
+<p>Sintaxis:</p>
+<div class="snippet"><pre><code class="language-javascript">do {
+  code block
+} while (condition);</code></pre></div>
+
+<p>Nota el punto y coma utilizado al final del bucle do ... while.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var i = 20;
+do { 
+  document.write(i + "<br />");
+  i++;
+}
+while (i &lt;= 25);</code></pre></div>
+
+<p>Esto imprime los número desde 20 hasta 25.</p>
+<figure >
+  <img src="images/017.png" class="mini" alt="">
+</figure>
+<p>El bucle será siempre ejecutado al menos una vez, aún si la condición es falsa, porque el bloque de código es ejecutado antes de que la condición sea evaluada.</p>
+</article>
+<article>
+<h3 id="lec21">Break y Continue</h3>
+<h4>Break</h4>
+<p>La declaración break "salta fuera" de un bucle y continúa ejecutando el código posterior al bucle.</p>
+<div class="snippet"><pre><code class="language-javascript">for (i = 0; i &lt;= 10; i++) { 
+  if (i == 5) {
+      break;
+  }
+document.write(i + "<br />");
+}</code></pre></div>
+
+<p>Una vez que i alcance 5, saltará fuera del bucle.</p>
+<figure >
+  <img src="images/018.png" class="mini" alt="">
+</figure>
+<p>Puedes utilizar la palabra clave return para devolver algún valor inmediatamente desde el loop dentro de una función. Esto también romperá el loop.</p>
+<h4>Continue</h4>
+<p>La declaración continue detiene sólo una iteración en el bucle, y continúa con la siguiente iteración.</p>
+<div class="snippet"><pre><code class="language-javascript">for (i = 0; i &lt;= 10; i++) {
+  if (i == 5) { 
+    continue;
+  }
+    document.write(i + "<br />");
+}</code></pre></div>
+
+<p>Resultado:</p>
+<figure >
+  <img src="images/019.png" class="mini" alt="">
+</figure>
+<p>El valor 5 no es impreso, porque contlnue salta esa iteración del bucle.</p>
+<p>Code Coach</p>
+<p>Break y continue</p>
+</article>
+<article>
+<h3 id="lec22">Examen Módulo 3</h3>
+</article>
+<article>
+<h3 id="lec23">Proyecto de codificación: El caracol en el pozo</h3>
+</section>
+<section>
+<h2 id="#unidad4">Módulo 4: Funciones</h2>
+</article>
+<article>
+<h3 id="lec24">Funciones definidas por el usuario</h3>
+<h4>Funciones en JavaScript</h4>
+<p>Una función en JavaScript es un bloque de código designado para ejecutar una tarea en particular.</p>
+<p>Las principales ventajas de usar funciones son: Reusar el código: Define el código una sóla vez, y úsalo muchas veces.</p>
+<p>Usa el mismo código muchas veces con argumentos diferentes.</p>
+<p>Una función en JavaScript es ejecutada cuando "algo" la invoca, o la llama.</p>
+<h4>Definiendo una función</h4>
+<p>Para definir una función en JavaScript, utiliza la palabra clave function, seguida por el nombre, seguido por un conjunto de paréntesis.</p>
+<p>El código a ser ejecutado por la función es colocado dentro de llaves {}.</p>
+<div class="snippet"><pre><code class="language-javascript">function name() { 
+  //code to be executed
+}</code></pre></div>
+
+<p>Los nombres de las funciones pueden contener letras, dígitos, guiones bajos, y signos de dólar (mismas reglas que para las variables).</p>
+<h4>Llamando una función</h4>
+<p>Para ejecutar una función, necesitas llamarla. Para llamar una función, comienza con el nombre de la función, luego continúa con los argumentos entre paréntesis.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">function myFunction() { 
+  alert("Calling a Function!"); 
+}
+myFunction();</code></pre></div>
+
+<p>Siempre recuerda finalizar la declaración con un punto y coma después de llamar la función.</p>
+<h4>Llamando funciones</h4>
+<p>Una vez que la función es definida, JavaScript permite llamarla cuantas veces lo desees.</p>
+<div class="snippet"><pre><code class="language-javascript">function myFunction() {
+  alert("Alert box!");
+}
+myFunction(); 
+//"Alert box!"
+
+// some other code
+
+myFunction();
+//"Alert box!"</code></pre></div>
+
+<p>También puedes llamar a una función utilizando esta sintaxis: myfunction.call(). La diferencia es que cuando llamas a una función de este modo, estás pasando la palabra clave 'this' a una función. Aprenderás más sobre ello más adelante.</p>
+<p>Code Coach</p>
+<p>Funciones definidas por el usuario</p>
+</article>
+<article>
+<h3 id="lec25">Parámetros de funciones</h3>
+<h4>Parámetros de funciones</h4>
+<p>Las funciones pueden tomar parámetros. Los parámetros de funciones son los nombres listados en la definición de la posición.</p>
+<p>Sintaxis:</p>
+<div class="snippet"><pre><code class="language-javascript">functionName (param1, param2, param3) { 
+  // some code
+}</code></pre></div>
+
+<p>Así como con las variables, a los parámetros se les deben dar nombres, que son separados por comas dentro de los paréntesis.</p>
+<h4>Usando parámetros</h4>
+<p>Después de definir los parámetros, los puedes utilizar dentro de tu función.</p>
+<div class="snippet"><pre><code class="language-javascript">function sayHello(name) { 
+  alert("Hi, " + name); 
+}
+sayHello("David");</code></pre></div>
+
+<p>Esta función toma un parámetro, que es llamado name. Cuando llames a la función, provee el valor del parámetro (argumento) entre paréntesis.</p>
+<p>Los argumentos de funciones son los valores reales pasados a (y recibidos por) la función.</p>
+<p>Code Coach</p>
+<p>Parámetros de la función</p>
+<h4>Parámetros de funciones</h4>
+<p>En JavaScript puedes definir una función y pasarle diferentes parámetros (argumentos).</p>
+<div class="snippet"><pre><code class="language-javascript">function sayHello(name) {
+  alert("Hi, " + name);
+}
+sayHello("David"); 
+sayHello("Sarah"); 
+sayHello("John");</code></pre></div>
+
+<p>Esto permitirá ejecutar el código de la función utilizando los valores introducidos en los argumentos.</p>
+</article>
+<article>
+<h3 id="lec26">Utilizando múltiples parámetros con funciones</h3>
+<h4>Múltiples parámetros</h4>
+<p>Puedes definir múltiples parámetros para una función separándolos con comas.</p>
+<div class="snippet"><pre><code class="language-javascript">function myFunc(x, y) { 
+  // some code
+}</code></pre></div>
+
+<p>En el ejemplo anterior se define la función myFunc que toma dos parámetros.</p>
+<h4>Múltiples parámetros</h4>
+<p>Los parámetros son utilizados dentro de la definición de la función.</p>
+<div class="snippet"><pre><code class="language-javascript">function sayHello(name, age) { 
+  document.write(name + " is " + age + " years old."); 
+}</code></pre></div>
+
+<p>Los parámetros de la función son los nombres que se muestran en la definición de la función.</p>
+<h4>Múltiples parámetros</h4>
+<p>Cuando llames a la función, coloca los argumentos en el mismo orden en el que los definiste.</p>
+<div class="snippet"><pre><code class="language-javascript">function sayHello(name, age) { 
+  document.write(name + " is " + age + " years old."); 
+}
+sayHello("John", 20);</code></pre></div>
+
+<p>Si pasas más argumentos de los que están definidos, éstos serán asignados a un array llamado arguments. Pueden utilizarse de la siguiente manera: arguments[O], arguments1 ], ...</p>
+<p>Code Coach</p>
+<p>Múltiples parámetros</p>
+<h4>Múltiples parámetros</h4>
+<p>Después de definir la función, puedes llamarla tantas veces como necesites.</p>
+<p>Las funciones en JavaScript no validan el número de argumentos recibidos.</p>
+<p>Si una función es llamada con argumentos omitidos (menos de los declarados), los valores omitidos son tomados como undefined (indefinido), lo que indica que a una variable no le ha sido asignado un valor.</p>
+</article>
+<article>
+<h3 id="lec27">La declaración return</h3>
+<h4>Retorno de función</h4>
+<p>Una función puede tener una declaración retum , opcional. Esta se utiliza para retornar un valor desde una función.</p>
+<p>Esta declaración es útil cuando hacemos cálculos que requieren un resultado.</p>
+<p>Cuando JavaScript llega hasta una declaración retum, la función detiene . . , su eJecuc1on.</p>
+<h4>Retorno de función</h4>
+<p>Utiliza la declaración retum para retorna un valor.</p>
+<p>Por ejemplo, vamos a calcular el producto de dos números, y retornar el resultado.</p>
+<div class="snippet"><pre><code class="language-javascript">function myFunction(a, b) { 
+  return a * b;
+} 
+
+var x = myFunction(5, 6); 
+// El valor de retorno se almacenará en x</code></pre></div>
+
+<p>Si no retornas ningún valor desde la función, la misma retornará undefined.</p>
+<p>Retorno de función</p>
+<p>Otro ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">function addNumbers (a, b) { 
+  var c = a + b; 
+  return c;
+} 
+document.write(addNumbers(40, 2));</code></pre></div>
+
+<p>La instrucción document. write despliega el valor retornado por la función, el cual es la suma de los dos parámetros.</p>
+<p>Code Coach</p>
+<p>La declaración return</p>
+</article>
+<article>
+<h3 id="lec28">Alert, Prompt, Confirm</h3>
+<h4>La ventana de alerta</h4>
+<p>JavaScript ofrece tres tipos de ventanas emergentes: ventana de Alert (Alerta), Prompt (ventana de Solicitud), y Confinn (ventana de Confirmación).</p>
+<h4>Ventana de alerta</h4>
+<p>Una ventana de alerta es utilizada cuando quieres asegurarte que la información llegue hasta el usuario.</p>
+<p>Cuando aparece una ventana de alerta, el usuario debe hacer clic en OK para proceder. La función alert toma un sólo parámetro, el cual es el texto a desplegar en la ventana emergente.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">alert("Do you really want to leave this page?");</code></pre></div>
+
+<p>Resultado:</p>
+<figure >
+  <img src="images/020.png" class="mini" alt="">
+</figure>
+<p>Para desplegar saltos de línea dentro de una ventana emergente, utiliza una barra inversa seguida del carácter n.</p>
+<div class="snippet"><pre><code class="language-javascript">alert("Hello\nHow are you?");</code></pre></div>
+
+<p>Resultado:</p>
+<figure >
+  <img src="images/021.png" class="mini" alt="">
+</figure>
+<p>Ten cuidado cuando utilices ventanas de alerta, ya que el usuario sólo podrá continuar utilizando la página después de hacer clic en OK.</p>
+<h4>Ventana de solicitud</h4>
+<p>Una ventana de solicitud es utilizada usualmente para que el usuario ingrese un valor antes de ingresar a la página.</p>
+<p>Cuando se despliega una ventana de solicitud, el usuario tendrá que hacer clic en OK o Cancel para poder proceder después de introducir el valor de entrada.</p>
+<p>Si el usuario hace clic en OK, la ventana retoma el valor Introducido. Si el usuario hace clic en Cancel, la ventana retorna null.</p>
+<p>El método promptQ toma dos parámetros.</p>
+<ul>
+<li>El primero es la etiqueta, que es la que quieres desplegar dentro del campo de texto.</li>
+<li>El segundo es la cadena para desplegar dentro del campo de texto por defecto (opcional).</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var user = prompt("Please enter your name"); 
+alert(user);</code></pre></div>
+
+<p>Así se despliega la solicitud:</p>
+<figure >
+  <img src="images/022.png" class="mini" alt="">
+</figure>
+<p>Cuando aparezca un cuadro de aviso , el usuario tendrá que hacer clic en "OK" o en "Cancel" para proceder tras introducir un valor de entrada. No utilices demasiado este método, ya que evita que el usuario acceda a otras partes de la página hasta que se cierre el recuadro.</p>
+<h4>Ventana de confirmación</h4>
+<p>Una ventana de confinnaclón es utilizada comúnmente para permitir al usuario validar o aceptar algo.</p>
+<p>Cuando una ventada de confirmación emerge, el usuario debe hacer clic en OK o Cancel para poder proceder.</p>
+<p>Si el usuario hace clic en OK, la ventana retornará verdadero. Si el usuario hace clic en Cancel, la ventana retornará falso.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var result = confirm("Do you really want to leave this page?"); 
+if (result == true) { 
+  alert("Thanks for visiting"); 
+} else {
+  alert("Thanks for staying with us");
+}</code></pre></div>
+
+<p>Resultado:</p>
+<figure >
+  <img src="images/023.png" class="mini" alt="">
+</figure>
+<p>Este es el resultado cuando el usuario hace clic enOK:</p>
+<figure >
+  <img src="images/024.png" class="mini" alt="">
+</figure>
+<p>Este es el resultado cuando el usuario hace clic en Cancel:</p>
+<figure >
+  <img src="images/025.png" class="mini" alt="">
+</figure>
+<p>No utilices demasiado este método, ya que también evita que el usuario acceda a otras partes de la página hasta que se cierre el recuadro.</p>
+</article>
+<article>
+<h3 id="lec29">Examen Módulo 4</h3>
+</article>
+<article>
+<h3 id="lec30">Proyecto de codificación: Conversor de monedas</h3>
+</section>
+<section>
+<h2 id="#unidad5">Módulo 5: Objetos</h2>
+</article>
+<article>
+<h3 id="lec31">Introducción a los objetos</h3>
+<h4>Objetos en JavaScript</h4>
+<p>La variables en JavaScript son contenedores para valores y data. Los objetos también son variables, pero ellos pueden contener muchas variables.</p>
+<p>Piensa en los objetos como una lista de valores que son escritos como pares name:value (nombre:valor), con los nombres y los valores separados por dos puntos.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var person = { 
+  name: "John", age: 31, favColor: "green", height: 183
+};</code></pre></div>
+
+<p>Estos valores son llamados propiedades.</p>
+<figure >
+  <img src="images/026.png" class="mini" alt="">
+</figure>
+<p>Los objetos en JavaScript son contenedores para valores con nombre.</p>
+<h4>Propiedades de objetos</h4>
+<p>Puedes acceder a las propiedades de los objetos de dos maneras.</p>
+<div class="snippet"><pre><code class="language-javascript">objectName.propertyName
+//or
+objectName['propertyName']</code></pre></div>
+
+<p>Este ejemplo demuestra como acceder la edad de nuestro objeto persona.</p>
+<div class="snippet"><pre><code class="language-javascript">var person = {
+  name: "John", age: 31, favColor: "green", height: 183
+};
+var x = person.age; 
+var y = person['age'];</code></pre></div>
+
+<p>La propiedad incorporada length en JavaScript es uti I izada para contar el número de caracteres en una propiedad o cadena de texto.</p>
+<div class="snippet"><pre><code class="language-javascript">var course = {name: "JS", lessons: 41}; 
+document.write(course.name.length);</code></pre></div>
+
+<p>Objects (objetos) son uno de los conceptos fundamentales de JavaScript.</p>
+<h4>Métodos de objetos</h4>
+<p>Un método de Objeto es una propiedad que contiene la definición de una función.</p>
+<p>Utiliza la siguiente sintaxis para acceder al método del objeto.</p>
+<div class="snippet"><pre><code class="language-javascript">objectName.methodName()</code></pre></div>
+
+<p>Tal y como ya sabes, document.wrlteO despliega data. La función wrlteO realmente es un método del objeto document.</p>
+<div class="snippet"><pre><code class="language-javascript">document.write("This is some text");</code></pre></div>
+
+<p>Los métodos son funciones que han sido guardadas como propiedades de objetos.</p>
+<p>Code Coach</p>
+<p>Introduciendo objetos</p>
+</article>
+<article>
+<h3 id="lec32">Creando tus propios objetos</h3>
+<h4>El constructor de objetos</h4>
+<p>En la lección anterior, creamos un objeto utilizando la sintaxis de literal de objeto (o inicializador).</p>
+<div class="snippet"><pre><code class="language-javascript">var person = {
+  name: "John", age: 42, favColor: "green" 
+};</code></pre></div>
+
+<p>Esto te permite crear un único objeto. Algunas veces, necesitamos configurar un "tipo de objeto" que pueda ser usado para crear un número de objetos de un mismo tipo.</p>
+<p>La forma estándar para crear un "tipo de objeto" es utilizando una función constructora de objetos.</p>
+<div class="snippet"><pre><code class="language-javascript">function person (name, age, color) { 
+  this.name = name;
+  this.age = age;
+  this.favColor = color;
+};</code></pre></div>
+
+<p>La función anterior (persona) es un constructor de objeto, que toma parámetros y los asigna a las propiedades del objeto.</p>
+<p>La palabra clave this refiere al objeto actual.</p>
+<p>Nota que this no es una variable. Es una palabra clave, y su valor no puede ser cambiado.</p>
+<h4>Creando objetos</h4>
+<p>Una vez que tengas un constructor de objetos, puedes utilizar la palabra clave new para crear nuevos objetos del mismo tipo.</p>
+<div class="snippet"><pre><code class="language-javascript">var p1 = new person("John", 42, "green");
+var p2 = new person("Amy", 21, "red");
+
+document.write(p1.age); // Outputs 42
+document.write(p2.name); // Outputs "Amy"</code></pre></div>
+
+<p>Pulsa para intentarlo 1 p 1 y p2 son ahora objetos del tipo person. Sus propiedades son asignadas a los valores correspondientes.</p>
+<h4>Creando objetos</h4>
+<p>Considera el siguiente ejemplo.</p>
+<div class="snippet"><pre><code class="language-javascript">function person (name, age) {
+  this.name = name;
+  this.age = age;
+}
+var John = new person("John", 25); 
+var James = new person("James", 21);</code></pre></div>
+
+<p>Accede a las propiedades del objeto utilizando la sintaxis de punto, como hiciste anteriormente.</p>
+<figure >
+  <img src="images/027.png" class="mini" alt="">
+</figure>
+<p>Es esencial comprender la creación de objects.</p>
+<p>Code Coach</p>
+<p>Creando tus propios objetos</p>
+</article>
+<article>
+<h3 id="lec33">Inicialización de objetos</h3>
+<h4>Inicialización de objetos</h4>
+<p>Utiliza la sintaxis de literal de objetos o lnlclallzador para crear un sólo objeto.</p>
+<div class="snippet"><pre><code class="language-javascript">var John = {name: "John", age: 25}; 
+var James = {name: "James", age: 21};</code></pre></div>
+
+<p>Los Objects consisten en propiedades que se utilizan para describir un objeto. Los valores de las propiedades de objetos pueden contener tipos de datos primitivos u otros objetos.</p>
+<h4>Utilizando inicializadores de objetos</h4>
+<p>Los espacios y saltos de línea no son importantes. La definición de un objeto puede expandirse múltiples líneas.</p>
+<div class="snippet"><pre><code class="language-javascript">var John = { 
+  name: "John", 
+  age: 25
+}; 
+var James = { 
+  name: "James", 
+  age: 21
+};</code></pre></div>
+
+<p>No importa cómo el objeto sea creado, la sintaxis para acceder a las propiedades y métodos no cambia.</p>
+<div class="snippet"><pre><code class="language-javascript">document.write(John.age);</code></pre></div>
+
+<p>No te olvides de la segunda sintaxis de acceso: John['age'].</p>
+</article>
+<article>
+<h3 id="lec34">Añadiendo métodos</h3>
+<h4>Métodos</h4>
+<p>Los métodos son funciones que se guardan como propiedades de un objeto.</p>
+<p>Utiliza la siguiente sintaxis para crear un método de objeto:</p>
+<div class="snippet"><pre><code class="language-javascript">methodName = function () { code lines }</code></pre></div>
+
+<p>Accede a un método de objeto utilizando la sintaxis siguiente:</p>
+<div class="snippet"><pre><code class="language-javascript">objectName.methodName()</code></pre></div>
+
+<p>Un método es una función, que pertenece a un objeto. Puede ser referenciada utilizando la palabra clave this.</p>
+<p>La palabra clave this es utilizada como una referencia al objeto actual, lo que significa que puedes utilizarla para acceder a las propiedades y métodos de los objetos.</p>
+<p>La definición de métodos se realiza dentro del constructor de la función.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">function person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.changeName = function (name) {
+    this.name = name;
+  }
+}
+
+var p = new person("David", 21);
+p.changeName("John");
+//Ahora p.name es igual a "John"</code></pre></div>
+
+<p>En el ejemplo anterior, hemos definido un método llamado changeName para nuestra persona, que es una función, que toma un parámetro name y se lo asigna a la propiedad name del objeto.</p>
+<p>this.nombre se refiere a la propiedad nombre del objeto.</p>
+<p>El método changeName cambia la propiedad name del objeto a su argumento.</p>
+<p>Code Coach</p>
+<p>Añadiendo Métodos</p>
+<h4>Métodos</h4>
+<p>También puedes definir la función fuera del constructor y asociarla con el objeto.</p>
+<div class="snippet"><pre><code class="language-javascript">function person (name, age) {
+  this.name = name; 
+  this.age = age;
+  this.yearOfBirth = bornYear;
+}
+
+function bornYear() {
+  return 2016 - this.age;
+}</code></pre></div>
+
+<p>Como puedes ver, hemos asignado la propiedad yearOfBlrth del objeto a la función bomYear.</p>
+<p>La palabra clave this es utilizada para acceder a la propiedad age del objeto, que va a llamar el método.</p>
+<p>Ten presente que no es necesario escribir los paréntesis de la función cuando es asignada a un objeto.</p>
+<h4>Métodos</h4>
+<p>Llama al método como siempre.</p>
+<div class="snippet"><pre><code class="language-javascript">function person (name, age) {
+  this.name= name;
+  this.age = age; 
+  this.yearOfBirth = bornYear;
+}
+function bornYear() {
+  return 2016 - this.age;
+}
+var p = new person("A", 22); 
+document.write(p.yearOfBirth());</code></pre></div>
+
+<p>Llama al método por el nombre de la propiedad que especificaste en la función constructora, en lugar del nombre de la función.</p>
+</article>
+<article>
+<h3 id="lec35">Examen Módulo 5</h3>
+</article>
+<article>
+<h3 id="lec36">Proyecto de codificación: Gestión de contacto</h3>
+</section>
+<section>
+<h2 id="#unidad6">Módulo 6: Objetos principales</h2>
+</article>
+<article>
+<h3 id="lec37">Arreglos</h3>
+<h4>Arreglos en JavaScript</h4>
+<p>Los arreglos registran múltiples valores en un sola variable.</p>
+<p>Para registrar tres nombres de cursos, necesitas tres variables.</p>
+<div class="snippet"><pre><code class="language-javascript">var course1 = "HTML";
+var course2 = "CSS";
+var course3 = "JS";</code></pre></div>
+
+<p>Pero, ¿qué pasa si tienes 500 cursos? La solución es un arreglo.</p>
+<div class="snippet"><pre><code class="language-javascript">var courses = new Array("HTML", "CSS", "JS");</code></pre></div>
+
+<p>Esta sintaxis declara un arreglo llamado courses, el cual registra tres valores, o elementos.</p>
+<h4>Accediendo a un arreglo</h4>
+<p>Se hace referencia a un elemento de la matriz haciendo referencia al número de índice escrito entre corchetes.</p>
+<p>Esta declaración accede al valor del primer elemento en "cursos" y cambia el valor del segundo elemento.</p>
+<div class="snippet"><pre><code class="language-javascript">var courses = new Array("HTML", "CSS", "JS");
+
+var course = courses[0]; // HTML 
+courses[1] = "C++"; //Cambia el segundo elemento
+</code></pre></div>
+
+<p>[O] es el primer elemento en un arreglo. [1] es el segundo. Los índices de un arreglo comienzan con O.</p>
+<h4>Accediendo a un arreglo</h4>
+<p>Intentar acceder a un índice fuera del arreglo, retorna el valor undefined (Indefinido).</p>
+<div class="snippet"><pre><code class="language-javascript">var courses = new Array("HTML", "CSS", "JS"); 
+document.write(courses[10]); //undefined</code></pre></div>
+
+<p>Nuestro arreglo courses tiene sólo tres elementos, por lo que el 10&deg; índice, que sería el elemento numero 11, no existe (está indefinido).</p>
+<p>Code Coach</p>
+<p>Matrices</p>
+</article>
+<article>
+<h3 id="lec38">Otras formas para crear arreglos</h3>
+<h4>Creando arreglos</h4>
+<p>También puedes declarar un arreglo, indicando el número de elementos que contendrá, y añadiendo los elementos posteriormente.</p>
+<div class="snippet"><pre><code class="language-javascript">var courses = new Array(3);
+courses[0] = "HTML"; 
+courses[1] = "CSS"; 
+courses[2] = "JS";</code></pre></div>
+
+<p>Un arreglo es un tipo especial de objeto.</p>
+<p>Un arreglo utiliza números para acceder sus elementos, y un objeto utiliza nombre para acceder a sus miembros.</p>
+<h4>Creando arreglos</h4>
+<p>Los arreglos en JavaScript son dinámicos, por lo que puedes declarar un arreglo y no pasarle ningún argumento con el constructor Array(). Posteriormente, puedes añadir los elementos de forma dinámica.</p>
+<div class="snippet"><pre><code class="language-javascript">var courses = new Array();
+courses[0] = "HTML"; 
+courses[1] = "CSS";
+courses[2] = "JS";
+courses[3] = "C++";</code></pre></div>
+
+<p>Puedes añadir tantos elementos como necesites.</p>
+<h4>Literales de arreglos</h4>
+<p>Para mayor simplicidad, legibilidad, y velocidad de ejecución, también puedes declarar arreglos utilizando la sintaxis de literal de arreglos.</p>
+<div class="snippet"><pre><code class="language-javascript">var courses = ["HTML", "CSS", "JS"];</code></pre></div>
+
+<p>El resultado es el mismo arreglo como el que fue creado con la sintaxis new ArrayQ.</p>
+<p>Puedes acceder y modificar los elementos del arreglo utilizando el número de índice, tal y como hiciste anteriormente.</p>
+<p>La sintaxis de literal de arreglo es la manera recomendada para declarar arreglos.</p>
+</article>
+<article>
+<h3 id="lec39">Propiedades de arreglos y métodos</h3>
+<h4>La propiedad length</h4>
+<p>Los arreglos en JavaScript tienen propiedades y métodos útiles Integrados de manera estándar.</p>
+<p>La propiedad length (longitud) de un arreglo retorna el número de sus elementos.</p>
+<div class="snippet"><pre><code class="language-javascript">var courses = ["HTML", "CSS", "JS"]; 
+document.write(courses.length);</code></pre></div>
+
+<p>La propiedad length es siempre uno más que el mayor índice del arreglo. Si el arreglo está vacío, la propiedad length retorna O.</p>
+<h4>Combinando arreglos</h4>
+<p>El método concatO de JavaScript te permite juntar arreglos y crear un arreglo completamente nuevo.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var c1 = ["HTML", "CSS"]; 
+var c2 = ["JS", "C++"]; 
+var courses = c1.concat(c2);</code></pre></div>
+
+<p>El arreglo courses resultante contiene 4 elementos (HTML, CSS, JS y C++).</p>
+<p>La operación concat no afecta a los arreglos c 1 y c2 - sólo retorna la concatenación resultante como un nuevo arreglo.</p>
+<p>Code Coach</p>
+<p>Propiedades de matrices &amp; método</p>
+</article>
+<article>
+<h3 id="lec40">Arreglos asociativos</h3>
+<h4>Arreglos asociativos</h4>
+<p>Mientras que muchos lenguajes de programación soportan arreglos con nombre en los índices (texto en lugar de números), llamados arreglos asociativos, JavaScript no lo soporta. Sin embargo, puedes utilizar la sintaxis de nombramiento de arreglos, que producirá un objeto.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var person = []; //arreglo vacío 
+person["name"] = "John"; 
+person["age"] = 46; 
+document.write(person["age"]);</code></pre></div>
+
+<p>Ahora, person es tratado como un objeto, en lugar de ser un arreglo.</p>
+<p>Los índices textuales "name" y "age" se convierten en propiedades del objeto person.</p>
+<p>Como el arreglo person es tratado como un objeto, los métodos y propiedades estándar para arreglos producirán resultados incorrectos. Por ejemplo, person.length retornará o.</p>
+<h4>Arreglos asociativos</h4>
+<p>Recuerda que JavaScript no soporta arreglos con índices textuales.</p>
+<p>En JavaScript, los arreglos siempre usan índices , . numer1cos.</p>
+<p>Es mejor utilizar un objeto cuando quieres que el índice sea una cadena de texto.</p>
+<p>Utiliza un arreglo cuando quieras que el índice , sea un numero.</p>
+<p>Si utilizas un índice textual, JavaScript redefinirá el arreglo a un objeto estándar.</p>
+</article>
+<article>
+<h3 id="lec41">El objeto Math</h3>
+<h4>El objeto Math</h4>
+<p>El objeto Math te permite realizar tareas matemáticas, e incluye varias propiedades.</p>
+<figure >
+  <img src="images/028.png" class="mini" alt="">
+</figure>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">document.write(Math.PI);</code></pre></div>
+
+<p>El objeto Math no tiene constructor. No hay necesidad de primero crear un objeto Math.</p>
+<h4>Métodos del objeto Math</h4>
+<p>El objeto Math contiene un número de métodos que son utilizados para cálculos:</p>
+<figure >
+  <img src="images/029.png" class="mini" alt="">
+</figure>
+<p>Por ejemplo, lo siguiente calculará la raíz cuadrada de un número.</p>
+<div class="snippet"><pre><code class="language-javascript">var number = Math.sqrt(4);
+document.write(number);</code></pre></div>
+
+<p>Para obtener un número aleatorio entre 1 y 1 O, utiliza Math.random(), lo cual te da un número entre 0-1. A continuación multiplica el número por 1O, y elimina Math.ceil() de él: Math.ceil(Math.random() * 1O).</p>
+<p>Code Coach</p>
+
+
+<p>El objeto Math</p>
+<h4>El objeto Math</h4>
+<p>Vamos a crear un programa que solicitará al usuario que ingrese un número y alerte su raíz cuadrada.</p>
+<div class="snippet"><pre><code class="language-javascript">var n = prompt("Enter a number", ""); 
+var answer = Math.sqrt(n); 
+alert("The square root of " + n + " is " + answer);</code></pre></div>
+
+<p>Resultado:</p>
+<figure >
+  <img src="images/030.png" class="mini" alt="">
+</figure>
+<p>Ingrese un número, como 64.</p>
+<figure >
+  <img src="images/031.png" class="mini" alt="">
+</figure>
+<p>Math es un objeto útil. Puedes ahorrar mucho tiempo utilizando Math en vez de escribir tus propias funciones cada vez.</p>
+</article>
+<article>
+<h3 id="lec42">El objeto Date</h3>
+<h4>setlnterval</h4>
+<p>El método setlntervalO llama una función o evalúa una expresión a intervalos específicos ( en milisegundos).</p>
+<p>Este método continuará llamando a la función hasta que clearlntervalO es llamado o la ventana es cerrada.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">function myAlert() {
+alert("Hi");
+} 
+setInterval(myAlert, 3000);</code></pre></div>
+
+<p>Este código llamará la función myAlert cada 3 segundos (1000 ms = 1 segundo).</p>
+<p>Escribe el nombre de la función sin los paréntesis cuando la pases como parámetro al método setlnterval.</p>
+<h4>El objeto Date</h4>
+<p>El objeto Date (Fecha en Inglés) nos permite trabajar con fechas.</p>
+<p>Una fecha consiste en un año, un mes, un día, una hora, un minuto, un segundo, y milisegundos.</p>
+<p>Al utilizar new DateO, creamos un nuevo objeto "date" con la fecha y hora actual.</p>
+<div class="snippet"><pre><code class="language-javascript">var d = new Date(); //d almacena la fecha y hora actual</code></pre></div>
+
+<p>Las otras formas de inicializar fechas nos permiten la creación de nuevos objetos "date" a partir de la fecha y hora especificada.</p>
+<div class="snippet"><pre><code class="language-javascript">new Date(milliseconds)
+new Date(dateString)
+new Date(year, month, day, hours, minutes, seconds, milliseconds)</code></pre></div>
+
+<p>Las fechas en JavaScript son calculadas en milisegundos desde el 01 de Enero de 1970 00:00:00 hora universal (UTC). Un día contiene 86.400.000 milisegundos.</p>
+<p>Por ejemplo</p>
+<div class="snippet"><pre><code class="language-javascript">//viernes 02 de enero de 1970, 00:00:00 hs
+var d1= new Date(86400000); 
+
+//viernes 02 de enero de 2015, 10:42:00 hs
+var d2 = new Date("January 2, 2015 10:42:00");
+
+//sábado 11 de junio de 1988, 11:42:00 hs
+var d3 = new Date(88,5,11,11,42,0,0);</code></pre></div>
+
+<p>JavaScript cuenta los meses desde O y hasta 11. Enero es O y diciembre es 11.</p>
+<p>Los objetos Date son estáticos, en lugar de dinámicos. La hora de tu computadora continúa avanzando, pero los objetos date una vez creados no cambiarán.</p>
+<h4>Métodos del objeto Date</h4>
+<p>Cuando un objeto Date es creado, una serie de métodos hacen posible ejecutar operaciones en él.</p>
+<figure >
+  <img src="images/032.png" class="mini" alt="">
+</figure>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var d = new Date();
+var hours = d.getHours();
+//hours es igual a la hora actual</code></pre></div>
+
+<p>Vamos a crear un programa que imprima la hora actual en el navegador cada segundo.</p>
+<div class="snippet"><pre><code class="language-javascript">function printTime() {
+  var d= new Date();
+  var hours = d.getHours();
+  var mins = d.getMinutes(); 
+  var secs = d.getSeconds();
+  document.body.innerHTML = hours+":"+mins+":"+secs;
+}
+setInterval(printTime, 1000);</code></pre></div>
+
+<p>Hemos declarado una función printTime, la cual toma la hora actual del objeto date, y la imprime en la pantalla.</p>
+<p>Luego llamamos a la función una vez cada segundo, utilizando el método setlnterval.</p>
+<p>La propiedad innerHTML establece o retorna el contenido HTML de un elemento.</p>
+<p>En nuestro caso, estamos cambiando el contenido HTML de la sección "body" de nuestro documento. Este código sobrescribe el contenido cada segundo, en lugar de imprimirlo continuamente en la pantalla.</p>
+<p>Code Coach</p>
+<p>El objeto fecha</p>
+</article>
+<article>
+<h3 id="lec43">Examen Módulo 6</h3>
+</article>
+<article>
+<h3 id="lec44">Proyecto de codificación: Gestión de tienda</h3>
+</section>
+<section>
+<h2 id="#unidad7">Módulo 7: DOM y Eventos</h2>
+</article>
+<article>
+<h3 id="lec45">¿Qué es DOM?</h3>
+<h4>El DOM</h4>
+<p>Cuando abres cualquier página web en el navegador, el código HTML de la página es cargado y reproducido visualmente en la pantallla.</p>
+<p>Para lograr esto, el navegador construye el Modelo de Objetos del Documento (Document Object Model en Inglés) de la página, que es un modelo orientado a objetos de su estructura lógica.</p>
+<p>El DOM (por sus siglas en inglés) de un documento HTML puede ser representado como un conjunto de cajas anidadas:</p>
+<figure >
+  <img src="images/033.png" class="mini" alt="">
+</figure>
+<p>Se puede utilizar JavaScript para manipular el DOM de una página de forma dinámica para añadir, borrar y modificar elementos.</p>
+<h4>El árbol del DOM</h4>
+<p>El DOM representa un documento como una estructura de árbol.</p>
+<p>Los elementos HTML se convierten en nodos interrelacionados en el árbol.</p>
+<p>Todos esos nodos en el árbol tienen algún tipo de relación entre ellos.</p>
+<p>Los nodos pueden tener nodos hijos {chlld en Inglés). Los nodos en el mismo nivel del árbol son llamados hermanos {slbllngs en Inglés).</p>
+<figure >
+  <img src="images/034.png" class="mini" alt="">
+</figure>
+<p>Del ejemplo anterior:</p>
+<p>&lt;html&gt; tiene dos hijos (&lt;head&gt;, &lt;body&gt;);</p>
+<p>&lt;head&gt; tiene un hijo (&lt;title&gt;) y un padre (&lt;html&gt;);</p>
+<p>&lt;title&gt; tiene un padre (&lt;head&gt;) y no tiene hijos;</p>
+<p>&lt;body&gt; tiene dos hijos (&lt;h1 &gt; y &lt;a&gt;) y un padre (&lt;html&gt;);</p>
+<p>Es importante entender las relaciones entre los elementos en un documento HTML con el fin de ser capaz de manipularlos con JavaScript.</p>
+<h4>El objeto ''document''</h4>
+<p>Hay un objeto "document" predefinido en JavaScript, que puede ser utilizado para acceder a todos los elementos del DOM.</p>
+<p>En otras palabras, el objeto "document" es el dueño ( o raíz) de todos los objetos en tu página web.</p>
+<p>Por lo tanto, si quieres acceder objetos en una página HTML, siempre comienza accediendo al objeto "document".</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">document.body.innerHTML = "Some text";</code></pre></div>
+
+<p>Como "body" es un elemento del DOM, podemos accederlo utilizando el objeto "document" y modificar el contenido de la propiedad lnnerHTML.</p>
+<p>La propiedad lnnerHTML puede ser utilizada en casi todos los elementos HTML para modificar su contenido.</p>
+</article>
+<article>
+<h3 id="lec46">Seleccionando elementos</h3>
+<h4>Seleccionando elementos</h4>
+<p>Todos los elementos HTML son objetos, y como ya sabemos, cada objeto tiene propiedades y métodos.</p>
+<p>El objeto "document'' tiene métodos que te permiten seleccionar el elemento HTML deseado.</p>
+<p>Estos tres métodos son los más comúnmente utilizados para seleccionar elementos HTML:</p>
+<div class="snippet"><pre><code class="language-javascript">//encontrar un elemento por su id
+document.getElementById(id)
+
+//encontrar elementos por el nombre de su clase
+document.getElementsByClassName(name)
+
+//encontrar elementos por el nombre de su etiqueta
+document.getElementsByTagName(name)</code></pre></div>
+
+<p>En el siguiente ejemplo, el método getElementByld es utilizado para seleccionar el elemento con id="demo" y cambiar su contenido:</p>
+<div class="snippet"><pre><code class="language-javascript">var elem = document.getElementById("demo"); 
+elem.innerHTML = "Hello World!";</code></pre></div>
+
+<p>El ejemplo anterior asume que el HTML contiene un elemento con id="demo", por ejemplo &lt;div id="demo"&gt;&lt;/div&gt;.</p>
+<h4>Seleccionando elementos</h4>
+<p>El método getElementsByClassNameO encuentra todos los elementos por nombre de clase y los retorna como un arreglo.</p>
+<p>Por ejemplo, si nuestra página HTML contiene tres elementos con class="demo", el siguiente código retornaría todos esos elementos como un arreglo:</p>
+<div class="snippet"><pre><code class="language-javascript">var arr = document.getElementsByClassName("demo"); 
+//acceder al segundo elemento
+arr[1].innerHTML = "Hi";</code></pre></div>
+
+<p>Similarmente, el método getElementsByTagName retorna todos los elementos de la etiqueta especificada como un arreglo.</p>
+<p>El siguiente ejemplo obtiene todos los elementos "p" (párrafos) de la página y cambia su contenido:</p>
+
+<div class="snippet"><pre><code class="language-html">&lt;p&gt;hi&lt;/p&gt;
+&lt;p&gt;hello&lt;/p&gt;
+&lt;p&gt;hi&lt;/p&gt;
+&lt;script&gt;
+var arr = document.getElementsByTagName("p");
+for (var x = 0; x &lt; arr.length; x++) {
+  arr[x].innerHTML = "Hi there";
+}
+&lt;/script&gt;</code></pre></div>
+
+<p>La secuencia anterior resultará en el siguiente código HTML:</p>
+
+<div class="snippet"><pre><code class="language-html">&lt;p&gt;Hi there&lt;/p&gt;
+&lt;p&gt;Hi there&lt;/p&gt;
+&lt;p&gt;Hi there&lt;/p&gt;</code></pre></div>
+
+<p>Utilizamos la propiedad length del arreglo para iterar a través de todos los elementos seleccionados en el ejemplo anterior.</p>
+<h4>Trabajando con DOM</h4>
+<p>Cada elemento en el DOM tiene una serie de propiedades y métodos que proveen información acerca de sus relaciones entre sí:</p>
+<p>element.chlldNodes retorna un arreglo que contiene los nodos hijos de un elemento.</p>
+<p>element.firstChlld retorna el primer nodo hijo de un elemento.</p>
+<p>element.lastChlld retorna el primer nodo hijo de un elemento.</p>
+<p>element.hasChlldNodes retorna verdadero si un elemento tiene al menos un nodo hijo, de lo contrario retorna falso.</p>
+<p>element.nextSlbllng retorna el siguiente nodo que se encuentre al mismo nivel en el árbol DOM.</p>
+<p>element.prevlousSlbllng retorna el nodo anterior que se encuentre al mismo nivel en el árbol DOM.</p>
+<p>element.parentNode retorna el nodo padre de un elemento.</p>
+<p>Podemos, por ejemplo, seleccionar todos los nodos hijos de un elemento y cambiar su contenido.</p>
+
+<div class="snippet"><pre><code class="language-html">&lt;html&gt;
+&lt;body&gt;
+&lt;div id=&quot;demo&quot;&gt;
+&lt;p&gt;some text&lt;/p&gt; 
+&lt;p&gt;some other text&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var a = document.getElementById(&quot;demo&quot;); 
+var arr = a.childNodes;
+for(var x = 0; x &lt; arr.length; x++) { 
+  arr[x].innerHTML = &quot;new text&quot;;
+}
+&lt;/script&gt;
+
+&lt;/body&gt; 
+&lt;/html&gt;</code></pre></div>
+
+<p>El código anterior cambia el texto de ambos párrafos a "new text".</p>
+</article>
+<article>
+<h3 id="lec47">Modificando elementos</h3>
+<h4>Modificando atributos</h4>
+<p>Una vez que has seleccionado el(los) elemento(s) con los que quieres trabajar, puedes modificar sus atributos.</p>
+<p>Tal y como hemos visto en lecciones anteriores, podemos modificar el texto contenido en un elemento utilizando la propiedad lnnerHTML. Similarmente, podemos cambiar los atributos de los elementos.</p>
+<p>Por ejemplo, podemos cambiar el atributo src de una imagen:</p>
+<div class="snippet"><pre><code class="language-html">&lt;img id=&quot;myimg&quot; src=&quot;orange.png&quot; alt=&quot;&quot; /&gt;
+&lt;script&gt;
+  var el = document.getElementById(&quot;myimg&quot;);
+  el.src = &quot;apple.png&quot;;
+&lt;/script&gt;
+</code></pre></div>
+
+<p>Podemos cambiar el atributo href de un enlace:</p>
+<div class="snippet"><pre><code class="language-html">&lt;a href=&quot;http://www.example.com&quot;&gt;Some link&lt;/a&gt;
+&lt;script&gt;
+  var el = document.getElementsByTagName(&quot;a&quot;); 
+  el[0].href = &quot;http://www.sololearn.com&quot;; 
+&lt;/script&gt;
+</code></pre></div>
+
+<p>Prácticamente, todos los atributos de un elemento pueden ser cambiados utilizando JavaScript.</p>
+<h4>Modificando el estilo</h4>
+<p>El estilo de los elemento HTML también puede ser modificado utilizando JavaScript.</p>
+<p>Puedes acceder a todos los atributos utilizando el objeto style del elemento.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-html">&lt;div id=&quot;demo&quot; style=&quot;width:200px&quot;&gt;some text&lt;/div&gt;
+&lt;script&gt; 
+  var x = document.getElementById(&quot;demo&quot;);
+  x.style.color = &quot;6600FF&quot;;
+  x.style.width = &quot;100px&quot;;
+&lt;/script&gt;
+</code></pre></div>
+
+<p>El código anterior modifica el color y ancho del texto en el elemento div.</p>
+<p>Se pueden establecer y modificar todas las propiedades CSS utilizando JavaScript. Sólo recuerda, que no puedes utilizar guiones (-) en los nombres de las propiedades: estos son reemplazados con versiones "camelCase", donde las palabras compuestas comienzan con una letra mayúscula.</p>
+<p>Por ejemplo: la propiedad background-color debe ser referida como backgroundColor.</p>
+</article>
+<article>
+<h3 id="lec48">Añadiendo y removiendo elementos</h3>
+<h4>Creando elementos</h4>
+<p>Utiliza los métodos siguientes para crear nuevos nodos:</p>
+<p>elemento.cloneNodeO clona un elemento y retorna el nodo resultante.</p>
+<p>document.createElement( elemento) crea un nuevo nodo con el elemento correspondiente.</p>
+
+<p>document.createTextNode(texto) crea un nuevo nodo de texto.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var node = document.createTextNode("Some new text");</code></pre></div>
+
+<p>EL código anterior creará un nuevo nodo de texto, pero no aparecerá en el documento hasta que lo añadas a un elemento existente con alguno de los siguientes métodos:</p>
+<p>elemento.appendChlld(newNode) añade un nuevo nodo hijo a un elemento como el último de sus hijos.</p>
+<p>elemento. lnaertBefore(node1, node2) inserta node1 como un hijo antes del node2.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-html">&lt;div id="demo"&gt;some content&lt;/div&gt;
+
+&lt;script&gt;
+  //crear un nuevo párrafo
+  var p = document.createElement("p");
+  var node = document.createTextNode("Some new text");
+  //añadir el texto al párrafo 
+  p.appendChild(node);
+
+  var div = document.getElementById("demo"); 
+  //añadir el párrafo al div
+  div.appendChild(p); 
+&lt;/script&gt;</code></pre></div>
+
+<p>El código anterior crea un nuevo párrafo y lo añade al elemento div existente de la página.</p>
+<h4>Removiendo elementos</h4>
+<p>Para remover un elemento HTML, debes seleccionar el padre del elemento y utilizar el método removeChild(node).</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-html">&lt;div id="demo"&gt;
+  &lt;p id="p1"&gt;Este es un párrafo.&lt;/p&gt;
+  &lt;p id="p2"&gt;Este es otro párrafo.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var parent = document.getElementById("demo");
+  var child = document.getElementById("p1");
+  parent.removeChild(child);
+&lt;/script&gt;</code></pre></div>
+
+<p>En el código anterior, el párrafo con id="p1" es removido de la página.</p>
+<p>Una forma alternativa para lograr el mismo resultado sería utilizar la propiedad parentNode para obtener e~ el padre del elemento que queremos remover:</p>
+<p>var child = document.getElementByld("p1");</p>
+<p>child.parentNode.removeChild(child)</p>
+<h4>Reemplazando elementos</h4>
+<p>Para reemplazar un elemento HTML, se utiliza el método elemento.replaceChild(newNode, oldNode).</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-html">&lt;div id="demo"&gt;
+  &lt;p id="p1"&gt;Este es un párrafo.&lt;/p&gt;
+  &lt;p id="p2"&gt;Este es otro párrafo.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var p = document.createElement("p");
+  var node = document.createTextNode("This is new");
+  p.appendChild(node);
+
+  var parent = document.getElementById("demo");
+  var child = document.getElementById("p1");
+  parent.replaceChild(p, child);
+&lt;/script&gt;</code></pre></div>
+
+<p>El código anterior crea un nuevo elemento "párrafo" que reemplaza al párrafo "p1" existente.</p>
+</article>
+<article>
+<h3 id="lec49">Creando animaciones</h3>
+<h4>Animaciones</h4>
+<p>Ahora que sabemos cómo seleccionar y cambiar elementos del DOM, podemos crear una animación simple.</p>
+<p>Vamos a crear una página HTML sencilla con un elemento "box'' que será animado utilizando JS.</p>
+<div class="snippet"><pre><code class="language-html">&lt;style&gt;
+#container {
+    width: 200px;
+    height: 200px;
+    background: green;
+    position: relative;
+}
+#box {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+}
+&lt;/style&gt;
+  &lt;div id="container"&gt;
+  &lt;div id="box"&gt; &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<p>Nuestro elemento "box'' está dentro de un elemento "container''. Fijate en el atributo "position" (posición) utilizado por los elementos: para el contenedor es &bull;relatlve&bull; (relativa) y para la box es "absolute" (absoluta). Esto nos permite crear la animación relativa al contenedor.</p>
+<figure >
+  <img src="images/035.png" class="mini" alt="">
+</figure>
+<p>Estaremos animando la caja roja para hacer que se mueva al lado derecho del contenedor.</p>
+<p>Necesitas estar familiarizado con CSS para entender mejor el código utilizado. </p>
+<h4>Animaciones</h4>
+<p>Para crear una animación, debemos cambiar las propiedades de un elemento a pequeños intervalos de tiempo. Podemos lograr esto utilizando el método setlntervalO, el cual nos permite crear un cronómetro y llamar una función para cambiar propiedades repetidamente a intervalos definidos (en milisegundos).</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var t = setInterval(move, 500);</code></pre></div>
+
+<p>Este código crea un cronómetro que llama la función moveO cada 500 milisegundos.</p>
+<p>Ahora necesitamos definir la función moveQ, que modifica la posición de la caja.</p>
+<div class="snippet"><pre><code class="language-javascript">// Posición inicial
+var pos = 0; 
+//nuestro elemento box
+var box = document.getElementById("box");
+
+function move() {
+  pos += 1;
+  box.style.left = pos+"px"; //px = pixeles
+}</code></pre></div>
+
+<p>La función moveO incrementa la propiedad left del elemento "box" en uno cada vez que es llamada.</p>
+<h4>Animaciones</h4>
+<p>El siguiente código define un cronómetro que llama la función moveO cada 10 milisegundos:</p>
+<div class="snippet"><pre><code class="language-javascript">var t = setInterval(move, 10);</code></pre></div>
+
+<p>Sin embargo, esto hace que nuestra caja se mueva hacia la derecha por siempre. Para detener la animación cuando la caja alcance el fmal del contenedor, añadimos una validación sencilla a la función moveO y utilizamos el método clearlntervalO para detener el cronómetro.</p>
+<div class="snippet"><pre><code class="language-javascript">function move() {
+  if(pos &gt;= 150) {
+    clearInterval(t);
+  }
+  else {
+    pos += 1;
+    box.style.left = pos+"px";
+  }
+}</code></pre></div>
+
+<p>Cuando el atributo "left" de la caja llega al valor de 150, la caja alcanzará el final del contenedor, basado en que el ancho del contenedor es 200 y el ancho de la caja es 50.</p>
+<p>El código final:</p>
+<div class="snippet"><pre><code class="language-javascript">function() {
+  var pos = 0; 
+  //nuestro elemento box
+  var box = document.getElementById('box');
+  var t = setInterval(move, 10);
+
+  function move() {
+    if(pos &gt;= 150) {
+      clearInterval(t);
+    }
+    else {
+      pos += 1;
+      box.style.left = pos+'px';
+    }
+  }
+}</code></pre></div>
+
+<p>Felicitaciones, ¡acabas de crear tu primera animación en JavaScript!</p>
+</article>
+<article>
+<h3 id="lec50">Manejando eventos</h3>
+<h4>Eventos</h4>
+<p>Puedes escribir código JavaScript que se ejecute cuando un evento ocurra, como cuando un usuario hace clic en un elemento HTML, mueve el ratón, o envía un formulario.</p>
+<p>Cuando un evento ocurre en un elemento objetivo, una función &bull;handler" (manejadora) es ejecutada.</p>
+<p>Eventos HTML comunes incluyen:</p>
+<figure >
+  <img src="images/036.png" class="mini" alt="">
+</figure>
+<p>Los eventos correspondientes pueden ser añadidos a elementos HTML como atributos.</p>
+<p>Por ejemplo: &lt;p onclick=&bull;someFuncO"&gt;some text&lt;/p&gt;</p>
+<h4>Manejando eventos</h4>
+<p>Vamos a desplegar una ventana emergente de alerta cuando el usuario haga clic sobre un botón específico:</p>
+<div class="snippet"><pre><code class="language-html">&lt;button onclick="show();"&gt;Click Me&lt;/button&gt;
+&lt;script&gt;
+function show() {
+    alert("Hi there");
+}
+&lt;/script&gt;</code></pre></div>
+
+<p>Los manejadores de eventos pueden ser asignados a los elementos.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var x = document.getElementById('demo');
+x.onclick = function () {
+  document.body.innerHTML = Date();
+}</code></pre></div>
+
+<p>Puedes adjuntar eventos a prácticamente todos los elementos HTML.</p>
+<h4>Eventos</h4>
+<p>Los eventos onload y onunload son desencadenados cuando el usuario entra o sale de la página. Esto puede ser útil cuando se realizan acciones después que la página es cargada.</p>
+<div class="snippet"><pre><code class="language-javascript">&lt;body onload="doSomething()"&gt;</code></pre></div>
+
+<p>Similarmente, el evento window.onload puede ser utilizado para ejecutar código después de que toda la página ha sido cargada.</p>
+<div class="snippet"><pre><code class="language-javascript">window.onload = function() {
+  //some code
+}</code></pre></div>
+
+<p>El evento onchange es usado principalmente en "textboxes" (campos de texto). El manipulador del evento es llamado cuando el texto dentro de un textbox cambia y el elemento pierde el foco.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-html">&lt;input type="text" id="name" onchange="change()"&gt;
+
+&lt;script&gt; 
+function change() {
+  var x = document.getElementById('name');
+  x.value = x.value.toUpperCase();
+}
+&lt;/script&gt;</code></pre></div>
+
+<p>Es importante comprender los eventos ya que son una parte esencial de la dinámica de las páginas web.</p>
+<h4>Notificadores de eventos</h4>
+<p>El método addEventlistenerO registra un manejador de evento a un elemento sin sobrescribir manejadores existentes. Puedes añadir muchos manejadores de evento a un mismo elemento.</p>
+<p>También puedes añadir muchos manejadores de evento del mismo tipo a un mismo elemento, p.ej., dos eventos "click".</p>
+<div class="snippet"><pre><code class="language-javascript">element.addEventListener(event, function, useCapture);</code></pre></div>
+
+<p>El primer parámetro es el tipo de evento (como "click" o "mousedown").</p>
+<p>El segundo parámetro es la función que queremos llamar cuando el evento ocurre. El tercer parámetro es un valor booleano especificando si se utiliza "bubbling" o "capturing" al manejar los eventos. Este parámetro es opcional, y será descrito en la próxima lección. ,1 l.,.</p>
+<p>Nota que no utilizas el prefijo "on" para estos eventos; utiliza "click" en lugar de "onclick''.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">element.addEventListener("click", myFunction);
+element.addEventListener("mouseover", myFunction);
+
+function myFunction() {
+  alert("Hello World!");
+}</code></pre></div>
+
+<p>Este código añade dos "listeners" (notificadores) de evento al elemento.</p>
+<p>Podemos remover uno de los "listeners":</p>
+<div class="snippet"><pre><code class="language-javascript">element.removeEventListener("mouseover", myFunction);</code></pre></div>
+
+<p>Vamos a crear un manejador de evento que se remueve a si mismo después de ser ejecutado:</p>
+<div class="snippet"><pre><code class="language-html">&lt;button id="demo"&gt;Start&lt;/button&gt;
+
+&lt;script&gt;
+  var btn = document.getElementById("demo");
+  btn.addEventListener("click", myFunction);
+
+  function myFunction() {
+    alert(Math.random());
+    btn.removeEventListener("click", myFunction);
+  }
+&lt;/script&gt;</code></pre></div>
+
+<p>Después de hacer clic sobre el botón, una alerta se despliega con un número aleatorio y el "listener" del evento es removido.</p>
+<p>Internet Explorer versión 8 e inferior no soporta los métodos addEventlistenerO y removeEventlistenerQ. Sin embargo, puedes utilizar el método document.attachEventO para agregar manejadores de evento en Internet Explorer.</p>
+
+
+</article>
+<article>
+<h3 id="lec51">Propagación de Eventos</h3>
+<h4>Propagación de Eventos</h4>
+<p>Hay dos formas en que se propagan los eventos en el DOM del HTML: "bubbllng" y "capturlng".</p>
+<p>La propagación de eventos permite la definición del orden del elemento cuando un evento ocurre. Si tienes un elemento &lt;p&gt; dentro de un elemento &lt;div&gt;, y el usuario hace clic en el elemento &lt;p&gt;, ¿cuál de los eventos "click" de los elementos debe ser manejado primero?</p>
+<p>En "bubbling", el evento del elemento más interno es manejado primero y después el evento del elemento externo es manejado. El evento "click" del elemento &lt;p&gt; es manejado primero, seguido por el evento "click" del elemento &lt;div&gt;.</p>
+<p>En "capturlng", el evento del elemento más externo es manejado primero y luego el interno. El evento "click" del elemento &lt;div&gt; es manejado primero, seguido del evento "click" del elemento &lt;p&gt;.</p>
+<p>"Capturing" va hacia abajo del DOM. "Bubbling" va hacia arriba del DOM.</p>
+<h4>Capturing vs. Bubbling</h4>
+<p>El método addEventlistenerO te permite especificar el tipo de propagación con el parámetro "useCapture".</p>
+<div class="snippet"><pre><code class="language-javascript">addEventListener(event, function, useCapture)</code></pre></div>
+
+<p>El valor por defecto es &bull;ta1se&bull; (falso), lo que significa que "bubbling" es el tipo de propagación a utilizar; cuando el valor es "true&ordm; (verdadero), el evento utilizará la propagación "capturing".</p>
+<div class="snippet"><pre><code class="language-javascript">//Capturing propagation
+elem1.addEventListener("click", myFunction, true); 
+
+//Bubbling propagation
+elem2.addEventListener("click", myFunction, false);</code></pre></div>
+
+<p>Esto es particularmente útil cuando tienes el mismo evento manejado por múltiples elementos en la jerarquía del DOM.</p>
+</article>
+<article>
+<h3 id="lec52">Creando un deslizador de imágenes</h3>
+<h4>Deslizador de imágenes</h4>
+<p>Ahora podemos crear un deslizador de imágenes como proyecto de ejemplo. Las imágenes serán cambiadas utilizando botones de "Next" y "Prev". Ahora, vamos a crear nuestro HTML, que incluirá una imagen y dos botones de navegación:</p>
+<div class="snippet"><pre><code class="language-html">&lt;div&gt;
+  &lt;button&gt; Prev &lt;/button&gt;
+  &lt;img src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px" /&gt;
+  &lt;button&gt; Next &lt;/button&gt;
+&lt;/div&gt;</code></pre></div>
+
+<p>A continuación, vamos a definir nuestras imágenes de ejemplo en un arreglo:</p>
+<div class="snippet"><pre><code class="language-javascript">var images = [
+  "http://www.sololearn.com/uploads/slider/1.jpg", 
+  "http://www.sololearn.com/uploads/slider/2.jpg", 
+  "http://www.sololearn.com/uploads/slider/3.jpg"
+];</code></pre></div>
+
+<p>Vamos a utilizar tres imágenes de ejemplo que hemos cargado en nuestro servidor. Puedes utilizar cualquier número de imágenes.</p>
+<h4>Deslizador de imágenes</h4>
+<p>Ahora tenemos que manejar los clics de los botones "Next" y "Prev" y llamar a las funciones correspondientes para cambiar la imagen.</p>
+<p>HTML:</p>
+<div class="snippet"><pre><code class="language-html">&lt;div&gt;
+  &lt;button onclick="prev()"&gt;Prev&lt;/button&gt;
+  &lt;img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px"/&gt;
+  &lt;button onclick="next()"&gt;Next&lt;/button&gt;
+&lt;/div&gt;</code></pre></div>
+
+<p>JS:</p>
+<div class="snippet"><pre><code class="language-javascript">var images = [
+  'http://www.sololearn.com/uploads/slider/1.jpg', 
+  'http://www.sololearn.com/uploads/slider/2.jpg', 
+  'http://www.sololearn.com/uploads/slider/3.jpg'
+];
+var num = 0;
+function next() {
+  var slider = document.getElementById('slider');
+  num++;
+  if(num &gt;= images.length) {
+    num = 0;
+  }
+  slider.src = images[num];
+}
+function prev() {
+  var slider = document.getElementById('slider');
+  num--;
+  if(num &lt; 0) {
+    num = images.length-1;
+  }
+  slider.src = images[num];
+}</code></pre></div>
+
+<p>La variable num retiene la imagen actual. Los clics en los botones "Next" y "Prev" son manejados por sus correspondientes funciones, las cuales cambian el origen de la imagen al siguiente/anterior en el arreglo.</p>
+<p>¡Hemos creado un deslizador de imágenes funcional!</p>
+</article>
+<article>
+<h3 id="lec53">Validación de formularios</h3>
+<h4>Validación de formularios</h4>
+<p>HTML5 añade algunos atributos que permiten la validación de formularios. Por ejemplo, el atributo required puede añadirse a un campo de entrada para que sea obligatorio rellenarlo. Validaciones más complejas pueden ser hechas usando JavaScript.</p>
+<p>El elemento "form" tiene un evento "onsubmit" que puede ser manejado para ejecutar validación.</p>
+<p>Por ejemplo, vamos a crear un formulario con dos entradas y un botón. El texto en ambos campos debe ser el mismo y no pueden estar en blanco para pasar la validación.</p>
+<div class="snippet"><pre><code class="language-html">&lt;form onsubmit="return validate()" method="post"&gt;
+  Number: &lt;input type="text" name="num1" id="num1" /&gt;
+  &lt;br /&gt;
+  Repeat: &lt;input type="text" name="num2" id="num2" /&gt;
+  &lt;br /&gt;
+  &lt;input type="submit" value="Submit" /&gt;
+&lt;/form&gt;</code></pre></div>
+
+<p>Ahora necesitamos definir la función validate():</p>
+<div class="snippet"><pre><code class="language-javascript">function validate() {
+  var n1 = document.getElementById('num1');
+  var n2 = document.getElementById('num2');
+  if(n1.value != '' &amp;&amp; n2.value != '') {
+    if(n1.value == n2.value) {
+      return true;
+    }
+  }
+  alert("The values should be equal and not blank");
+  return false;
+}</code></pre></div>
+
+<p>Retornaremos true sólo cuando los valores no estén en blanco y sean iguales.</p>
+<p>El formulario no será enviado si su evento onsubmit retorna false.</p>
+</article>
+<article>
+<h3 id="lec54">Examen Módulo 7</h3>
+</section>
+<section>
+<h2 id="#unidad8">Módulo 8: ES6</h2>
+</article>
+<article>
+<h3 id="lec55">Introducción a ES6</h3>
+<h4>ECMAScript 6</h4>
+<p>ECMAScrlpt (ES) es una especificación de lenguaje programación creada para estandarizar JavaScript.</p>
+<p>La sexta edición, inicialmente conocida como ECMAScript 6 (ES6) y después renombrada a ECMAScrlpt 2015, añade una cantidad de sintaxis nueva considerable para escribir aplicaciones complejas, incluyendo clases y módulos, iteradores y bucles for/of, generadores, funciones flecha, datos binarios, arrays escritos, colecciones (maps, sets y weak maps), promesas, mejoras numéricas y matemáticas, reflección y proxies.</p>
+<p>En otras palabras, ES6 es un superconjunto de JavaScript (ESS). El motivo de que ES6 se volviera tan popular es que introdujo nuevas convenciones y conceptos OOP como las clases.</p>
+<p>En este módulo cubrimos las adiciones más importantes a ES6. ¡Comencemos!</p>
+</article>
+<article>
+<h3 id="lec56">Variables y strings</h3>
+<h4>var &amp; let</h4>
+<p>En ES6 tenemos tres formas de declarar variables:</p>
+<div class="snippet"><pre><code class="language-javascript">var a = 10;
+const b = 'hello';
+let c = true;
+</code></pre></div>
+
+<p>El tipo de declaración que se use depende del ámbito (scope). Scope o ámbito es el concepto fundamental en todos los lenguajes de programación que define la visibilidad de una variable.</p>
+<h4>var &amp; let</h4>
+<p>A diferencia de la palabra clave var, que define una variable globalmente o localmente a toda una función independientemente del ámbito o scope del bloque, let te permite declarar variables limitadas al bloque, a la declaración o a la expresión en la que se utilicen.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">if (true) {
+  let name = 'Jack';
+}
+alert(name); //Genera un error </code></pre></div>
+
+<p>En este caso la variable name sólo es accesible en el ámbito (scope) de la declaración if porque fue declarada como let.</p>
+<p>Para demostrar la diferencia de scope entre var y let, considera este ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">function varTest() {
+  var x = 1;
+  if (true) {
+    var x = 2;  // la misma variable
+    console.log(x);  // 2
+  }
+  console.log(x);  // 2
+}
+
+function letTest() {
+  let x = 1;
+  if (true) {
+    let x = 2;  // variables distintas
+    console.log(x);  // 2
+  }
+  console.log(x);  // 1
+}</code></pre></div>
+
+<p>Uno de los mejores usos de let es en bucles (loops):</p>
+<div class="snippet"><pre><code class="language-javascript">for (let i = 0; i &lt; 3; i++) {
+  document.write(i);
+}</code></pre></div>
+
+<p>Aquí, la variable i sólo es accesible dentro del scope del bucleámbito for donde es necesaria.</p>
+<p>let no está sujeta a Variable Hoisting o elevación de variables, lo que significa que las declaraciones let no se mueven a lo más alto del contexto de ejecución actual.</p>
+<h4>const</h4>
+<p>Las variables const tienen el mismo ámbito ( scope) que las variables declaradas usando let. La diferencia es que las variables const son inmutables - no se permite que sean reasignadas.</p>
+<p>Por ejemplo, lo siguiente genera una excepción:</p>
+<div class="snippet"><pre><code class="language-javascript">const a = 'Hello';
+a = 'Bye';</code></pre></div>
+
+<p>const no está sujeta a Variable Hoisting o elevación de variables, lo que significa que las declaraciones const no se mueven a lo más alto del contexto de ejecución actual. Ten también en cuenta que el código ES6 sólo se ejecutará en los navegadores que lo soporten. Los dispositivos y navegadores más antiguos que no soporten ES6 devolverán un error de sintaxis.</p>
+<h4>Template Literals en ES6</h4>
+<p>Las template llterals o literales de plantilla son un modo para devolver variables en la cadena. Antes de ES6 teníamos que descomponer la cadena, por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let name = 'David';
+let msg = 'Welcome ' + name + '!';
+console.log(msg);</code></pre></div>
+
+<p>ES6 presenta una nuea forma de producir valores de variables en cadenas. El código superior puede reescribirse como:</p>
+<div class="snippet"><pre><code class="language-javascript">let name = 'David';
+let msg = `Welcome ${name}!`;
+console.log(msg);</code></pre></div>
+
+<p>Observa que las template literals están encerradas por el acento Inverso ( ), y no por comillas simples o dobles.</p>
+<p>La ${expresslon} es un ejemplo, y puede incluir cualquier expresión, la cual será evaluada e insertada en la template literal.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let a = 8;
+let b = 34;
+let msg = `The sum is ${a+b}`;
+console.log(msg);</code></pre></div>
+
+<p>Para escapar de un acento inverso en una template literal, escribe una barra invertida \ antes del acento inverso.</p>
+<p>Code Coach</p>
+<p>ES6 Variables y cadenas</p>
+</article>
+<article>
+<h3 id="lec57">Bucles y funciones en ES6</h3>
+<h4>Bucles (loops) en ECMAScript 6</h4>
+<p>En JavaScript solemos usar el bucle for para iterar sobre los valores de una lista:</p>
+<div class="snippet"><pre><code class="language-javascript">let arr = [1, 2, 3];
+for (let k = 0; k &lt; arr.length; k++) {
+  console.log(arr[k]);
+}</code></pre></div>
+
+<p>El bucle for...in sirve para iterar sobre las claves enumerables de un objeto.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let obj = {a: 1, b: 2, c: 3};
+for (let v in obj) {
+  console.log(v);
+}</code></pre></div>
+
+<p>El bucle for...in NO debería utilizarse para iterar sobre arrays, porque, dependiendo del motor de JavaScript, podría iterar en un orden arbitrario. Además, la variable de iteracción es una cadena (string), por lo que si intentas hacer cualquier operación matemática con la variable estarás realizando una concatenación de cadena en lugar de una suma.</p>
+<p>ES6 introduce el nuevo bucle for...of, el cual crea un bucle que itera sobre objetos iterables.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let list = ["x", "y", "z"];
+for (let val of list) {
+  console.log(val);
+}</code></pre></div>
+
+<h4>Bucles (loops) en ECMAScript 6</h4>
+<p>Durante cada iteracción, a la variable val se le asigna el elemento correspondiente de la lista.</p>
+<p>El bucle for &bull;&bull;. of funciona también para otros objetos iterables, incluyendo cadenas (Siringa):</p>
+<div class="snippet"><pre><code class="language-javascript">for (let ch of "Hello") {
+  console.log(ch);
+}</code></pre></div>
+
+<p>El bucle for...of también funciona sobre las colecciones recién introducidas (Map, Set, WeakMap y WeakSet). Aprenderemos más sobre ellos en las próximas lecciones. Ten en cuenta que el código ES6 sólo se ejecutará en los navegadores que lo soporten. Los dispositivos y navegadores más antiguos que no soporten ES6 devolverán un error de sintaxis.</p>
+<p>Code Coach</p>
+<p>Bucles en ECMAScript 6</p>
+<h4>Funciones en ECMAScript 6</h4>
+<p>Antes de ES6, una función de JavaScript se definía así:</p>
+<div class="snippet"><pre><code class="language-javascript">function add(x, y) {
+  var sum = x + y;  
+  console.log(sum);
+}</code></pre></div>
+
+<p>ES6 introduce una nueva sintaxis para escribir funciones. La función de arriba puede reescribirse como:</p>
+<div class="snippet"><pre><code class="language-javascript">const add = (x, y) =&gt; {
+  let sum = x + y;  
+  console.log(sum);
+}</code></pre></div>
+
+<p>Esta nueva sintaxis es bastante práctica cuando sólo se necesita una función simple con un argumento.</p>
+<p>Puedes no tener que escribir function y retum, así como algunos paréntesis y llaves.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">const greet = x =&gt; "Welcome " + x;</code></pre></div>
+
+<p>El código anterior define una función llamada greet (saludar) que tiene un argumento y devuelve un mensaje.</p>
+<p>Si no hay parámetros, debe utilizarse un par de paréntesis vacíos, como en este caso:</p>
+<div class="snippet"><pre><code class="language-javascript">const x = () =&gt; alert("Hi");</code></pre></div>
+
+<h4>Funciones en ECMAScript 6</h4>
+<p>La sintaxis es muy útil para las funciones inline. Por ejemplo, supongamos que tenemos un array, y que necesitamos ejecutar una función para cada elemento del array. Usamos el método forEach para llamar a una función para cada elemento:</p>
+<div class="snippet"><pre><code class="language-javascript">var arr = [2, 3, 7, 8];
+
+arr.forEach(function(el) {
+  console.log(el * 2);
+});</code></pre></div>
+
+<p>ES6 introduce una nueva sintaxis para escribir funciones. La función de arriba puede reescribirse como:</p>
+<p>Sin embargo, en ES6, el código de arriba puede reescribirse de la siguiente manera:</p>
+<div class="snippet"><pre><code class="language-javascript">const arr = [2, 3, 7, 8];
+
+arr.forEach(v =&gt; {
+  console.log(v * 2);
+});</code></pre></div>
+
+<p>El código es más corto y ordenado, ¿no te parece? :)</p>
+<h4>Parámetros predeterminados en ES6</h4>
+<p>En ES6, podemos poner los valores predeterminados en la propia firma de las funciones.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">function test(a, b = 3, c = 42) {
+  return a + b + c;
+}
+console.log(test(5)); //50</code></pre></div>
+
+<p>Y aquí tienes un ejemplo de una función flecha (arrow) con parámetros predeterminados:</p>
+<div class="snippet"><pre><code class="language-javascript">const test = (a, b = 3, c = 42) =&gt; {
+  return a + b + c;
+}
+console.log(test(5)); //50</code></pre></div>
+
+<p>Las expresiones de valor predeterminado son evaluadas cuando se realiza la llamada de la función, de izquierda a derecha. Esto también significa que las expresiones predeterminadas también pueden usar los valores de parámetros ya llenados.</p>
+</article>
+<article>
+<h3 id="lec58">Objetos en ES6</h3>
+<h4>Objetos en ES6</h4>
+<p>Las variables de JavaScript pueden ser tipos de datos Object (objetos) que contienen muchos valores, llamados properties (propiedades).</p>
+<p>Un objeto también puede tener propiedades que son definiciones de funciones, llamadas methods (métodos), para realizar acciones sobre el objeto.</p>
+<p>ES6 introduce notaciones cortas y nombres de propiedad computados que hacen que sea más fácil entender cómo se declaran y usan los objetos.</p>
+<p>La definición shorthand del nuevo método no requiere el signo de dos puntos (:) ni la palabra clave functlon, como en la función grow de la declaración del objeto tree:</p>
+<div class="snippet"><pre><code class="language-javascript">let tree = {
+  height: 10,
+  color: 'green',
+  grow() {
+    this.height += 2;
+  }
+};
+tree.grow();
+console.log(tree.height); // 12</code></pre></div>
+
+<p>También puedes usar un shorthand de valor de propiedad cuando al inicializar propiedades con una variable del mismo nombre.</p>
+<p>Por ejemplo, las propiedades helght y health están siendo inicializadas con variables llamadas helght y health:</p>
+<div class="snippet"><pre><code class="language-javascript">let height = 5;
+let health = 100;
+
+let athlete = {
+  height,
+  health
+};</code></pre></div>
+
+<p>Cuando se crea un objeto usando nombres de propiedad duplicados, la última propiedad sobreescribirá a las anteriores del mismo nombre.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var a = {x: 1, x: 2, x: 3, x: 4};</code></pre></div>
+
+<p>Los nombres de propiedad duplicados generaron un SyntaxError en ES5 usando el modo estricto. Sin embargo, ES6 elimina esta limitación.</p>
+<h4>Nombres de propiedad calculados</h4>
+<p>Con ES6, ahora se pueden usar nombres de propiedad calculados. Usando los corchetes [ ), podemos usar una expresión para un nombre de propiedad, incluyendo cadenas que se concatenan. Esto puede ser útil en los casos en los que queremos crear ciertos objetos basados en datos del usuario (por ej.: ID, email, etc.) Aquí puedes ver tres ejemplos:</p>
+<p>Ejemplo 1:</p>
+<div class="snippet"><pre><code class="language-javascript">let prop = 'name';
+let id = '1234';
+let mobile = '08923';
+
+let user = {
+  [prop]: 'Jack',
+  [`user_${id}`]: `${mobile}`
+};</code></pre></div>
+
+<p>Ejemplo 2:</p>
+<div class="snippet"><pre><code class="language-javascript">var i = 0;
+var a = {
+  ['foo' + ++i]: i,
+  ['foo' + ++i]: i,
+  ['foo' + ++i]: i
+};</code></pre></div>
+
+<p>Ejemplo 3:</p>
+<div class="snippet"><pre><code class="language-javascript">var param = 'size';
+var config = {
+  [param]: 12,
+  ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+};
+console.log(config.mobileSize); // 4</code></pre></div>
+
+<p>Es muy útil cuando necesitas crear objetos personalizados basados en algunas variables.</p>
+<h4>Object.assign() en ES6</h4>
+<p>ES6 añade un nuevo método Object, assignQ, que nos permite combinar múltiples fuentes en un destino para crear un nuevo objeto.</p>
+<p>Object.aalgnQ también es útil para crear un duplicado de un objeto existente.</p>
+<p>Echemos un vistazo al siguiente ejemplo para ver cómo combinar objetos:</p>
+<div class="snippet"><pre><code class="language-javascript">let person = {
+  name: 'Jack',
+  age: 18,
+  sex: 'male'
+};
+let student = {
+  name: 'Bob',
+  age: 20,
+  xp: '2'
+};
+let newStudent = Object.assign({}, person, student);</code></pre></div>
+
+<p>Aquí utilizamos Object.assign() donde el primer parámetro es el objeto de destino al que quieres aplicar nuevas propiedades.</p>
+<p>Todos los parámetros después del primero serán utilizados como fuentes para el destino. No hay límite en la cantidad de parámetros fuente. Sin embargo, el orden es importante porque las propiedades del segundo parámetro serán anuladas por propiedades del mismo nombre posteriores, etc.</p>
+<p>En el ejemplo anterior utilizamos un nuevo objeto{} como el destino y usamos dos objetos como fuentes. ,.,</p>
+<p>Prueba a cambiar el orden de los parámetros segundo y tercero para ver qué le ocurre al resultado.</p>
+<p>Ahora veamos cómo podemos usar assignQ para crear un objeto duplicado sin erar una refwencia (mutación) en el objeto base.</p>
+<p>En el siguiente ejemplo se usó asignación para intentar generar un nuevo objeto. Sin embargo, usar= crea una referencia al objeto base. Debido a esta referencia, los cambios destinados a un nuevo objeto mutan el objeto original:</p>
+<div class="snippet"><pre><code class="language-javascript">let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = person; //newPerson crea a una referencia a person
+newPerson.name = 'Bob';
+
+console.log(person.name); // Bob
+console.log(newPerson.name); // Bob</code></pre></div>
+
+<p>Para evitarlo (las mutaciones), usa Object.assign() para crear un nuevo objeto.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = Object.assign({}, person);
+newPerson.name = 'Bob';
+
+console.log(person.name); // Jack
+console.log(newPerson.name); // Bob</code></pre></div>
+
+<p>Por último, puedes asignar un valor a una propiedad de objeto en la declaración Object.assign().</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = Object.assign({}, person, {name: 'Bob'});</code></pre></div>
+
+<p>¡Ejecuta el código y mira cómo funciona!</p>
+<p>CodeCoach</p>
+<p>ES6 Objectos</p>
+</article>
+<article>
+<h3 id="lec59">Desestructuración en ES6</h3>
+<h4>Desestructuración de arrays en ES6</h4>
+<p>La sintaxis de asignación destructuring es una expresión de JavaScript que hace posible descomponer valores de arrays o propiedades de objetos en diferentes variables.</p>
+<p>ES6 tiene una sintaxis corta para desestructurar un array.</p>
+<p>El siguiente ejemplo demuestra cómo descomponer los elementos de un array en diferentes variables:</p>
+<div class="snippet"><pre><code class="language-javascript">let arr = ['1', '2', '3'];
+let [one, two, three] = arr;
+
+console.log(one); // 1
+console.log(two); // 2
+console.log(three); // 3</code></pre></div>
+
+<p>También podemos desestructurar un array devuelto por una función.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let a = () =&gt; {
+  return [1, 3, 2];
+};
+
+let [one, , two] = a();</code></pre></div>
+
+<p>Observa que dejamos vacío el espacio del segundo argumento.</p>
+<p>La sintaxis destructuring también simplifica asignar e intercambiar valores.</p>
+<div class="snippet"><pre><code class="language-javascript">let a, b, c = 4, d = 8;
+[a, b = 6] = [2]; // a = 2, b = 6
+[c, d] = [d, c]; // c = 8, d = 4</code></pre></div>
+
+<p>¡Ejecuta el código y mira cómo funciona!</p>
+<h4>Desestructuración de objetos en ES6</h4>
+<p>De forma similar a la desestructuración de arrays, la desestructuración de objetos descompone y extrae propiedades en diferentes variables.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let obj = {h:100, s: true};
+let {h, s} = obj;
+
+console.log(h); // 100
+console.log(s); // true</code></pre></div>
+
+<p>Podemos asignar sin una declaración, pero ello tiene algunos requisitos de sintaxis:</p>
+<div class="snippet"><pre><code class="language-javascript">let a, b;
+({a, b} = {a: 'Hello ', b: 'Jack'});
+
+console.log(a + b); // Hello Jack</code></pre></div>
+
+<p>Los () con un punto y coma(;) al final son obligatorios para desestructurar sin una declaración. No obstante, también puedes hacerlo de la siguiente manera, la cual no requiere paréntesis() :</p>
+<div class="snippet"><pre><code class="language-javascript">let {a, b} = {a: 'Hello ', b: 'Jack'};
+console.log(a + b);</code></pre></div>
+
+<p>También puedes asignar el objeto a nuevos nombres de variables.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var o = {h: 42, s: true};
+var {h: foo, s: bar} = o;
+
+//console.log(h); // Error
+console.log(foo); // 42</code></pre></div>
+
+<p>Por último, puedes asignar valores predeterminados a variables, en caso de que el valor extraído del objeto sea indefinido.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var obj = {id: 42, name: "Jack"};
+
+let {id = 10, age = 20} = obj;
+
+console.log(id); // 42
+console.log(age); // 20</code></pre></div>
+
+<p>¡Ejecuta el código y mira cómo funciona!</p>
+</article>
+<article>
+<h3 id="lec60">Rest y Spread</h3>
+<h4>Párametros REST en ES6</h4>
+<p>Antes de ES6, si queríamos pasar una cantidad de argumentos variable a una función, podíamos usar el objeto argumenta, un objeto similar a un array, para acceder a los parámetros pasados a la función.</p>
+<p>Por ejemplo, escribamos una función que comprueba si un array contiene todos los argumentos pasados:</p>
+<div class="snippet"><pre><code class="language-javascript">function containsAll(arr) {
+  for (let k = 1; k &lt; arguments.length; k++) {
+    let num = arguments[k];
+    if (arr.indexOf(num) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+let x = [2, 4, 6, 7];
+console.log(containsAll(x, 2, 4, 7));
+console.log(containsAll(x, 6, 4, 9));</code></pre></div>
+
+<p>Podemos pasar cualquier cantidad de argumentos a la función y acceder a ella usando el objeto arguments.</p>
+<p>Aunque esto funciona, ES6 ofrece una sintaxis más legible para lograr una cantidad de parámetros variable usando un parámetro rest:</p>
+<div class="snippet"><pre><code class="language-javascript">function containsAll(arr, ...nums) {
+  for (let num of nums) {
+    if (arr.indexOf(num) === -1) {
+      return false;
+    }
+  }
+  return true;
+}</code></pre></div>
+
+<p>El parámetro ... nums se denomina un parámetro rest. éste coge todos los argumentos "adicionales" pasados a la función.</p>
+<p>Sólo el último parámetro de una función puede ser marcado como un parámetro rest. Si no existen argumentos adicionales, el parámetro rest simplemente será un array vacío; el parámetro rest nunca será undefined.</p>
+<p>Code Coach</p>
+<p>Rest &amp; Spread</p>
+<h4>El operador Spread</h4>
+<p>Esteoperadoressimilaralparámetrorest, pero tieneotrafinalidadcuandoseutilizaenobjetos, arraysollamadasafunciones(argumentos).</p>
+<h4>Spread en llamadas a funciones</h4>
+<p>Es común pasar los elementos de un array como argumentos a una función. Antes de ES6, usábamos el siguiente método:</p>
+<div class="snippet"><pre><code class="language-javascript">function myFunction(w, x, y, z) {
+  console.log(w + x + y + z);
+}
+var args = [1, 2, 3];
+myFunction.apply(null, args.concat(4));</code></pre></div>
+
+<p>ES6 ofrece un modo sencillo de realizar lo del ejemplo anterior cono operadonts apread&middot;</p>
+<div class="snippet"><pre><code class="language-javascript">const myFunction = (w, x, y, z) =&gt; {
+  console.log(w + x + y + z);
+};
+let args = [1, 2, 3];
+myFunction(...args, 4);</code></pre></div>
+
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">var dateFields = [1970, 0, 1];  // 1 Jan 1970
+var date = new Date(...dateFields);
+console.log(date);</code></pre></div>
+
+<p>Antes de ES6, usábamos la siguiente sintaxis para añadirunelementoenmediodeunarray:</p>
+<div class="snippet"><pre><code class="language-javascript">var arr = ["One", "Two", "Five"];
+
+arr.splice(2, 0, "Three");
+arr.splice(3, 0, "Four");
+console.log(arr);</code></pre></div>
+
+<p>Puedes usar métodos como, por ejemplo, push, spllce y concat en diferentes posiciones del array para conseguir esto. Sin embargo, en ES6, eloperador spreadnos permitehacerlocon mayor facilidad:</p>
+<div class="snippet"><pre><code class="language-javascript">let newArr = ['Three', 'Four']; 
+let arr = ['One', 'Two', ...newArr, 'Five'];
+console.log(arr);</code></pre></div>
+
+<p>ES6 ofrece un modo sencillo de realizar lo del ejemplo anterior cono operadorn apread:</p>
+<h4>Spread en literals de objetos</h4>
+<p>En objetos copla las propias propiedades enumerablesdelobjetoproporcionadoylas trasladaaunobjetonuevo.</p>
+<div class="snippet"><pre><code class="language-javascript">const obj1 = { foo: 'bar', x: 42 };
+const obj2 = { foo: 'baz', y: 5 };
+
+const clonedObj = {...obj1}; // { foo: "bar", x: 42 }
+const mergedObj = {...obj1, ...obj2}; // { foo: "baz", x: 42, y: 5 }</code></pre></div>
+
+<p>Ejemplo:</p>
+<p>Sinembargo,siintentascombinarlos,no obtendrás el resultado esperado:</p>
+<div class="snippet"><pre><code class="language-javascript">const obj1 = { foo: 'bar', x: 42 };
+const obj2 = { foo: 'baz', y: 5 };
+const merge = (...objects) =&gt; ({...objects});
+
+let mergedObj = merge(obj1, obj2);
+// { 0: { foo: 'bar', x: 42 }, 1: { foo: 'baz', y: 5 } }
+
+let mergedObj2 = merge({}, obj1, obj2);
+// { 0: {}, 1: { foo: 'bar', x: 42 }, 2: { foo: 'baz', y: 5 } }</code></pre></div>
+
+<p>Esposlblecombinaroclonarobjetos con otro operador: Object.asslgnQ.</p>
+</article>
+<article>
+<h3 id="lec61">Clases en ES6</h3>
+<h4>Clases en ES6</h4>
+<p>En esta lección explicaremos cómo crear una class (clase) que puede ser utilizada para crear múltiples objetos de la misma estructura. Una clase utiliza la palabra clave class y contiene un método constructor para la inicialización.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}</code></pre></div>
+
+<p>Una clase declarada puede utilizarse para crear múltiples objetos usando la palabra clave new.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">const square = new Rectangle(5, 5);
+const poster = new Rectangle(2, 3);</code></pre></div>
+
+<p>Las Declaraciones de Clase NO están elevadas (hoisted), mientras que las Declaraciones de Funciones sí. Si intentas acceder a tu clase antes de declararla te encontrarás con el error ReferenceError.</p>
+<p>También puedes definir una clase con una expresión de clase, en la cual la clase puede tener o no tener nombre.</p>
+<p>Una clase nombrada tiene este aspecto:</p>
+<div class="snippet"><pre><code class="language-javascript">var Square = class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};</code></pre></div>
+
+<p>En la expresión de clase no nombrada, simplemente se asigna una variable a la definición de clase:</p>
+<div class="snippet"><pre><code class="language-javascript">var Square = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }   
+};</code></pre></div>
+
+<p>El constructor es un método especial utilizado para crear e inicializar un objeto creado con una clase. Sólo puede haber un constructor en cada clase.</p>
+<h4>Métodos de clase en ES6</h4>
+<p>ES6 introdujo una abreviatura que no requiere la palabra clave function para una función asignada al nombre de un método. Un tipo de método de clase es el método prototype, el cual está disponible para los objetos de la clase.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  get area() {
+    return this.calcArea();
+  }
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+const square = new Rectangle(5, 5);
+console.log(square.area); // 25</code></pre></div>
+
+<p>En el código anterior, area es un getter y calcArea es un método. Otro tipo de método es el método static, el cual no puede ser llamado a través de una instancia de clase. Los métodos static (estáticos) suelen utilizarse para crear funciones de utilidad para una aplicación.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    return Math.hypot(dx, dy);
+  }
+}
+const p1 = new Point(7, 2);
+const p2 = new Point(3, 8);
+
+console.log(Point.distance(p1, p2));</code></pre></div>
+
+<p>Como puedes ver, el método static distance es llamado directamente usando el nombre de clase sin un objeto.</p>
+<p>Code Coach</p>
+<p>Métodos de clase en ES6</p>
+<h4>Herencia en ES6</h4>
+<p>La palabra clave extends se utiliza en declaraciones de clase o expresiones de clase para crear un hijo de una clase o clase secundaria. Este hijo hereda las propiedades y métodos del padre.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(this.name + ' barks.');
+  }
+}
+let dog = new Dog('Rex');
+dog.speak(); // Rex barks.</code></pre></div>
+
+<p>En el código de arriba, la clase Dog (perro) es hijo de la clase Animal, heredando sus propiedades y métodos.</p>
+<p>Si hay un constructor presente en la subclase, éste primero necesita llamar a superO antes de usar this. Además, la palabra clave super es utilizada para llamar a los métodos del padre.</p>
+<p>Por ejemplo, podemos modificar el programa anterior:</p>
+<div class="snippet"><pre><code class="language-javascript">class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(this.name + ' makes a noise.');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    super.speak(); // Super
+    console.log(this.name + ' barks.');
+  }
+}
+
+let dog = new Dog('Rex');
+dog.speak();</code></pre></div>
+
+<p>En el código de arriba, el método speakO del padre es llamado usando la palabra clave super.</p>
+</article>
+<article>
+<h3 id="lec62">Map y Set</h3>
+<h4>ES6 Map</h4>
+<p>Un objeto Map puede ser utilizado para contener pares key/value (clave/valor). Una clave o un valor en un map puede ser cualquier cosa (objetos y valores primitivos).</p>
+<p>La sintaxis new Map((iterable)) crea un objeto Map en el que iterable es un array o cualquier otro objeto iterable cuyos elementos son arrays (cada uno de ellos con un par clave/valor).</p>
+<p>Un Object es similar a Map pero existen diferencias imporantes que hacen que sea preferible utilizar Map en algunos casos:</p>
+<ol>
+<li>Las keys o claves pueden ser de cualquier tipo, incluyendo funciones, objetos y cualquier primitivo.</li>
+<li>Puedes obtener el tamaño de un Map.</li>
+<li>Puedes iterar directamente sobre Map.</li>
+<li>El rendimiento de Map es mejor en situaciones que implican una frecuente adición y sustracción de pares clave/valor.</li>
+</ol>
+<p>La propiedad size devuelve la cantidad de pares clave/valor de un map.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let map = new Map([['k1', 'v1'], ['k2', 'v2']]);
+
+console.log(map.size); // 2</code></pre></div>
+
+<p>Métodos</p>
+<p>set(key, value) Añade un par clave/valor especificado al map. Si la clave especificada ya existe, su valor correspondiente es reemplazado por el valor especificado.</p>
+<p>get(key) Obtiene el valor correspondiente de una clave determinada del map. Si la clave especificada no existe, se devuelve undefmed.</p>
+<p>has(key) Devuelve true (verdadero) si existe una clave especificada en el map o false en caso contrario.</p>
+<p>delete(key) Elimina el par clave/valor con una clave especificada del map y devuelve true. Devuelve false si el elemento no existe.</p>
+<p>clearO Elimina todos los pares clave/valor de un map.</p>
+<p>keysO Devuelve un iterador de claves en el map para cada elemento.</p>
+<p>valuesO Devuelve un iterador de valores en el map para cada elemento.</p>
+<p>entrlesO Devuelve un iterador de array[clave, valor) el map para cada elemento.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let map = new Map();
+
+map.set('k1', 'v1').set('k2', 'v2');
+
+console.log(map.get('k1')); // v1
+
+console.log(map.has('k2')); // true
+
+for (let kv of map.entries())
+  console.log(kv[0] + " : " + kv[1]);</code></pre></div>
+
+<p>El ejemplo anterior demuestra algunos de los métodos Map de ES6. , , 1,,,.</p>
+<p>Map admite diferentes tipos de datos; por ejemplo, 1 y "1" son dos &bull;claves/valores diferentes.</p>
+<p>Code Coach</p>
+<p>Mapa ES6</p>
+<h4>ES6Set</h4>
+<p>Un objeto Set puede utilizarse para tener valores únicos (las repeticiones no están permitidas). Una clave en un set puede ser cualquier cosa (objetos y valores primitivos).</p>
+<p>La sintaxis new Set&laquo;tterable]) crea un objeto Set en el que Iterable es un array o cualquier otro objeto con valores.</p>
+<p>La propiedad size devuelve la cantidad de valores diferentes de un set.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let set = new Set([1, 2, 4, 2, 59, 9, 4, 9, 1]);
+
+console.log(set.size); // 5</code></pre></div>
+
+<p>Métodos</p>
+<p>add(value) Añade al set un nuevo elemento con el valor dado.</p>
+<p>delete(value) Borra un valor especificado del set.</p>
+<p>has(value) Devuelve true (verdadero) si existe un valor especificado en el set o false en caso conrario.</p>
+<p>clear() Borra el set.</p>
+<p>values() Devuelve un iterador de valores en el set.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let set = new Set();
+set.add(5).add(9).add(59).add(9);
+
+console.log(set.has(9));
+
+for (let v of set.values())
+    console.log(v);</code></pre></div>
+
+<p>El ejemplo anterior demuestra algunos de los métodos Set de ES6.</p>
+<p>Set admite diferentes tipos de datos; por ejemplo, 1 y "1" son dos valores diferentes.</p>
+<p>También se pueden almacenar NaN y undefmed en Set.</p>
+</article>
+<article>
+<h3 id="lec63">Más sobre ES6</h3>
+<h4>Promises en ES6</h4>
+<p>Una Promise es una forma mejor de programación asíncrona en comparación con el modo común que consiste en utilizar un tipo de método setTimeout().</p>
+<p>Observa este ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">setTimeout(function() {
+  console.log("Work 1");
+  setTimeout(function() {
+    console.log("Work 2");
+  }, 1000);
+}, 1000);
+console.log("End");</code></pre></div>
+
+<p>Emite (print) "End", "Work 1" y "Work 2" en ese orden (el work o trabajo se realiza de forma asíncrona). Pero si hay más eventos como este, el código se vuelve muy complejo.</p>
+<p>En estas situaciones, ES6 nos rescata. Se puede crear una promise de la siguiente manera:</p>
+<div class="snippet"><pre><code class="language-javascript">new Promise (function(resolve, reject) {
+  // Work
+  if (success)
+      resolve(result);
+  else
+      reject(Error("failure"));
+});</code></pre></div>
+
+<p>Aquí, resolve (resolver)es el método para el éxito y reject (rechazar) es el método para el fracaso.</p>
+<p>Si un método devuelve una promise, sus llamadas debe usar el método then, el cual toma dos métodos como entrada: uno para el éxito y otro para el fracaso.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">asyncFunc("Work 1") // Task 1
+.then(function(result) {
+  console.log(result);
+  return asyncFunc("Work 2"); // Task 2
+}, function(error) {
+    console.log(error);
+})
+.then(function(result) {
+  console.log(result);
+}, function(error) {
+  console.log(error);
+});
+console.log("End");</code></pre></div>
+
+<p>También emite "End", "Work 1" y "Work 2" en ese orden (el work o trabajo se realiza de forma asíncrona). Sin embargo, esto claramente es mucho más legible que el ejemplo anterior, y es más fácil trabajar así en situaciones más complejas.</p>
+<p>¡Ejecuta el código y mira cómo funciona!</p>
+<h4>lteradores y generadores</h4>
+<p>Symbol.ltera1Dr es le iterado, predeterminado para un objeto. Los bucles for ... of están basados en este tipo de iterador.</p>
+<p>En el siguiente ejemplo veremos cómo debemos implementarlo y cómo se utilizan las funciones generadoras.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">let myIterableObj = { 
+  [Symbol.iterator] : function* () {
+    yield 1; yield 2; yield 3;
+  }
+};
+console.log([...myIterableObj]); // [ 1, 2, 3 ]</code></pre></div>
+
+<p>Primero creamos un objeto y usamos Symbol.lterator y la función generadora para rellenarlo con algunos valores.</p>
+<p>En la segunda línea del código, usamos un * con la palabra clave function. Esto se llama función generadora o gen function.</p>
+<p>Por ejemplo, aquí vemos un caso simple de cómo las gen functions pueden ser útiles:</p>
+<div class="snippet"><pre><code class="language-javascript">function* idMaker() {
+  let index = 0;
+  while (index &lt; 5)
+    yield index++;
+}
+var gen = idMaker();
+console.log(gen.next().value);</code></pre></div>
+
+<p>Podemos salir y volver a entrar funciones generadoras más tarde. Sus vinculaciones variables (contexto) serán guardadas a través de las reentradas. Son una herramienta muy poderosa para la programación asíncrona, especialmente cuando se combinan con Promises. También pueden ser útiles para crear bucles con requisitos especiales.</p>
+<p>Podemos jerarquizar (nest) funciones generadoras unas dentro de otras para crear estructuras más complejas y pasarles argumentos mientras las estamos llamando. El siguiente ejemplo muestra un caso útil de cómo podemos usar las funciones generadoras y Symbol.iterators juntos.</p>
+<p>Ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">const arr = ['0', '1', '4', 'a', '9', 'c', '16'];
+const my_obj = {
+  [Symbol.iterator]: function*() {
+    for(let index of arr) {
+      yield `${index}`;
+    }
+  }
+};
+
+const all = [...my_obj] /* Here you can replace the '[...my_obj]' with 'arr'. */
+  .map(i =&gt; parseInt(i, 10))
+  .map(Math.sqrt)
+  .filter((i) =&gt; i &lt; 5) /* try changing the value of 5 to 4 see what happens.*/
+  .reduce((i, d) =&gt; i + d); /* comment this line while you are changing the value of the line above */
+console.log(all);</code></pre></div>
+
+<p>Creamos un objeto de 7 elementos usando Symbol.lterator y funciones generadoras. En la seguida parte, asignamos nuestro objeto a la constante all. Al final emitimos (print) su valor. ,\/ ~</p>
+<p>¡Ejecuta el código y mira cómo .... funciona!</p>
+<h4>Módulos</h4>
+<p>Es una buena práctica dividir tu código relacionado en módulos. Antes de ES6, hubo algunas bibliotecas que lo hicieron posible (RequireJS, CommonJS). ES6 ahora soporta esto de forma nativa.</p>
+<p>Aspectos a tener en cuenta cuando usas módulos:</p>
+<p>La primera consideración es el mantenimiento. Un módulo es independiente de otros, haciendo posible las mejoras y la ampliación sin dependencia de código en otros módulos.</p>
+<p>La segunda consideración son el tema del namespace. En una lección anterior hablamos sobre variables y ámbito (scope). Como sabes, las vars se declaran globalmente, por lo que es común tener contaminación de namespace, en la que variables no relacionadas son accesibles por todo nuestro código. Los módulos solucionan este problema creando un espacio privado para las variables.</p>
+<p>Otra consideración importante es la reutlllzaclón. Cuando escribimos código que puede ser utilizado en otros proyectos, los módulos hacen posible reutilizar fácilmente el código sin tener que reescribirlo en un proyecto nuevo.</p>
+<p>Veamos como deberíamos usar los módulos en los archivos JS.</p>
+<p>Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">// lib/math.js
+export let sum = (x, y) =&gt; { return x + y; }
+export let pi = 3.14;
+
+// app.js
+import * as math from "lib/math"
+console.log(`2p = + ${math.sum(math.pi, math.pi)}`)</code></pre></div>
+
+<p>Aquí estamos exportando la función suma y la variable pi para poder utilizarlas en archivos diferentes.</p>
+<p>ES6 soporta oficialmente los módulos, sin embargo algunos navegadores aún no soportan los módulos de forma nativa. Por ese motivo debemos usar bundlers (creadores) como Webpack o Browserify para ejecutar nuestro código.</p>
+<h4>Métodos integrados</h4>
+<p>ES6 también ha introducido nuevos métodos integrados para hacer más fáciles algunas tareas. Aqui cubriremos los más comunes.</p>
+<h4>Búsqueda de elementos de arrays</h4>
+<p>El modo tradicional de encontrar el primer elemento de un array por su valor y una regla fue el siguiente:</p>
+<div class="snippet"><pre><code class="language-javascript">let res = [4, 5, 1, 8, 2, 0].filter(function (x) {
+  return x &gt; 3;
+})[0];</code></pre></div>
+
+<p>La nueva sintaxis es más limpia y más sólida:</p>
+<div class="snippet"><pre><code class="language-javascript">let res = [4, 5, 1, 8, 2, 0].find(x =&gt; x &gt; 3);</code></pre></div>
+
+<p>También puedes obtener el índice del elemento de arriba utilizando el método findlndex():</p>
+<div class="snippet"><pre><code class="language-javascript">let res = [4, 5, 1, 8, 2, 0].findIndex(x =&gt; x &gt; 3);</code></pre></div>
+
+<h4>Repeticiones de strings</h4>
+<p>Antes de ES6, la siguiente sintaxis era la forma correcta de repetir un string múltiples veces:</p>
+<div class="snippet"><pre><code class="language-javascript">console.log(Array(3 + 1).join("foo"));// foofoofoo</code></pre></div>
+
+<p>Métodos integrados</p>
+<div class="snippet"><pre><code class="language-javascript">console.log("foo".repeat(3));// foofoofoo</code></pre></div>
+
+<p>La nueva sintaxis es más limpia y más sólida:</p>
+<h4>Búsqueda de strings</h4>
+<p>Antes de ES6, sólo utilizábamos el método lndexOfQ para encontrar la posición del texto en el string. Por ejemplo:</p>
+<div class="snippet"><pre><code class="language-javascript">console.log("SoloLearn".indexOf("Solo") === 0); // true
+console.log("SoloLearn".indexOf("Solo") === (4 - "Solo".length)); // true
+console.log("SoloLearn".indexOf("loLe") !== -1); // true
+console.log("SoloLearn".indexOf("olo", 1) !== -1); // true
+console.log("SoloLearn".indexOf("olo", 2) !== -1); // false</code></pre></div>
+
+<p>También puedes obtener el índice del elemento de arriba utilizando el método findlndexQ:</p>
+<p>La nueva sintaxis es más llmpia y mas sóUda:</p>
+<div class="snippet"><pre><code class="language-javascript">console.log("SoloLearn".startsWith("Solo", 0)); // true
+console.log("SoloLearn".endsWith("Solo", 4)); // true
+console.log("SoloLearn".includes("loLe")); // true
+console.log("SoloLearn".includes("olo", 1)); // true
+console.log("SoloLearn".includes("olo", 2)); // false</code></pre></div>
+
+<p>Siempre es una buena práctica refactorizar tu código con la nueva sintaxis para aprender cosas nuevas y hacer que tu código sea más comprensible.</p>
+
+<article>
+<h3 id="lec64">Examon Módulo 7</h3>
+</article>
+<article>
+<h3 id="lec65">Proyecto de codificación: Palabras</h3>
+</article>
+</section>
+
+</main>
+<!-- Incluir el archivo js de highlight.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<!-- Inicializar el resaltado de sintaxis -->
+<script>hljs.highlightAll();</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

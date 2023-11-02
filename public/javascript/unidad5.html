@@ -1,0 +1,198 @@
+<section>
+<h2 id="unidad5">M&oacute;dulo 5: Objetos</h2>
+<article>
+<h3 id="lec31">Introducci&oacute;n a los objetos</h3>
+<h4>Objetos en JavaScript</h4>
+<p>La variables en JavaScript son contenedores para valores y datos. Los objetos tambi&eacute;n son variables, pero ellos pueden contener muchas variables.</p>
+<p>Piensa en los objetos como una lista de valores que son escritos como pares name:value (nombre:valor), con los nombres y los valores separados por dos puntos.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var person = { 
+  name: "John", age: 31, favColor: "green", height: 183
+};</code></pre>
+</div>
+<p>Estos valores son llamados propiedades.</p>
+<figure><img class="mini" src="images/026.png" alt="" /></figure>
+<p>Los objetos en JavaScript son contenedores para valores con nombre.</p>
+<h4>Propiedades de objetos</h4>
+<p>Puedes acceder a las propiedades de los objetos de dos maneras.</p>
+<div class="snippet">
+<pre><code class="language-javascript">nombreDeObjeto.nombreDePropiedad
+//o<br />nombreDeObjeto['nombreDePropiedad']</code></pre>
+</div>
+<p>Este ejemplo demuestra como acceder la edad de nuestro objeto persona.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var persona = {
+  nombre: "John", edad: 31, colorFav: "verde", altura: 183
+};
+var x = persona.edad; 
+var y = persona['edad'];</code></pre>
+</div>
+<p>La propiedad length incorporada en JavaScript es utiIizada para contar el n&uacute;mero de caracteres en el valor de una propiedad o el n&uacute;mero de caracteres en una cadena de texto.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var curso = {nombre: "JavaScript", lecciones: 41}; 
+document.write(curso.nombre.length); // 10</code></pre>
+</div>
+<p>Los objects (objetos) son uno de los conceptos fundamentales de JavaScript.</p>
+<h4>M&eacute;todos de objetos</h4>
+<p>Un m&eacute;todo de objeto es una propiedad que contiene la definici&oacute;n de una funci&oacute;n.</p>
+<p>Utiliza la siguiente sintaxis para acceder al m&eacute;todo del objeto.</p>
+<div class="snippet">
+<pre><code class="language-javascript">nombreDelObjeto.nombreDelMetodo()</code></pre>
+</div>
+<p>Tal y como ya sabes, el m&eacute;todo document.wrlte() despliega datos. La funci&oacute;n wrlte() es un m&eacute;todo del objeto document.</p>
+<div class="snippet">
+<pre><code class="language-javascript">document.write("Este es alg&uacute;n texto");</code></pre>
+</div>
+<p>Los m&eacute;todos son funciones que han sido guardadas como propiedades de objetos.</p>
+<p>Code Coach</p>
+<p>Introduciendo objetos</p>
+</article>
+<article>
+<h3 id="lec32">Creando tus propios objetos</h3>
+<h4>El constructor de objetos</h4>
+<p>En la lecci&oacute;n anterior, creamos un objeto utilizando la sintaxis de literal de objeto (o inicializador).</p>
+<div class="snippet">
+<pre><code class="language-javascript">var persona = {
+  nombre: "John", edad: 42, colorFav: "verde" 
+};</code></pre>
+</div>
+<p>Esto te permite crear un &uacute;nico objeto. Algunas veces, necesitamos configurar un "tipo de objeto" que pueda ser usado para crear un n&uacute;mero determinado de objetos de un mismo tipo.</p>
+<p>La forma est&aacute;ndar para crear un "tipo de objeto" es utilizando una funci&oacute;n constructora de objetos.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function persona (nombre, edad, color) { 
+  this.nombre = nombre;
+  this.edad = edad;
+  this.colorFav = color;
+};</code></pre>
+</div>
+<p>La funci&oacute;n anterior (persona) es un constructor de objetos, que toma tres par&aacute;metros y los asigna a las propiedades del objeto.</p>
+<p>La palabra clave this se refiere al objeto actual.</p>
+<p>Nota que this no es una variable. Es una palabra clave, y su valor no puede ser cambiado.</p>
+<h4>Creando objetos</h4>
+<p>Una vez que tengas un constructor de objetos, puedes utilizar la palabra clave new para crear nuevos objetos del mismo tipo.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var p1 = new persona("John", 42, "verde");
+var p2 = new persona("Amy", 21, "rojo");
+
+document.write(p1.edad); // Salida 42
+document.write(p2.nombre); // Salida "Amy"</code></pre>
+</div>
+<p>Las variables p1 y p2 son ahora objetos del tipo persona. A sus propiedades les son asignados los valores correspondientes.</p>
+<h4>Creando objetos</h4>
+<p>Considera el siguiente ejemplo.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function person (name, age) {
+  this.name = name;
+  this.age = age;
+}
+var John = new person("John", 25); 
+var James = new person("James", 21);</code></pre>
+</div>
+<p>Accede a las propiedades del objeto utilizando la sintaxis de punto, como hiciste anteriormente.</p>
+<figure><img class="mini" src="images/027.png" alt="" /></figure>
+<p>Es esencial comprender la creaci&oacute;n de objetos.</p>
+<p>Code Coach</p>
+<p>Creando tus propios objetos</p>
+</article>
+<article>
+<h3 id="lec33">Inicializaci&oacute;n de objetos</h3>
+<h4>Inicializaci&oacute;n de objetos</h4>
+<p>Utiliza la sintaxis de literal de objetos o inicializador para crear un s&oacute;lo objeto.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var John = {name: "John", age: 25}; 
+var James = {name: "James", age: 21};</code></pre>
+</div>
+<p>Los objetos consisten en propiedades que se utilizan para describir un objeto. Los valores de las propiedades de los objetos pueden contener tipos de datos primitivos u otros objetos.</p>
+<h4>Utilizando inicializadores de objetos</h4>
+<p>Los espacios y saltos de l&iacute;nea no son importantes. La definici&oacute;n de un objeto puede expandirse a m&uacute;ltiples l&iacute;neas.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var John = { 
+  name: "John", 
+  age: 25
+}; 
+var James = { 
+  name: "James", 
+  age: 21
+};</code></pre>
+</div>
+<p>No importa c&oacute;mo el objeto sea creado, la sintaxis para acceder a las propiedades y m&eacute;todos no cambia.</p>
+<div class="snippet">
+<pre><code class="language-javascript">document.write(John.age);</code></pre>
+</div>
+<p>No te olvides de la segunda sintaxis de acceso: John['age'].</p>
+</article>
+<article>
+<h3 id="lec34">A&ntilde;adiendo m&eacute;todos</h3>
+<h4>M&eacute;todos</h4>
+<p>Los m&eacute;todos son funciones que se guardan como propiedades de un objeto.</p>
+<p>Utiliza la siguiente sintaxis para crear un m&eacute;todo de objeto:</p>
+<div class="snippet">
+<pre><code class="language-javascript">nombreDelMetodo = function () { l&iacute;neas de c&oacute;digo }</code></pre>
+</div>
+<p>Accede a un m&eacute;todo de objeto utilizando la sintaxis siguiente:</p>
+<div class="snippet">
+<pre><code class="language-javascript">nombreDelObjeto.nombreDelMetodo()</code></pre>
+</div>
+<p>Un m&eacute;todo es una funci&oacute;n, que pertenece a un objeto. Puede ser referenciada utilizando la palabra clave this.</p>
+<p>La palabra clave this es utilizada como una referencia al objeto actual, lo que significa que puedes utilizarla para acceder a las propiedades y m&eacute;todos de un objeto.</p>
+<p>Los m&eacute;todos se definen dentro de la funci&oacute;n constructora.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function persona (nombre, edad) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.cambiarNombre = function (nombre) {
+    this.nombre = nombre;
+  }
+}
+
+var p = new persona("David", 21);
+p.cambiarNombre("John");
+//Ahora p.nombre es igual a "John"</code></pre>
+</div>
+<p>En el ejemplo anterior, hemos definido un m&eacute;todo llamado cambiarNombre para nuestra persona, que es una funci&oacute;n, que toma un par&aacute;metro nombre y se lo asigna a la propiedad nombre del objeto.</p>
+<p>this.nombre se refiere a la propiedad nombre del objeto.</p>
+<p>El m&eacute;todo cambiarNombre cambia la propiedad nombre del objeto a su argumento.</p>
+<p>Code Coach</p>
+<p>A&ntilde;adiendo M&eacute;todos</p>
+<h4>M&eacute;todos</h4>
+<p>Tambi&eacute;n puedes definir la funci&oacute;n fuera del constructor y asociarla con el objeto.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function persona (nombre, edad) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.anioDeNac = anioNac;
+}
+
+function anioNac() {
+  return 2016 - this.edad;
+}</code></pre>
+</div>
+<p>Como puedes ver, hemos asignado la propiedad anioDeNac del objeto a la funci&oacute;n anioNac.</p>
+<p>La palabra clave this es utilizada para acceder a la propiedad edad del objeto, que ser&aacute; llamada por el m&eacute;todo.</p>
+<p>Ten presente que no es necesario escribir los par&eacute;ntesis de la funci&oacute;n cuando es asignada a un objeto.</p>
+<h4>M&eacute;todos</h4>
+<p>Llama al m&eacute;todo como siempre.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function persona (nombre, edad) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.anioDeNac = anioNac;
+}
+
+function anioNac() {
+  return 2016 - this.edad;
+}
+var p = new persona("A", 22); 
+document.write(p.anioDeNac());</code></pre>
+</div>
+<p>Llama al m&eacute;todo por el nombre de la propiedad que especificaste en la funci&oacute;n constructora, en lugar del nombre de la funci&oacute;n.</p>
+</article>
+<article>
+<h3 id="lec35">Examen M&oacute;dulo 5</h3>
+</article>
+<article>
+<h3 id="lec36">Proyecto de codificaci&oacute;n: Gesti&oacute;n de contacto</h3>
+</article>
+</section>

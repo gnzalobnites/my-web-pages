@@ -1,0 +1,137 @@
+<section>
+    <h2 id="unidad2">M&oacute;dulo 2: Conceptos b&aacute;sicos</h2>
+    <article>
+    <h3 id="lec7">Operadores matematicos</h3>
+    <h4>Operadores aritm&eacute;ticos</h4>
+    <p>Los operadores aritm&eacute;ticos realizan funciones aritm&eacute;ticas en n&uacute;meros (literales o variables).</p>
+    <figure><img class="mini" src="images/005.png" alt="" /></figure>
+    <p>En el siguiente ejemplo, el operador de adici&oacute;n es usado para determinar la suma de dos n&uacute;meros.</p>
+    <div class="snippet">
+    <pre><code class="language-javascript">var x = 10 + 5;
+    document.write(x);
+    </code></pre>
+    </div>
+    <p>Puedes a&ntilde;adir tantos n&uacute;meros o variables juntas como quieras o sea necesario.</p>
+    <div class="snippet">
+    <pre><code class="language-javascript">var x = 10;
+    var y = x + 5 + 22 + 45 + 6548;
+    document.write(y);
+    </code></pre>
+    </div>
+    <p>Puedes obtener el resultado de la expresi&oacute;n de un string utilizando la funci&oacute;n eval(), la cual toma el argumento de una expresi&oacute;n de un string como eval("10 * 20 + 8") y devuelve el resultado. Si el argumento est&aacute; vac&iacute;o, la funci&oacute;n devuelve undefined.</p>
+    <h4>Multiplicaci&oacute;n</h4>
+    <p>El operador de multiplicaci&oacute;n (*) multiplica un n&uacute;mero por otro.</p>
+    <div class="snippet">
+    <pre><code class="language-javascript">var x = 10 * 5;
+    document.write(x);
+    </code></pre>
+    </div>
+    <p>10 * '5' o '10' * '5' da el mismo resultado. Multiplicar un n&uacute;mero con valores de string como 'sololearn' * 5 devuelve NaN (Not a Number - no es un n&uacute;mero).</p>
+    <p class="code_coach">Code Coach</p>
+    <p>Operadores matem&aacute;ticos</p>
+    <h4>Divisi&oacute;n</h4>
+    <p>El operador / es utilizado para realizar operaciones de divisi&oacute;n:</p>
+    <div class="snippet">
+    <pre><code class="language-javascript">var x = 100 / 5;
+    document.write(x);
+    </code></pre>
+    </div>
+    <p>Recuerda gestionar los casos donde pueda haber una divisi&oacute;n entre 0.</p>
+    <h4>El m&oacute;dulo</h4>
+    <p>El operador m&oacute;dulo (%) retorna el resto de la divisi&oacute;n (lo que sobra).</p>
+    <div class="snippet">
+    <pre><code class="language-javascript">var myVariable = 26 % 6;
+    </code></pre>
+    </div>
+    <p>En JavaScript, el operador m&oacute;dulo es utilizado no s&oacute;lo en enteros, sino tambi&eacute;n en n&uacute;meros de punto flotante.</p>
+    <h4>Incremento y decrementos</h4>
+    <p><u>Incremento ++</u></p>
+    <p>El operador de incremento, aumenta el valor num&eacute;rico de su operando en uno. Si se coloca antes del operando, retorna el valor incrementado. Si se coloca despu&eacute;s del operando, retorna el valor original y luego incrementa el operando.</p>
+    <p><u>Decremento --</u></p>
+    <p>El operador de decremento, disminuye el valor num&eacute;rico de su operando en uno. Si se coloca antes del operando, retorna el valor decrementado. Si se coloca despu&eacute;s del operando, retorna el valor original y luego decrementa el operando.</p>
+    <p><strong>Algunos ejemplos:</strong></p>
+    <figure><img class="mini" src="images/006.png" alt="" /></figure>
+    <p>Al igual que en matem&aacute;ticas de escuela, puedes cambiar el orden de las operaciones aritm&eacute;ticas usando par&eacute;ntesis. Ejemplo: var x = (100 + 50) * 3;</p>
+    </article>
+    <article>
+    <h3 id="lec8">Operadores de asignaci&oacute;n</h3>
+    <h4>Operadores de asignaci&oacute;n</h4>
+    <p>Los operadores de asignaci&oacute;n asignan valores a variables de JavaScript.</p>
+    <figure><img class="mini" src="images/007.png" alt="" /></figure>
+    <p>Puedes utilizar m&uacute;ltiples operadores de asignaci&oacute;n en una l&iacute;nea, como x - = y + = 9.</p>
+    </article>
+    <article>
+    <h3 id="lec9">Operadores de comparaci&oacute;n</h3>
+    <h4>Operadores de comparaci&oacute;n</h4>
+    <p>Los operadores de comparaci&oacute;n son utilizados en declaraciones l&oacute;gicas para determinar la igualdad o diferencia entre variables o valores. Estos retornan <strong>verdadero</strong> o <strong>falso</strong>.</p>
+    <p>El operador <strong>igual que (==)</strong> valida si los valores de los operandos son iguales.</p>
+    <div class="snippet">
+    <pre><code class="language-javascript">var num = 18;
+    // num == 8 retornar&aacute; false (falso)
+    </code></pre>
+    </div>
+    <p>Puedes comprobar todo tipo de datos; los operadores de comparaci&oacute;n siempre devuelven true o false (verdadero o falso).</p>
+    <h4>Operadores de comparaci&oacute;n</h4>
+    <p>La siguiente tabla explica los operadores de comparaci&oacute;n.</p>
+    <figure><img class="mini" src="images/008.png" alt="" /></figure>
+    <p>Cuando uses operadores, aseg&uacute;rate de que los argumentos sean del mismo tipo de datos; los n&uacute;meros deber&iacute;an ser comparados con n&uacute;meros, las cadenas de texto, con cadenas de texto, y as&iacute; sucesivamente.</p>
+    <p class="code_coach">Code Coach</p>
+    <p>Operadores de comparaci&oacute;n 2</p>
+    </article>
+    <article>
+    <h3 id="lec10">Operadores l&oacute;gicos o booleanos</h3>
+    <h4>Operadores l&oacute;gicos</h4>
+    <p>Operadores <strong>l&oacute;gicos</strong>, tambi&eacute;n conocidos como operadores <strong>booleanos</strong>, eval&uacute;an la expresi&oacute;n y retornan <strong>verdadero</strong> o <strong>falso</strong>.</p>
+    <p>La tabla a continuaci&oacute;n explica los operadores l&oacute;gicos (Y, O, NO).</p>
+    <figure><img class="mini" src="images/009.png" alt="" /></figure>
+    <p>Puedes comprobar todo tipo de datos; los operadores de comparaci&oacute;n siempre devuelven true o false (verdadero o falso).</p>
+    <h4>Operadores l&oacute;gicos</h4>
+    <p>En el siguiente ejemplo, hemos conectado dos expresiones booleanas con el operador Y.</p>
+    <div class="snippet">
+    <pre><code class="language-javascript">(4 &gt; 2) &amp;&amp; (10 &lt; 15)
+    </code></pre>
+    </div>
+    <p>Para que esta expresi&oacute;n sea <strong>verdadera</strong>, ambas condiciones deben ser <strong>verdaderas</strong>.</p>
+    <ul>
+    <li>La primera condici&oacute;n determina si 4 es mayor que 2, lo cual es <strong>verdadero</strong>.</li>
+    <li>La segunda condici&oacute;n determina si 10 es menor que 15, lo cual tambi&eacute;n es <strong>verdadero</strong>.</li>
+    </ul>
+    <p>Basados en estos resultados, la expresi&oacute;n completa es evaluada como <strong>verdadera</strong>.</p>
+    <h4>Operador condicional (ternario)</h4>
+    <p>Hay otro operador condicional en JavaScript que asigna un valor a una variable, basado en una condici&oacute;n.</p>
+    <p><strong>Sintaxis:</strong></p>
+    <div class="snippet">
+    <pre><code class="language-javascript">variable = (condici&oacute;n) ? valor1: valor2
+    </code></pre>
+    </div>
+    <p><strong>Por ejemplo:</strong></p>
+    <div class="snippet">
+    <pre><code class="language-javascript">var esAdulto = (edad &lt; 18) ? "Demasiado joven": "Lo suficientemente mayor";
+    </code></pre>
+    </div>
+    <p>Si la variable edad tiene un valor por debajo de 18, el valor de la variable <em>esAdulto</em> ser&aacute; "Demasiado joven". De lo contrario, el valor de <em>esAdulto</em> ser&aacute; "Lo suficientemente mayor".</p>
+    <p class="code_coach">Code Coach</p>
+    <p>Operadores l&oacute;gicos o booleanos</p>
+    <p>Los operadores l&oacute;gicos permiten conectar tantas expresiones como desees.</p>
+    <!--Parte sin articles ni sections_ Comienzo--> <!-- <div class="snippet"><pre><code class="language-javascript"></code></pre></div> --></article>
+    <article>
+    <h3 id="lec11">Operadores de cadenas de texto</h3>
+    <h4>Operadores de cadenas de texto</h4>
+    <p>El operador para cadenas de texto m&aacute;s &uacute;til es concatenaci&oacute;n, representado por el signo +. Concatenaci&oacute;n puede ser usado para construir cadenas de texto juntando m&uacute;ltiples cadenas de texto, o juntando cadenas de texto con otros tipos:</p>
+    <div class="snippet">
+    <pre><code class="language-javascript">var mystring1 = "I am learning";
+    var mystring2 = "JavaScript with Sololearn.";
+    document.write(mystring1 + mystring2);
+    </code></pre>
+    </div>
+    <p>El ejemplo anterior declara e inicializa dos variables de cadena de texto, y luego las concatena.</p>
+    <figure><img class="mini" src="images/010.png" alt="" /></figure>
+    <p>Los n&uacute;meros entre comillas son tratados como cadenas de texto: "42" no es el n&uacute;mero 42, es una cadena de texto que incluye dos caracteres, 4 y 2.</p>
+    <article>
+    <h3 id="lec12">Examen M&oacute;dulo 2</h3>
+    </article>
+    <article>
+    <h3 id="lec13">Proyecto de codificaci&oacute;n: Planeador de viajes</h3>
+    </article>
+    </article>
+    </section>

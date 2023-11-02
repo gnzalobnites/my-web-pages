@@ -1,0 +1,873 @@
+<section>
+<h2 id="unidad8">M&oacute;dulo 8: ES6</h2>
+<article>
+<h3 id="lec55">Introducci&oacute;n a ES6</h3>
+<h4>ECMAScript 6</h4>
+<p>ECMAScrlpt (ES) es una especificaci&oacute;n de lenguaje de programaci&oacute;n creada para estandarizar JavaScript.</p>
+<p>La sexta edici&oacute;n, inicialmente conocida como ECMAScript 6 (ES6) y despu&eacute;s renombrada a ECMAScrlpt 2015, a&ntilde;ade una cantidad&nbsp;considerable de sintaxis nueva para escribir aplicaciones complejas, incluyendo clases y m&oacute;dulos, iteradores y bucles for/of, generadores, funciones flecha, datos binarios, arrays escritos, colecciones (maps, sets y weak maps), promesas, mejoras num&eacute;ricas y matem&aacute;ticas, reflecci&oacute;n y proxies.</p>
+<p>En otras palabras, ES6 es un superconjunto de JavaScript (ES5). El motivo de que ES6 se volviera tan popular es que introdujo nuevas convenciones y conceptos OOP como las clases.</p>
+<p>En este m&oacute;dulo cubrimos las adiciones m&aacute;s importantes a ES6. &iexcl;Comencemos!</p>
+</article>
+<article>
+<h3 id="lec56">Variables y strings</h3>
+<h4>Variables var y let</h4>
+<p>En ES6 tenemos tres formas de declarar variables:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var a = 10;
+const b = 'hello';
+let c = true;
+</code></pre>
+</div>
+<p>El tipo de declaraci&oacute;n que se use depende del &aacute;mbito (scope). Scope o &aacute;mbito es un concepto fundamental en todos los lenguajes de programaci&oacute;n, y define la visibilidad de una variable.</p>
+<h4>Variables var y let</h4>
+<p>A diferencia de la palabra clave var, que define una variable globalmente o localmente a toda una funci&oacute;n independientemente del &aacute;mbito o scope del bloque, let te permite declarar variables limitadas al bloque, a la declaraci&oacute;n o a la expresi&oacute;n en la que se utilicen.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">if (true) {
+  let name = 'Jack';
+}
+alert(name); //Genera un error </code></pre>
+</div>
+<p>En este caso la variable name s&oacute;lo es accesible en el &aacute;mbito (scope) de la declaraci&oacute;n if porque fue declarada como let.</p>
+<p>Para demostrar la diferencia de scope entre var y let, considera este ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function pruebaDeVar() {
+  var x = 1;
+  if (true) {
+    var x = 2;  // la misma variable x
+    console.log(x);  // 2
+  }
+  console.log(x);  // 2
+}
+
+function pruebaDeLet() {
+  let x = 1;
+  if (true) {
+    let x = 2;  // variables x distintas
+    console.log(x);  // 2
+  }
+  console.log(x);  // 1
+}</code></pre>
+</div>
+<p>Uno de los mejores usos de let es en bucles (loops):</p>
+<div class="snippet">
+<pre><code class="language-javascript">for (let i = 0; i &lt; 3; i++) {
+  document.write(i);
+}</code></pre>
+</div>
+<p>Aqu&iacute;, la variable i s&oacute;lo es accesible dentro del scope (&aacute;mbito) del bucle for donde es necesaria.</p>
+<p>Las variables let no est&aacute;n sujetas a Variable Hoisting o elevaci&oacute;n de variables, lo que significa que las declaraciones let no se mueven a lo m&aacute;s alto del contexto de ejecuci&oacute;n actual.</p>
+<h4>Variables const</h4>
+<p>Las variables const tienen el mismo &aacute;mbito (scope) que las variables let. La diferencia es que las variables const son inmutables: no se permite que sean reasignadas.</p>
+<p>Por ejemplo, lo siguiente genera una excepci&oacute;n:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const a = 'Hello';
+a = 'Bye';</code></pre>
+</div>
+<p>Las variables const no est&aacute;n sujetas a Variable Hoisting o elevaci&oacute;n de variables, lo que significa que las declaraciones const no se mueven a lo m&aacute;s alto del contexto de ejecuci&oacute;n actual. Ten tambi&eacute;n en cuenta que el c&oacute;digo ES6 s&oacute;lo se ejecutar&aacute; en los navegadores que lo soporten. Los dispositivos y navegadores m&aacute;s antiguos que no soporten ES6 devolver&aacute;n un error de sintaxis.</p>
+<h4>Template Literals en ES6</h4>
+<p>Las <em>template literals</em> o literales de plantilla son un modo para devolver (o insertar) variables en una cadena de caracteres. Antes de ES6 ten&iacute;amos que descomponer la cadena, por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let name = 'David';
+let msg = 'Welcome ' + name + '!';
+console.log(msg);</code></pre>
+</div>
+<p>ES6 presenta una nuea forma de insertar valores de variables en las cadenas. El c&oacute;digo superior puede reescribirse como:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let name = 'David';
+let msg = `Welcome ${name}!`;
+console.log(msg);</code></pre>
+</div>
+<p>Observa que las <em>template literals</em> est&aacute;n encerradas por el acento Inverso (`), y no por comillas simples o dobles.</p>
+<p>La ${expresion} es un ejemplo, y puede incluir cualquier expresi&oacute;n, la cual ser&aacute; evaluada e insertada en la <em>template literal</em>.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let a = 8;
+let b = 34;
+let msg = `The sum is ${a+b}`;
+console.log(msg);</code></pre>
+</div>
+<p>Para escapar un acento inverso en una template literal, escribe una barra invertida \ antes del acento inverso.</p>
+<p>Code Coach</p>
+<p>ES6 Variables y cadenas</p>
+</article>
+<article>
+<h3 id="lec57">Bucles y funciones en ES6</h3>
+<h4>Bucles (loops) en ECMAScript 6</h4>
+<p>En JavaScript solemos usar el bucle for para iterar sobre los valores de una lista:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let arr = [1, 2, 3];
+for (let k = 0; k &lt; arr.length; k++) {
+  console.log(arr[k]);
+}</code></pre>
+</div>
+<h4>El bucle for...in</h4>
+<p>El bucle for...in sirve para iterar sobre las claves enumerables de un objeto.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let obj = {a: 1, b: 2, c: 3};
+for (let clave in obj) {
+  console.log(clave); // a \n b \n c
+}</code></pre>
+</div>
+<p>El bucle for...in NO deber&iacute;a utilizarse para iterar sobre arrays, porque, dependiendo del motor de JavaScript, podr&iacute;a iterar en un orden arbitrario. Adem&aacute;s, la variable de iteracci&oacute;n es una cadena (string), por lo que si intentas hacer cualquier operaci&oacute;n matem&aacute;tica con la variable estar&aacute;s realizando una concatenaci&oacute;n de cadena en lugar de una suma.</p>
+<h4>El bucle for...of</h4>
+<p>ES6 introduce el nuevo bucle for...of, el cual itera sobre objetos iterables.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let letras = ["x", "y", "z"];
+for (let letra of letras) {
+  console.log(letra);
+}</code></pre>
+</div>
+<h4>Bucles (loops) en ECMAScript 6</h4>
+<p>Durante cada iteracci&oacute;n, a la variable letra se le asigna el elemento correspondiente del arreglo letras.</p>
+<p>El bucle for...of funciona tambi&eacute;n con otros objetos iterables, como las cadenas (<em>sirings</em>):</p>
+<div class="snippet">
+<pre><code class="language-javascript">for (let caracter of "Hello") {
+  console.log(caracter);
+}</code></pre>
+</div>
+<p>El bucle for...of tambi&eacute;n funciona sobre las colecciones reci&eacute;n introducidas (Map, Set, WeakMap y WeakSet). Aprenderemos m&aacute;s sobre ellos en las pr&oacute;ximas lecciones. Ten en cuenta que el c&oacute;digo ES6 s&oacute;lo se ejecutar&aacute; en los navegadores que lo soporten. Los dispositivos y navegadores m&aacute;s antiguos que no soporten ES6 devolver&aacute;n un error de sintaxis.</p>
+<p>Code Coach</p>
+<p>Bucles en ECMAScript 6</p>
+</article>
+    
+    <h4>Funciones en ECMAScript 6</h4>
+<p>Antes de ES6, una funci&oacute;n de JavaScript se defin&iacute;a as&iacute;:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function add(x, y) {
+  var sum = x + y;  
+  console.log(sum);
+}</code></pre>
+</div>
+<p>ES6 introduce una nueva sintaxis para escribir funciones. La funci&oacute;n de arriba puede reescribirse como:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const add = (x, y) =&gt; {
+  let sum = x + y;  
+  console.log(sum);
+}</code></pre>
+</div>
+<p>Esta nueva sintaxis es bastante pr&aacute;ctica cuando s&oacute;lo se necesita una funci&oacute;n simple con un argumento.</p>
+<p>Puedes no tener que escribir <em>function</em> y <em>return</em>, as&iacute; como algunos par&eacute;ntesis y llaves.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const saluda = x =&gt; `&iexcl;Hola ${x}!`;</code></pre>
+</div>
+<p>El c&oacute;digo anterior define una funci&oacute;n llamada saluda que tiene un argumento y devuelve un mensaje.</p>
+<p>Si no hay par&aacute;metros, debe utilizarse un par de par&eacute;ntesis vac&iacute;os, como en este caso:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const x = () =&gt; alert("Hi");</code></pre>
+</div>
+<h4>Funciones en ECMAScript 6</h4>
+<p>La sintaxis es muy &uacute;til para las funciones inline. Por ejemplo, supongamos que tenemos un array, y que necesitamos ejecutar una funci&oacute;n para cada elemento del array. Usamos el m&eacute;todo forEach para llamar a una funci&oacute;n para cada elemento:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var arr = [2, 3, 7, 8];
+
+arr.forEach(function(el) {
+  console.log(el * 2);
+});</code></pre>
+</div>
+<p>Sin embargo, en ES6, el c&oacute;digo de arriba puede reescribirse de la siguiente manera:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const arr = [2, 3, 7, 8];
+
+arr.forEach(v =&gt; {
+  console.log(v * 2);
+});</code></pre>
+</div>
+<p>El c&oacute;digo es m&aacute;s corto y ordenado, &iquest;no te parece?</p>
+<h4>Par&aacute;metros predeterminados en ES6</h4>
+<p>En ES6, podemos poner los valores predeterminados en la propia definici&oacute;n de las funciones.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function test(a, b = 3, c = 42) {
+  return a + b + c;
+}
+console.log(test(5)); //50</code></pre>
+</div>
+<p>Y aqu&iacute; tienes un ejemplo de una funci&oacute;n flecha (arrow) con par&aacute;metros predeterminados:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const test = (a, b = 3, c = 42) =&gt; {
+  return a + b + c;
+}
+console.log(test(5)); //50</code></pre>
+</div>
+<p>Las expresiones de valor predeterminado son evaluadas de izquierda a derecha cuando se realiza la llamada a la funci&oacute;n. Esto tambi&eacute;n significa que las expresiones predeterminadas tambi&eacute;n pueden usar los valores de par&aacute;metros ya llenados.</p>
+<article>
+<h3 id="lec58">Objetos en ES6</h3>
+<h4>Objetos en ES6</h4>
+<p>Las variables de JavaScript pueden contener datos de tipo object (objetos) que contienen muchos valores, llamados properties (propiedades).</p>
+<p>Un objeto tambi&eacute;n puede tener propiedades que son definiciones de funciones, llamadas methods (m&eacute;todos), para realizar acciones sobre el objeto.</p>
+<p>ES6 introduce notaciones cortas y nombres de propiedad computados que hacen que sea m&aacute;s f&aacute;cil entender c&oacute;mo se declaran y usan los objetos.</p>
+<h4>Definici&oacute;n shorthand de m&eacute;todos y propiedades</h4>
+<p>Las definiciones <em>shorthand</em> (taquigrafiadas) de m&eacute;todos de objetos no requieren el signo de dos puntos (:) ni la palabra clave <em>function</em>, como en el m&eacute;todo grow de del objeto tree:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let tree = {
+  height: 10,
+  color: 'green',
+  grow() {
+    this.height += 2;
+  }
+};
+tree.grow();
+console.log(tree.height); // 12</code></pre>
+</div>
+<p>Tambi&eacute;n puedes usar una definici&oacute;n <em>shorthand</em> de valor de propiedad al inicializar propiedades con una variable del mismo nombre.</p>
+<p>Por ejemplo, las propiedades height y health est&aacute;n siendo inicializadas con variables llamadas height y health:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let height = 5;
+let health = 100;
+
+let athlete = {
+  height,
+  health
+};</code></pre>
+</div>
+<h4>Nombres de propiedad duplicados</h4>
+<p>Cuando se crea un objeto usando nombres de propiedad duplicados, la &uacute;ltima propiedad sobreescribir&aacute; a las anteriores del mismo nombre.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var a = {x: 1, x: 2, x: 3, x: 4};</code></pre>
+</div>
+<p>Los nombres de propiedad duplicados generaron un SyntaxError en ES5 usando el modo estricto. Sin embargo, ES6 elimina esta limitaci&oacute;n.</p>
+<h4>Nombres de propiedad calculados</h4>
+<p>Con ES6, ahora se pueden usar nombres de propiedad calculados (o claves calculadas) en los objetos. Usando los corchetes [ ], podemos usar una expresi&oacute;n para un nombre de una propiedad (o sea para una clave del objeto), incluyendo cadenas que se concatenan. Esto puede ser &uacute;til en los casos en los que queremos crear ciertos objetos basados en datos del usuario (por ej.: ID, email, etc.). Aqu&iacute; puedes ver tres ejemplos:</p>
+<p>Ejemplo 1:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let prop = 'name';
+let id = '1234';
+let mobile = '08923';
+
+let user = {
+  [prop]: 'Jack',
+  [`user_${id}`]: `${mobile}`
+};</code></pre>
+</div>
+<p>Ejemplo 2:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var i = 0;
+var a = {
+  ['foo' + ++i]: i,
+  ['foo' + ++i]: i,
+  ['foo' + ++i]: i
+};</code></pre>
+</div>
+<p>Ejemplo 3:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var param = 'size';
+var config = {
+  [param]: 12,
+  ['mobile' + param.charAt(0).toUpperCase() + param.slice(1)]: 4
+};
+console.log(config.mobileSize); // 4</code></pre>
+</div>
+<p>Es muy &uacute;til cuando necesitas crear objetos personalizados basados en algunas variables.</p>
+<h4>Object.assign() en ES6</h4>
+<p>ES6 a&ntilde;ade el m&eacute;todo Object.assign(), que nos permite combinar m&uacute;ltiples fuentes en un destino para crear un nuevo objeto.</p>
+<p>Object.assign() tambi&eacute;n es &uacute;til para crear un duplicado de un objeto existente.</p>
+<p>Echemos un vistazo al siguiente ejemplo para ver c&oacute;mo combinar objetos:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let person = {
+  name: 'Jack',
+  age: 18,
+  sex: 'male'
+};
+let student = {
+  name: 'Bob',
+  age: 20,
+  xp: '2'
+};
+let newStudent = Object.assign({}, person, student);</code></pre>
+</div>
+<p>Aqu&iacute; utilizamos Object.assign() donde el primer par&aacute;metro es el objeto de destino al que quieres aplicar nuevas propiedades.</p>
+<p>Todos los par&aacute;metros despu&eacute;s del primero ser&aacute;n utilizados como fuentes para el destino. No hay l&iacute;mite en la cantidad de par&aacute;metros fuente. Sin embargo, el orden es importante porque las propiedades de cada par&aacute;metro ser&aacute;n anuladas (sobreescritas) por propiedades del mismo nombre de los par&aacute;metros posteriores, etc.</p>
+<p>En el ejemplo anterior utilizamos un nuevo objeto vac&iacute;o, {}, como el destino y usamos dos objetos como fuentes.</p>
+<p>Prueba a cambiar el orden de los par&aacute;metros segundo y tercero para ver qu&eacute; le ocurre al resultado.</p>
+<p>Ahora veamos c&oacute;mo podemos usar Object.assign() para crear un objeto duplicado sin crear una referencia (mutaci&oacute;n) en el objeto base.</p>
+<p>En el siguiente ejemplo se us&oacute; la asignaci&oacute;n (=) para intentar generar un nuevo objeto. Sin embargo, usar = crea una referencia al objeto base. Debido a esta referencia, los cambios destinados a un nuevo objeto mutan el objeto original:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = person; //newPerson crea a una referencia a person
+newPerson.name = 'Bob';
+
+console.log(person.name); // Bob
+console.log(newPerson.name); // Bob</code></pre>
+</div>
+<p>Para evitar las mutaciones, usa Object.assign() para crear un nuevo objeto.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = Object.assign({}, person);
+newPerson.name = 'Bob';
+
+console.log(person.name); // Jack
+console.log(newPerson.name); // Bob</code></pre>
+</div>
+<p>Por &uacute;ltimo, Object.assign() permite asignar un valor a una propiedad del objeto que crea.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = Object.assign({}, person, {name: 'Bob'});</code></pre>
+</div>
+<p>&iexcl;Ejecuta el c&oacute;digo y mira c&oacute;mo funciona!</p>
+<p>CodeCoach</p>
+<p>ES6 Objectos</p>
+</article>
+   
+<article>
+<h3 id="lec59">Desestructuraci&oacute;n en ES6</h3>
+<h4>Desestructuraci&oacute;n de arrays en ES6</h4>
+<p>La sintaxis de asignaci&oacute;n destructuring es una expresi&oacute;n de JavaScript que hace posible descomponer valores de <em>arrays</em> o propiedades de objetos en diferentes variables.</p>
+<p>ES6 tiene una sintaxis corta para desestructurar un <em>array</em>.</p>
+<p>El siguiente ejemplo demuestra c&oacute;mo descomponer los elementos de un array en diferentes variables:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let arr = ['1', '2', '3'];
+let [one, two, three] = arr;
+
+console.log(one); // 1
+console.log(two); // 2
+console.log(three); // 3</code></pre>
+</div>
+<p>Tambi&eacute;n podemos desestructurar un <em>array</em> devuelto por una funci&oacute;n.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let a = () =&gt; {
+  return [1, 3, 2];
+};
+
+let [one, , two] = a();</code></pre>
+</div>
+<p>Observa que dejamos vac&iacute;o el espacio del segundo argumento.</p>
+<p>La sintaxis destructuring tambi&eacute;n simplifica la asignaci&oacute;n e intercambio de valores.</p>
+<div class="snippet">
+<pre><code class="language-javascript">let a, b, c = 4, d = 8;
+[a, b = 6] = [2]; // a = 2, b = 6
+[c, d] = [d, c]; // c = 8, d = 4</code></pre>
+</div>
+<p>&iexcl;Ejecuta el c&oacute;digo y mira c&oacute;mo funciona!</p>
+<h4>Desestructuraci&oacute;n de objetos en ES6</h4>
+<p>De forma similar a la desestructuraci&oacute;n de <em>arrays</em>, la desestructuraci&oacute;n de objetos descompone y extrae propiedades de un objeto en diferentes variables.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let obj = {h: 100, s: true};
+let {h, s} = obj;
+
+console.log(h); // 100
+console.log(s); // true</code></pre>
+</div>
+<p>Podemos asignar sin una declaraci&oacute;n, pero ello tiene algunos requisitos de sintaxis:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let a, b;
+({a, b} = {a: 'Hello ', b: 'Jack'});
+
+console.log(a + b); // Hello Jack</code></pre>
+</div>
+<p>Los par&eacute;ntesis, (), con un punto y coma (;) al final son obligatorios para desestructurar sin una declaraci&oacute;n. No obstante, tambi&eacute;n puedes hacerlo de la siguiente manera, la cual no requiere par&eacute;ntesis, ():</p>
+<div class="snippet">
+<pre><code class="language-javascript">let {a, b} = {a: 'Hello ', b: 'Jack'};
+console.log(a + b);</code></pre>
+</div>
+<p>Tambi&eacute;n puedes asignar el objeto a nuevos nombres de variables.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var o = {h: 42, s: true};
+var {h: foo, s: bar} = o;
+
+//console.log(h); // Error
+console.log(foo); // 42</code></pre>
+</div>
+<p>Por &uacute;ltimo, puedes asignar valores predeterminados a variables, en caso de que el valor extra&iacute;do del objeto sea indefinido.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var obj = {id: 42, name: "Jack"};
+
+let {id = 10, age = 20} = obj;
+
+console.log(id); // 42
+console.log(age); // 20</code></pre>
+</div>
+<p>&iexcl;Ejecuta el c&oacute;digo y mira c&oacute;mo funciona!</p>
+</article>
+<article>
+<h3 id="lec60">Rest y Spread</h3>
+<h4>P&aacute;rametros REST en ES6</h4>
+<p>Antes de ES6, si quer&iacute;amos pasar una cantidad de argumentos variable a una funci&oacute;n, pod&iacute;amos usar el objeto <em>arguments</em>, un objeto similar a un <em>array</em>, para acceder a los par&aacute;metros pasados a la funci&oacute;n. El objeto arguments es un arreglo que contiene tos los argumentos pasados a la funci&oacute;n, de modo que se puede acceder a cada argumento mediante su &iacute;ndice en el <em>array</em>.</p>
+<p>Por ejemplo, escribamos una funci&oacute;n que comprueba si un <em>array</em> contiene todos los argumentos pasados:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function containsAll(arr) {
+  for (let k = 1; k &lt; arguments.length; k++) {
+    let num = arguments[k];
+    if (arr.indexOf(num) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+let x = [2, 4, 6, 7];
+console.log(containsAll(x, 2, 4, 7));
+console.log(containsAll(x, 6, 4, 9));</code></pre>
+</div>
+<p>Podemos pasar cualquier cantidad de argumentos a la funci&oacute;n y acceder a ellos usando el objeto <em>arguments</em>.</p>
+<p>Aunque esto funciona, ES6 ofrece una sintaxis m&aacute;s legible para lograr una cantidad de par&aacute;metros variable usando un par&aacute;metro <em>rest</em>:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function containsAll(arr, ...nums) {
+  for (let num of nums) {
+    if (arr.indexOf(num) === -1) {
+      return false;
+    }
+  }
+  return true;
+}</code></pre>
+</div>
+<p>El par&aacute;metro ...nums se denomina un par&aacute;metro <em>rest</em>. &eacute;ste coge todos los argumentos "adicionales" pasados a la funci&oacute;n.</p>
+<p>S&oacute;lo el &uacute;ltimo par&aacute;metro de una funci&oacute;n puede ser marcado como un par&aacute;metro <em>rest</em>. Si no existen argumentos adicionales, el par&aacute;metro rest simplemente ser&aacute; un <em>array</em> vac&iacute;o; el par&aacute;metro <em>rest</em> nunca ser&aacute; <em>undefined</em>.</p>
+<p>Code Coach</p>
+<p>Rest &amp; Spread</p>
+<h4>El operador Spread</h4>
+<p>Este operador es similar al par&aacute;metro <em>rest</em>, pero tiene otra finalidad cuando se utiliza en objetos, <em>arrays</em> o llamadas a funciones (argumentos).</p>
+<h4>Spread en llamadas a funciones</h4>
+<p>Es com&uacute;n pasar los elementos de un array como argumentos a una funci&oacute;n. Antes de ES6, us&aacute;bamos el siguiente m&eacute;todo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function myFunction(w, x, y, z) {
+  console.log(w + x + y + z);
+}
+var args = [1, 2, 3];
+myFunction.apply(null, args.concat(4));</code></pre>
+</div>
+<p>ES6 ofrece un modo sencillo de realizar lo anterior, con operadores <em>spread</em>&middot;</p>
+<div class="snippet">
+<pre><code class="language-javascript">const myFunction = (w, x, y, z) =&gt; {
+  console.log(w + x + y + z);
+};
+let args = [1, 2, 3];
+myFunction(...args, 4);</code></pre>
+</div>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var dateFields = [1970, 0, 1];  // 1 Jan 1970
+var date = new Date(...dateFields);
+console.log(date);</code></pre>
+</div>
+<p>Antes de ES6, us&aacute;bamos la siguiente sintaxis para a&ntilde;adir un elemento en medio de un <em>array</em>:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var arr = ["One", "Two", "Five"];
+
+arr.splice(2, 0, "Three");
+arr.splice(3, 0, "Four");
+console.log(arr);</code></pre>
+</div>
+<p>Puedes usar m&eacute;todos como, por ejemplo, <em>push</em>, <em>splice</em> y concat en diferentes posiciones del <em>array</em> para conseguir esto. Sin embargo, en ES6, el operador <em>spread</em> nos permite hacerlo con mayor facilidad:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let newArr = ['Three', 'Four']; 
+let arr = ['One', 'Two', ...newArr, 'Five'];
+console.log(arr);</code></pre>
+</div>
+<h4>Spread en literales de objetos</h4>
+<p>En objetos, el operador spread copia las propiedades enumerables del objeto proporcionado y las traslada a un objeto nuevo.</p>
+<div class="snippet">
+<pre><code class="language-javascript">const obj1 = {foo: 'bar', x: 42};
+const obj2 = {foo: 'baz', y: 5};
+
+const clonedObj = {...obj1}; // {foo: "bar", x: 42}
+const mergedObj = {...obj1, ...obj2}; // {foo: "baz", x: 42, y: 5}</code></pre>
+</div>
+<p>Ejemplo:</p>
+<p>Sin embargo, si intentas combinarlos, no obtendr&aacute;s el resultado esperado:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const obj1 = {foo: 'bar', x: 42};
+const obj2 = {foo: 'baz', y: 5};
+const merge = (...objects) =&gt; ({...objects});
+
+let mergedObj = merge(obj1, obj2);
+// {0: {foo: 'bar', x: 42}, 1: {foo: 'baz', y: 5}}
+
+let mergedObj2 = merge({}, obj1, obj2);
+// {0: {}, 1: {foo: 'bar', x: 42}, 2: {foo: 'baz', y: 5}}</code></pre>
+</div>
+<p>Es posible combinar o clonar objetos con otro operador: Object.assign().</p>
+</article>
+ 
+ <article>
+<h3 id="lec61">Clases en ES6</h3>
+<h4>Clases en ES6</h4>
+<p>En esta lecci&oacute;n explicaremos c&oacute;mo crear una <em>class</em> (clase) que puede ser utilizada para crear m&uacute;ltiples objetos de la misma estructura. Una clase utiliza la palabra clave <em>class</em> y contiene un m&eacute;todo constructor para la inicializaci&oacute;n.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">class Rectangulo {
+  constructor(altura, ancho) {
+    this.altura = altura;
+    this.ancho = ancho;
+  }
+}</code></pre>
+</div>
+<p>Una clase declarada puede utilizarse para crear m&uacute;ltiples objetos usando la palabra clave <em>new</em>.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const cuadrado = new Rectangulo(5, 5);
+const poster = new Rectangulo(2, 3);</code></pre>
+</div>
+<p>Las declaraciones de clase no est&aacute;n elevadas <em>(hoisted)</em>, mientras que las declaraciones de funciones s&iacute;. Si intentas acceder a tu clase antes de declararla te encontrar&aacute;s con el error ReferenceError.</p>
+<p>Tambi&eacute;n puedes definir una clase con una expresi&oacute;n de clase, en la cual la clase puede tener o no tener nombre.</p>
+<p>Una clase nombrada tiene este aspecto:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var Cuadrado = class Rectangulo {
+  constructor(altura, ancho) {
+    this.altura = altura;
+    this.ancho = ancho;
+  }
+};</code></pre>
+</div>
+<p>En la expresi&oacute;n de clase no nombrada, simplemente se asigna la definici&oacute;n de clase a una variable:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var Cuadrado = class {
+  constructor(altura, ancho) {
+    this.altura = altura;
+    this.ancho = ancho;
+  }   
+};</code></pre>
+</div>
+<p>El constructor es un m&eacute;todo especial utilizado para crear e inicializar un objeto creado con una clase. S&oacute;lo puede haber un constructor en cada clase.</p>
+<h4>M&eacute;todos de clase en ES6</h4>
+<p>ES6 introdujo una abreviatura que no requiere la palabra clave <em>function</em> para una funci&oacute;n asignada al nombre de un m&eacute;todo. Un tipo de m&eacute;todo de clase es el m&eacute;todo <em>prototype</em>, el cual est&aacute; disponible para los objetos de la clase.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">class Rectangulo {
+  constructor(altura, ancho) {
+    this.altura = altura;
+    this.ancho = ancho;
+  }
+  get area() {
+    return this.calcArea();
+  }
+  calcArea() {
+    return this.altura * this.ancho;
+  }
+}
+const cuadrado1 = new Rectangulo(5, 5);
+console.log(cuadrado1.area); // 25</code></pre>
+</div>
+<p>En el c&oacute;digo anterior, area es un <em>getter</em> y calcArea es un m&eacute;todo. Otro tipo de m&eacute;todo es el m&eacute;todo <em>static</em>, el cual no puede ser llamado a trav&eacute;s de una instancia de clase. Los m&eacute;todos <em>static</em> (est&aacute;ticos) suelen utilizarse para crear funciones de utilidad para una aplicaci&oacute;n.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">class Punto {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  static distancia(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    return Math.hypot(dx, dy);
+  }
+}
+const p1 = new Punto(7, 2);
+const p2 = new Punto(3, 8);
+
+console.log(Punto.distancia(p1, p2));</code></pre>
+</div>
+<p>Como puedes ver, el m&eacute;todo <em>static</em> <em>distance</em> es llamado directamente usando el nombre de clase sin un objeto.</p>
+<p>Code Coach</p>
+<p>M&eacute;todos de clase en ES6</p>
+<h4>Herencia en ES6</h4>
+<p>La palabra clave <em>extends</em> se utiliza en declaraciones de clase o expresiones de clase para crear un hijo de una clase o clase secundaria. Este hijo hereda las propiedades y m&eacute;todos del padre.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">class Animal {
+  constructor(nombre) {
+    this.nombre = nombre;
+  }
+  habla() {
+    console.log(this.nombre + ' hace un ruido.');
+  }
+}
+
+class Perro extends Animal {
+  habla() {
+    console.log(this.nombre + ' ladra.');
+  }
+}
+let perro1 = new Perro('Rex');
+perro1.habla(); // Rex ladra.</code></pre>
+</div>
+<p>En el c&oacute;digo de arriba, la clase Perro es hijo de la clase Animal, heredando sus propiedades y m&eacute;todos.</p>
+<p>Si hay un constructor presente en la subclase, &eacute;ste primero necesita llamar a <em>super()</em> antes de usar <em>this</em>. Adem&aacute;s, la palabra clave <em>super</em> es utilizada para llamar a los m&eacute;todos del padre.</p>
+<p>Por ejemplo, podemos modificar el programa anterior:</p>
+<div class="snippet">
+<pre><code class="language-javascript">class Animal {
+  constructor(nombre) {
+    this.nombre = nombre;
+  }
+  habla() {
+    console.log(this.nombre + ' hace un ruido.');
+  }
+}
+
+class Perro extends Animal {
+  habla() {
+    super.habla(); // Super
+    console.log(this.nombre + ' ladra.');
+  }
+}
+
+let perro1 = new Perro('Rex');
+perro1.habla();</code></pre>
+</div>
+<p>En el c&oacute;digo de arriba, el m&eacute;todo <em>speak()</em> del padre es llamado usando la palabra clave <em>super</em>.</p>
+</article>
+<article>
+<h3 id="lec62">Map y Set</h3>
+<h4>ES6 Map</h4>
+<p>Un objeto <em>map</em> puede ser utilizado para contener pares <em>key/value</em> (clave/valor). Una clave o un valor en un <em>map</em> puede ser cualquier cosa (objetos y valores primitivos).</p>
+<p>La sintaxis <em>new</em> Map((iterable)) crea un objeto map en el que iterable es un <em>array</em> o cualquier otro objeto iterable cuyos elementos son <em>arrays</em> (cada uno de ellos con un par clave/valor).</p>
+<p>Un <em>object</em> es similar a <em>map</em> pero existen diferencias imporantes que hacen que sea preferible utilizar <em>map</em>&nbsp;en algunos casos:</p>
+<ol>
+<li>Las <em>keys</em> o claves pueden ser de cualquier tipo, incluyendo funciones, objetos y cualquier primitivo.</li>
+<li>Puedes obtener el tama&ntilde;o de un <em>map</em>.</li>
+<li>Puedes iterar directamente sobre un&nbsp;<em>map</em>.</li>
+<li>El rendimiento de un <em>map</em> es mejor en situaciones que implican una frecuente adici&oacute;n y sustracci&oacute;n de pares clave/valor.</li>
+</ol>
+<p>La propiedad <em>size</em> devuelve la cantidad de pares clave/valor de un <em>map</em>.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let map = new Map([['k1', 'v1'], ['k2', 'v2']]);
+
+console.log(map.size); // 2</code></pre>
+</div>
+<h4>M&eacute;todos de los <em>maps</em></h4>
+<ul>
+<li><strong><em>set(key, value)</em></strong>: A&ntilde;ade un par clave/valor especificado al map. Si la clave especificada ya existe, su valor correspondiente es reemplazado por el valor especificado.</li>
+<li><em><strong>get(key)</strong></em>: Obtiene el valor correspondiente de una clave determinada del map. Si la clave especificada no existe, se devuelve <em>undefined</em>.</li>
+<li><em><strong>has(key)</strong></em>: Devuelve <em>true</em> (verdadero) si existe una clave especificada en el map o <em>false</em> en caso contrario.</li>
+<li><em><strong>delete(key)</strong></em>: Elimina el par clave/valor con una clave especificada del <em>map</em> y devuelve <em>true</em>. Devuelve <em>false</em> si el elemento no existe.</li>
+<li><em><strong>clear()</strong></em>: Elimina todos los pares clave/valor de un <em>map</em>.</li>
+<li><em><strong>keys()</strong></em>: Devuelve un iterador de claves en el <em>map</em> para cada elemento.</li>
+<li><em><strong>values()</strong></em>: Devuelve un iterador de valores en el <em>map</em> para cada elemento.</li>
+<li><em><strong>entries()</strong></em>: Devuelve un iterador de <em>arrays&nbsp;</em>[clave, valor] para cada elemento del <em>map</em>.</li>
+</ul>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let map = new Map();
+
+map.set('k1', 'v1').set('k2', 'v2');
+
+console.log(map.get('k1')); // v1
+
+console.log(map.has('k2')); // true
+
+for (let kv of map.entries())
+  console.log(kv[0] + " : " + kv[1]);</code></pre>
+</div>
+<p>El ejemplo anterior demuestra algunos de los m&eacute;todos <em>map</em> de ES6.&nbsp;</p>
+<p>Map admite diferentes tipos de datos; por ejemplo, 1 y "1" son dos claves/valores diferentes.</p>
+<p>Code Coach</p>
+<p>Mapa ES6</p>
+<h4>ES6Set</h4>
+<p>Un objeto <em>set</em> puede utilizarse para almacenar valores &uacute;nicos (las repeticiones no est&aacute;n permitidas). Una clave en un <em>set</em> puede ser cualquier cosa (objetos y valores primitivos).</p>
+<p>La sintaxis <em>new Set</em>([iterable]) crea un objeto <em>set</em> en el que iterable es un <em>array</em> o cualquier otro objeto con valores.</p>
+<p>La propiedad <em>size</em> devuelve la cantidad de valores diferentes de un <em>set</em>.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let set = new Set([1, 2, 4, 2, 59, 9, 4, 9, 1]);
+
+console.log(set.size); // 5</code></pre>
+</div>
+<h4>M&eacute;todos los sets</h4>
+<ul>
+<li><em><strong>add(value)</strong></em>: A&ntilde;ade al <em>set</em> un nuevo elemento con el valor dado.</li>
+<li><em><strong>delete(value)</strong></em>: Borra un valor especificado del <em>set</em>.</li>
+<li><strong><em>has(value)</em></strong>: Devuelve <em>true</em> (verdadero) si existe un valor especificado en el <em>set</em> o <em>false</em> en caso contrario.</li>
+<li><em><strong>clear()</strong></em>: Borra el <em>set</em>.</li>
+<li><em><strong>values()</strong></em>: Devuelve un iterador de valores en el set.</li>
+</ul>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let set = new Set();
+set.add(5).add(9).add(59).add(9);
+
+console.log(set.has(9)); // true
+
+for (let v of set.values())
+    console.log(v);</code></pre>
+</div>
+<p>El ejemplo anterior demuestra algunos de los m&eacute;todos <em>set</em> de ES6.</p>
+<p>Set admite diferentes tipos de datos; por ejemplo, 1 y "1" son dos valores diferentes.</p>
+<p>Tambi&eacute;n se pueden almacenar NaN y undefined en un&nbsp;<em>set</em>.</p>
+</article>
+    
+    <article>
+<h3 id="lec63">M&aacute;s sobre ES6</h3>
+<h4>Promises en ES6</h4>
+<p>Una <em>promise</em> es una forma mejor de programaci&oacute;n as&iacute;ncrona en comparaci&oacute;n con el modo com&uacute;n que consiste en utilizar un tipo de m&eacute;todo setTimeout().</p>
+<p>Observa este ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">setTimeout(function() {
+  console.log("Work 1");
+  setTimeout(function() {
+    console.log("Work 2");
+  }, 1000);
+}, 1000);
+console.log("End");</code></pre>
+</div>
+<p>Emite <em>(print)</em> "End", "Work 1" y "Work 2" en ese orden (el <em>work</em> o trabajo se realiza de forma as&iacute;ncrona). Pero si hay m&aacute;s eventos como este, el c&oacute;digo se vuelve muy complejo.</p>
+<p>En estas situaciones, ES6 nos rescata. Se puede crear una <em>promise</em> de la siguiente manera:</p>
+<div class="snippet">
+<pre><code class="language-javascript">new Promise (function(resolve, reject) {
+  // Trabajo
+  if (exito)
+      resolve(result);
+  else
+      reject(Error("failure"));
+});</code></pre>
+</div>
+<p>Aqu&iacute;, <em>resolve</em> (resolver) es el m&eacute;todo para el &eacute;xito y <em>reject</em> (rechazar) es el m&eacute;todo para el fracaso.</p>
+<p>Si un m&eacute;todo devuelve una <em>promise</em>, sus llamadas deben usar el m&eacute;todo <em>then</em>, el cual toma dos m&eacute;todos como entrada: uno para el &eacute;xito y otro para el fracaso.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function asyncFunc(trabajo) {<br /> return new Promise(function(resolver, rechazar) {<br /> if (trabajo === "") {<br /> rechazar(Error("Nada"));<br /> }<br /> setTimeout(function() {<br /> resolver(trabajo);<br /> }, 1000);<br /> });<br />}<br />asyncFunc("Trabajo 1") // Tarea 1
+.then(function(resultado) {
+  console.log(resultado);
+  return asyncFunc("Trabajo 2"); // Tarea 2
+}, function(error) {
+    console.log(error);
+})
+.then(function(resultado) {
+  console.log(resultado);
+}, function(error) {
+  console.log(error);
+});
+console.log("Fin");</code></pre>
+</div>
+<p>Tambi&eacute;n emite "Fin", "Trabajo 1" y "Trabajo 2", en ese orden (el <em>work</em> o trabajo se realiza de forma as&iacute;ncrona). Sin embargo, esto claramente es mucho m&aacute;s legible que el ejemplo anterior, y es m&aacute;s f&aacute;cil trabajar as&iacute; en situaciones m&aacute;s complejas.</p>
+<p>&iexcl;Ejecuta el c&oacute;digo y mira c&oacute;mo funciona!</p>
+<h4>lteradores y generadores</h4>
+<p>Symbol.iterator es el iterador, predeterminado para un objeto. Los bucles for...of est&aacute;n basados en este tipo de iterador.</p>
+<p>En el siguiente ejemplo veremos c&oacute;mo debemos implementarlo y c&oacute;mo se utilizan las funciones generadoras.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let miObjIterable = { 
+  [Symbol.iterator] : function* () {
+    yield 1; yield 2; yield 3;
+  }
+};
+console.log([...miObjIterableObj]); // [ 1, 2, 3 ]</code></pre>
+</div>
+<p>Primero creamos un objeto y usamos Symbol.iterator y la funci&oacute;n generadora para rellenarlo con algunos valores.</p>
+<p>En la segunda l&iacute;nea del c&oacute;digo, usamos un * con la palabra clave function. Esto se llama funci&oacute;n generadora o <em>gen function.</em></p>
+<p>Por ejemplo, aqu&iacute; vemos un caso simple de c&oacute;mo las <em>gen functions</em> pueden ser &uacute;tiles:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function* generadorDeID() {
+  let indice = 0;
+  while (indice &lt; 5)
+    yield indice++;
+}
+var gen = generadorDeID();
+console.log(gen.next().value);</code></pre>
+</div>
+<p>Podemos salir de una funci&oacute;n generadora y volver a entrar a ella m&aacute;s tarde. Sus vinculaciones variables (contexto) ser&aacute;n guardadas a trav&eacute;s de las reentradas. Son una herramienta muy poderosa para la programaci&oacute;n as&iacute;ncrona, especialmente cuando se combinan con <em>promises</em>. Tambi&eacute;n pueden ser &uacute;tiles para crear bucles con requisitos especiales.</p>
+<p>Podemos anidar <em>(nest)</em> funciones generadoras unas dentro de otras para crear estructuras m&aacute;s complejas y pasarles argumentos mientras las estamos llamando. El siguiente ejemplo muestra un caso &uacute;til de c&oacute;mo podemos usar las funciones generadoras y Symbol.iterator juntos.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">const arr = ['0', '1', '4', 'a', '9', 'c', '16'];
+const mi_obj = {
+  [Symbol.iterator]: function*() {
+    for(let indice of arr) {
+      yield `${indice}`;
+    }
+  }
+};
+
+const all = [...mi_obj] /* Aqu&iacute; puedes reemplazar el '[...my_obj]' por 'arr'. */
+  .map(i =&gt; parseInt(i, 10))
+  .map(Math.sqrt)
+  .filter((i) =&gt; i &lt; 5) /* prueba cambiar el valor de 5 a 4 y observa lo que ocurre.*/
+  .reduce((i, d) =&gt; i + d); /* comenta esta l&iacute;nea mientras est&aacute;s cambiando el valor de la l&iacute;nea de arriba */
+console.log(all);</code></pre>
+</div>
+<p>Creamos un objeto de 7 elementos usando Symbol.iterator y funciones generadoras. En la seguida parte, asignamos nuestro objeto a la constante all. Al final emitimos <em>(print)</em> su valor.</p>
+<p>&iexcl;Ejecuta el c&oacute;digo y mira c&oacute;mo .... funciona!</p>
+<h4>M&oacute;dulos</h4>
+<p>Es una buena pr&aacute;ctica dividir tu c&oacute;digo relacionado en m&oacute;dulos. Antes de ES6, hubo algunas bibliotecas que lo hicieron posible (RequireJS, CommonJS). ES6 ahora soporta esto de forma nativa.</p>
+<p>Aspectos a tener en cuenta cuando usas m&oacute;dulos:</p>
+<ul>
+<li>La primera consideraci&oacute;n es el mantenimiento. Un m&oacute;dulo es independiente de otros, haciendo posible las mejoras y la ampliaciones sin dependencias de c&oacute;digo en otros m&oacute;dulos.</li>
+<li>La segunda consideraci&oacute;n es el tema del <em>namespace</em>. En una lecci&oacute;n anterior hablamos sobre variables y &aacute;mbito <em>(scope)</em>. Como sabes, las variables var se declaran globalmente, por lo que es com&uacute;n tener contaminaci&oacute;n de <em>namespace</em>, en la que variables no relacionadas son accesibles por todo nuestro c&oacute;digo. Los m&oacute;dulos solucionan este problema creando un espacio privado para las variables.</li>
+<li>Otra consideraci&oacute;n importante es la reutilizaci&oacute;n. Cuando escribimos c&oacute;digo que puede ser utilizado en otros proyectos, los m&oacute;dulos hacen posible reutilizar f&aacute;cilmente el c&oacute;digo sin tener que reescribirlo en un proyecto nuevo.</li>
+</ul>
+<p>Veamos c&oacute;mo deber&iacute;amos usar los m&oacute;dulos en los archivos JS.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">// lib/math.js
+export let sum = (x, y) =&gt; { return x + y; }
+export let pi = 3.14;
+
+// app.js
+import * as math from "lib/math"
+console.log(`2p = + ${math.sum(math.pi, math.pi)}`)</code></pre>
+</div>
+<p>Aqu&iacute; estamos exportando la funci&oacute;n suma y la variable pi para poder utilizarlas en archivos diferentes.</p>
+<p>ES6 soporta oficialmente los m&oacute;dulos, sin embargo algunos navegadores a&uacute;n no soportan los m&oacute;dulos de forma nativa. Por ese motivo debemos usar <em>bundlers</em> (creadores) como Webpack o Browserify para ejecutar nuestro c&oacute;digo.</p>
+<h4>M&eacute;todos integrados</h4>
+<p>ES6 tambi&eacute;n ha introducido nuevos m&eacute;todos integrados para hacer m&aacute;s f&aacute;ciles algunas tareas. Aqui cubriremos los m&aacute;s comunes.</p>
+<h4>B&uacute;squeda de elementos de arrays</h4>
+<p>El modo tradicional de encontrar el primer elemento de un <em>array</em> por su valor y una regla fue el siguiente:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let res = [4, 5, 1, 8, 2, 0].filter(function (x) {
+  return x &gt; 3;
+})[0];</code></pre>
+</div>
+<p>La nueva sintaxis es m&aacute;s limpia y m&aacute;s s&oacute;lida:</p>
+<div class="snippet">
+<pre><code class="language-javascript">let res = [4, 5, 1, 8, 2, 0].find(x =&gt; x &gt; 3);</code></pre>
+</div>
+<p>Tambi&eacute;n puedes obtener el &iacute;ndice del elemento de arriba utilizando el m&eacute;todo findIndex():</p>
+<div class="snippet">
+<pre><code class="language-javascript">let res = [4, 5, 1, 8, 2, 0].findIndex(x =&gt; x &gt; 3);</code></pre>
+</div>
+<h4>Repeticiones de strings</h4>
+<p>Antes de ES6, la siguiente sintaxis era la forma correcta de repetir un string m&uacute;ltiples veces:</p>
+<div class="snippet">
+<pre><code class="language-javascript">console.log(Array(3 + 1).join("foo"));// foofoofoo</code></pre>
+</div>
+<p>La nueva sintaxis es m&aacute;s limpia y m&aacute;s s&oacute;lida:</p>
+<div class="snippet">
+<pre><code class="language-javascript">console.log("foo".repeat(3));// foofoofoo</code></pre>
+</div>
+<h4>B&uacute;squeda de strings</h4>
+<p>Antes de ES6, s&oacute;lo utiliz&aacute;bamos el m&eacute;todo indexOf() para encontrar la posici&oacute;n del texto en el string. Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">console.log("SoloLearn".indexOf("Solo") === 0); // true
+console.log("SoloLearn".indexOf("Solo") === (4 - "Solo".length)); // true
+console.log("SoloLearn".indexOf("loLe") !== -1); // true
+console.log("SoloLearn".indexOf("olo", 1) !== -1); // true
+console.log("SoloLearn".indexOf("olo", 2) !== -1); // false</code></pre>
+</div>
+<p>Tambi&eacute;n puedes obtener el &iacute;ndice del elemento de arriba utilizando el m&eacute;todo findIndex():</p>
+<p>La nueva sintaxis es m&aacute;s limpia y mas s&oacute;lida:</p>
+<div class="snippet">
+<pre><code class="language-javascript">console.log("SoloLearn".startsWith("Solo", 0)); // true
+console.log("SoloLearn".endsWith("Solo", 4)); // true
+console.log("SoloLearn".includes("loLe")); // true
+console.log("SoloLearn".includes("olo", 1)); // true
+console.log("SoloLearn".includes("olo", 2)); // false</code></pre>
+</div>
+<p>Siempre es una buena pr&aacute;ctica refactorizar tu c&oacute;digo con la nueva sintaxis para aprender cosas nuevas y hacer que tu c&oacute;digo sea m&aacute;s comprensible.</p>
+<article>
+<h3 id="lec64">Examon M&oacute;dulo 7</h3>
+</article>
+<article>
+<h3 id="lec65">Proyecto de codificaci&oacute;n: Palabras</h3>
+</article>
+    </section>

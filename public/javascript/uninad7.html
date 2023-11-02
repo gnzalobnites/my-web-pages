@@ -1,0 +1,531 @@
+<section>
+  <h2 id="unidad7">M&oacute;dulo 7: DOM y Eventos</h2>
+  <article>
+  <h3 id="lec45">&iquest;Qu&eacute; es DOM?</h3>
+  <h4>El DOM</h4>
+  <p>Cuando abres cualquier p&aacute;gina web en el navegador, el c&oacute;digo HTML de la p&aacute;gina es cargado y reproducido visualmente en la pantallla.</p>
+  <p>Para lograr esto, el navegador construye el Modelo de Objetos del Documento (Document Object Model en Ingl&eacute;s) de la p&aacute;gina, que es un modelo orientado a objetos de su estructura l&oacute;gica.</p>
+  <p>El DOM (por sus siglas en ingl&eacute;s) de un documento HTML puede ser representado como un conjunto de cajas anidadas:</p>
+  <figure><img class="mini" src="images/033.png" alt="" /></figure>
+  <p>Se puede utilizar JavaScript para manipular el DOM de una p&aacute;gina de forma din&aacute;mica para a&ntilde;adir, borrar y modificar elementos.</p>
+  <h4>El &aacute;rbol del DOM</h4>
+  <p>El DOM representa un documento como una estructura de &aacute;rbol.</p>
+  <p>Los elementos HTML se convierten en nodos interrelacionados en el &aacute;rbol.</p>
+  <p>Todos esos nodos en el &aacute;rbol tienen alg&uacute;n tipo de relaci&oacute;n entre ellos.</p>
+  <p>Los nodos pueden tener nodos hijos (child en Ingl&eacute;s). Los nodos en el mismo nivel del &aacute;rbol son llamados hermanos (siblings en Ingl&eacute;s).</p>
+  <figure><img class="mini" src="images/034.png" alt="" /></figure>
+  <p>Del ejemplo anterior:</p>
+  <p>&lt;html&gt; tiene dos hijos (&lt;head&gt;, &lt;body&gt;);</p>
+  <p>&lt;head&gt; tiene un hijo (&lt;title&gt;) y un padre (&lt;html&gt;);</p>
+  <p>&lt;title&gt; tiene un padre (&lt;head&gt;) y no tiene hijos;</p>
+  <p>&lt;body&gt; tiene dos hijos (&lt;h1 &gt; y &lt;a&gt;) y un padre (&lt;html&gt;);</p>
+  <p>Es importante entender las relaciones entre los elementos en un documento HTML con el fin de ser capaz de manipularlos con JavaScript.</p>
+  <h4>El objeto ''document''</h4>
+  <p>Hay un objeto "document" predefinido en JavaScript, que puede ser utilizado para acceder a todos los elementos del DOM.</p>
+  <p>En otras palabras, el objeto "document" es el due&ntilde;o (o ra&iacute;z) de todos los objetos en tu p&aacute;gina web.</p>
+  <p>Por lo tanto, si quieres acceder a los elementos de una p&aacute;gina HTML, siempre comienza accediendo al objeto "document".</p>
+  <p>Por ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">document.body.innerHTML = "&lt;p&gt;&lt;b&gt;Some text&lt;/b&gt;&lt;/p&gt;";</code></pre>
+  </div>
+  <p>Como "body" es un elemento del DOM, podemos acceder a &eacute;l utilizando el objeto "document" y modificar el contenido de su propiedad innerHTML.</p>
+  <p>La propiedad innerHTML puede ser utilizada en casi todos los elementos HTML para modificar el c&oacute;digo HTML que contienen.</p>
+  </article>
+  <article>
+  <h3 id="lec46">Seleccionando elementos</h3>
+  <h4>Seleccionando elementos</h4>
+  <p>Todos los elementos HTML son objetos, y como ya sabemos, cada objeto tiene propiedades y m&eacute;todos.</p>
+  <p>El objeto "document'' tiene m&eacute;todos que te permiten seleccionar el elemento HTML deseado.</p>
+  <p>Estos tres m&eacute;todos son los m&aacute;s com&uacute;nmente utilizados para seleccionar elementos HTML:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">//encontrar un elemento por su id
+  document.getElementById(id_del_elemento)
+  
+  //encontrar elementos por el nombre de su clase
+  document.getElementsByClassName(nombre_de_la_clase)
+  
+  //encontrar elementos por el nombre de su etiqueta
+  document.getElementsByTagName(etiqueta_HTML)</code></pre>
+  </div>
+  <p>En el siguiente ejemplo, el m&eacute;todo getElementByld es utilizado para seleccionar el elemento con id="demo" y cambiar su contenido:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">var elem = document.getElementById("demo"); 
+  elem.innerHTML = "Hello World!";</code></pre>
+  </div>
+  <p>El ejemplo anterior asume que el HTML contiene un elemento con id="demo", por ejemplo &lt;div id="demo"&gt;&lt;/div&gt;.</p>
+  <h4>Seleccionando elementos</h4>
+  <p>El m&eacute;todo getElementsByClassName() encuentra todos los elementos por nombre de clase y los retorna como un arreglo.</p>
+  <p>Por ejemplo, si nuestra p&aacute;gina HTML contiene tres elementos con class="demo", el siguiente c&oacute;digo retornar&aacute; todos esos elementos como un arreglo:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">var arr = document.getElementsByClassName("demo"); 
+  //acceder al segundo elemento
+  arr[1].innerHTML = "Hi";</code></pre>
+  </div>
+  <p>Similarmente, el m&eacute;todo getElementsByTagName retorna todos los elementos de la etiqueta especificada como un arreglo.</p>
+  <p>El siguiente ejemplo obtiene todos los elementos "p" (p&aacute;rrafos) de la p&aacute;gina y cambia su contenido:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;p&gt;hi&lt;/p&gt;
+  &lt;p&gt;hello&lt;/p&gt;
+  &lt;p&gt;hi&lt;/p&gt;
+  &lt;script&gt;
+  var arr = document.getElementsByTagName("p");
+  for (var x = 0; x &lt; arr.length; x++) {
+    arr[x].innerHTML = "Hi there";
+  }
+  &lt;/script&gt;</code></pre>
+  </div>
+  <p>La secuencia anterior resultar&aacute; en el siguiente c&oacute;digo HTML:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;p&gt;Hi there&lt;/p&gt;
+  &lt;p&gt;Hi there&lt;/p&gt;
+  &lt;p&gt;Hi there&lt;/p&gt;</code></pre>
+  </div>
+  <p>Utilizamos la propiedad length del arreglo para iterar a trav&eacute;s de todos los elementos seleccionados en el ejemplo anterior.</p>
+  <h4>Trabajando con DOM</h4>
+  <p>Cada elemento en el DOM tiene una serie de propiedades y m&eacute;todos que proveen informaci&oacute;n acerca de sus relaciones entre s&iacute;:</p>
+  <ul>
+  <li><strong>childNodes</strong> retorna un arreglo que contiene los nodos hijos de un elemento.</li>
+  <li><strong>firstChild</strong> retorna el primer nodo hijo de un elemento.</li>
+  <li><strong>lastChild</strong> retorna el &uacute;ltimo nodo hijo de un elemento.</li>
+  <li><strong>hasChildNodes</strong> retorna verdadero si un elemento tiene al menos un nodo hijo, de lo contrario retorna falso.</li>
+  <li><strong>nextSibling</strong> retorna el siguiente nodo que se encuentre al mismo nivel en el &aacute;rbol DOM.</li>
+  <li><strong>previousSibling</strong> retorna el nodo anterior que se encuentre al mismo nivel en el &aacute;rbol DOM.</li>
+  <li><strong>parentNode</strong> retorna el nodo padre de un elemento.</li>
+  </ul>
+  <p>Podemos, por ejemplo, seleccionar todos los nodos hijos de un elemento y cambiar su contenido.</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;html&gt;
+  &lt;body&gt;
+  &lt;div id="demo"&gt;
+  &lt;p&gt;some text&lt;/p&gt; 
+  &lt;p&gt;some other text&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;script&gt;
+  var a = document.getElementById("demo"); 
+  var arr = a.childNodes;
+  for(var x = 0; x &lt; arr.length; x++) { 
+    arr[x].innerHTML = "new text";
+  }
+  &lt;/script&gt;
+  
+  &lt;/body&gt; 
+  &lt;/html&gt;</code></pre>
+  </div>
+  <p>El c&oacute;digo anterior cambia el texto de ambos p&aacute;rrafos a "new text".</p>
+  </article>
+  <article>
+  <h3 id="lec47">Modificando elementos</h3>
+  <h4>Modificando atributos</h4>
+  <p>Una vez que has seleccionado los elementos con los que quieres trabajar, puedes modificar sus atributos.</p>
+  <p>Tal y como hemos visto en lecciones anteriores, podemos modificar el texto contenido en un elemento utilizando la propiedad lnnerHTML. Similarmente, podemos cambiar los atributos de los elementos.</p>
+  <p>Por ejemplo, podemos cambiar el atributo src de una imagen:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;img id="myimg" src="orange.png" alt="" /&gt;
+  &lt;script&gt;
+    var el = document.getElementById("myimg");
+    el.src = "apple.png";
+  &lt;/script&gt;
+  </code></pre>
+  </div>
+  <p>Podemos cambiar el atributo href de un enlace:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;a href="http://www.example.com"&gt;Some link&lt;/a&gt;
+  &lt;script&gt;
+    var el = document.getElementsByTagName("a"); 
+    el[0].href = "http://www.sololearn.com"; 
+  &lt;/script&gt;
+  </code></pre>
+  </div>
+  <p>Pr&aacute;cticamente, todos los atributos de un elemento pueden ser cambiados utilizando JavaScript.</p>
+  <h4>Modificando el estilo</h4>
+  <p>El estilo de los elementos HTML tambi&eacute;n puede ser modificado utilizando JavaScript.</p>
+  <p>Puedes acceder a todos los atributos utilizando el objeto style del elemento.</p>
+  <p>Por ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;div id="demo" style="width:200px"&gt;some text&lt;/div&gt;
+  &lt;script&gt; 
+    var x = document.getElementById("demo");
+    x.style.color = "6600FF";
+    x.style.width = "100px";
+  &lt;/script&gt;
+  </code></pre>
+  </div>
+  <p>El c&oacute;digo anterior modifica el color del texto y el ancho del elemento div.</p>
+  <p>Se pueden establecer y modificar todas las propiedades CSS utilizando JavaScript. S&oacute;lo recuerda, que no puedes utilizar guiones (-) en los nombres de las propiedades: estos son reemplazados con versiones "camelCase", donde la palabra que sigue a un gui&oacute;n comienza con una letra may&uacute;scula.</p>
+  <p>Por ejemplo: la propiedad background-color debe ser referida como backgroundColor.</p>
+  </article>
+  <article>
+  <h3 id="lec48">A&ntilde;adiendo y removiendo elementos</h3>
+  <h4>Creando elementos</h4>
+  <p>Utiliza los m&eacute;todos siguientes para crear nuevos nodos:</p>
+  <ul>
+  <li><strong>cloneNode()</strong>: clona un elemento y retorna el nodo resultante. Es un m&eacute;todo pose&iacute;do por los objetos elementos.</li>
+  <li><strong>createElement(elemento)</strong>: crea un nuevo nodo con el elemento correspondiente. Es un m&eacute;todo del objeto documento.</li>
+  <li><strong>createTextNode(texto)</strong>: crea un nuevo nodo de texto.&nbsp;Es otro m&eacute;todo del objeto documento.</li>
+  </ul>
+  <p>Por ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">var node = document.createTextNode("Some new text");</code></pre>
+  </div>
+  <p>EL c&oacute;digo anterior crear&aacute; un nuevo nodo de texto, pero no aparecer&aacute; en el documento hasta que lo a&ntilde;adas a un elemento existente con alguno de los siguientes m&eacute;todos de los objetos que representan a los elementos HTML:</p>
+  <ul>
+  <li><strong>appendChild(newNode)</strong> a&ntilde;ade un nuevo nodo hijo a un elemento como el &uacute;ltimo de sus hijos.</li>
+  <li><strong>insertBefore(node1, node2)</strong> inserta node1 como un hijo antes del node2.</li>
+  </ul>
+  <p>Ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;div id="demo"&gt;some content&lt;/div&gt;
+  
+  &lt;script&gt;
+    //crear un nuevo p&aacute;rrafo
+    var p = document.createElement("p");<br />  //crear un nuevo nodo de texto
+    var node = document.createTextNode("Some new text");
+    //a&ntilde;adir el texto al p&aacute;rrafo 
+    p.appendChild(node);
+    //obtener el contenedor del p&aacute;rrafo
+    var div = document.getElementById("demo"); 
+    //a&ntilde;adir el p&aacute;rrafo al div
+    div.appendChild(p); 
+  &lt;/script&gt;</code></pre>
+  </div>
+  <p>El c&oacute;digo anterior crea un nuevo p&aacute;rrafo y lo a&ntilde;ade al elemento div existente de la p&aacute;gina.</p>
+  <h4>Removiendo elementos</h4>
+  <p>Para remover un elemento HTML, debes seleccionar el padre del elemento y utilizar el m&eacute;todo removeChild(node).</p>
+  <p>Por ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;div id="demo"&gt;
+    &lt;p id="p1"&gt;Este es un p&aacute;rrafo.&lt;/p&gt;
+    &lt;p id="p2"&gt;Este es otro p&aacute;rrafo.&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;script&gt;
+    var parent = document.getElementById("demo");
+    var child = document.getElementById("p1");
+    parent.removeChild(child);
+  &lt;/script&gt;</code></pre>
+  </div>
+  <p>En el c&oacute;digo anterior, el p&aacute;rrafo con id = "p1" es removido de la p&aacute;gina.</p>
+  <p>Una forma alternativa para lograr el mismo resultado ser&iacute;a utilizar la propiedad parentNode para obtener el padre del elemento que queremos remover:</p>
+  <p>var child = document.getElementByld("p1");</p>
+  <p>child.parentNode.removeChild(child)</p>
+  <h4>Reemplazando elementos</h4>
+  <p>Para reemplazar un elemento HTML, se utiliza el m&eacute;todo replaceChild(newNode, oldNode), que es un m&eacute;todo de los objetos que representan elementos HTML.</p>
+  <p>Por ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;div id="demo"&gt;
+    &lt;p id="p1"&gt;Este es un p&aacute;rrafo.&lt;/p&gt;
+    &lt;p id="p2"&gt;Este es otro p&aacute;rrafo.&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;script&gt;
+    var p = document.createElement("p");
+    var node = document.createTextNode("This is new");
+    p.appendChild(node);
+  
+    var parent = document.getElementById("demo");
+    var child = document.getElementById("p1");
+    parent.replaceChild(p, child);
+  &lt;/script&gt;</code></pre>
+  </div>
+  <p>El c&oacute;digo anterior crea un nuevo elemento "p&aacute;rrafo" que reemplaza al p&aacute;rrafo "p1" existente.</p>
+  </article>
+  <article>
+  <h3 id="lec49">Creando animaciones</h3>
+  <h4>Animaciones</h4>
+  <p>Ahora que sabemos c&oacute;mo seleccionar y cambiar elementos del DOM, podemos crear una animaci&oacute;n simple.</p>
+  <p>Vamos a crear una p&aacute;gina HTML sencilla con un elemento "box'' que ser&aacute; animado utilizando JS.</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;style&gt;
+  #container {
+      width: 200px;
+      height: 200px;
+      background: green;
+      position: relative;
+  }
+  #box {
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+  }
+  &lt;/style&gt;
+    &lt;div id="container"&gt;
+    &lt;div id="box"&gt; &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+  </div>
+  <p>Nuestro elemento "box'' est&aacute; dentro de un elemento "container''. Fijate en el atributo "position" (posici&oacute;n) utilizado por los elementos: para el contenedor es relatlve (relativa) y para la box es "absolute" (absoluta). Esto nos permite crear la animaci&oacute;n relativa al contenedor, porque los elementos con posici&oacute;n absoluta se pueden desplazar con respecto al primer contenedor con posici&oacute;n absoluta, usando los atributos left y right.</p>
+  <figure><img class="mini" src="images/035.png" alt="" /></figure>
+  <p>Estaremos animando la caja roja para hacer que se mueva al lado derecho del contenedor.</p>
+  <p>Necesitas estar familiarizado con CSS para entender mejor el c&oacute;digo utilizado.</p>
+  <h4>Animaciones</h4>
+  <p>Para crear una animaci&oacute;n, debemos cambiar las propiedades de un elemento a peque&ntilde;os intervalos de tiempo. Podemos lograr esto utilizando el m&eacute;todo setInterval(), el cual nos permite crear un cron&oacute;metro y llamar una funci&oacute;n para cambiar propiedades repetidamente a intervalos definidos (en milisegundos).</p>
+  <p>Por ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">var t = setInterval(move, 500);</code></pre>
+  </div>
+  <p>Este c&oacute;digo crea un cron&oacute;metro que llama la funci&oacute;n mover() cada 500 milisegundos. La variable t almacenar&aacute; el ID retornado por la funci&oacute;n setInterval() al ser llamada.</p>
+  <p>Ahora necesitamos definir la funci&oacute;n mover(), que modifica la posici&oacute;n de la caja.</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">// Posici&oacute;n inicial
+  var pos = 0; 
+  //nuestro elemento box
+  var box = document.getElementById("box");
+  
+  function mover() {
+    pos += 1;
+    box.style.left = pos+"px"; //px = pixeles
+  }</code></pre>
+  </div>
+  <p>La funci&oacute;n mover() incrementa la propiedad left del elemento "box" en uno cada vez que es llamada.</p>
+  <h4>Animaciones</h4>
+  <p>El siguiente c&oacute;digo define un cron&oacute;metro que llama la funci&oacute;n mover() cada 10 milisegundos:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">var t = setInterval(mover, 10);</code></pre>
+  </div>
+  <p>Sin embargo, esto hace que nuestra caja se mueva hacia la derecha por siempre. Para detener la animaci&oacute;n cuando la caja alcance el final del contenedor, a&ntilde;adimos una validaci&oacute;n sencilla a la funci&oacute;n mover() y utilizamos el m&eacute;todo clearlnterval(ID_del_cronometro) para detener el cron&oacute;metro.</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">function mover() {
+    if(pos &gt;= 150) {
+      clearInterval(t);
+    }
+    else {
+      pos += 1;
+      box.style.left = pos+"px";
+    }
+  }</code></pre>
+  </div>
+  <p>Cuando el atributo "left" de la caja llega al valor de 150, la caja alcanzar&aacute; el final del contenedor, basado en que el ancho del contenedor es 200 y el ancho de la caja es 50.</p>
+  <p>El c&oacute;digo final:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">function() {
+    var pos = 0; 
+    //nuestro elemento box
+    var box = document.getElementById('box');
+    var t = setInterval(move, 10);
+  
+    function move() {
+      if(pos &gt;= 150) {
+        clearInterval(t);
+      }
+      else {
+        pos += 1;
+        box.style.left = pos+'px';
+      }
+    }
+  }</code></pre>
+  </div>
+  <p>Felicitaciones, &iexcl;acabas de crear tu primera animaci&oacute;n en JavaScript!</p>
+  </article>
+  <article>
+  <h3 id="lec50">Manejando eventos</h3>
+  <h4>Eventos</h4>
+  <p>Puedes escribir c&oacute;digo JavaScript que se ejecute cuando un evento ocurra, como cuando un usuario hace clic en un elemento HTML, mueve el rat&oacute;n, o env&iacute;a un formulario.</p>
+  <p>Cuando un evento ocurre en un elemento objetivo, una funci&oacute;n "handler" (manejadora) es ejecutada.</p>
+  <p>Eventos HTML comunes incluyen:</p>
+  <figure><img class="mini" src="images/036.png" alt="" /></figure>
+  <p>Los eventos correspondientes pueden ser a&ntilde;adidos a elementos HTML como atributos.</p>
+  <p>Por ejemplo: &lt;p onclick="algunaFunc()"&gt;some text&lt;/p&gt;</p>
+  <h4>Manejando eventos</h4>
+  <p>Vamos a desplegar una ventana emergente de alerta cuando el usuario haga clic sobre un bot&oacute;n espec&iacute;fico:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;button onclick="show();"&gt;Click Me&lt;/button&gt;
+  &lt;script&gt;
+  function show() {
+      alert("Hi there");
+  }
+  &lt;/script&gt;</code></pre>
+  </div>
+  <p>Las funciones manejadoras de eventos pueden ser asignadas a los eventos de los elementos. Los eventos son propiedades de de los objetos que representan a los elementos HTML.</p>
+  <p>Por ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">var x = document.getElementById('demo');
+  x.onclick = function () {
+    document.body.innerHTML = Date();
+  }</code></pre>
+  </div>
+  <p>El objeto x representa al elemento con id = "demo" y la propiedad onclick del objeto x representa al atributo onclick del elemento con id = "demo". Puedes adjuntar eventos a pr&aacute;cticamente todos los elementos HTML.</p>
+  <h4>Eventos</h4>
+  <p>Los eventos onload y onunload son desencadenados cuando el usuario entra o sale de la p&aacute;gina. Esto puede ser &uacute;til cuando se realizan acciones despu&eacute;s de que la p&aacute;gina es cargada.</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">&lt;body onload="hazAlgo()"&gt;</code></pre>
+  </div>
+  <p>Similarmente, el evento window.onload puede ser utilizado para ejecutar c&oacute;digo despu&eacute;s de que toda la p&aacute;gina ha sido cargada.</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">window.onload = function() {
+    //some code
+  }</code></pre>
+  </div>
+  <p>El evento onchange es usado principalmente en "textboxes" (campos de texto). La funci&oacute;n manejadora del evento es llamada cuando el texto dentro de un textbox cambia y el elemento pierde el foco.</p>
+  <p>Por ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;input type="text" id="name" onchange="change()"&gt;
+  
+  &lt;script&gt; 
+    function change() {
+      var x = document.getElementById('name');
+      x.value = x.value.toUpperCase();
+    }
+  &lt;/script&gt;</code></pre>
+  </div>
+  <p>Es importante comprender los eventos ya que son una parte esencial de la din&aacute;mica de las p&aacute;ginas web.</p>
+  <h4>Detectores de eventos</h4>
+  <p>El m&eacute;todo addEventlistener() agrega un detector de eventos a un elemento sin sobrescribir&nbsp;detectores de eventos existentes. Puedes a&ntilde;adir muchos detectores de eventos a un mismo elemento.</p>
+  <p>Tambi&eacute;n puedes a&ntilde;adir muchos detectores de eventos del mismo tipo a un mismo elemento, p. ej., dos eventos "click".</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">element.addEventListener(evento, funcion, usaCapture);</code></pre>
+  </div>
+  <ul>
+  <li>El primer par&aacute;metro es el tipo de evento (como "click" o "mousedown").</li>
+  <li>El segundo par&aacute;metro es la funci&oacute;n que queremos llamar cuando el evento ocurre.</li>
+  <li>El tercer par&aacute;metro es un valor booleano que especifica si se utiliza "bubbling" o "capturing" al manejar los eventos. Este par&aacute;metro es opcional, y ser&aacute; descrito en la pr&oacute;xima lecci&oacute;n.</li>
+  </ul>
+  <p>Nota que no utilizas el prefijo "on" para estos eventos; utiliza "click" en lugar de "onclick''.</p>
+  <p>Ejemplo:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">element.addEventListener("click", myFunction);
+  element.addEventListener("mouseover", myFunction);
+  
+  function myFunction() {
+    alert("Hello World!");
+  }</code></pre>
+  </div>
+  <p>Este c&oacute;digo a&ntilde;ade dos "listeners" (detectores) de evento al elemento.</p>
+  <p>Podemos remover uno de los "listeners":</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">element.removeEventListener("mouseover", myFunction);</code></pre>
+  </div>
+  <p>Vamos a crear un detector de eventos que se remueva a si mismo despu&eacute;s de ser ejecutado:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;button id="demo"&gt;Start&lt;/button&gt;
+  
+  &lt;script&gt;
+    var btn = document.getElementById("demo");
+    btn.addEventListener("click", myFunction);
+  
+    function myFunction() {
+      alert(Math.random());
+      btn.removeEventListener("click", myFunction);
+    }
+  &lt;/script&gt;</code></pre>
+  </div>
+  <p>Despu&eacute;s de hacer clic sobre el bot&oacute;n, una alerta se despliega con un n&uacute;mero aleatorio y el "listener" del evento es removido.</p>
+  <p>Internet Explorer versi&oacute;n 8 e inferior no soporta los m&eacute;todos addEventlistener() y removeEventlistener(). Sin embargo, puedes utilizar el m&eacute;todo document.attachEvent() para agregar detectores de eventos en Internet Explorer.</p>
+  </article>
+  <article>
+  <h3 id="lec51">Propagaci&oacute;n de Eventos</h3>
+  <h4>Propagaci&oacute;n de Eventos</h4>
+  <p>Hay dos formas en que se propagan los eventos en el DOM del HTML: "bubbllng" y "capturing".</p>
+  <p>La propagaci&oacute;n de eventos permite la definici&oacute;n del orden del elemento cuando un evento ocurre. Si tienes un elemento &lt;p&gt; dentro de un elemento &lt;div&gt;, y el usuario hace clic en el elemento &lt;p&gt;, &iquest;cu&aacute;l de los eventos "click" de los elementos debe ser manejado primero?</p>
+  <p>En "bubbling", el evento del elemento m&aacute;s interno es manejado primero y despu&eacute;s es manejado el evento del elemento externo. El evento "click" del elemento &lt;p&gt; es manejado primero, seguido por el evento "click" del elemento &lt;div&gt;.</p>
+  <p>En "capturing", el evento del elemento m&aacute;s externo es manejado primero y luego es manejado el evento del elemento m&aacute;s interno. El evento "click" del elemento &lt;div&gt; es manejado primero, seguido del evento "click" del elemento &lt;p&gt;.</p>
+  <p>"Capturing" va hacia abajo del DOM. "Bubbling" va hacia arriba del DOM.</p>
+  <h4>Capturing vs. Bubbling</h4>
+  <p>El m&eacute;todo addEventlistener() te permite especificar el tipo de propagaci&oacute;n con el par&aacute;metro "useCapture".</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">addEventListener(event, function, useCapture)</code></pre>
+  </div>
+  <p>El valor por defecto es "false" (falso), lo que significa que "bubbling" es el tipo de propagaci&oacute;n a utilizar; cuando el valor es "true" (verdadero), el evento utilizar&aacute; la propagaci&oacute;n "capturing".</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">//Propagaci&oacute;n tipo "capturing"
+  elem1.addEventListener("click", myFunction, true); 
+  
+  //Propagaci&oacute;n tipo "bubbling"
+  elem2.addEventListener("click", myFunction, false);</code></pre>
+  </div>
+  <p>Esto es particularmente &uacute;til cuando tienes el mismo evento manejado por m&uacute;ltiples elementos en la jerarqu&iacute;a del DOM.</p>
+  </article>
+  <article>
+  <h3 id="lec52">Creando un deslizador de im&aacute;genes</h3>
+  <h4>Deslizador de im&aacute;genes</h4>
+  <p>Ahora podemos crear un deslizador de im&aacute;genes como proyecto de ejemplo. Las im&aacute;genes ser&aacute;n cambiadas utilizando botones de "Next" y "Prev". Ahora, vamos a crear nuestro HTML, que incluir&aacute; una imagen y dos botones de navegaci&oacute;n:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;div&gt;
+    &lt;button&gt; Prev &lt;/button&gt;
+    &lt;img src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px" /&gt;
+    &lt;button&gt; Next &lt;/button&gt;
+  &lt;/div&gt;</code></pre>
+  </div>
+  <p>A continuaci&oacute;n, vamos a definir nuestras im&aacute;genes de ejemplo en un arreglo:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">var images = [
+    "http://www.sololearn.com/uploads/slider/1.jpg", 
+    "http://www.sololearn.com/uploads/slider/2.jpg", 
+    "http://www.sololearn.com/uploads/slider/3.jpg"
+  ];</code></pre>
+  </div>
+  <p>Vamos a utilizar tres im&aacute;genes de ejemplo que hemos cargado en nuestro servidor. Puedes utilizar cualquier n&uacute;mero de im&aacute;genes.</p>
+  <h4>Deslizador de im&aacute;genes</h4>
+  <p>Ahora tenemos que manejar los clics de los botones "Next" y "Prev" y llamar a las funciones correspondientes para cambiar la imagen.</p>
+  <p>HTML:</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;div&gt;
+    &lt;button onclick="prev()"&gt;Prev&lt;/button&gt;
+    &lt;img id="slider" src="http://www.sololearn.com/uploads/slider/1.jpg" width="200px" height="100px"/&gt;
+    &lt;button onclick="next()"&gt;Next&lt;/button&gt;
+  &lt;/div&gt;</code></pre>
+  </div>
+  <p>JS:</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">var images = [
+    'http://www.sololearn.com/uploads/slider/1.jpg', 
+    'http://www.sololearn.com/uploads/slider/2.jpg', 
+    'http://www.sololearn.com/uploads/slider/3.jpg'
+  ];
+  var num = 0;
+  function next() {
+    var slider = document.getElementById('slider');
+    num++;
+    if(num &gt;= images.length) {
+      num = 0;
+    }
+    slider.src = images[num];
+  }
+  function prev() {
+    var slider = document.getElementById('slider');
+    num--;
+    if(num &lt; 0) {
+      num = images.length-1;
+    }
+    slider.src = images[num];
+  }</code></pre>
+  </div>
+  <p>La variable num retiene la imagen actual. Los clics en los botones "Next" y "Prev" son manejados por sus correspondientes funciones, las cuales cambian el origen de la imagen al siguiente/anterior en el arreglo.</p>
+  <p>&iexcl;Hemos creado un deslizador de im&aacute;genes funcional!</p>
+  </article>
+  <article>
+  <h3 id="lec53">Validaci&oacute;n de formularios</h3>
+  <h4>Validaci&oacute;n de formularios</h4>
+  <p>HTML5 a&ntilde;ade algunos atributos que permiten la validaci&oacute;n de formularios. Por ejemplo, el atributo required puede a&ntilde;adirse a un campo de entrada para que sea obligatorio rellenarlo. Validaciones m&aacute;s complejas pueden ser hechas usando JavaScript.</p>
+  <p>El elemento "form" tiene un evento "onsubmit" que puede ser manejado para ejecutar validaci&oacute;n.</p>
+  <p>Por ejemplo, vamos a crear un formulario con dos entradas y un bot&oacute;n. El texto en ambos campos debe ser el mismo y no pueden estar en blanco para pasar la validaci&oacute;n.</p>
+  <div class="snippet">
+  <pre><code class="language-html">&lt;form onsubmit="return validate()" method="post"&gt;
+    Number: &lt;input type="text" name="num1" id="num1" /&gt;
+    &lt;br /&gt;
+    Repeat: &lt;input type="text" name="num2" id="num2" /&gt;
+    &lt;br /&gt;
+    &lt;input type="submit" value="Submit" /&gt;
+  &lt;/form&gt;</code></pre>
+  </div>
+  <p>Ahora necesitamos definir la funci&oacute;n validate():</p>
+  <div class="snippet">
+  <pre><code class="language-javascript">function validate() {
+    var n1 = document.getElementById('num1');
+    var n2 = document.getElementById('num2');
+    if(n1.value != '' &amp;&amp; n2.value != '') {
+      if(n1.value == n2.value) {
+        return true;
+      }
+    }
+    alert("Los valores deben ser iguales y no estar en blanco");
+    return false;
+  }</code></pre>
+  </div>
+  <p>Retornaremos true s&oacute;lo cuando los valores no est&eacute;n en blanco y sean iguales.</p>
+  <p>El formulario no ser&aacute; enviado si su evento onsubmit retorna false.</p>
+  </article>
+  <article>
+  <h3 id="lec54">Examen M&oacute;dulo 7</h3>
+  </article>
+  </section>

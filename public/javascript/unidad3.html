@@ -1,0 +1,328 @@
+<section>
+<h2 id="unidad3">M&oacute;dulo 3: Bucles y condicionales</h2>
+<article>
+<h3 id="lec14">La declaraci&oacute;n if</h3>
+<h4>La declaraci&oacute;n if</h4>
+<p>Muy a menudo cuando escribes c&oacute;digo, deseas ejecutar diferentes acciones basados en diferentes condiciones.</p>
+<p>Puedes realizar esto utilizando declaraciones condicionales en tu c&oacute;digo.</p>
+<p>Utiliza if para especificar un bloque de c&oacute;digo que ser&aacute; ejecutado si una condici&oacute;n espec&iacute;fica es verdadera.</p>
+<div class="snippet">
+<pre><code class="language-javascript">if (condition ) {
+  statements
+}</code></pre>
+</div>
+<p>Las declaraciones ser&aacute;n ejecutadas s&oacute;lo si la condici&oacute;n espec&iacute;fica es verdadera.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var myNum1 = 7;
+var myNum2 = 70;
+if (myNum1 &lt; myNum2) {
+  alert("JavaScript is easy to learn.");
+}
+</code></pre>
+</div>
+<p>Resultado:</p>
+<figure><img class="mini" src="images/011.png" alt="" /></figure>
+<p>Tal y como se ve en el dibujo anterior, el m&eacute;todo alert() en JavaScript es utilizado para generar una ventana de alerta emergente que contiene la informaci&oacute;n contenida entre los par&eacute;ntesis.</p>
+<h4>La declaraci&oacute;n if</h4>
+<p>Este es otro ejemplo de una declaraci&oacute;n condicional falsa.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var myNum1 = 7;
+var myNum2 = 10;
+if (myNum1 &gt; myNum2) {
+  alert("JavaScript is easy to learn.");
+}</code></pre>
+</div>
+<p>Como la condici&oacute;n eval&uacute;a a falso, la declaraci&oacute;n de alerta es omitida y el programa contin&uacute;a con la l&iacute;nea despu&eacute;s de la llave de cierre de la declaraci&oacute;n if.</p>
+<p>Nota que if est&aacute; en letras min&uacute;sculas. Utilizar letras may&uacute;sculas (lf o IF) generar&aacute; un error.</p>
+<p>Code Coach</p>
+<p>La declaraci&oacute;n if</p>
+<h3>La declaraci&oacute;n else</h3>
+<p>Utiliza la declaraci&oacute;n else para especificar un bloque de c&oacute;digo que ser&aacute; ejecutado si la condici&oacute;n es falsa.</p>
+<div class="snippet">
+<pre><code class="language-javascript">if (expresi&oacute;n) {
+  // c&oacute;digo ejecutado si la condici&oacute;n es verdadera
+}
+else {
+  // c&oacute;digo ejecutado si la condici&oacute;n es falsa
+}</code></pre>
+</div>
+<p>Puedes evitar las llaves {} si tu c&oacute;digo bajo la condici&oacute;n s&oacute;lo contiene un comando.</p>
+<h4>La declaraci&oacute;n else</h4>
+<p>El siguiente ejemplo demuestra el uso de una declaraci&oacute;n lf... else.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var myNum1 = 7;
+var myNum2 = 10;
+if (myNum1 &gt; myNum2) {
+  alert("This is my first condition");
+} else {
+  alert("This is my second condition");
+}</code></pre>
+</div>
+<p>El ejemplo anterior dice:</p>
+<p>- Si myNum 1 es mayor que myNum2, alerta "This is my first condition";</p>
+<p>- Si no, alerta "This is my second condition".</p>
+<p>El navegador imprimir&aacute; la segunda condici&oacute;n, ya que 7 no es mayor que 10.</p>
+<figure><img class="mini" src="images/012.png" alt="" /></figure>
+<p>Tambi&eacute;n existe otra forma de hacerlo utilizando el operador ?: a &gt; b ? alert(a): alert(b).</p>
+<p>Code Coach</p>
+<p>La declaraci&oacute;n if else</p>
+</article>
+<article>
+<h3 id="lec16">La declaraci&oacute;n else if</h3>
+<h4>else if</h4>
+<p>Puedes utilizar la declaraci&oacute;n else if para especificar una nueva condici&oacute;n si la primera condici&oacute;n es falsa.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var course = 1;
+if (course == 1) {
+document.write("&lt;h1&gt;HTML Tutorial&lt;/h1&gt;");
+} else if (course == 2) { 
+  document.write("&lt;h1&gt;CSS Tutorial&lt;/h1&gt;");
+} else {
+  document.write("&lt;h1&gt;JavaScript Tutorial&lt;/h1&gt;");
+}</code></pre>
+</div>
+<p>El c&oacute;digo anterior dice:</p>
+<p>- SI course es igual que 1, despliega "Tutorial HTML";</p>
+<p>- Si no, si course es igual que 2, despliega "Tutorial CSS";</p>
+<p>- Si ninguna de las anteriores es verdadera, entonces despliega "Tutorial JavaScript";</p>
+<p>course es igual que 1, as&iacute; que obtenemos el siguiente resultado:</p>
+<figure><img class="mini" src="images/013.png" alt="" /></figure>
+<p>La declaraci&oacute;n else final "finaliza" la declaraci&oacute;n else if y deber&iacute;a ser escrita siempre despu&eacute;s de las declaraciones lf y else lf.</p>
+<p>Code Coach</p>
+<p>else if</p>
+<h4>else if</h4>
+<p>El bloque final else ser&aacute; ejecutado cuando ninguna de las condiciones sean verdadera.</p>
+<p>Vamos a cambiar el valor de la variable course de nuestro ejemplo previo.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var course = 3;
+if (course == 1) {
+  document.write("&lt;h1&gt;HTML Tutorial&lt;/h1&gt;");
+} else if (course == 2) {
+  document.write("&lt;h1&gt;CSS Tutorial&lt;/h1&gt;");
+} else {
+  document.write("&lt;h1&gt;JavaScript Tutorial&lt;/h1&gt;");
+}</code></pre>
+</div>
+<p>El resultado</p>
+<figure><img class="mini" src="images/014.png" alt="" /></figure>
+<p>Puedes escribir tantas declaraciones else if como necesites.</p>
+</article>
+<article>
+<h3 id="lec17">La declaraci&oacute;n switch</h3>
+<h4>Switch</h4>
+<p>En los casos donde necesitas evaluar m&uacute;ltiples condiciones, utilizar declaraciones if else para cada condici&oacute;n podr&iacute;a no ser la mejor soluci&oacute;n.</p>
+<p>La declaraci&oacute;n switch es utilizada para ejecutar diferentes acciones basadas en diferentes condiciones. Sintaxis:</p>
+<div class="snippet">
+<pre><code class="language-javascript">switch (expresi&oacute;n) {
+  case n1:
+    declaraciones
+    break;
+  case n2:
+    declaraciones
+    break;
+  default:
+    declaraciones
+}</code></pre>
+</div>
+<p>La expresi&oacute;n switch es evaluada una vez. El valor de la expresi&oacute;n es comparado con los valores de cada case (caso). Si hay una coincidencia, el bloque asociado de c&oacute;digo es ejecutado.</p>
+<p>Puedes obtener el mismo resultado con m&uacute;ltiples declaraciones if... else, pero la declaraci&oacute;n switch es m&aacute;s efectiva en tales situaciones.</p>
+<h4>La declaraci&oacute;n switch</h4>
+<p>Considera el siguiente ejemplo.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var day = 2;
+switch (day) {
+  case 1:
+    document.write("Monday");
+    break;
+  case 2:
+    document.write("Tuesday");
+    break;
+  case 3:
+    document.write("Wednesday");
+    break;
+  default:
+    document.write("Another day");
+}</code></pre>
+</div>
+<p>Puedes tener tantas declaraciones case como sean necesarias.</p>
+<h4>La palabra clave break</h4>
+<p>Cuando el c&oacute;digo JavaScript llega a un break, se rompe la secuencia de un bloque switch. Esto detendr&aacute; la ejecuci&oacute;n de c&oacute;digo adicional y evaluaciones de "case" dentro del bloque.</p>
+<p>Usualmente, en cada declaraci&oacute;n de un case deber&iacute;a ser colocado un break.</p>
+<p>Code Coach</p>
+<p>La declaraci&oacute;n switch</p>
+<h4>La palabra clave default</h4>
+<p>La palabra clave default (o por defecto) especifica el c&oacute;digo a ejecutar si no hay ninguna coincidencia.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var color = "yellow";
+switch(color) {
+  case "blue":
+    document.write("This is blue.");
+    break;
+  case "red":
+    document.write("This is red.");
+    break;
+  case "green":
+    document.write("This is green.");
+    break;
+  case "orange":
+    document.write("This is orange.");
+    break;
+  default:
+    document.write("Color not found.");
+}</code></pre>
+</div>
+<p>El bloque default puede ser omitido, si no hay necesidad de manejar el caso donde no se encuentren coincidencias.</p>
+</article>
+<article>
+<h3 id="lec18">El bucle For</h3>
+<h4>Bucles</h4>
+<p>Los bucles pueden ejecutar un bloque de c&oacute;digo un n&uacute;mero de veces. Son &uacute;tiles en los casos en que quieras ejecutar el mismo c&oacute;digo repetidamente, a&ntilde;adiendo valores diferentes cada vez.</p>
+<p>JavaScript tiene tres tipos de bucles: for, while, y do whlle.</p>
+<p>El bucle for es usado com&uacute;nmente cuando creamos un bucle.</p>
+<p>La sintaxis:</p>
+<div class="snippet">
+<pre><code class="language-javascript">for (declaraci&oacute;n 1; declaraci&oacute;n 2; declaraci&oacute;n 3) { 
+  bloque de c&oacute;digo a ser ejecutado
+}</code></pre>
+</div>
+<p>Declaraci&oacute;n 1: es ejecutada antes de que el bucle (el bloque de c&oacute;digo) comience.</p>
+<p>Declaraci&oacute;n 2: determina la condici&oacute;n para ejecutar el bucle (el bloque de c&oacute;digo).</p>
+<p>Declaraci&oacute;n 3: es ejecutada cada vez y despu&eacute;s de que el bucle (el bloque de c&oacute;digo) ha sido ejecutado.</p>
+<p>Como puedes ver, el bucle cl&aacute;sico for tiene tres componentes, o declaraciones.</p>
+<h4>El bucle For</h4>
+<p>El ejemplo a continuaci&oacute;n crea un bucle for que imprime n&uacute;meros del 1 al 5.</p>
+<div class="snippet">
+<pre><code class="language-javascript">for (i = 1; i &lt;= 5; i++) { 
+  document.write(i + "&lt;br&gt;");
+}</code></pre>
+</div>
+<p>En este ejemplo, la declaraci&oacute;n 1 establece una variable antes de que el bucle comience (var i = 1).</p>
+<p>La declaraci&oacute;n 2 define la condici&oacute;n para que el bucle for se ejecute (i debe ser menor o igual que 5).</p>
+<p>La declaraci&oacute;n 3 incrementa el valor (i++) cada vez que el bloque de c&oacute;digo en el bucle ha sido ejecutado.</p>
+<p>Resultado:</p>
+<figure><img class="mini" src="images/015.png" alt="" /></figure>
+<p>La declaraci&oacute;n 1 es opcional, y puede ser omitida, si tus valores son fijados antes que el bucle comience.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var i = 1; 
+for (; i &lt;= 5; i++) { 
+  document.write(i + "&lt;br&gt;"); 
+}
+</code></pre>
+</div>
+<p>Adicionalmente, puedes inicializar m&aacute;s de un valor en la declaraci&oacute;n 1, usando comas, para separarlos.</p>
+<div class="snippet">
+<pre><code class="language-javascript">for (i = 1, text = ""; i &lt;= 5; i++) {
+  text = i;
+  document.write(i + "&lt;br&gt;");
+}</code></pre>
+</div>
+<p>ES6 introduce otros tipos de loops for; puedes aprender sobre ellos m&aacute;s adelante en el curso de ES6.</p>
+<p>Code Coach</p>
+<h4>El bucle for</h4>
+<p>Si la declaraci&oacute;n 2 retorna verdadero, el bucle comenzar&aacute; una y otra vez; si retorna falso, el bucle terminar&aacute;. La declaraci&oacute;n 2 es tambi&eacute;n opcional.</p>
+<p>Si omites la declaraci&oacute;n 2, tienes que proveer un break dentro del bucle. De otra forma, el bucle nunca terminar&iacute;a.</p>
+<p>La declaraci&oacute;n 3 es utilizada para cambiar la variable inicial. Puede hacer cualquier cosa, incluyendo incrementos negativos (i--), incrementos positivos (i = i + 15), o cualquier otra cosa.</p>
+<p>La declaraci&oacute;n 3 es tambi&eacute;n opcional, y puede ser omitida si t&uacute; incrementas tus valores dentro del bucle.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var i = 0; 
+for(; i &lt; 10; ) { 
+  document.write(i); 
+  i++;
+}</code></pre>
+</div>
+<p>Puedes tener m&uacute;ltiples bucles for anidados.</p>
+</article>
+<article>
+<h3 id="lec19">El bucle While</h3>
+<h4>El bucle While</h4>
+<p>El bucle while repite un bloque de c&oacute;digo, mientras una condici&oacute;n especificada sea verdadera.</p>
+<p>Sintaxis:</p>
+<div class="snippet">
+<pre><code class="language-javascript">while (condici&oacute;n) { 
+  bloque de c&oacute;digo
+}</code></pre>
+</div>
+<p>La condici&oacute;n puede ser cualquier declaraci&oacute;n condicional que retorne verdadero o falso.</p>
+<h4>El bucle While</h4>
+<p>Considera el siguiente ejemplo.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var i = 0; 
+while (i &lt;= 10) {
+  document.write(i + "&lt;br&gt;");
+  i++;
+}</code></pre>
+</div>
+<p>El bucle continuar&aacute; siendo ejecutado mientras i sea menor o igual que 10. Cada vez que el bucle se ejecuta, i ser&aacute; incrementada por 1.</p>
+<p>Esto desplegar&aacute; los valores desde 0 hasta 10.</p>
+<p>&nbsp;</p>
+<figure><img class="mini" src="images/016.png" alt="" /></figure>
+<p>Ten cuidado cuando escribas condiciones. Si una condici&oacute;n siempre es true (verdadera), el ciclo se ejecutar&aacute; indefinidamente.</p>
+<p>Code Coach</p>
+<h4>El bucle while</h4>
+<p>Si olvidas incrementar la variable utilizada en la condici&oacute;n, el bucle nunca terminar&aacute;.</p>
+<p>Aseg&uacute;rate de que la condici&oacute;n en un bloque while eventualmente se vuelva falsa.</p>
+</article>
+<article>
+<h3 id="lec20">El bucle Do...While</h3>
+<h4>El bucle Do...While</h4>
+<p>El bucle do...while es una variante del bucle while. Este bucle ejecutar&aacute; el c&oacute;digo una vez antes de validar si la condici&oacute;n es verdadera, y entonces se repetir&aacute; el bucle mientras la condici&oacute;n sea verdadera.</p>
+<p>Sintaxis:</p>
+<div class="snippet">
+<pre><code class="language-javascript">do {
+  bloque de c&oacute;digo 
+} while (condici&oacute;n);</code></pre>
+</div>
+<p>Nota el punto y coma utilizado al final del bucle do...while.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var i = 20;
+do { 
+  document.write(i + "&lt;br&gt;");
+  i++;
+}
+while (i &lt;= 25);</code></pre>
+</div>
+<p>Esto imprime los n&uacute;mero desde 20 hasta 25.</p>
+<figure><img class="mini" src="images/017.png" alt="" /></figure>
+<p>El bucle ser&aacute; siempre ejecutado al menos una vez, a&uacute;n si la condici&oacute;n es falsa, porque el bloque de c&oacute;digo es ejecutado antes de que la condici&oacute;n sea evaluada.</p>
+</article>
+<article>
+<h3 id="lec21">Break y Continue</h3>
+<h4>Break</h4>
+<p>La declaraci&oacute;n break "salta fuera" de un bucle y contin&uacute;a ejecutando el c&oacute;digo posterior al bucle.</p>
+<div class="snippet">
+<pre><code class="language-javascript">for (i = 0; i &lt;= 10; i++) { 
+  if (i == 5) {
+      break;
+  }
+  document.write(i + "&lt;br&gt;");
+}</code></pre>
+</div>
+<p>Una vez que i alcance 5, saltar&aacute; fuera del bucle.</p>
+<figure><img class="mini" src="images/018.png" alt="" /></figure>
+<p>Puedes utilizar la palabra clave return para devolver alg&uacute;n valor inmediatamente desde una funci&oacute;n ubicada dentro del bucle. Esto tambi&eacute;n romper&aacute; el loop.</p>
+<h4>Continue</h4>
+<p>La declaraci&oacute;n continue detiene s&oacute;lo una iteraci&oacute;n en el bucle, y contin&uacute;a con la siguiente iteraci&oacute;n.</p>
+<div class="snippet">
+<pre><code class="language-javascript">for (i = 0; i &lt;= 10; i++) {
+  if (i == 5) { 
+    continue;
+  }
+  document.write(i + "&lt;br&gt;");
+}</code></pre>
+</div>
+<p>Resultado:</p>
+<figure><img class="mini" src="images/019.png" alt="" /></figure>
+<p>El valor 5 no es impreso, porque continue salta esa iteraci&oacute;n del bucle.</p>
+<p>Code Coach</p>
+<p>Break y continue</p>
+</article>
+<article>
+<h3 id="lec22">Examen M&oacute;dulo 3</h3>
+</article>
+<article>
+<h3 id="lec23">Proyecto de codificaci&oacute;n: El caracol en el pozo</h3>
+</article>
+</section>

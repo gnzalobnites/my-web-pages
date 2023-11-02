@@ -1,0 +1,305 @@
+<div class="snippet"><pre><code class="language-javascript"></code></pre></div>
+<div class="snippet"><pre><code class="language-html"></code></pre></div>
+
+Línea 2733
+
+
+<article>
+<h3 id="lec11">Operadores de cadenas de texto</h3>
+<h4>Operadores de cadenas de texto</h4>
+</article>
+<article>
+<h3 id="lec12">Examen Módulo 2</h3>
+</article>
+<article>
+<h3 id="lec13">Proyecto de codificación: Planeador de viajes</h3>
+</article>
+</section>
+<section>
+<h2 id="#unidad3">Condicionales y bucles</h2>
+<article>
+<h3 id="lec14">La declaración if</h3>
+<h4>La declaración if</h4>
+<h4>La declaración if</h4>
+</article>
+<article>
+<h3 id="lec15">La declaración else</h3>
+<h4>La declaración else</h4>
+<h4>La declaración else</h4>
+</article>
+<article>
+<h3 id="lec16">La declaration else if</h3>
+<h4>Else if</h4>
+<h4>Else if</h4>
+</article>
+<article>
+<h3 id="lec17">La declaración switch</h3>
+<h4>Switch</h4>
+<h4>La declaración switch</h4>
+<h4>La palabra clave break</h4>
+<h4>La palabra clave default</h4>
+</article>
+<article>
+<h3 id="lec18">El bucle For</h3>
+<h4>Bucles</h4>
+<h4>El bucle For</h4>
+<h4>El bucle For</h4>
+</article>
+<article>
+<h3 id="lec19">El bucle While</h3>
+<h4>El bucle While</h4>
+<h4>El bucle While</h4>
+<h4>El bucle While</h4>
+</article>
+<article>
+<h3 id="lec20">El bucle Do...While</h3>
+<h4>El bucle Do...While</h4>
+</article>
+<article>
+<h3 id="lec21">Breaky Continue</h3>
+<h4>Break</h4>
+<h4>Continue</h4>
+</article>
+<article>
+<h3 id="lec22">Examen Módulo 3</h3>
+</article>
+<article>
+<h3 id="lec23">Proyecto de codificación: El caracol en el pozo</h3>
+</article>
+</section>
+<section>
+<h2 id="#unidad4">Funciones</h2>
+<article>
+<h3 id="lec24">Funciones definidas por el usuario</h3>
+<h4>Funciones en JavaScript</h4>
+<h4>Definiendo una función</h4>
+<h4>Llamando una función</h4>
+<h4>Llamando funciones</h4>
+</article>
+<article>
+<h3 id="lec25">Parámetros de funciones</h3>
+<h4>Parámetros de funciones</h4>
+<h4>Usando parámetros</h4>
+<h4>Parámetros de funciones</h4>
+</article>
+<article>
+<h3 id="lec26">Utilizando múltiples parámetros con funciones</h3>
+<h4>Múltiples parámetros</h4>
+<h4>Múltiples parámetros</h4>
+<h4>Múltiples parámetros</h4>
+<h4>Múltiples parámetros</h4>
+</article>
+<article>
+<h3 id="lec27">La declaración return</h3>
+<h4>Retorno de función</h4>
+<h4>Retorno de función</h4>
+<h4>Retorno de función</h4>
+</article>
+<article>
+<h3 id="lec28">Alert, Prompt, Confirm</h3>
+<h4>La ventana de alerta</h4>
+<h4>Ventana de alerta</h4>
+<h4>Ventana de solicitud</h4>
+<h4>Ventana de confirmación</h4>
+</article>
+<article>
+<h3 id="lec29">Examen Modulo 4</h3>
+</article>
+<article>
+<h3 id="lec30">Proyecto de codificación: Conversor de monedas</h3>
+</article>
+</section>
+<section>
+<h2 id="#unidad5">Objetos</h2>
+<article>
+<h3 id="lec31">Introducción a los objetos</h3>
+<h4>Objetos en JavaScript</h4>
+<h4>Propiedades de objetos</h4>
+<h4>Métodos de objetos</h4>
+</article>
+<article>
+<h3 id="lec32">Creando tus propios objetos</h3>
+<h4>El constructor de objetos</h4>
+<h4>Creando objetos</h4>
+<h4>Creando objetos</h4>
+</article><article>
+<h3 id="lec33">Inicialización de objetos</h3>
+<h4>Inicialización de objetos</h4>
+<h4>Utilizando inicializadores de objetos</h4>
+</article>
+<article>
+<h3 id="lec34">Añadiendo métodos</h3>
+<h4>Métodos</h4>
+<h4>Métodos</h4>
+<h4>Métodos</h4>
+</article>
+<article>
+<h3 id="lec35">Examen Módulo 5</h3>
+</article>
+<article>
+<h3 id="lec36">Proyecto de codificación: Gestión de contacto</h3>
+</article>
+</section>
+<section>
+<h2 id="#unidad6">Objetos principales</h2>
+<article>
+<h3 id="lec37">Arreglos</h3>
+<h4>Arreglos en JavaScript</h4>
+<h4>Accediendo a un arreglo</h4>
+<h4>Accediendo a un arreglo</h4>
+</article>
+<article>
+<h3 id="lec38">Otras formas para crear arreglos</h3>
+<h4>Creando arreglos</h4>
+<h4>Creando arreglos</h4>
+<h4>Literales de arreglos</h4>
+</article>
+<article>
+<h3 id="lec39">Propiedades de arreglos y métodos</h3>
+<h4>La propiedad length</h4>
+<h4>Combinando arreglos</h4>
+</article>
+<article>
+<h3 id="lec40">Arreglos asociativos</h3>
+<h4>Arreglos asociativos</h4>
+<h4>Arreglos asociativos</h4>
+</article>
+<article>
+<h3 id="lec41">El objeto Math</h3>
+<h4>El objeto Math</h4>
+<h4>Métodos del objeto Math</h4>
+<h4>El objeto Math</h4>
+</article>
+<article>
+<h3 id="lec42">El objeto Date</h3>
+<h4>setInterval</h4>
+<h4>El objeto Date</h4>
+<h4>Métodos de objeto Date</h4>
+</article>
+<article>
+<h3 id="lec43">Examen Módulo 6</h3>
+</article>
+<article>
+<h3 id="lec44">Proyecto de codificación: Gestión de tienda</h3>
+</article>
+</section>
+<section>
+<h2 id="#unidad7">DOM y eventos</h2>
+<article>
+<h3 id="lec45">¿Qué es DOM?</h3>
+<h4>El DOM</h4>
+<h4>El árbol del DOM</h4>
+<h4>El objeto "document"</h4>
+</article>
+<article>
+<h3 id="lec46">Seleccionando elementos</h3>
+<h4>Seleccionando elementos</h4>
+<h4>Seleccionando elementos</h4>
+<h4>Trabajando con DOM</h4>
+</article>
+<article>
+<h3 id="lec47">Modificando elementos</h3>
+<h4>Modificando atributos</h4>
+<h4>Modificando el estilo</h4>
+</article>
+<article>
+<h3 id="lec48">Añadiendo y removiendo elementos</h3>
+<h4>Creando elementos</h4>
+<h4>Rem1oviendo elementos</h4>
+<h4>Reemplazando elementos</h4>
+</article>
+<article>
+<h3 id="lec49">Creando animaciones</h3>
+<h4>Animaciones</h4>
+<h4>Animaciones</h4>
+<h4>Animaciones</h4>
+</article>
+<article>
+<h3 id="lec50">Manejando eventos</h3>
+<h4>Eventos</h4>
+<h4>Manejando eventos</h4>
+<h4>Eventos</h4>
+<h4>Notificadores de eventos</h4>
+</article>
+<article>
+<h3 id="lec51">Propagación de Eventos</h3>
+<h4>Propagación de Eventos</h4>
+<h4>Capturing vs. Bubbling</h4>
+</article>
+<article>
+<h3 id="lec52">Creando un deslizador de imágenes</h3>
+<h4>Deslizador de imágenes</h4>
+<h4>Deslizador de imágenes</h4>
+</article>
+<article>
+<h3 id="lec53">Validación de formularios</h3>
+<h4>Validación de formularios</h4>
+</article>
+<article>
+<h3 id="lec54">Examen Módulo 7</h3>
+</article>
+</section>
+<section>
+<h2 id="#unidad8">ECMAScript 6</h2>
+<article>
+<h3 id="lec55">Introducción a ES6</h3>
+<h4>ECMAScript 6</h4>
+</article>
+<article>
+<h3 id="lec56">Variables y strings</h3>
+<h4>var & let</h4>
+<h4>var & let</h4>
+<h4>const</h4>
+<h4>Template Literals en ES6</h4>
+</article>
+<article>
+<h3 id="lec57">Bucles y funciones en ES6</h3>
+<h4>Bucles (loops) en ECMAScript 6</h4>
+<h4>Bucles (loops) en ECMAScript 6</h4>
+<h4>Funciones en ECMAScript 6</h4>
+<h4>Funciones en ECMAScript 6</h4>
+<h4>Parámetros predeterminados en ES6</h4>
+</article>
+<article>
+<h3 id="lec58">Objetos en ES6</h3>
+<h4>Objetos en ES6</h4>
+<h4>Nombres de propiedad calculados</h4>
+<h4>Object.assign()</h4>
+</article>
+<article>
+<h3 id="lec59">Desestructuración en ES6</h3>
+<h4>Desestructuración de arrays en ES6</h4>
+<h4>Desestructuración de objetos en ES6</h4>
+<h4>Desestructuración de objetos en ES6</h4>
+</article>
+<article>
+<h3 id="lec60">Resty Spread</h3>
+<h4>Párametros REST en ES6</h4>
+<h4>El operador Spread</h4>
+<h4>Spread en llamadas a funciones</h4>
+<h4>Spread en literals de arrays</h4>
+<h4Spread en literals de objetos></h4>
+</article>
+<article>
+<h3 id="lec61">Clases en ES6</h3>
+<h4>Clases en ES6</h4>
+<h4>Métodos de clase en ES6</h4>
+<h4>Herencia en ES6</h4>
+</article>
+<article>
+<h3 id="lec62">Map y  Set</h3>
+<h4>ES6 Map</h4>
+<h4>ES6 Set</h4>
+</article>
+<article>
+<h3 id="lec63">Más sobre ES6</h3>
+<h4>Promises en ES6</h4>
+<h4>Promises en ES6</h4>
+<h4>Iteradores y generadores</h4>
+<h4>Módulos</h4>
+<h4>Métodos integrados</h4>
+<h4>Búsqueda de elementos de arrays</h4>
+<h4>Repeticiones de strings</h4>
+<h4>Métodos integrados</h4>
+<h4>Búsqueda de strings</h4>
+</article>

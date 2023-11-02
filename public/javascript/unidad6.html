@@ -1,0 +1,221 @@
+<section>
+<h2 id="unidad6">M&oacute;dulo 6: Objetos principales predefinidos</h2>
+<article>
+<h3 id="lec37">Arreglos</h3>
+<h4>Arreglos en JavaScript</h4>
+<p>Los arreglos registran m&uacute;ltiples valores en un sola variable.</p>
+<p>Para registrar tres nombres de cursos, necesitas tres variables.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var curso1 = "HTML";
+var curso2 = "CSS";
+var curso3 = "JS";</code></pre>
+</div>
+<p>Pero, &iquest;qu&eacute; pasa si tienes 500 cursos? La soluci&oacute;n es un objeto predefinido de JavaScript llamado arreglo (o <em>array</em>).</p>
+<div class="snippet">
+<pre><code class="language-javascript">var cursos = new Array("HTML", "CSS", "JS");</code></pre>
+</div>
+<p>Esta sintaxis declara un arreglo llamado cursos, el cual registra tres valores, o elementos.</p>
+<h4>Accediendo a un arreglo</h4>
+<p>Se hace referencia a un elemento de un arreglo (o matriz) mediante su n&uacute;mero de &iacute;ndice escrito entre corchetes.</p>
+<p>Esta declaraci&oacute;n accede al valor del primer elemento del arreglo "cursos" y cambia el valor de su segundo elemento.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var cursos = new Array("HTML", "CSS", "JS");
+
+var curso = cursos[0]; // HTML 
+cursos[1] = "C++"; // Cambia el segundo elemento
+</code></pre>
+</div>
+<p>El primer elemento de un arreglo es [0]; el segundo, [1]; el tercero, [2]; etc. Los &iacute;ndices de un arreglo comienzan con 0.</p>
+<h4>Accediendo a un arreglo</h4>
+<p>Intentar acceder a un &iacute;ndice fuera del arreglo, retorna el valor undefined (indefinido).</p>
+<div class="snippet">
+<pre><code class="language-javascript">var courses = new Array("HTML", "CSS", "JS"); 
+document.write(courses[10]); //undefined</code></pre>
+</div>
+<p>Nuestro arreglo courses tiene s&oacute;lo tres elementos, por lo que el 10&deg; &iacute;ndice, que ser&iacute;a el elemento numero 11, no existe (est&aacute; indefinido).</p>
+<p>Code Coach</p>
+<p>Matrices</p>
+</article>
+<article>
+<h3 id="lec38">Otras formas para crear arreglos</h3>
+<h4>Creando arreglos</h4>
+<p>Tambi&eacute;n puedes declarar un arreglo, indicando el n&uacute;mero de elementos que contendr&aacute;, y a&ntilde;adiendo los elementos posteriormente.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var cursos = new Array(3);
+cursos[0] = "HTML"; 
+cursos[1] = "CSS"; 
+cursos[2] = "JS";</code></pre>
+</div>
+<p>Un arreglo es un tipo especial de objeto. Un arreglo utiliza n&uacute;meros para acceder sus elementos, y un objeto utiliza nombres para acceder a sus miembros.</p>
+<h4>Creando arreglos</h4>
+<p>Los arreglos en JavaScript son din&aacute;micos, por lo que puedes declarar un arreglo y no pasarle ning&uacute;n argumento a su funci&oacute;n constructora Array(). Y posteriormente, puedes a&ntilde;adir los elementos de forma din&aacute;mica.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var cursos = new Array();
+cursos[0] = "HTML"; 
+cursos[1] = "CSS";
+cursos[2] = "JS";
+cursos[3] = "C++";</code></pre>
+</div>
+<p>Puedes a&ntilde;adir tantos elementos como necesites.</p>
+<h4>Literales de arreglos</h4>
+<p>Para mayor simplicidad, legibilidad, y velocidad de ejecuci&oacute;n, tambi&eacute;n puedes declarar arreglos utilizando la sintaxis de literal de arreglos.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var cursos = ["HTML", "CSS", "JS"];</code></pre>
+</div>
+<p>El resultado es el mismo arreglo que el que fue creado con la sintaxis new Array().</p>
+<p>Puedes acceder a los elementos del arreglo y modificarlos utilizando su n&uacute;mero de &iacute;ndice, tal y como lo hiciste anteriormente.</p>
+<p>La sintaxis de literal de arreglo es la manera recomendada para declarar arreglos.</p>
+</article>
+<article>
+<h3 id="lec39">Propiedades y m&eacute;todos de los arreglos</h3>
+<h4>La propiedad length</h4>
+<p>Los arreglos en JavaScript tienen propiedades y m&eacute;todos &uacute;tiles integrados de manera est&aacute;ndar.</p>
+<p>La propiedad length (longitud) de un arreglo retorna el n&uacute;mero de sus elementos.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var cursos = ["HTML", "CSS", "JS"]; 
+document.write(cursos.length);</code></pre>
+</div>
+<p>La propiedad length es siempre uno m&aacute;s que el mayor &iacute;ndice del arreglo. Si el arreglo est&aacute; vac&iacute;o, la propiedad length retorna 0.</p>
+<h4>Combinando arreglos</h4>
+<p>El m&eacute;todo concat() de JavaScript te permite juntar arreglos y crear un arreglo completamente nuevo.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var c1 = ["HTML", "CSS"]; 
+var c2 = ["JS", "C++"]; 
+var courses = c1.concat(c2);</code></pre>
+</div>
+<p>El arreglo courses resultante contiene 4 elementos (HTML, CSS, JS y C++).</p>
+<p>La operaci&oacute;n concat no afecta a los arreglos c1 y c2, s&oacute;lo retorna la concatenaci&oacute;n resultante como un nuevo arreglo.</p>
+<p>Code Coach</p>
+<p>Propiedades de matrices &amp; m&eacute;todo</p>
+</article>
+<article>
+<h3 id="lec40">Arreglos asociativos</h3>
+<h4>Arreglos asociativos</h4>
+<p>Mientras que muchos lenguajes de programaci&oacute;n soportan arreglos con nombres en los &iacute;ndices (texto en lugar de n&uacute;meros), llamados arreglos asociativos, JavaScript no los soporta. Sin embargo, puedes utilizar la sintaxis de nombramiento de arreglos, que producir&aacute; un objeto.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var persona = []; //arreglo vac&iacute;o 
+persona["nombre"] = "John"; 
+persona["edad"] = 46; 
+document.write(persona["edad"]); // 46</code></pre>
+</div>
+<p>Ahora, persona es tratado como un objeto, en lugar de como un arreglo.</p>
+<p>Los &iacute;ndices textuales "nombre" y "edad" se convierten en propiedades del objeto persona.</p>
+<p>Como el arreglo persona es tratado como un objeto, los m&eacute;todos y propiedades est&aacute;ndar para arreglos producir&aacute;n resultados incorrectos. Por ejemplo, persona.length retornar&aacute; 0.</p>
+<h4>Arreglos asociativos</h4>
+<p>Recuerda que JavaScript no soporta arreglos con &iacute;ndices textuales.</p>
+<p>En JavaScript, los arreglos siempre usan &iacute;ndices num&eacute;ricos.</p>
+<p>Es mejor utilizar un objeto cuando quieres que el &iacute;ndice sea una cadena de texto.</p>
+<p>Utiliza un arreglo cuando quieras que el &iacute;ndice , sea un numero.</p>
+<p>Si utilizas un &iacute;ndice textual, JavaScript redefinir&aacute; el arreglo como un objeto est&aacute;ndar.</p>
+</article>
+<article>
+<h3 id="lec41">El objeto Math</h3>
+<h4>El objeto Math</h4>
+<p>El objeto Math te permite realizar tareas matem&aacute;ticas, e incluye varias propiedades [pares clave: valor; recuerda que puedes acceder a los valores de las propiedades de un objeto usando la sintaxis de punto: nombreDelObjeto.nombreDeLaPropiedad].</p>
+<figure><img class="mini" src="images/028.png" alt="" /></figure>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">document.write(Math.PI);</code></pre>
+</div>
+<p>El objeto Math no tiene constructor. [No se puede usar la palabra clave new con el objeto Math para crear objetos de tipo Math]. No hay necesidad de primero crear un objeto Math.</p>
+<h4>M&eacute;todos del objeto Math</h4>
+<p>El objeto Math posee muchos m&eacute;todos [propiedades que son funciones] que son utilizados para hacer c&aacute;lculos:</p>
+<figure><img class="mini" src="images/029.png" alt="" /></figure>
+<p>Por ejemplo, el siguiente c&oacute;digo calcular&aacute; la ra&iacute;z cuadrada de un n&uacute;mero.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var raiz_cuadrada_de_4 = Math.sqrt(4);
+document.write(raiz_cuadrada_de_4);</code></pre>
+</div>
+<p>Para obtener un n&uacute;mero entero aleatorio entre 1 y 10, utiliza el m&eacute;todo Math.random(), el cual te da un n&uacute;mero entre 0 y 1. A continuaci&oacute;n multiplica el n&uacute;mero obteniendo por 10, y elimina su parte decimal redonde&aacute;ndolo al n&uacute;mero entero mayor m&aacute;s cercano mediante el m&eacute;todo Math.ceil(): Math.ceil(Math.random() * 10).</p>
+<p>Code Coach</p>
+<p>El objeto Math</p>
+<h4>El objeto Math</h4>
+<p>Vamos a crear un programa que solicitar&aacute; al usuario que ingrese un n&uacute;mero y alertar&aacute; su ra&iacute;z cuadrada.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var n = prompt("Enter a number", ""); 
+var answer = Math.sqrt(n); 
+alert("The square root of " + n + " is " + answer);</code></pre>
+</div>
+<p>Resultado:</p>
+<figure><img class="mini" src="images/030.png" alt="" /></figure>
+<p>Ingrese un n&uacute;mero, como 64.</p>
+<figure><img class="mini" src="images/031.png" alt="" /></figure>
+<p>Math es un objeto &uacute;til. Puedes ahorrar mucho tiempo utilizando Math en vez de escribir tus propias funciones cada vez.</p>
+</article>
+<article>
+<h3 id="lec42">El objeto Date</h3>
+<h4>M&eacute;todo setlnterval</h4>
+<p>El m&eacute;todo setlnterval(funcion, milisegundos) llama una funci&oacute;n o eval&uacute;a una expresi&oacute;n a intervalos espec&iacute;ficos (en milisegundos).</p>
+<p>Este m&eacute;todo continuar&aacute; llamando a la funci&oacute;n pasada como argumento hasta que el m&eacute;todo clearlnterval(ID_del_intervalo) es llamado o la ventana es cerrada.</p>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function myAlert() {
+  alert("Hi");
+} 
+setInterval(myAlert, 3000);</code></pre>
+</div>
+<p>Este c&oacute;digo llamar&aacute; la funci&oacute;n myAlert cada 3 segundos (1000 ms = 1 segundo).</p>
+<p>Escribe el nombre de la funci&oacute;n sin los par&eacute;ntesis cuando la pases como argumento al m&eacute;todo setlnterval.</p>
+<h4>El objeto Date</h4>
+<p>El objeto Date (fecha en Ingl&eacute;s) nos permite trabajar con fechas.</p>
+<p>Una fecha consiste en un a&ntilde;o, un mes, un d&iacute;a, una hora, un minuto, un segundo, y milisegundos.</p>
+<p>Al utilizar new Date(), creamos un nuevo objeto "date" con la fecha y hora actual.</p>
+<div class="snippet">
+<pre><code class="language-javascript">var d = new Date(); //d almacena la fecha y hora actual</code></pre>
+</div>
+<p>Las otras formas de inicializar fechas nos permiten la creaci&oacute;n de nuevos objetos "date" a partir de la fecha y hora especificada.</p>
+<div class="snippet">
+<pre><code class="language-javascript">new Date(milisegundos)
+new Date(cadenaDeFecha)
+new Date(anio, mes, dia, horas, minutos, segundos, milisegundos)</code></pre>
+</div>
+<p>Las fechas en JavaScript son calculadas en milisegundos desde el 1⁰ de Enero de 1970 00:00:00 hora universal (UTC). Un d&iacute;a contiene 86.400.000 milisegundos.</p>
+<p>Por ejemplo</p>
+<div class="snippet">
+<pre><code class="language-javascript">//viernes 2 de enero de 1970, 00:00:00 hs
+var d1= new Date(86400000);
+
+//viernes 2 de enero de 2015, 10:42:00 hs
+var d2 = new Date("January 2, 2015 10:42:00");
+
+//s&aacute;bado 11 de junio de 1988, 11:42:00 hs
+var d3 = new Date(88,5,11,11,42,0,0);</code></pre>
+</div>
+<p>JavaScript cuenta los meses desde 0 y hasta 11. Enero es 0 y diciembre es 11.</p>
+<p>Los objetos Date son est&aacute;ticos, en lugar de din&aacute;micos. La hora de tu computadora contin&uacute;a avanzando, pero los objetos date una vez creados no cambiar&aacute;n.</p>
+<h4>M&eacute;todos del objeto Date</h4>
+<p>Cuando un objeto Date es creado, una serie de m&eacute;todos hacen posible ejecutar operaciones en &eacute;l.</p>
+<figure><img class="mini" src="images/032.png" alt="" /></figure>
+<p>Por ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var d = new Date();
+var hours = d.getHours();
+//hours es igual a la hora actual</code></pre>
+</div>
+<p>Vamos a crear un programa que imprima la hora actual en el navegador cada segundo.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function printTime() {
+  var d = new Date();
+  var hours = d.getHours();
+  var mins = d.getMinutes(); 
+  var secs = d.getSeconds();
+  document.body.innerHTML = hours+":"+mins+":"+secs;
+}
+setInterval(printTime, 1000);</code></pre>
+</div>
+<p>Hemos declarado una funci&oacute;n printTime, la cual toma la hora actual del objeto date, y la imprime en la pantalla.</p>
+<p>Luego llamamos a la funci&oacute;n una vez cada segundo, utilizando el m&eacute;todo setlnterval.</p>
+<p>La propiedad innerHTML establece o retorna el contenido de un elemento HTML [o sea lo que est&aacute; encerrado entre sus etiquetas de apertura y de cierre].</p>
+<p>En nuestro caso, estamos cambiando el contenido del elemento "body" de nuestro documento HTML. Este c&oacute;digo sobrescribe el contenido cada segundo, en lugar de imprimirlo continuamente en la pantalla.</p>
+<p>Code Coach</p>
+<p>El objeto fecha</p>
+</article>
+<article>
+<h3 id="lec43">Examen M&oacute;dulo 6</h3>
+</article>
+<article>
+<h3 id="lec44">Proyecto de codificaci&oacute;n: Gesti&oacute;n de tienda</h3>
+</article>
+</section>

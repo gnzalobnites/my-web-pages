@@ -1,0 +1,220 @@
+<section>
+<h2 id="unidad4">M&oacute;dulo 4: Funciones</h2>
+<article>
+<h3 id="lec24">Funciones definidas por el usuario</h3>
+<h4>Funciones en JavaScript</h4>
+<p>Una funci&oacute;n en JavaScript es un bloque de c&oacute;digo designado para ejecutar una tarea en particular.</p>
+<p>Las principales ventajas de usar funciones son:</p>
+<ul>
+<li>Reusar el c&oacute;digo: Define el c&oacute;digo una s&oacute;la vez, y &uacute;salo muchas veces.</li>
+<li>Usa el mismo c&oacute;digo muchas veces con argumentos diferentes.</li>
+</ul>
+<p>Una funci&oacute;n en JavaScript es ejecutada cuando "algo" la invoca, o la llama.</p>
+<h4>Definiendo una funci&oacute;n</h4>
+<p>Para definir una funci&oacute;n en JavaScript, utiliza la palabra clave function, seguida por el nombre, seguido por un conjunto de par&eacute;ntesis.</p>
+<p>El c&oacute;digo a ser ejecutado por la funci&oacute;n es colocado dentro de llaves {}.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function nombre() { 
+  //c&oacute;digo a ser ejecutado
+}</code></pre>
+</div>
+<p>Los nombres de las funciones pueden contener letras, d&iacute;gitos, guiones bajos, y signos de d&oacute;lar (mismas reglas que para las variables).</p>
+<h4>Llamando una funci&oacute;n</h4>
+<p>Para ejecutar una funci&oacute;n, necesitas llamarla. Para llamar una funci&oacute;n, comienza con el nombre de la funci&oacute;n, luego contin&uacute;a con los argumentos entre par&eacute;ntesis.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function miFuncion() { 
+  alert("Llamndo a una funci&oacute;n!"); 
+}
+miFuncion();</code></pre>
+</div>
+<p>Siempre recuerda finalizar la declaraci&oacute;n con un punto y coma despu&eacute;s de llamar la funci&oacute;n.</p>
+<h4>Llamando funciones</h4>
+<p>Una vez que la funci&oacute;n es definida, JavaScript permite llamarla cuantas veces lo desees.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function miFuncion() {
+  alert("&iexcl;Caja de alerta!");
+}
+miFuncion(); 
+//"&iexcl;Caja de alerta!"
+
+// alg&uacute;n otro c&oacute;digo
+
+miFuncion ();
+//"Caja de alerta!"</code></pre>
+</div>
+<p>Tambi&eacute;n puedes llamar a una funci&oacute;n utilizando esta sintaxis: miFuncion.call(). La diferencia es que cuando llamas a una funci&oacute;n de este modo, est&aacute;s pasando la palabra clave 'this' a una funci&oacute;n. Aprender&aacute;s m&aacute;s sobre ello m&aacute;s adelante.</p>
+<p>Code Coach</p>
+<p>Funciones definidas por el usuario</p>
+</article>
+<article>
+<h3 id="lec25">Los par&aacute;metros de las funciones</h3>
+<h4>Los par&aacute;metros de las funciones</h4>
+<p>Las funciones pueden tomar par&aacute;metros. Los par&aacute;metros de las funciones son los nombres listados en la definici&oacute;n de la funci&oacute;n.</p>
+<p>Sintaxis:</p>
+<div class="snippet">
+<pre><code class="language-javascript">nombreDeLaFuncion (param1, param2, param3) { 
+  // alg&uacute;n c&oacute;digo
+}</code></pre>
+</div>
+<p>As&iacute; como con las variables, a los par&aacute;metros se les debe dar nombres, que son separados por comas dentro de los par&eacute;ntesis.</p>
+<h4>Usando par&aacute;metros</h4>
+<p>Despu&eacute;s de definir los par&aacute;metros, los puedes utilizar dentro de tu funci&oacute;n.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function diHola(nombre) { 
+  alert("Hola, " + nombre); 
+}
+diHola("David");</code></pre>
+</div>
+<p>Esta funci&oacute;n toma un par&aacute;metro, que es llamado nombre. Cuando llames a la funci&oacute;n, provee el valor del par&aacute;metro (argumento) entre par&eacute;ntesis.</p>
+<p>Los argumentos de funciones son los valores reales pasados a (y recibidos por) la funci&oacute;n.</p>
+<p>Code Coach</p>
+<p>Par&aacute;metros de funci&oacute;n</p>
+<h4>Los par&aacute;metros de las funciones</h4>
+<p>En JavaScript puedes definir una funci&oacute;n y pasarle diferentes par&aacute;metros (argumentos).</p>
+<div class="snippet">
+<pre><code class="language-javascript">function diHola(nombre) {
+  alert("Hola, " + nombre);
+}
+diHola("David"); 
+diHola("Sarah"); 
+diHola("John");</code></pre>
+</div>
+<p>Esto permitir&aacute; ejecutar el c&oacute;digo de la funci&oacute;n utilizando los valores introducidos en los argumentos.</p>
+</article>
+<article>
+<h3 id="lec26">Utilizando m&uacute;ltiples par&aacute;metros con funciones</h3>
+<h4>M&uacute;ltiples par&aacute;metros</h4>
+<p>Puedes definir m&uacute;ltiples par&aacute;metros para una funci&oacute;n separ&aacute;ndolos con comas.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function miFunc(x, y) { 
+  // alg&uacute;n c&oacute;digo
+}</code></pre>
+</div>
+<p>En el ejemplo anterior se define la funci&oacute;n miFunc que toma dos par&aacute;metros.</p>
+<h4>M&uacute;ltiples par&aacute;metros</h4>
+<p>Los par&aacute;metros son utilizados dentro de la definici&oacute;n de la funci&oacute;n.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function diHola(nombre, edad) { 
+  document.write(nombre + " tiene " + edad + " a&ntilde;os."); 
+}</code></pre>
+</div>
+<p>Los par&aacute;metros de la funci&oacute;n son los nombres que se muestran en la definici&oacute;n de la funci&oacute;n.</p>
+<h4>M&uacute;ltiples par&aacute;metros</h4>
+<p>Cuando llames a la funci&oacute;n, coloca los argumentos en el mismo orden en el que los definiste.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function diHola(nombre, edad) { 
+  document.write(nombre + " tiene " + edad + " a&ntilde;os."); 
+}
+diHola("John", 20);</code></pre>
+</div>
+<p>Si pasas m&aacute;s argumentos de los que est&aacute;n definidos, &eacute;stos ser&aacute;n asignados a un array llamado arguments. Pueden utilizarse de la siguiente manera: arguments[0], arguments[1], ...</p>
+<p>Code Coach</p>
+<p>M&uacute;ltiples par&aacute;metros</p>
+<h4>M&uacute;ltiples par&aacute;metros</h4>
+<p>Despu&eacute;s de definir la funci&oacute;n, puedes llamarla tantas veces como necesites.</p>
+<p>Las funciones en JavaScript no validan el n&uacute;mero de argumentos recibidos.</p>
+<p>Si una funci&oacute;n es llamada con argumentos omitidos (menos de los declarados), los valores omitidos son tomados como undefined (indefinido), lo que indica que a una variable no le ha sido asignado un valor.</p>
+</article>
+<article>
+<h3 id="lec27">La declaraci&oacute;n return</h3>
+<h4>Retorno de una funci&oacute;n</h4>
+<p>Una funci&oacute;n puede tener una declaraci&oacute;n return opcional. Esta se utiliza para retornar un valor desde una funci&oacute;n.</p>
+<p>Esta declaraci&oacute;n es &uacute;til cuando hacemos c&aacute;lculos que requieren un resultado.</p>
+<p>Cuando JavaScript llega hasta una declaraci&oacute;n return, la funci&oacute;n detiene su ejecuci&oacute;n.</p>
+<h4>Retorno de una funci&oacute;n</h4>
+<p>Utiliza la declaraci&oacute;n return para retornar un valor.</p>
+<p>Por ejemplo, vamos a calcular el producto de dos n&uacute;meros, y retornar el resultado.</p>
+<div class="snippet">
+<pre><code class="language-javascript">function miFuncion(a, b) { 
+  return a * b;
+} 
+
+var x = miFuncion(5, 6); 
+// El valor de retorno se almacenar&aacute; en x</code></pre>
+</div>
+<p>Si no retornas ning&uacute;n valor desde la funci&oacute;n, la misma retornar&aacute; undefined.</p>
+<h4>Retorno de una funci&oacute;n</h4>
+<p>Otro ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">function sumarNumeros(a, b) { 
+  var c = a + b; 
+  return c;
+} 
+document.write(sumarNumeros(40, 2));</code></pre>
+</div>
+<p>La instrucci&oacute;n document.write() despliega el valor retornado por la funci&oacute;n, el cual es la suma de los dos par&aacute;metros.</p>
+<p>Code Coach</p>
+<p>La declaraci&oacute;n return</p>
+</article>
+<article>
+<h3 id="lec28">Alert, prompt, confirm</h3>
+<h4>La ventana de alerta</h4>
+<p>JavaScript ofrece tres tipos de ventanas emergentes:</p>
+<ol>
+<li>Ventana de alert (alerta),</li>
+<li>Ventana de prompt (ventana de solicitud),</li>
+<li>Ventana de confirm (ventana de confirmaci&oacute;n).</li>
+</ol>
+<h4>Ventana de alerta</h4>
+<p>Una ventana de alerta es utilizada cuando quieres asegurarte de que la informaci&oacute;n llegue hasta el usuario.</p>
+<p>Cuando aparece una ventana de alerta, el usuario debe hacer clic en OK para proceder.</p>
+<p>La funci&oacute;n alert(texto) toma un s&oacute;lo par&aacute;metro, el cual es el texto a desplegar en la ventana emergente.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">alert("Do you really want to leave this page?");</code></pre>
+</div>
+<p>Resultado:</p>
+<figure><img class="mini" src="images/020.png" alt="" /></figure>
+<p>Para desplegar saltos de l&iacute;nea dentro de una ventana emergente, utiliza una barra inversa (\) seguida del car&aacute;cter n.</p>
+<div class="snippet">
+<pre><code class="language-javascript">alert("Hello\nHow are you?");</code></pre>
+</div>
+<p>Resultado:</p>
+<figure><img class="mini" src="images/021.png" alt="" /></figure>
+<p>Ten cuidado cuando utilices ventanas de alerta, ya que el usuario s&oacute;lo podr&aacute; continuar utilizando la p&aacute;gina despu&eacute;s de hacer clic en OK.</p>
+<h4>Ventana de solicitud</h4>
+<p>Una ventana de solicitud es utilizada usualmente para que el usuario ingrese un valor antes de ingresar a la p&aacute;gina.</p>
+<p>Cuando se despliega una ventana de solicitud, el usuario tendr&aacute; que hacer clic en OK o Cancel para poder proceder despu&eacute;s de introducir el valor de entrada.</p>
+<p>Si el usuario hace clic en OK, la ventana retorna el valor introducido. Si el usuario hace clic en Cancel, la ventana retorna null.</p>
+<p>El m&eacute;todo prompt(etiqueta, cadena) toma dos par&aacute;metros.</p>
+<ul>
+<li>El primero es la etiqueta, que es el texto que quieres desplegar sobre el campo de texto.</li>
+<li>El segundo es la cadena para desplegar dentro del campo de texto por defecto (opcional).</li>
+</ul>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var user = prompt("Please enter your name"); 
+alert(user);</code></pre>
+</div>
+<p>As&iacute; se despliega la solicitud:</p>
+<figure><img class="mini" src="images/022.png" alt="" /></figure>
+<p>Cuando aparezca un cuadro de aviso , el usuario tendr&aacute; que hacer clic en "OK" o en "Cancel" para proceder tras introducir un valor de entrada. No utilices demasiado este m&eacute;todo, ya que evita que el usuario acceda a otras partes de la p&aacute;gina hasta que se cierre el recuadro.</p>
+<h4>Ventana de confirmaci&oacute;n</h4>
+<p>Una ventana de confirmaci&oacute;n es utilizada com&uacute;nmente para permitir al usuario validar o aceptar algo.</p>
+<p>Cuando una ventana de confirmaci&oacute;n emerge, el usuario debe hacer clic en OK o Cancel para poder proceder.</p>
+<p>Si el usuario hace clic en OK, la ventana retornar&aacute; verdadero. Si el usuario hace clic en Cancel, la ventana retornar&aacute; falso.</p>
+<p>Ejemplo:</p>
+<div class="snippet">
+<pre><code class="language-javascript">var result = confirm("Do you really want to leave this page?"); 
+if (result == true) { 
+  alert("Thanks for visiting"); 
+} else {
+  alert("Thanks for staying with us");
+}</code></pre>
+</div>
+<p>Resultado:</p>
+<figure><img class="mini" src="images/023.png" alt="" /></figure>
+<p>Este es el resultado cuando el usuario hace clic en OK:</p>
+<figure><img class="mini" src="images/024.png" alt="" /></figure>
+<p>Este es el resultado cuando el usuario hace clic en Cancel:</p>
+<figure><img class="mini" src="images/025.png" alt="" /></figure>
+<p>No utilices demasiado este m&eacute;todo, ya que tambi&eacute;n evita que el usuario acceda a otras partes de la p&aacute;gina hasta que se cierre el recuadro.</p>
+</article>
+<article>
+<h3 id="lec29">Examen M&oacute;dulo 4</h3>
+</article>
+<article>
+<h3 id="lec30">Proyecto de codificaci&oacute;n: Conversor de monedas</h3>
+</article>
+</section>
