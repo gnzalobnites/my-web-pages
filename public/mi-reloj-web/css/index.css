@@ -51,11 +51,11 @@ body{
 }
 #hora{
   height: 80vh;
-  font-size: 25px;
+  //font-size: 25px;
 }
 
 #fecha{
-   font-size: 10px;
+   //font-size: 10px;
 }
 
 
