@@ -177,6 +177,10 @@ display: block !important;
     }
   }
 
+.list-unstyled li {
+  margin-bottom: 10px;
+}
+
 
 
 
