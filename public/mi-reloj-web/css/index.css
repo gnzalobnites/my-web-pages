@@ -41,11 +41,11 @@
 
 body{
   background-color: black;
-  color: greenyellow;
+  color: #00ff00;
   padding: 70px;
   height: 100vh;
-  
 }
+
 #hamburguesa {
 	color: greenyellow;
 }
