@@ -32,31 +32,18 @@
     }
 }
 
-
-.fuenteDigital{
-	font-family: 'digital-7_monomono'; 
-}
-.fuenteFecha{
-	font-family: 'voltecregular';
-}
-
 body{
   background-color: black;
-  color: greenyellow;
+  color: #00ff00;
   padding-top: 70px;
   height: 100vh;
   
 }
 #hamburguesa {
-	color: greenyellow;
+  color: #00ff00;
 }
 #hora{
   height: 80vh;
-}
-
-#fecha{
-	font-size: 23px; 
-	/*text-align: center; */
 }
 
 .bd-placeholder-img {
