@@ -32,12 +32,11 @@
     }
 }
 
-
 .fuenteDigital{
-	font-family: 'digital-7_monomono'; 
+  //font-family: 'digital-7_monomono'; 
 }
 .fuenteFecha{
-	font-family: 'voltecregular';
+  //font-family: 'voltecregular';
 }
 
 body{
@@ -53,22 +52,11 @@ body{
 #hora{
   height: 80vh;
 }
-#hs_y_mins{
-	/*font-size: 90px;*/
-     /*text-align: center; */
-}
-#segundos{
-	/*font-size: 45px; */
-	/*text-align: center; */
-}
+
 #fecha{
-	font-size: 23px; 
-	/*text-align: center; */
+   font-size: 23px;
 }
-.text-center{
-	//margin-top: 30px;
-	//font-weight: bold;
-}
+
 
 
 
