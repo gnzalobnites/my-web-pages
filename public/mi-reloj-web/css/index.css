@@ -47,10 +47,11 @@ body{
 }
 
 #hamburguesa {
-	color: greenyellow;
+  color: #00ff00;
 }
 #hora{
   height: 80vh;
+  font-size: 43px;
 }
 
 #fecha{
