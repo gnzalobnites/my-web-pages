@@ -62,24 +62,18 @@
           <label>Color de fuente: <input type="color" name="color" onchange="cambiarFuente(this.value)"></label> 
         </li>
         <li>
-        	<label>Tamaño de la hora: <input id="max_tam_hora" type="range" name="hsize" onchange="redimHora(this.value)"></label> 
+        <label>Tamaño de la hora: <input id="max_tam_hora" type="range" name="hsize" onchange="redimHora(this.value)"></label> 
         </li>  
-        <li>
-        	<label>Tamaño de la fecha: <input id="max_tam_fecha" type="range" name="fsize" onchange="redimFecha(this.value)"></label> 
+        <li class="nav-item">
+          <label>Tamaño de la fecha: <input id="max_tam_fecha" type="range" name="fsize" onchange="redimFecha(this.value)"></label> 
         </li>
-        <li>
-        	<label><button onclick="reset()">Reiniciar apariencia</button></label>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>-->
+        <li class="nav-item">
+          <label><button onclick="reset()">Reiniciar apariencia</button></label>
       </ul>
-     <!-- <span class="navbar-text">
-        Navbar text with an inline element
-      </span>-->
     </div>
   </div>
 </nav>
-<!--class="d-flex align-items-center justify-content-center"  -->
+
 </header>
 <main>
 	
@@ -114,58 +108,7 @@
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/test.js"></script>
-<script>
-	let my_use = document.getElementById("my_use");
- let href = my_use.getAttribute("xlink:href");
- href = "#arrows-fullscreen";
- my_use.setAttribute("xlink:href", href);
-
-function launch() {
-    launchFullScreen(document.documentElement);
-}
- 
- var my_li = document.getElementById("my_li");
-	my_li.addEventListener("click", launch);
- 
- function cancel() {
- 	cancelFullScreen();
- }
- 
-function launchFullScreen(element) {
-  if(element.requestFullScreen) {
-    element.requestFullScreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.webkitRequestFullScreen) {
-    element.webkitRequestFullScreen();
-  }
-  let my_use = document.getElementById("my_use");
- let href = my_use.getAttribute("xlink:href");
- href = "#fullscreen-exit";
- my_use.setAttribute("xlink:href", href);
- var my_li = document.getElementById("my_li");
-	my_li.removeEventListener("click", launch);
-   my_li.addEventListener("click", cancel);
-}
-// Lanza en pantalla completa en navegadores que lo soporten
-function cancelFullScreen() {
-     if(document.cancelFullScreen) {
-         document.cancelFullScreen();
-     } else if(document.mozCancelFullScreen) {
-         document.mozCancelFullScreen();
-     } else if(document.webkitCancelFullScreen) {
-         document.webkitCancelFullScreen();
-     }
-     let my_use = document.       getElementById("my_use");
- let href = my_use.getAttribute("xlink:href");
- href = "#arrows-fullscreen";
- my_use.setAttribute("xlink:href", href);
- var my_li = document.getElementById("my_li");
-	my_li.removeEventListener("click", cancel);
-   my_li.addEventListener("click", launch);
- }
-    
-</script>
+<script></script>
 
 </fullscreen>
 </body>
