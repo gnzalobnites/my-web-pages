@@ -65,13 +65,13 @@ function modoDiur(){
   let css_hightlight = document.getElementById("css_highlight");
   css_highlight.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css";
   
-  let offcanvasNavbar = document.getElementById("navSup");
-  offcanvasNavbar.style.backgroundColor = "#fff";
-  offcanvasNavbar.setAttribute("class", "navbar bg-body-tertiary fixed-top");
+  let navSup = document.getElementById("navSup");
+  navSup.style.backgroundColor = "#fff";
+  navSup.setAttribute("class", "navbar bg-body-tertiary fixed-top");
   
-  let offc = document.getElementById("offcanvasNavbar");
-  offc.style.backgroundColor = "#fff";
-  offc.style.color = "#000";
+  let offcanvasNavbar = document.getElementById("offcanvasNavbar");
+  offcanvasNavbar.style.backgroundColor = "#fff";
+  offcanvasNavbar.style.color = "#000";
   
   let butClose = document.getElementById("butClose");
   butClose.setAttribute("class", "btn-close");
