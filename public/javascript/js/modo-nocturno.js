@@ -7,10 +7,10 @@ function modoNoct(){
   let css_hightlight = document.getElementById("css_highlight");
   css_highlight.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css";
   
-  let navBar = document.getElementById("navSup");
-  navBar.style.backgroundColor = "#000";
-  navBar.setAttribute("class", "navbar navbar-dark bg-dark fixed-top");
-  navBar.style.color = "#fff";
+  let navSup = document.getElementById("navSup");
+  navSup.style.backgroundColor = "#000";
+  navSup.setAttribute("class", "navbar navbar-dark bg-dark fixed-top");
+  navSup.style.color = "#fff";
   
   let offcanvasNavbar = document.getElementById("offcanvasNavbar");
   offcanvasNavbar.style.backgroundColor = "#000";
