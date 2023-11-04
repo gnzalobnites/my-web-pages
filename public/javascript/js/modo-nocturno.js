@@ -49,7 +49,11 @@ for(let accordion_button of accordion_buttons){
   accordion_button.style.backgroundColor = "#000";
   accordion_button.style.color = "#fff";
 }
-  
+
+let dropdown_menu_offc = document.getElementById("dropdown_menu_offc");
+dropdown_menu_offc.style.backgroundColor = "#000";
+dropdown_menu_offc.style.color = "#fff";
+
 }
 
 function modoDiur(){
