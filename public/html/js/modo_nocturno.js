@@ -4,7 +4,7 @@ function modoNoct(){
   let botModoDiur = document.getElementById("botModoDiur");
   botModoDiur.setAttribute("class", "d-block btn btn-outline-secondary");
 
-  let css_hightlight = document.getElementById("css_highlight");
+  let css_highlight = document.getElementById("css_highlight");
   css_highlight.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css";
   
   let navSup = document.getElementById("navSup");
@@ -62,7 +62,7 @@ function modoDiur(){
   let botModoNoct = document.getElementById("botModoNoct");
   botModoNoct.setAttribute("class", "d-block btn btn-outline-secondary");
 
-  let css_hightlight = document.getElementById("css_highlight");
+  let css_highlight = document.getElementById("css_highlight");
   css_highlight.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css";
   
   let navSup = document.getElementById("navSup");
