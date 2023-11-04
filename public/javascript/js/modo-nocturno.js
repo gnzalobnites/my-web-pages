@@ -69,3 +69,15 @@ for(let accordion_body of accordion_bodies){
   accordion_body.style.color = "#fff";
 }
 
+let accordion_buttons = document.getElementsByClassName("accordion-button collapsed");
+for(let accordion_button of accordion_buttons){
+  accordion_button.style.backgroundColor = "#000";
+  accordion_button.style.color = "#fff";
+}
+
+
+
+
+
+
+
