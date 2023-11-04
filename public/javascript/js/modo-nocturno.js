@@ -4,7 +4,7 @@ function modoNoct(){
   let botModoDiur = document.getElementById("botModoDiur");
   botModoDiur.setAttribute("class", "d-block btn btn-outline-secondary");
   
-  let navBar = document.getElementById("navBar");
+  let navBar = document.getElementById("navSup");
   navBar.style.backgroundColor = "#000";
   navBar.setAttribute("class", "navbar navbar-dark bg-dark fixed-top");
   navBar.style.color = "#fff";
@@ -26,7 +26,7 @@ function modoDiur(){
   let botModoNoct = document.getElementById("botModoNoct");
   botModoNoct.setAttribute("class", "d-block btn btn-outline-secondary");
   
-  let navBar = document.getElementById("navBar");
+  let navBar = document.getElementById("navSup");
   navBar.style.backgroundColor = "#fff";
   navBar.setAttribute("class", "navbar bg-body-tertiary fixed-top");
   
