@@ -12,9 +12,9 @@ function modoNoct(){
   navBar.setAttribute("class", "navbar navbar-dark bg-dark fixed-top");
   navBar.style.color = "#fff";
   
-  let offc = document.getElementById("offcanvasNavbar");
-  offc.style.backgroundColor = "#000";
-  offc.style.color = "#fff";
+  let offcanvasNavbar = document.getElementById("offcanvasNavbar");
+  offcanvasNavbar.style.backgroundColor = "#000";
+  offcanvasNavbar.style.color = "#fff";
   
   let butClose = document.getElementById("butClose");
   butClose.setAttribute("class", "btn-close btn-close-white");
@@ -65,9 +65,9 @@ function modoDiur(){
   let css_hightlight = document.getElementById("css_highlight");
   css_highlight.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css";
   
-  let navBar = document.getElementById("navSup");
-  navBar.style.backgroundColor = "#fff";
-  navBar.setAttribute("class", "navbar bg-body-tertiary fixed-top");
+  let offcanvasNavbar = document.getElementById("navSup");
+  offcanvasNavbar.style.backgroundColor = "#fff";
+  offcanvasNavbar.setAttribute("class", "navbar bg-body-tertiary fixed-top");
   
   let offc = document.getElementById("offcanvasNavbar");
   offc.style.backgroundColor = "#fff";
