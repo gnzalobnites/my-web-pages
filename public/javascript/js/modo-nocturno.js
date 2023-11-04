@@ -74,7 +74,7 @@ function modoDiur(){
   
   document.body.style.color = "#000";
   document.body.style.backgroundColor = "#fff";
-    }
+    
 
 let accordion = document.getElementById("accordionExample");
 accordion.style.backgroundColor = "#fff";
@@ -104,7 +104,7 @@ for(let accordion_button of accordion_buttons){
   accordion_button.style.color = "#000";
 }
 
-
+}
 
 
 
