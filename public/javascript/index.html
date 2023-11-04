@@ -111,9 +111,26 @@
             <li class="nav-item">
               <a class="nav-link" href="https://gonzalo-benites-webpages.on.drv.tw/cursos/javascript/#pie">Contacto</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <button onclick="recPag()" class="btn btn-info ms-auto mx-2" style="text-wrap: balance;">Recargar la página desde el servidor</button>
-            </li>
+            </li>-->
+	    <!-- botones modo nocturno -->
+          <li class="nav-item">
+            <button id="botModoNoct" onclick="modoNoct()" type="button" class="d-block btn btn-outline-secondary">
+            Modo noche
+            <svg width="24" height="24">
+              <use xlink:href="#modoNoche" />
+            </svg>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button id="botModoDiur" onclick="modoDiur()" type="button" class="d-none btn btn-outline-secondary">
+            Modo día
+            <svg width="24" height="24">
+              <use xlink:href="#modoDiurno" />
+            </svg>
+            </button>
+	  </li>
             <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page"
             href="https://gonzalo-benites-webpages.on.drv.tw/cursos/html/donar.html"><span
@@ -3354,7 +3371,7 @@ console.log("SoloLearn".includes("olo", 2)); // false</code></pre>
 
 <script src="js/buscador.js"></script>
 
-<!--<script src="js/auto_actualizador.js" ></script>-->
+<script src="js/modo-nocturno.js" ></script>
 
 <script>
 	let my_use = document.getElementById("my_use");
