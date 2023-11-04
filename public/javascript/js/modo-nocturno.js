@@ -46,3 +46,26 @@ function modoDiur(){
   document.body.style.color = "#000";
   document.body.style.backgroundColor = "#fff";
     }
+
+let accordion = document.getElementById("accordionExample");
+accordion.style.backgroundColor = "#000";
+accordion.style.color = "#fff";
+
+let accordion_items = document.getElementsByClassName("accordion-item");
+for(let accordion_item of accordion_items){
+  accordion_item.style.backgroundColor = "#000";
+  accordion_item.style.color = "#fff";
+}
+
+let accordion_headers = document.getElementsByClassName("accordion-header");
+for(let accordion_header of accordion_headers){
+  accordion_header.style.backgroundColor = "#000";
+  accordion_header.style.color = "#fff";
+}
+
+let accordion_bodies = document.getElementsByClassName("accordion-body");
+for(let accordion_body of accordion_bodies){
+  accordion_body.style.backgroundColor = "#000";
+  accordion_body.style.color = "#fff";
+}
+
