@@ -3,6 +3,9 @@ function modoNoct(){
   botModoNoct.setAttribute("class", "d-none");
   let botModoDiur = document.getElementById("botModoDiur");
   botModoDiur.setAttribute("class", "d-block btn btn-outline-secondary");
+
+  let css_hightlight = document.getElementById("css_highlight");
+  css_highlight.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css";
   
   let navBar = document.getElementById("navSup");
   navBar.style.backgroundColor = "#000";
