@@ -57,14 +57,14 @@ figure img {
 
 @font-face {
     font-family: 'Roboto';
-    src: url('https://gonzalo-benites-webpages.on.drv.tw/cursos/javascript/fuentes/Roboto-Regular.ttf') format('truetype');
+    src: url('fuentes/Roboto-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('https://gonzalo-benites-webpages.on.drv.tw/cursos/javascript/fuentes/Poppins-Regular.ttf') format('truetype');
+    src: url('fuentes/Poppins-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
