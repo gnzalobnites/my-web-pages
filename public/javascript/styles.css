@@ -73,7 +73,7 @@ figure img {
     font-family: 'Arial Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Arial Regular'), url('fuentes/ARIAL.woff') format('woff');
+    src: local('fuentes/Arial Regular'), url('fuentes/ARIAL.woff') format('woff');
 }
 
 section {
