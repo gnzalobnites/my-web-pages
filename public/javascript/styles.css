@@ -82,17 +82,16 @@ section {
     
 }
 
-
-
 .snippet {
     margin-right: 10px;
 }
 
 #tdc {
-	margin-left: 20%;
-	margin-right: 20%;
+  margin-left: 20%;
+  margin-right: 20%;
     
 }
+
 #fondo {
     background-image: url(images/javascript_fondo.png);
     width: 100%;
@@ -102,20 +101,21 @@ section {
 }
 
 .container {
-	width: 95%;
-    text-align: center;
+  width: 95%;
+  text-align: center;
 }
+
 .container1 {
-	width: 95%;
-    text-align: left;
-    margin-left: 5px;
+  width: 95%;
+  text-align: left;
+  margin-left: 5px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Arial Regular, sans-serif;
-  }
+  font-family: Arial Regular, sans-serif;
+}
 
-p {
+p, li {
     font-family: Arial Regular, sans-serif;
     /* font-family: Poppins, sans-serif; */
     font-size: 14px;
@@ -123,17 +123,17 @@ p {
 
 
 h1 {
-    font-size: 24px;
+    font-size: 22px;
     padding-top: 60px;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 60px;
 }
 
 h3 {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 body {
