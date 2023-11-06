@@ -3,6 +3,10 @@ figure {
     width: 95%;
 }
 
+a {
+    white-space: wrap;
+}
+
 figure img {
     margin: auto;
 }
