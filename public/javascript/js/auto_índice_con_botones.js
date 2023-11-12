@@ -7,11 +7,11 @@ for(elementoH2 of elementosH2){
 	divDeBotónH2.setAttribute("class", "btn-group");
     divDeBotónH2.setAttribute("style", "margin-bottom: 2px");
 	divDeBotónH2.innerHTML = `<a href="#elemento_H2_número_${n}" >
-      <button class="btn btn-info btn-lg" type="button" style="text-overflow: ellipsis;">
+      <button class="btn btn-info btn-lg botón-h2" type="button" style="text-overflow: ellipsis;">
         ${textoElH2}
       </button>
     </a>
-    <button type="button" class="btn btn-lg btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-lg btn-info dropdown-toggle dropdown-toggle-split botón-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
       <span class="visually-hidden">Toggle Dropdown</span>
     </button>
     <ul class="dropdown-menu" id="lista_${n}_de_elementos_H3_botones">
