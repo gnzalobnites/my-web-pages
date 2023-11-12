@@ -97,11 +97,26 @@ section {
     
 }
 
+/* Estilo para índice principal */
+
+.índice-princ{
+    margin-bottom: 2px;
+}
+.btn-group {
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+h2, h3 {
+	padding-top: 60px; 
+}
+
 #fondo {
     background-image: url(images/javascript_fondo.png);
     width: 100%;
     height: auto;
-    padding-top: 20px;
+    padding-top: 60px;
     padding-bottom: 90px;
 }
 

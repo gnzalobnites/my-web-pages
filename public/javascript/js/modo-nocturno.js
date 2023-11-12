@@ -22,9 +22,9 @@ function modoNoct(){
   document.body.style.color = "#fff";
   document.body.style.backgroundColor = "#000";
 
-  let accordion = document.getElementById("accordionExample");
+  /* let accordion = document.getElementById("accordionExample");
 accordion.style.backgroundColor = "#000";
-accordion.style.color = "#fff";
+accordion.style.color = "#fff"; */
 
 let accordion_items = document.getElementsByClassName("accordion-item");
 for(let accordion_item of accordion_items){
@@ -50,7 +50,7 @@ for(let accordion_button of accordion_buttons){
   accordion_button.style.color = "#fff";
 }
 
-let dropdown_menu_offc = document.getElementById("dropdown_menu_offc");
+let dropdown_menu_offc = document.getElementById("listaDelDropdown");
 dropdown_menu_offc.style.backgroundColor = "#000";
 dropdown_menu_offc.style.color = "#fff";
 
