@@ -18,42 +18,19 @@ function modoNoct(){
   
   let butClose = document.getElementById("butClose");
   butClose.setAttribute("class", "btn-close btn-close-white");
-  
+
+  let dropdown_menu_offc = document.getElementById("listaDelDropdown");
+  dropdown_menu_offc.style.backgroundColor = "#000";
+  dropdown_menu_offc.style.color = "#fff";
+
+  let dropdown_ítems = document.getElementsByClassName("dropdown-item");
+  for(dropdown_ítem of dropdown_ítems){
+    dropdown_ítem.style.backgroundColor = "#000";
+    dropdown_ítem.style.color = "#fff";
+  }
+
   document.body.style.color = "#fff";
   document.body.style.backgroundColor = "#000";
-
-  /* let accordion = document.getElementById("accordionExample");
-accordion.style.backgroundColor = "#000";
-accordion.style.color = "#fff"; */
-
-let accordion_items = document.getElementsByClassName("accordion-item");
-for(let accordion_item of accordion_items){
-  accordion_item.style.backgroundColor = "#000";
-  accordion_item.style.color = "#fff";
-}
-
-let accordion_headers = document.getElementsByClassName("accordion-header");
-for(let accordion_header of accordion_headers){
-  accordion_header.style.backgroundColor = "#000";
-  accordion_header.style.color = "#fff";
-}
-
-let accordion_bodies = document.getElementsByClassName("accordion-body");
-for(let accordion_body of accordion_bodies){
-  accordion_body.style.backgroundColor = "#000";
-  accordion_body.style.color = "#fff";
-}
-
-let accordion_buttons = document.getElementsByClassName("accordion-button collapsed");
-for(let accordion_button of accordion_buttons){
-  accordion_button.style.backgroundColor = "#000";
-  accordion_button.style.color = "#fff";
-}
-
-let dropdown_menu_offc = document.getElementById("listaDelDropdown");
-dropdown_menu_offc.style.backgroundColor = "#000";
-dropdown_menu_offc.style.color = "#fff";
-
 }
 
 function modoDiur(){
@@ -63,7 +40,7 @@ function modoDiur(){
   botModoNoct.setAttribute("class", "d-block btn btn-outline-secondary");
 
   let css_hightlight = document.getElementById("css_highlight");
-  css_highlight.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css";
+  css_hightlight.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css";
   
   let navSup = document.getElementById("navSup");
   navSup.style.backgroundColor = "#fff";
@@ -75,38 +52,20 @@ function modoDiur(){
   
   let butClose = document.getElementById("butClose");
   butClose.setAttribute("class", "btn-close");
+
+  let dropdown_menu_offc = document.getElementById("listaDelDropdown");
+  dropdown_menu_offc.style.backgroundColor = "#fff";
+  dropdown_menu_offc.style.color = "#000";
+
+  let dropdown_ítems = document.getElementsByClassName("dropdown-item");
+  for(dropdown_ítem of dropdown_ítems){
+    dropdown_ítem.style.backgroundColor = "#fff";
+    dropdown_ítem.style.color = "#000";
+  }
   
   document.body.style.color = "#000";
   document.body.style.backgroundColor = "#fff";
     
-
-let accordion = document.getElementById("accordionExample");
-accordion.style.backgroundColor = "#fff";
-accordion.style.color = "#000";
-
-let accordion_items = document.getElementsByClassName("accordion-item");
-for(let accordion_item of accordion_items){
-  accordion_item.style.backgroundColor = "#fff";
-  accordion_item.style.color = "#000";
-}
-
-let accordion_headers = document.getElementsByClassName("accordion-header");
-for(let accordion_header of accordion_headers){
-  accordion_header.style.backgroundColor = "#fff";
-  accordion_header.style.color = "#000";
-}
-
-let accordion_bodies = document.getElementsByClassName("accordion-body");
-for(let accordion_body of accordion_bodies){
-  accordion_body.style.backgroundColor = "#fff";
-  accordion_body.style.color = "#000";
-}
-
-let accordion_buttons = document.getElementsByClassName("accordion-button collapsed");
-for(let accordion_button of accordion_buttons){
-  accordion_button.style.backgroundColor = "#fff";
-  accordion_button.style.color = "#000";
-}
 
 }
 

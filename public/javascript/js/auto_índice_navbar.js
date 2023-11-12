@@ -40,6 +40,7 @@ while(j < elsH3.length){
   let nuevoEnlaceAElH3 = document.createElement("a");
   nuevoEnlaceAElH3.setAttribute("class","dropdown-item");
   nuevoEnlaceAElH3.setAttribute("href", `#elemento_H3_número_${j + 1}`);
+  nuevoEnlaceAElH3.setAttribute("style","white-space: wrap");
   nuevoEnlaceAElH3.appendChild(textoElH3);
   let nuevoÍtemListaElsH3 = document.createElement("li");
   nuevoÍtemListaElsH3.appendChild(nuevoEnlaceAElH3);

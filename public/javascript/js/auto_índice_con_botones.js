@@ -5,11 +5,22 @@ for(elementoH2 of elementosH2){
 	let textoElH2 = elementoH2.textContent;
 	let divDeBotónH2 = document.createElement("div");
 	divDeBotónH2.setAttribute("class", "btn-group");
-	divDeBotónH2.setAttribute("role", "group");
-	divDeBotónH2.setAttribute("aria-label", "Button group with nested dropdown");
-	divDeBotónH2.innerHTML = `<a href="#elemento_H2_número_${n}"><button type="button" class="btn btn-secondary índice-princ">${textoElH2}</button></a><div class="btn-group" role="group"><button type="button" class="btn btn-secondary dropdown-toggle índice-princ" data-bs-toggle="dropdown" aria-expanded="false"></button><ul class="dropdown-menu" id="lista_${n}_de_elementos_H3_botones"><li><a class="dropdown-item" href=""></a></li></ul>`;
-let div_de_botones  = document.getElementById("div_de_botones");
-div_de_botones.appendChild(divDeBotónH2);
+    divDeBotónH2.setAttribute("style", "margin-bottom: 2px");
+	divDeBotónH2.innerHTML = `<a href="#elemento_H2_número_${n}" >
+      <button class="btn btn-info btn-lg" type="button" style="text-overflow: ellipsis;">
+        ${textoElH2}
+      </button>
+    </a>
+    <button type="button" class="btn btn-lg btn-info dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu" id="lista_${n}_de_elementos_H3_botones">
+      <li><a class="dropdown-item" href=""></a></li>
+    </ul>`;
+let div_fondo = document.getElementById("fondo");
+div_fondo.appendChild(divDeBotónH2);
+let br = document.createElement("br");
+div_fondo.appendChild(br);
 n++;
 };
 

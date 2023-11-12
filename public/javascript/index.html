@@ -81,13 +81,14 @@
 
 </head>
 <body id="body">
+  <div id="contenido_visible">
   <fullscreen>
     <p id="top"></p>
 <header>
   <!-- Comienzo de navbar offcanvas-->
   <nav id="navSup" class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><strong>JavaScript</strong> desde cero</a>
+      <a class="navbar-brand" href="#"><strong>JS</strong> desde cero</a>
       <!-- botón pantalla completa -->
       <button style="border-width: 0;
   background-color: #ccc;" class="" id="my_li" onclick="">
@@ -157,10 +158,9 @@
 
 <!--Tabla de contenido - comienzo-->
 <div id="fondo">
-<!-- Comienzo botones -->
-<div id="div_de_botones"></div>
-<!-- Fin botones -->
+
 </div>
+
 
 <main>
   <h1>JavaScript</h1>
@@ -312,8 +312,8 @@
       <h4>Variables</h4>
       <p>Las <strong>variables</strong> son contenedores para registrar datos. El valor de una variable puede cambiar a lo largo del programa.</p>
       <p>Utilice la palabra clave <strong>var</strong> para declarar una variable:</p>
-      var x = 10;
-      </code></pre></div>
+<div class="snippet"><pre><code class="language-javascript"></code>var x = 10;
+</code></pre></div>
       <p>En el ejemplo anterior, a la variable x le es asignado el valor <strong>10</strong>.</p>
       <p>En JavaScript, el signo igual (=) se llama el operador "<b>asignación</b>", en lugar de un operador "igual a".</p>
       <p>Por ejemplo, x = y asignará el valor de y a x.</p>
@@ -1367,7 +1367,7 @@ document.write(p.yearOfBirth());</code></pre></div>
 
 <h3>Proyecto de codificación: Gestión de contacto</h3>
 
-<h2>Objetos principales predefinidos</h2>
+<h2>Objetos principales</h2>
 
 <h3>Arreglos</h3>
 <h4>Arreglos en JavaScript</h4>
@@ -3001,6 +3001,8 @@ console.log("SoloLearn".includes("olo", 2)); // false</code></pre>
 
 </main>
 
+
+
 <nav id="nav" class="navbar bg-body-tertiary fixed-bottom">
 <div id="navDivExt" class="container-fluid">
   <div id="divIntNav" class="d-flex mx-auto" role="search">
@@ -3035,6 +3037,7 @@ console.log("SoloLearn".includes("olo", 2)); // false</code></pre>
   </footer>
 </div> 
 </fullscreen>
+</div>
 <!-- Incluir el archivo js de highlight.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 <!-- Inicializar el resaltado de sintaxis -->
