@@ -2,8 +2,10 @@ const express = require('express');
 const path = require('path'); // Añade esta línea
 const PORT = process.env.PORT || 3030;
 var bodyParser = require('body-parser');
-
+var cookieParser = require('cookie-parser');
 const app = express();
+
+app.use(cookieParser())
 
 //Para analizar datos codificados en URL
 app.use(bodyParser.urlencoded({ extended: false })) 
