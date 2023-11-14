@@ -40,6 +40,10 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
+app.get('/primera_plantilla', function(req, res){
+  res.render('primera_plantilla'); 
+});
+
 var cosas = require('./cosas.js'); 
 
 app.use('/cosas', cosas);
