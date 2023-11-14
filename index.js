@@ -1,8 +1,15 @@
 const express = require('express');
 const path = require('path'); // Añade esta línea
 const PORT = process.env.PORT || 3030;
+var bodyParser = require('body-parser');
 
 const app = express();
+
+//Para analizar datos codificados en URL
+app.use(bodyParser.urlencoded({ extended: false })) 
+
+//Para analizar datos json
+app.use(bodyParser.json())
 
 //Registrador simple de tiempo de solicitud 
 app.use(function(req, res, next){
