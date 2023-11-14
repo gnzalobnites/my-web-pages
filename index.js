@@ -4,9 +4,18 @@ const PORT = process.env.PORT || 3030;
 
 const app = express();
 
+//Registrador simple de tiempo de solicitud 
+app.use(function(req, res, next){
+
+  console.log("Una nueva solicitud recibida en " + Date.now());
+    
+  next();
+});
+
 // Configura la carpeta estática para tus archivos
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Manejador de ruta
 app.get('/', function (req, res) {
 
 	// Agregar encabezados para deshabilitar la caché
@@ -29,6 +38,19 @@ app.get('/:id', function(req, res){
 app.get('/cosas/:nombre/:id', function(req, res) {
   res.send('id: ' + req.params.id + ' y nombre: ' + req.params.nombre);
 });  
+
+app.get('/cosas/:id(\\d{5})', function(req, res){
+  res.send('id: ' + req.params.id); 
+});
+
+app.use('/', function(req, res){
+
+  console.log('Fin');
+});
+
+app.get('*', function(req, res){
+  res.send('<h1>Lo siento, esta es una URL no válida.</h1>');
+});
     
 app.listen(PORT, function () {
     console.log(`El servidor está escuchando en el puerto ${PORT}`);
