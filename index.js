@@ -5,6 +5,10 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 const app = express();
 
+app.set('view engine', 'pug');
+
+app.set('views','./views'); 
+
 app.use(cookieParser())
 
 //Para analizar datos codificados en URL
