@@ -17,6 +17,10 @@ app.get('/', function (req, res) {
 	// Enviar el archivo index.html como respuesta
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
+
+var cosas = require('./cosas.js'); 
+
+app.use('/cosas', cosas);
     
 app.listen(PORT, function () {
     console.log(`El servidor está escuchando en el puerto ${PORT}`);
