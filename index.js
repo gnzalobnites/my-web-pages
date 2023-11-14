@@ -21,6 +21,14 @@ app.get('/', function (req, res) {
 var cosas = require('./cosas.js'); 
 
 app.use('/cosas', cosas);
+
+app.get('/:id', function(req, res){
+	res.send('El id que especificaste es ' + req.params.id);
+});
+
+app.get('/cosas/:nombre/:id', function(req, res) {
+  res.send('id: ' + req.params.id + ' y nombre: ' + req.params.nombre);
+});  
     
 app.listen(PORT, function () {
     console.log(`El servidor está escuchando en el puerto ${PORT}`);
