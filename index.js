@@ -45,8 +45,8 @@ app.get('/primera_plantilla', function(req, res){
    nombre: "Gonzalo"})
 });
 
-app.get('/vista_dinamica', function(req, res){
-  res.render('vista_dinamica', {
+app.get('/primera-vista-dinamica', function(req, res){
+  res.render('vista_dinámica', {
     nombre: "google",
     url:"http://www.google.com"
   });
