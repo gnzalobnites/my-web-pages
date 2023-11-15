@@ -26,7 +26,7 @@ app.use(function(req, res, next){
 });
 
 app.get('/primera/vista/dinamica', function(req, res){
-  res.render('dinámica', {
+  res.render('dinamica', {
     nombre: "google",
     url:"http://www.google.com"
   });
