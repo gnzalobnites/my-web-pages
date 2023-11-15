@@ -57,7 +57,7 @@ app.get('/primera-vista-dinamica/:id(\\d{3})', function(req, res){
   res.render('vista_dinámica', {
     nombre: "google",
     url:"http://www.google.com",
-    id: req.params.id
+    usuario: {id: req.params.id},
   });
 });
 
