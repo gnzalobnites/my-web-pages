@@ -41,7 +41,9 @@ app.get('/', function (req, res) {
 });
 
 app.get('/primera_plantilla', function(req, res){
-  res.render('primera_plantilla'); 
+  res.render('primera_plantilla',{
+	  nombre: "Gonzalo",
+  ); 
 });
 
 app.get('/vista_dinamica', function(req, res){
