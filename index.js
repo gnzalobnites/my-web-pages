@@ -25,6 +25,13 @@ app.use(function(req, res, next){
   next();
 });
 
+app.get('/vista_dinámica', function(req, res){
+  res.render('dinámica', {
+    nombre: "google",
+    url:"http://www.google.com"
+  });
+});
+
 // Configura la carpeta estática para tus archivos
 app.use(express.static(path.join(__dirname, 'public')));
 
