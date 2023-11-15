@@ -25,7 +25,7 @@ app.use(function(req, res, next){
   next();
 });
 
-app.get('/vista_dinámica', function(req, res){
+app.get('/vista_dinámica/vista_dinámica', function(req, res){
   res.render('dinámica', {
     nombre: "google",
     url:"http://www.google.com"
