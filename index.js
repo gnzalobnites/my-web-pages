@@ -46,7 +46,7 @@ app.get('/primera_plantilla', function(req, res){
 });
 
 app.get('/vista_dinamica', function(req, res){
-  res.render('primera_dinamica', {
+  res.render('vista_dinamica', {
     nombre: "google",
     url:"http://www.google.com"
   });
