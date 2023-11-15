@@ -25,7 +25,7 @@ app.use(function(req, res, next){
   next();
 });
 
-app.get('/primera/vista/dinámica', function(req, res){
+app.get('/primera/vista/dinamica', function(req, res){
   res.render('dinámica', {
     nombre: "google",
     url:"http://www.google.com"
