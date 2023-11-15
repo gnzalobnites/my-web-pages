@@ -25,13 +25,6 @@ app.use(function(req, res, next){
   next();
 });
 
-app.get('/primera/vista/dinamica', function(req, res){
-  res.render('dinamica', {
-    nombre: "google",
-    url:"http://www.google.com"
-  });
-});
-
 // Configura la carpeta estática para tus archivos
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -49,6 +42,13 @@ app.get('/', function (req, res) {
 
 app.get('/primera_plantilla', function(req, res){
   res.render('primera_plantilla'); 
+});
+
+app.get('/vista_dinamica', function(req, res){
+  res.render('primera_plantilla', {
+    nombre: "google",
+    url:"http://www.google.com"
+  });
 });
 
 var cosas = require('./cosas.js'); 
