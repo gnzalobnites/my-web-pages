@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3030;
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var cosas = require('./cosas.js'); 
+var javascript_pug = require('./javascript.js'); 
 const app = express();
 
 app.set('view engine', 'pug');
@@ -61,23 +62,13 @@ app.get('/primera-vista-dinamica/:id(\\d{3})', function(req, res){
   });
 });
 
-app.use('/cosas', cosas);
-
-/* app.get('/:id', function(req, res){
-	res.send('El id que especificaste es ' + req.params.id);
-}); */
-
-/* app.get('/cosas/:nombre/:id', function(req, res) {
-  res.send('id: ' + req.params.id + ' y nombre: ' + req.params.nombre);
-}); */  
+app.use('/cosas', cosas); 
 
 app.get('/cosas/:id(\\d{5})', function(req, res){
   res.send('id: ' + req.params.id);
 });
 
-/* app.use('/', function(req, res){
-  console.log('Fin');
-}); */
+app.use('/javascript-pug', javascript_pug);
 
 app.get('*', function(req, res){
   res.send('<h1>Lo siento, esta es una URL no válida.</h1>');
