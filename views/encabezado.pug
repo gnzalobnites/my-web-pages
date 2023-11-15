@@ -1,36 +1,32 @@
 // Comienzo de navbar offcanvas
-nav#navSup.navbar.bg-body-tertiary.fixed-top.           
+nav#navSup.navbar.bg-body-tertiary.fixed-top           
     div.container-fluid
         a.navbar-brand(href='#')
-            strong JS
-            |  desde cero
+        strong JS
+        | desde cero
         // botón pantalla completa
         button#my_li(style='border-width: 0; background-color: #ccc;', onclick='')
-            svg.bi.bi-arrows-fullscreen(xmlns='http://www.w3.org/2000/svg', width='16', height='16', fill='currentColor')
-                use#my_use(xlink:href='')
+        svg.bi.bi-arrows-fullscreen(xmlns='http://www.w3.org/2000/svg', width='16', height='16', fill='currentColor')
+            use#my_use(xlink:href='')
         // botón del buscador
         button#svg.btn.btn-info.ms-auto.mx-2(onclick='mostrarBusc()')
-            svg.bi.bi-search(xmlns='http://www.w3.org/2000/svg', width='16', height='16', fill='currentColor')
-                use(xlink:href='#search')
+        svg.bi.bi-search(xmlns='http://www.w3.org/2000/svg', width='16', height='16', fill='currentColor')
+            use(xlink:href='#search')
         button.navbar-toggler(type='button', data-bs-toggle='offcanvas', data-bs-target='#offcanvasNavbar', aria-controls='offcanvasNavbar', aria-label='Toggle navigation')
-            span.navbar-toggler-icon
+        span.navbar-toggler-icon
         div#offcanvasNavbar.offcanvas.offcanvas-end(tabindex='-1', aria-labelledby='offcanvasNavbarLabel')
-        .offcanvas-header
-            p#offcanvasNavbarLabel.offcanvas-title
-            strong JavaScript
-            |  desde cero
+        div.offcanvas-header
+            p#offcanvasNavbarLabel.offcanvas-title 
+            b JavaScript 
+            | desde cero
             button#butClose.btn-close(type='button', data-bs-dismiss='offcanvas', aria-label='Close')
-        .offcanvas-body
+        div.offcanvas-body
             ul.navbar-nav.justify-content-end.flex-grow-1.pe-3
             li.nav-item
                 a.nav-link.active(aria-current='page', href='#') Inicio
             li.nav-item
                 a.nav-link(href='javascript/#pie') Contacto
-            //
-                <li class="nav-item">
-                <button onclick="recPag()" class="btn btn-info ms-auto mx-2" style="text-wrap: balance;">Recargar la página desde el servidor</button>
-                </li>
-            // botones modo nocturno
+                // botones modo nocturno
             li.nav-item
                 button#botModoNoct.d-block.btn.btn-outline-secondary(onclick='modoNoct()', type='button')
                 | Modo noche
@@ -46,6 +42,6 @@ nav#navSup.navbar.bg-body-tertiary.fixed-top.
                 // Ítems tdc offcanvas inicio
                 ul#listaDelDropdown.dropdown-menu
                 // Ítems tdc offcanvas final
-// Final de navbar offcanvas
-// Tabla de contenido - comienzo
+                // Final de navbar offcanvas
+                // Tabla de contenido - comienzo
 div#fondo
