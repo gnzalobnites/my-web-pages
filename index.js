@@ -53,17 +53,7 @@ app.get('/primera-vista-dinamica', function(req, res){
   });
 });
 
-app.use('/cosas', cosas);
-
-app.get('/:id', function(req, res){
-	res.send('El id que especificaste es ' + req.params.id);
-});
-
-/* app.get('/cosas/:nombre/:id', function(req, res) {
-  res.send('id: ' + req.params.id + ' y nombre: ' + req.params.nombre);
-}); */  
-
-app.get('/cosas/:id(\\d{3})', function(req, res){
+app.get('/primera-vista-dinamica/:id(\\d{3})', function(req, res){
   res.render('vista_dinámica', {
     nombre: "google",
     url:"http://www.google.com",
@@ -71,9 +61,23 @@ app.get('/cosas/:id(\\d{3})', function(req, res){
   });
 });
 
-app.use('/', function(req, res){
-  console.log('Fin');
+app.use('/cosas', cosas);
+
+/* app.get('/:id', function(req, res){
+	res.send('El id que especificaste es ' + req.params.id);
+}); */
+
+/* app.get('/cosas/:nombre/:id', function(req, res) {
+  res.send('id: ' + req.params.id + ' y nombre: ' + req.params.nombre);
+}); */  
+
+app.get('/cosas/:id(\\d{5})', function(req, res){
+  res.send('id: ' + req.params.id);
 });
+
+/* app.use('/', function(req, res){
+  console.log('Fin');
+}); */
 
 app.get('*', function(req, res){
   res.send('<h1>Lo siento, esta es una URL no válida.</h1>');

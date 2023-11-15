@@ -12,4 +12,9 @@ html
         figure
         img.mini(src='javascript/images/001.png' alt='')
         p El valor de la variable nombre es #{nombre}
-        p el id pasado es: #{id}
+        if(id > 700)
+            p el id pasado es: #{id}
+        else
+            p no envió un id válido
+        
+        
