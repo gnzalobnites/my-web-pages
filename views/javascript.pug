@@ -1,41 +1,7 @@
 doctype html
 html(lang='es')
   head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet', href='/javascript/styles.css')
-    title JavaScript desde cero
-    meta(name='google-site-verification', content='IlwE29oPx3IJib2qhYUc07f7uJp7SpVM12hd1DnPiqE')
-    // Fuente Poppins
-    link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap', rel='stylesheet')
-    // CSS de Bootstrap
-    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9', crossorigin='anonymous')
-    // CSS de highlight.js
-    link#css_highlight(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css')
-    // íconos de la página
-    link(rel='apple-touch-icon', sizes='180x180', href='https://gonzalo-web-pages.onrender.com/javascript/apple-touch-icon-js.png')
-    link(rel='icon', type='image/png', sizes='32x32', href='/javascript/favicon-32x32.png')
-    link(rel='icon', type='image/png', sizes='16x16', href='/javascript/favicon-16x16.png')
-    link(rel='manifest', href='https://gonzalo-web-pages.onrender.com/javascript/site.webmanifest')
-    link(rel='mask-icon', href='safari-pinned-tab.svg', color='#5bbad5')
-    meta(name='msapplication-TileColor', content='#da532c')
-    meta(name='theme-color', content='#ffffff')
-    // SEO comienzo
-    meta(name='description', content='Aprende JavaScript desde cero con este curso gratuito. En este curso aprenderás los fundamentos de Python, como variables, tipos de datos, operaciones, flujo de control, funciones, objetos, módulos y excepciones. También aprenderás a usar librerías populares de Python, como NumPy, Pandas y Matplotlib.')
-    meta(property='og:site_name', content='JavaScript desde cero')
-    meta(property='og:type', content='article')
-    meta(property='og:title', content='Aprende JavaScript Curso Desde Cero')
-    meta(property='og:description', content='Aprende JavaScript desde cero con este curso gratuito. En este curso aprenderás los fundamentos de Python, como variables, tipos de datos, operaciones, flujo de control, funciones, objetos, módulos y excepciones. También aprenderás a usar librerías populares de Python, como NumPy, Pandas y Matplotlib.')
-    meta(property='og:url', content='https://gonzalo-web-pages.onrender.com/javascript')
-    meta(property='og:image', content='https://gonzalo-web-pages.onrender.com/javascript/images/javascript_fondo.png')
-    //
-      <meta property="article:published_time" content="2021-10-28T11:56:44.000Z">
-      <meta property="article:modified_time" content="2023-08-02T09:44:31.000Z">
-    meta(property='article:tag', content='JavaScript')
-    meta(property='article:tag', content='Español')
-    meta(property='article:tag', content='Curso')
-    // SEO final
-    // Buscador de Google
+    include ./head.pug
     
   body#body
     div#contenido_visible
