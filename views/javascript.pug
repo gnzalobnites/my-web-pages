@@ -13,14 +13,4 @@ html(lang='es')
                     
         include ./buscador_inferior.pug
         include ./pie.pug
-      // Incluir el archivo js de highlight.js
-      script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js')
-      // Inicializar el resaltado de sintaxis
-      script.
-        hljs.highlightAll();
-      script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js', integrity='sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm', crossorigin='anonymous')
-      script(src='/javascript/js/buscador.js')
-      script(src='/javascript/js/auto_índice_navbar.js')
-      script(src='/javascript/js/auto_índice_con_botones.js')
-      script(src='/javascript/js/modo-nocturno.js')
-      script(src='/javascript/js/pantalla_completa.js')
+      include ./scripts_final_body.pug
