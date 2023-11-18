@@ -69,8 +69,10 @@ app.post('/persona', function(req, res){
 });
 
 app.get('/personas', function(req, res){
-  let personas = await Persona.find(); 
-  res.json(personas);
+  Persona.find().then((personas) => {
+    res.send(personas);
+  });
 });
+
 
 app.listen(3000);
