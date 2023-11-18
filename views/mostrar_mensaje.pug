@@ -1,11 +1,13 @@
 html
-head
-  title Persona
-body
-  if(tipo == "error") 
-    h3(style = "color:red") #{mensaje}
-  else
-    h3 Nueva persona, 
-      nombre: #{persona.nombre},
-      edad: #{persona.edad} y  
-      nacionalidad: #{persona.nacionalidad} agregada!
+  head
+    title Persona
+  body
+    if(tipo == "error")
+      h3(style = "color:red") #{mensaje}
+    else
+      h3 
+        |Nueva persona, 
+        |nombre: #{persona.nombre}, 
+        |edad: #{persona.edad} y 
+        |nacionalidad: #{persona.nacionalidad} 
+        |agregada!
