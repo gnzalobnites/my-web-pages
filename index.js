@@ -1,12 +1,21 @@
 const express = require('express');
 const path = require('path'); // Añade esta línea
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var multer = require('multer');
 var upload = multer();
 var cosas = require('./cosas.js'); 
 var js_pug_router = require('./public/javascript/javascript.js'); 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/mi_db');
+var esquemaPersona = mongoose.Schema({
+  nombre: String,
+  edad: Number,
+  nacionalidad: String
+});
+var Persona = mongoose.model("Persona", esquemaPersona);
+
 const app = express();
 
 app.set('view engine', 'pug');
