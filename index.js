@@ -8,7 +8,7 @@ var upload = multer();
 var cosas = require('./cosas.js'); 
 var js_pug_router = require('./public/javascript/javascript.js'); 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mi_db');
+//mongoose.connect('mongodb://localhost/mi_db');
 var esquemaPersona = mongoose.Schema({
   nombre: String,
   edad: Number,
