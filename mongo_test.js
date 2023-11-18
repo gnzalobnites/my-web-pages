@@ -25,8 +25,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // para analizar multipart/form-data
 app.use(upload.array());  
 
-app.use(express.static('public'));
-
 app.get('/', function(req, res){
   res.render('form');
 });
