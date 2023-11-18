@@ -73,7 +73,7 @@ app.get('/persona', function(req, res){
 });
 
 app.post('/persona', function(req, res){
-  var infoPersona = req.body; //Obtener la informació?n analizada
+  var infoPersona = req.body; //Obtener la información analizada
   if(!infoPersona.nombre || !infoPersona.edad || !infoPersona.nacionalidad){
     res.render('mostrar_mensaje', {
       mensaje: "Lo siento, proporcionaste información incorrecta", 
@@ -91,7 +91,7 @@ app.post('/persona', function(req, res){
           mensaje: "Error de base de datos", 
           tipo: "error"
           });
-      }else{
+      } else {
         res.render('mostrar_mensaje', {
           mensaje: "Nueva persona agregada", 
           tipo: "éxito", 
@@ -99,7 +99,8 @@ app.post('/persona', function(req, res){
           });
       }
      });
-   });
+   }
+  });
                                                                                                                                               
 
 app.get('/primera_plantilla', function(req, res){
