@@ -20,8 +20,6 @@ const app = express();
 
 app.set('view engine', 'pug');
 
-app.set('views','./views');
-
 app.set('views', [
   './views',
   './public/javascript' 
@@ -38,10 +36,8 @@ app.use(bodyParser.json())
 // para analizar multipart/form-data
 app.use(upload.array());
 
-//Registrador simple de tiempo de solicitud 
-app.use(function(req, res, next){
-  console.log("Una nueva solicitud recibida en " + Date.now());
-  next();
+app.get('/form', function(req, res){
+  res.render('form');
 });
 
 app.post('/form', function(req, res){
@@ -62,10 +58,6 @@ app.get('/', function (req, res) {
 	      
 	// Enviar el archivo index.html como respuesta
     res.sendFile(path.join(__dirname, '/public/index.html'));
-});
-
-app.get('/form', function(req, res){
-  res.render('form');
 });
 
 app.get('/persona', function(req, res){
@@ -100,34 +92,7 @@ app.post('/persona', function(req, res){
       }
      });
    }
-  });
-                                                                                                                                              
-
-app.get('/primera_plantilla', function(req, res){
-  res.render('primera_plantilla',{
-   nombre: "Gonzalo"})
-});
-
-app.get('/primera-vista-dinamica', function(req, res){
-  res.render('vista_dinámica', {
-    nombre: "google",
-    url:"http://www.google.com"
-  });
-});
-
-app.get('/primera-vista-dinamica/:id(\\d{3})', function(req, res){
-  res.render('vista_dinámica', {
-    nombre: "google",
-    url:"http://www.google.com",
-    usuario: {id: req.params.id},
-  });
-});
-
-app.use('/cosas', cosas); 
-
-app.get('/cosas/:id(\\d{5})', function(req, res){
-  res.send('id: ' + req.params.id);
-});
+  });                                                                                                                                              
 
 app.use('/javascript-pug', js_pug_router);
 
