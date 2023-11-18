@@ -1,0 +1,15 @@
+html
+  head  
+    title Probador de Formularios
+  body
+    form(action = "/form", method = "POST")
+      div 
+        label(for = "say") Di:
+        input(name = "say" value = "Hola")
+      br
+      div
+        label(for = "to") Para: 
+        input(name = "to" value = "Formularios Express")
+      br
+      button(type = "submit") Enviar mis saludos
+                                                                          
