@@ -58,41 +58,7 @@ app.get('/', function (req, res) {
 	      
 	// Enviar el archivo index.html como respuesta
     res.sendFile(path.join(__dirname, '/public/index.html'));
-});
-
-app.get('/persona', function(req, res){
-  res.render('persona');
-});
-
-app.post('/persona', function(req, res){
-  var infoPersona = req.body; //Obtener la información analizada
-  if(!infoPersona.nombre || !infoPersona.edad || !infoPersona.nacionalidad){
-    res.render('mostrar_mensaje', {
-      mensaje: "Lo siento, proporcionaste información incorrecta", 
-      tipo: "error"
-      });      
-   } else {
-    var nuevaPersona = new Persona({
-      nombre: infoPersona.nombre,
-      edad: infoPersona.edad,
-      nacionalidad: infoPersona.nacionalidad
-    });
-    nuevaPersona.save(function(err, Persona){
-      if(err){
-        res.render('mostrar_mensaje', {
-          mensaje: "Error de base de datos", 
-          tipo: "error"
-          });
-      } else {
-        res.render('mostrar_mensaje', {
-          mensaje: "Nueva persona agregada", 
-          tipo: "éxito", 
-          persona: infoPersona
-          });
-      }
-     });
-   }
-  });                                                                                                                                              
+});                                                                                                                                            
 
 app.use('/javascript-pug', js_pug_router);
 
