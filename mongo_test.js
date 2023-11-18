@@ -52,20 +52,25 @@ app.post('/persona', function(req, res){
       nacionalidad: infoPersona.nacionalidad
     });
     nuevaPersona.save().then(() => {
-		res.render('mostrar_mensaje', {
+      res.render('mostrar_mensaje', {
           mensaje: "Nueva persona agregada", 
           tipo: "éxito", 
           persona: infoPersona
         });
-		console.log('Document saved successfully');
-	  }).catch(err => {
-		res.render('mostrar_mensaje', {
+      console.log('Document saved successfully');
+     }).catch(err => {
+	res.render('mostrar_mensaje', {
           mensaje: "Error de base de datos", 
           tipo: "error"
-        });
-		console.error('Error saving document:', err);
+     });
+	console.error('Error saving document:', err);
 	  });
-   }
+    }
+});
+
+app.get('/personas', function(req, res){
+  let personas = await Persona.find(); 
+  res.json(personas);
 });
 
 app.listen(3000);
