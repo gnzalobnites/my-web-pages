@@ -64,7 +64,7 @@ app.post('/persona', function(req, res){
           tipo: "error"
         });
 		console.error('Error saving document:', err);
-	  });;
+	  });
    }
 });
 
