@@ -10,7 +10,7 @@ var personaSchema = mongoose.Schema({
   nacionalidad: String
 });
 var Persona = mongoose.model("Persona", personaSchema);
-
+//test Lubuntu
 var app = express();
 
 app.set('view engine', 'pug'); 
