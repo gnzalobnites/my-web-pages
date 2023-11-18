@@ -68,6 +68,40 @@ app.get('/form', function(req, res){
   res.render('form');
 });
 
+app.get('/persona', function(req, res){
+  res.render('persona');
+});
+
+app.post('/persona', function(req, res){
+  var infoPersona = req.body; //Obtener la informació?n analizada
+  if(!infoPersona.nombre || !infoPersona.edad || !infoPersona.nacionalidad){
+    res.render('mostrar_mensaje', {
+      mensaje: "Lo siento, proporcionaste información incorrecta", 
+      tipo: "error"
+      });      
+   } else {
+    var nuevaPersona = new Persona({
+      nombre: infoPersona.nombre,
+      edad: infoPersona.edad,
+      nacionalidad: infoPersona.nacionalidad
+    });
+    nuevaPersona.save(function(err, Persona){
+      if(err){
+        res.render('mostrar_mensaje', {
+          mensaje: "Error de base de datos", 
+          tipo: "error"
+          });
+      }else{
+        res.render('mostrar_mensaje', {
+          mensaje: "Nueva persona agregada", 
+          tipo: "éxito", 
+          persona: infoPersona
+          });
+      }
+     });
+   });
+                                                                                                                                              
+
 app.get('/primera_plantilla', function(req, res){
   res.render('primera_plantilla',{
    nombre: "Gonzalo"})
