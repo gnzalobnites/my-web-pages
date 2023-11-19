@@ -3,7 +3,7 @@ head
   title Persona  
 body
   h1 Actualizar Persona
-  form(action="/actualizar-persona/#{persona._id}", method="PUT")
+  form(action="/actualizar-persona/#{persona._id}", method="POST")
     label(for="nombre") Nombre:
     input(type="text", name="nombre", value=persona.nombre)
     label(for="edad") Edad:

@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
+const methodOverride = require('method-override');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 var personaSchema = mongoose.Schema({
@@ -12,7 +13,7 @@ var personaSchema = mongoose.Schema({
 var Persona = mongoose.model("Persona", personaSchema);
 //test Lubuntu
 var app = express();
-
+app.use(methodOverride());
 app.set('view engine', 'pug'); 
 app.set('views', './views');
 
@@ -89,17 +90,16 @@ app.get('/actualizar-persona/:id', async function(req, res){
   res.render('actualizar_persona', { persona: persona_buscada});
 });
 
-app.put('/actualizar-persona/:id', async function(req, res){
-  let colecciónPersona = mongoose.model('Persona');
-  try {
-    const persona_actualizada = await colecciónPersona.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (persona_actualizada) {
-      res.redirect('/personas'); // Redirige a la lista de personas u otra página según sea necesario
-    } else {
+app.post('/actualizar-persona/:id', async function(req, res){
+  const métodoReal = req.headers['X-HTTP-Method-Override'];
+  if (métodoReal === 'PUT'){
+    const colecciónPersona = mongoose.model('Persona');
+    const persona_encontrada = await colecciónPersona.findByIdAndUpdate(req.params.id, req.body);
+    if (persona_encontrada){
+      res.redirect('/personas');
+    }else{
       res.status(404).send('No se encontró el documento');
     }
-  } catch (error) {
-    res.status(500).send('Error interno del servidor');
   }
 });
 
