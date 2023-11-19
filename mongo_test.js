@@ -39,23 +39,23 @@ app.post('/', function(req, res){
 });
 
 app.post('/persona', function(req, res){
-  var infoPersona = req.body; //Obtener la información analizada
-  if(!infoPersona.nombre || !infoPersona.edad || !infoPersona.nacionalidad){
+  var reqBody = req.body; //Obtener la información analizada
+  if(!reqBody.nombre || !reqBody.edad || !reqBody.nacionalidad){
     res.render('mostrar_mensaje', {
       mensaje: "Lo siento, proporcionaste información incorrecta", 
       tipo: "error"
       });      
    } else {
-    var nuevaPersona = new Persona({
-      nombre: infoPersona.nombre,
-      edad: infoPersona.edad,
-      nacionalidad: infoPersona.nacionalidad
+    var nuevoDocumentoPersona = new Persona({
+      nombre: reqBody.nombre,
+      edad: reqBody.edad,
+      nacionalidad: reqBody.nacionalidad
     });
-    nuevaPersona.save().then(() => {
+    nuevoDocumentoPersona.save().then(() => {
       res.render('mostrar_mensaje', {
           mensaje: "Nueva persona agregada", 
           tipo: "éxito", 
-          persona: infoPersona
+          persona: reqBody
         });
       console.log('Document saved successfully');
      }).catch(err => {
@@ -75,14 +75,11 @@ app.get('/personas', function(req, res){
 });
 
 app.get('/buscar-uno/:id', async function(req, res){
-  const Persona = mongoose.model('Persona');
-
-  const persona_buscada = await Persona.findOne(
-    {_id:req.params.id}
+  let colecciónPersona = mongoose.model('Persona');
+  let persona_buscada = await colecciónPersona.findOne(
+    {_id: req.params.id}
   );
-
   res.json(persona_buscada);
-
 });
 
 app.get('/actualizar-persona/:id', function(req, res){
