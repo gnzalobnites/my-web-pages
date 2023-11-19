@@ -2,21 +2,13 @@ html
 head
   title Persona  
 body
-  form(action = "/actualizar-persona", method = "PUT")
-    div
-      label(for = "id") Id:
-      input(name = "id")
-    br
-    div
-      label(for = "nombre") Nombre:
-      input(name = "nombre")
-    br
-    div 
-      label(for = "edad") Edad:
-      input(name = "edad")
-    br  
-    div
-      label(for = "nacionalidad") Nacionalidad: 
-      input(name = "nacionalidad")
-    br
-    button(type = "submit") Actualizar persona
+  h1 Actualizar Persona
+  form(action="/actualizar-persona/#{persona._id}", method="PUT")
+    label(for="nombre") Nombre:
+    input(type="text", name="nombre", value=persona.nombre)
+    label(for="edad") Edad:
+    input(type="number", name="edad", value=persona.edad)
+    label(for="nacionalidad") Nacionalidad:
+    input(type="text", name="nacionalidad", value=persona.nacionalidad)
+    button(type="submit") Actualizar Persona
+  p #{persona._id}

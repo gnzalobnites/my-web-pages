@@ -79,26 +79,28 @@ app.get('/buscar-uno/:id', async function(req, res){
   let persona_buscada = await colecciónPersona.findOne(
     {_id: req.params.id}
   );
-  res.json(persona_buscada);
+  res.send(persona_buscada);
 });
 
-app.get('/actualizar-persona', function(req, res){
-  res.render('actualizar_persona'); 
+app.get('/actualizar-persona/:id', async function(req, res){
+  let colecciónPersona = mongoose.model('Persona');
+  let persona_buscada = await colecciónPersona.findOne({_id: req.params.id});
+  console.log(persona_buscada);
+  res.render('actualizar_persona', { persona: persona_buscada});
 });
 
-app.put('/actualizar-persona', function(req, res){
-  //Persona.findByIdAndUpdate(req.params.id, req.body);
-  Persona.update(
-    {_id: req.params.id}, {
-      $set: {
-	nombre: req.params.nombre,
-	edad: req.params.edad,
-        nacionalidad: req.params.nacionalidad
-      }
-    }).then((persona_encontrada)=>{
-      res.json(persona_encontrada});
-    });
+app.put('/actualizar-persona/:id', async function(req, res){
+  let colecciónPersona = mongoose.model('Persona');
+  try {
+    const persona_actualizada = await colecciónPersona.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (persona_actualizada) {
+      res.redirect('/personas'); // Redirige a la lista de personas u otra página según sea necesario
+    } else {
+      res.status(404).send('No se encontró el documento');
+    }
+  } catch (error) {
+    res.status(500).send('Error interno del servidor');
+  }
 });
-
 
 app.listen(3000);
