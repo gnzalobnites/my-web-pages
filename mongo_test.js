@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
-const methodOverride = require('method-override');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 var personaSchema = mongoose.Schema({
@@ -13,7 +12,6 @@ var personaSchema = mongoose.Schema({
 var Persona = mongoose.model("Persona", personaSchema);
 //test Lubuntu
 var app = express();
-app.use(methodOverride());
 app.set('view engine', 'pug'); 
 app.set('views', './views');
 
@@ -21,7 +19,7 @@ app.set('views', './views');
 app.use(bodyParser.json());
 
 // para analizar application/xwww-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: false })); 
 
 // para analizar multipart/form-data
 app.use(upload.array());  
@@ -32,11 +30,6 @@ app.get('/', function(req, res){
 
 app.get('/persona', function(req, res){
   res.render('persona'); 
-});
-
-app.post('/', function(req, res){
-  console.log(req.body);
-  res.send("recibí tu solicitud!");
 });
 
 app.post('/persona', function(req, res){
@@ -83,24 +76,25 @@ app.get('/buscar-uno/:id', async function(req, res){
   res.send(persona_buscada);
 });
 
-app.get('/actualizar-persona/:id', async function(req, res){
+app.get('/actualizar-persona/:nombre', async function(req, res){
   let colecciónPersona = mongoose.model('Persona');
-  let persona_buscada = await colecciónPersona.findOne({_id: req.params.id});
+  let persona_buscada = await colecciónPersona.findOne({nombre: req.params.nombre});
   console.log(persona_buscada);
   res.render('actualizar_persona', { persona: persona_buscada});
 });
 
-app.post('/actualizar-persona/:id', async function(req, res){
-  const métodoReal = req.headers['X-HTTP-Method-Override'];
-  if (métodoReal === 'PUT'){
+app.post('/actualizar-persona', async function(req, res){
     const colecciónPersona = mongoose.model('Persona');
-    const persona_encontrada = await colecciónPersona.findByIdAndUpdate(req.params.id, req.body);
+    const persona_encontrada = await colecciónPersona.findByIdAndUpdate(req.body.id, {
+      nombre: req.body.nombre,
+      edad: req.body.edad,
+      nacionalidad: req.body.nacionalidad
+    });
     if (persona_encontrada){
-      res.redirect('/personas');
+      res.json(persona_encontrada);
     }else{
       res.status(404).send('No se encontró el documento');
     }
-  }
 });
 
 app.listen(3000);
