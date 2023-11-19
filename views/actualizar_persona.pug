@@ -1,0 +1,18 @@
+html 
+head
+  title Persona  
+body
+  form(action = "/actualizar-persona/#{id}", method = "PUT")
+    div
+      label(for = "nombre") Nombre:
+      input(name = "nombre")
+    br
+    div 
+      label(for = "edad") Edad:
+      input(name = "edad")
+    br  
+    div
+      label(for = "nacionalidad") Nacionalidad: 
+      input(name = "nacionalidad")
+    br
+    button(type = "submit") Crear nueva persona

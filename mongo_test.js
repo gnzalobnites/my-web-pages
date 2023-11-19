@@ -70,8 +70,35 @@ app.post('/persona', function(req, res){
 
 app.get('/personas', function(req, res){
   Persona.find().then((personas) => {
-    res.send(personas);
+    res.json(personas);
   });
+});
+
+app.get('/buscar-uno/:id', async function(req, res){
+  const Persona = mongoose.model('Persona');
+
+  const persona_buscada = await Persona.findOne(
+    {_id:req.params.id}
+  );
+
+  res.json(persona_buscada);
+
+});
+
+app.get('/actualizar-persona/:id', function(req, res){
+  res.render('actualizar_persona',{id: req.params.id}); 
+});
+
+app.put('/actualizar-persona/:id', function(req, res){
+  //Persona.findByIdAndUpdate(req.params.id, req.body);
+  Persona.update(
+    {_id: req.params.id}, {
+      $set: {
+        nacionalidad: "argentino"
+      }
+    }).then((persona_encontrada)=>{
+      res.render('actualizar_persona',{id: persona_encontrada.id});
+    });
 });
 
 
