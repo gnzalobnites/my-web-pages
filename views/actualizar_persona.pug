@@ -2,7 +2,11 @@ html
 head
   title Persona  
 body
-  form(action = "/actualizar-persona/#{id}", method = "PUT")
+  form(action = "/actualizar-persona", method = "PUT")
+    div
+      label(for = "id") Id:
+      input(name = "id")
+    br
     div
       label(for = "nombre") Nombre:
       input(name = "nombre")
@@ -15,4 +19,4 @@ body
       label(for = "nacionalidad") Nacionalidad: 
       input(name = "nacionalidad")
     br
-    button(type = "submit") Crear nueva persona
+    button(type = "submit") Actualizar persona
