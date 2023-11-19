@@ -82,19 +82,21 @@ app.get('/buscar-uno/:id', async function(req, res){
   res.json(persona_buscada);
 });
 
-app.get('/actualizar-persona/:id', function(req, res){
-  res.render('actualizar_persona',{id: req.params.id}); 
+app.get('/actualizar-persona', function(req, res){
+  res.render('actualizar_persona'); 
 });
 
-app.put('/actualizar-persona/:id', function(req, res){
+app.put('/actualizar-persona', function(req, res){
   //Persona.findByIdAndUpdate(req.params.id, req.body);
   Persona.update(
     {_id: req.params.id}, {
       $set: {
-        nacionalidad: "argentino"
+	nombre: req.params.nombre,
+	edad: req.params.edad,
+        nacionalidad: req.params.nacionalidad
       }
     }).then((persona_encontrada)=>{
-      res.render('actualizar_persona',{id: persona_encontrada.id});
+      res.json(persona_encontrada});
     });
 });
 
