@@ -102,7 +102,10 @@ app.post('/editar-persona/Actualizar', async function(req, res){
           acción: "actualizada"
       });
     }else{
-      res.status(404).send('No se encontró el documento');
+      res.render('mostrar_mensaje', {
+        mensaje: "Error al actualizar: No se encontró el documento", 
+        tipo: "error"
+      });
     }
 });
 
@@ -128,7 +131,10 @@ app.post('/editar-persona/Borrar', async function(req, res){
           acción: "borrada"
       });
     }else{
-      res.status(404).send('No se encontró el documento');
+      res.render('mostrar_mensaje', {
+        mensaje: "Error al borrar: No se encontró el documento", 
+        tipo: "error"
+      });
     };
   }
 );
