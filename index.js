@@ -35,10 +35,23 @@ app.use(bodyParser.json())
 // para analizar multipart/form-data
 app.use(upload.array());
 
-app.get('/cookie', function(req, res){
-  //res.cookie('name', 'express').send(`<p><b>cookie configurada como <br> {name: ${req.cookies.name}}</b></p>`);
-  res.cookie('name', 'express').json(req.cookies)
+app.get('/cookie-simple', function(req, res){
+  res.cookie('cookie_de_tipo_1', 'simple').json(req.cookies)
 });
+
+app.get('/cookie-expire/:ms', function(req, res){
+  res.cookie('cookie_de_tipo_2', 'expire',{expire: req.params.ms + Date.now()}).json(req.cookies)
+});
+
+app.get('/cookie-maxAge', function(req, res){
+  res.cookie('cookie_de_tipo_3', 'maxAge',{maxAge: 36000}).json(req.cookies)
+});
+
+app.get('/eliminar-cookie/:nombre', function(req, res){
+  res.clearCookie(req.params.nombre);
+  res.send('cookie ' + req.params.nombre + ' foo cleared');
+});
+
 
 app.get('/form', function(req, res){
   res.render('form');
