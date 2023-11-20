@@ -80,10 +80,14 @@ app.get('/actualizar-persona/:nombre', async function(req, res){
   let colecciónPersona = mongoose.model('Persona');
   let persona_buscada = await colecciónPersona.findOne({nombre: req.params.nombre});
   console.log(persona_buscada);
-  res.render('actualizar_persona', { persona: persona_buscada});
+  res.render('editar_persona', { 
+    persona: persona_buscada,
+    operación: "Editar",
+    acción: "/editar-persona/Actualizar"
+  });
 });
 
-app.post('/actualizar-persona', async function(req, res){
+app.post('/editar-persona/Actualizar', async function(req, res){
     const colecciónPersona = mongoose.model('Persona');
     const persona_encontrada = await colecciónPersona.findByIdAndUpdate(req.body.id, {
       nombre: req.body.nombre,
@@ -91,10 +95,42 @@ app.post('/actualizar-persona', async function(req, res){
       nacionalidad: req.body.nacionalidad
     });
     if (persona_encontrada){
-      res.json(persona_encontrada);
+      res.render('mostrar_mensaje', {
+          mensaje: "Persona actualizada", 
+          tipo: "éxito", 
+          persona: req.body,
+          acción: "actualizada"
+      });
     }else{
       res.status(404).send('No se encontró el documento');
     }
 });
+
+app.get('/borrar-persona/:nombre', async function(req, res){
+  let colecciónPersona = mongoose.model('Persona');
+  let persona_buscada = await colecciónPersona.findOne({nombre: req.params.nombre});
+  console.log(persona_buscada);
+  res.render('editar_persona', { 
+    persona: persona_buscada,
+    operación: "Borrar",
+    acción: "/editar-persona/Borrar"
+  });
+});
+
+app.post('/editar-persona/Borrar', async function(req, res){
+    const colecciónPersona = mongoose.model('Persona');
+    const persona_encontrada = await colecciónPersona.findByIdAndDelete(req.body.id);
+    if (persona_encontrada) {
+      res.render('mostrar_mensaje', {
+          mensaje: "Persona borrada", 
+          tipo: "éxito", 
+          persona: req.body,
+          acción: "borrada"
+      });
+    }else{
+      res.status(404).send('No se encontró el documento');
+    };
+  }
+);
 
 app.listen(3000);
