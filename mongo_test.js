@@ -28,11 +28,11 @@ app.get('/', function(req, res){
   res.render('form');
 });
 
-app.get('/persona', function(req, res){
-  res.render('persona'); 
+app.get('/crear-persona', function(req, res){
+  res.render('crear_persona'); 
 });
 
-app.post('/persona', function(req, res){
+app.post('/crear-persona', function(req, res){
   var reqBody = req.body; //Obtener la información analizada
   if(!reqBody.nombre || !reqBody.edad || !reqBody.nacionalidad){
     res.render('mostrar_mensaje', {
