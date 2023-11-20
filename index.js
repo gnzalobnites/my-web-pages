@@ -35,8 +35,9 @@ app.use(bodyParser.json())
 // para analizar multipart/form-data
 app.use(upload.array());
 
-app.get('/cookie-simple', function(req, res){
-  res.cookie('cookie_de_tipo_1', 'simple').json(req.cookies)
+app.get('/crear-cookie/:nombre/:valor', function(req, res){
+  res.cookie(req.params.nombre, req.params.valor).json(req.cookies);
+  //Establecer cookies desde el consola: document.cookie = 'nombre=valor'
 });
 
 app.get('/cookie-expire/:ms', function(req, res){
