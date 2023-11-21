@@ -64,7 +64,10 @@ app.post('/crear-persona', function(req, res){
 
 app.get('/personas', function(req, res){
   Persona.find().then((personas) => {
-    res.json(personas);
+    res.render('tabla_documentos', {
+      personas: personas,
+     // persona: "test"
+    });
   });
 });
 
