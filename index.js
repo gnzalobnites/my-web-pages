@@ -45,12 +45,10 @@ app.get('/contador-de-sesiones', function(req, res){
      res.send("¡Bienvenido a esta página por primera vez!");
   }
 });
-
 app.get('/crear-cookie/:nombre/:valor', function(req, res){
   res.cookie(req.params.nombre, req.params.valor).json(req.cookies);
   //Establecer cookies desde el consola: document.cookie = 'nombre=valor'
 });
-
 app.get('/cookie-expire/:ms', function(req, res){
   res.cookie('cookie_de_tipo_2', 'expire',{expire: req.params.ms + Date.now()}).json(req.cookies)
 });
