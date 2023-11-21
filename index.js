@@ -26,15 +26,25 @@ app.set('views', [
 ]); 
 
 app.use(cookieParser());
-app.use(session({secret: "¡Shh, es un secreto!"}));
+app.use(session({
+  secret: "¡Shh, es un secreto!",
+  resave: true
+}));
 // para analizar application/xwww-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true })); 
-
 //Para analizar datos json
 app.use(bodyParser.json())
-
 // para analizar multipart/form-data
 app.use(upload.array());
+app.get('/contador-de-sesiones', function(req, res){
+  if(req.session.page_views){
+     req.session.page_views++;
+     res.send("Has visitado esta página " + req.session.page_views + " veces");
+  } else {
+     req.session.page_views = 1;
+     res.send("¡Bienvenido a esta página por primera vez!");
+  }
+});
 
 app.get('/crear-cookie/:nombre/:valor', function(req, res){
   res.cookie(req.params.nombre, req.params.valor).json(req.cookies);
