@@ -8,6 +8,7 @@ var cosas = require('./cosas.js');
 var js_pug_router = require('./public/javascript/javascript.js'); 
 var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var esquemaPersona = mongoose.Schema({
   nombre: String,
   edad: Number,
@@ -24,8 +25,8 @@ app.set('views', [
   './public/javascript' 
 ]); 
 
-app.use(cookieParser())
-
+app.use(cookieParser());
+app.use(session({secret: "¡Shh, es un secreto!"}));
 // para analizar application/xwww-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true })); 
 
