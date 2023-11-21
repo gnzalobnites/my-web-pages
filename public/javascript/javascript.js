@@ -20,8 +20,10 @@ router.get('/', function(req, res){
     og_image: 'https://gonzalo-web-pages.onrender.com/javascript/images/javascript_fondo.png',
     article_tag_1: 'JavaScript',
     article_tag_2: 'Español',
-    article_tag_3: 'Curso'
+    article_tag_3: 'Curso',
+    modo: req.cookies.modo
   }); 
+  console.log(req.cookies.modo)
 });
 
 router.post('/', function(req, res){

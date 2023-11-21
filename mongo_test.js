@@ -66,7 +66,6 @@ app.get('/personas', function(req, res){
   Persona.find().then((personas) => {
     res.render('tabla_documentos', {
       personas: personas,
-     // persona: "test"
     });
   });
 });
