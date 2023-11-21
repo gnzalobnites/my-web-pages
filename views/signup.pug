@@ -1,0 +1,14 @@
+html
+  head
+    title Registro
+  body
+    if(message)
+      h4 #{message}
+    form(action = "/signup" method = "POST")
+      input(name = "id" type = "text" required placeholder = "ID de usuario")
+      br
+      br
+      input(name = "password" type = "password" required placeholder = "Contraseña")
+      br
+      br
+      button(type = "Submit") ¡Regístrate!

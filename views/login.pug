@@ -1,0 +1,14 @@
+html
+  head
+    title Inicio de sesión
+  body
+    if(message)
+      h4 #{message}
+    form(action = "/login" method = "POST")
+      input(name = "id" type = "text" required placeholder = "ID de usuario")
+      br
+      br
+      input(name = "password" type = "password" required placeholder = "Contraseña")
+      br
+      br
+      button(type = "Submit") Iniciar sesión
