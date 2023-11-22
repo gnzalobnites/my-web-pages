@@ -7,6 +7,15 @@ var upload = multer();
 var js_pug_router = require('./public/javascript/javascript.js'); 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var mongoose = require('mongoose');
+//mongoose.connect('mongodb://localhost:27017/mi_db');
+var esquemaUsuario = mongoose.Schema({
+  id: String,
+  contraseña: String,
+  nacionalidad: String
+});
+var Usuarios = mongoose.model("Usuarios", esquemaUsuarios);
+
 const app = express();
 
 app.set('view engine', 'pug');
