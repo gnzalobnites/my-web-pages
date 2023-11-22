@@ -8,13 +8,13 @@ var js_pug_router = require('./public/javascript/javascript.js');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://localhost:27017/mi_db');
+//mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 var esquemaUsuario = mongoose.Schema({
   id: String,
-  contraseña: String,
-  preferencias: {}
+  password: String,
+  //preferencias: {}
 });
-var Usuarios = mongoose.model("Usuarios", esquemaUsuarios);
+var Usuarios = mongoose.model("Usuarios", esquemaUsuario);
 
 const app = express();
 
@@ -38,20 +38,52 @@ app.get('/signup', function(req, res){
   res.render('signup');
 });
 app.post('/signup', function(req, res){
-  if(!req.body.id || !req.body.password){
-     res.status("400");
-     res.send("Detalles no válidos!");
-  } else {
-     Users.filter(function(user){
-        if(user.id === req.body.id){
-           res.render('signup', {
-              message: "¡El usuario ya existe! Inicia sesión o elige otro nombre de usuario"});
-        }
+  var reqBody = req.body;
+  if (!reqBody.id || !reqBody.password) {
+    res.render('mostrar_mensaje', {
+      mensaje: "Lo siento, proporcionaste información incorrecta", 
+      tipo: "error"
     });
-    var newUser = {id: req.body.id, password: req.body.password};
-    Users.push(newUser);
-    req.session.user = newUser;
-    res.redirect('/protected_page');
+  } else {
+    Usuarios.findOne({id: reqBody.id}).then((resBuscUno) => {
+      if (resBuscUno) {
+        // Si el usuario ya existe, muestra un mensaje de error
+        res.render('mostrar_mensaje', {
+          mensaje: "El usuario ya existe, inicie sesión", 
+          tipo: "error"
+        });
+      } else {
+        // Si el usuario no existe, crea uno nuevo
+        var newUser = new Usuarios({
+          id: reqBody.id,
+          password: reqBody.password,
+          //preferencias: {}
+        });
+
+        newUser.save().then(() => {
+          res.render('mostrar_mensaje', {
+            mensaje: "Nueva persona agregada", 
+            tipo: "éxito", 
+            persona: reqBody
+          });
+          console.log('Document saved successfully');
+        }).catch(err => {
+          res.render('mostrar_mensaje', {
+            mensaje: "Error de base de datos", 
+            tipo: "error"
+          });
+          console.error('Error saving document:', err);
+        });
+      }
+    }).catch(err => {
+      // Manejar errores de la búsqueda de usuario
+      res.render('mostrar_mensaje', {
+        mensaje: "Error de base de datos", 
+        tipo: "error"
+      });
+      console.error('Error searching for document:', err);
+    });
+    console.log(reqBody);
   }
 });
 function checkSignIn(req, res, next){
@@ -74,13 +106,15 @@ app.post('/login', function(req, res){
   if(!req.body.id || !req.body.password){
      res.render('login', {message: "Por favor, introduce tanto el ID como la contraseña"});
   } else {
-     Users.filter(function(user){
-        if(user.id === req.body.id && user.password === req.body.password){
-           req.session.user = user;
-           res.redirect('/protected_page');
-        }
-     });
-     res.render('login', {message: "Credenciales no válidas."});
+    Usuarios.findOne({id: req.body.id}).then((resBuscUno) => {
+      if(resBuscUno.id === req.body.id && resBuscUno.password === req.body.password){
+        req.session.user = resBuscUno;
+        res.redirect('/protected_page');
+      } else {
+        res.render('login', {message: "Credenciales no válidas."});
+      }
+      
+    });
   }
 });
 app.get('/logout', function(req, res){
