@@ -12,7 +12,7 @@ var mongoose = require('mongoose');
 var esquemaUsuario = mongoose.Schema({
   id: String,
   contraseña: String,
-  nacionalidad: String
+  preferencias: {}
 });
 var Usuarios = mongoose.model("Usuarios", esquemaUsuarios);
 
