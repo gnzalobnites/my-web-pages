@@ -3,6 +3,25 @@ html
       title Página protegida
    body
       div ¡Hola #{id}, ¿cómo estás hoy?
+      div Tu color favorito es #{color}
       div ¿Quieres cerrar sesión?
       div 
         a(href="/logout") Cerrar sesión
+      br
+      button(onclick="enviarSolicitud()") Establecer colot favorito
+      script
+         | function enviarSolicitud() {
+         |    var color = prompt("Ingrese su color favorito");
+         |    
+         |    var xhr = new XMLHttpRequest();
+         |    xhr.open("POST", "/configurar_color_favorito", true);
+         |    xhr.setRequestHeader("Content-Type", "application/json");
+         |
+         |    // Convertir datos a formato JSON y enviarlos en el cuerpo de la solicitud
+         |    var data = JSON.stringify({
+         |      id: '#{id}',
+         |      color: color
+         |    });
+         | 
+         |    xhr.send(data);
+         |  }

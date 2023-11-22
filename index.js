@@ -8,11 +8,13 @@ var js_pug_router = require('./public/javascript/javascript.js');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
+//mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 var esquemaUsuario = mongoose.Schema({
   id: String,
   password: String,
-  //preferencias: {}
+  preferencias: {
+    color: String
+  }
 });
 var Usuarios = mongoose.model("Usuarios", esquemaUsuario);
 
@@ -57,7 +59,9 @@ app.post('/signup', function(req, res){
         var newUser = new Usuarios({
           id: reqBody.id,
           password: reqBody.password,
-          //preferencias: {}
+          preferencias: {
+            color: "blanco"
+          }
         });
 
         newUser.save().then(() => {
@@ -96,13 +100,35 @@ function checkSignIn(req, res, next){
   }
 }
 app.get('/protected_page', checkSignIn, function(req, res){
-  res.render('protected_page', {id: req.session.user.id})
+  res.render('protected_page', {
+    id: req.session.user.id,
+    color: req.session.user.preferencias.color
+  })
 });
+/* app.post('/configurar_color_favorito/:id', function(req, res){
+  req.session.user.preferencias.color = req.body.color;
+  console.log(req.session.user.preferencias.color)
+}) */
+app.post('/configurar_color_favorito', function(req, res){
+  const Usuarios = mongoose.model('Usuarios');
+  Usuarios.findOneAndUpdate({id: req.body.id}, {
+    preferencias: {
+      color: req.body.color
+    },
+  }).then((usuario_actualizado) => {
+    console.log(usuario_actualizado);
+    res.status(200).send("Color favorito configurado correctamente");
+  }).catch((error) => {
+    console.error('Error al actualizar el usuario:', error);
+    res.status(500).send("Error al configurar el color favorito");
+  });
+});
+
 app.get('/login', function(req, res){
   res.render('login');
 });
 app.post('/login', function(req, res){
-  console.log(Users);
+  console.log(Usuarios);
   if(!req.body.id || !req.body.password){
      res.render('login', {message: "Por favor, introduce tanto el ID como la contraseña"});
   } else {
