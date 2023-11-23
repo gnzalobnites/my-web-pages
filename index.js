@@ -8,7 +8,7 @@ var js_pug_router = require('./public/javascript/javascript.js');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
+mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 var esquemaUsuario = mongoose.Schema({
   id: String,
   password: String,
@@ -22,8 +22,7 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.set('views', [
-  './views',
-  './public/javascript' 
+  './views' 
 ]); 
 
 app.use(bodyParser.json());

@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res){
-  res.render('javascript', {
+  res.render('página_dinámica_común', {
     title: "JavaScript desde cero",
     google_site_verification_content:"IlwE29oPx3IJib2qhYUc07f7uJp7SpVM12hd1DnPiqE",
     apple_touch_icon_180_href: 'https://gonzalo-web-pages.onrender.com/javascript/apple-touch-icon-js.png',
@@ -24,10 +24,6 @@ router.get('/', function(req, res){
     modo: req.cookies.modo
   }); 
   console.log(req.cookies.modo)
-});
-
-router.post('/', function(req, res){
-  res.send('Ruta POST en cosas.\n');
 });
 
 //exportar este router para usarlo en nuestro index.js 
