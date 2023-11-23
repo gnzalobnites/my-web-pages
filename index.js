@@ -104,11 +104,7 @@ app.get('/protected_page', checkSignIn, function(req, res){
     color: req.session.user.preferencias.color
   })
 });
-/* app.post('/configurar_color_favorito/:id', function(req, res){
-  req.session.user.preferencias.color = req.body.color;
-  console.log(req.session.user.preferencias.color)
-}) */
-app.post('/configurar_color_favorito', function(req, res){
+app.post('/configurar_color_favorito', checkSignIn, function(req, res){
   const Usuarios = mongoose.model('Usuarios');
   Usuarios.findOneAndUpdate({id: req.body.id}, {
     preferencias: {
