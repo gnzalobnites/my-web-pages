@@ -199,7 +199,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });                                                                                                                                            
 
-app.use('/javascript-pug', js_pug_router);
+app.use('/javascript-pug', router_js_pug);
 
 app.get('*', function(req, res){
   res.send('<h1>Lo siento, esta es una URL no válida.</h1>');
