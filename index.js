@@ -13,7 +13,8 @@ var esquemaUsuario = mongoose.Schema({
   id: String,
   password: String,
   preferencias: {
-    color: String
+    color: String,
+    tama-hora: Number
   }
 });
 var Usuarios = mongoose.model("Usuarios", esquemaUsuario);
