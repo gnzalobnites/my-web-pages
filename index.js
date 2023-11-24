@@ -4,20 +4,10 @@ const PORT = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
-var router_js_pug = require('./public/javascript/router_js_pug.js'); 
+var router_js_pug = require('./public/javascript/router_js_pug.js');
+var router_manejo_sesión = require('./router_manejo_sesión.js'); 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
-var esquemaUsuario = mongoose.Schema({
-  id: String,
-  password: String,
-  preferencias: {
-    color: String,
-    tama-hora: Number
-  }
-});
-var Usuarios = mongoose.model("Usuarios", esquemaUsuario);
 
 const app = express();
 
@@ -35,121 +25,8 @@ app.use(session({
   resave: true
 }));
 
-var Users = [];
-app.get('/signup', function(req, res){
-  res.render('signup');
-});
-app.post('/signup', function(req, res){
-  var reqBody = req.body;
-  if (!reqBody.id || !reqBody.password) {
-    res.render('mostrar_mensaje', {
-      mensaje: "Lo siento, proporcionaste información incorrecta", 
-      tipo: "error"
-    });
-  } else {
-    Usuarios.findOne({id: reqBody.id}).then((resBuscUno) => {
-      if (resBuscUno) {
-        // Si el usuario ya existe, muestra un mensaje de error
-        res.render('mostrar_mensaje', {
-          mensaje: "El usuario ya existe, inicie sesión", 
-          tipo: "error"
-        });
-      } else {
-        // Si el usuario no existe, crea uno nuevo
-        var newUser = new Usuarios({
-          id: reqBody.id,
-          password: reqBody.password,
-          preferencias: {
-            color: "blanco"
-          }
-        });
+app.use('/acceso', router_manejo_sesión);
 
-        newUser.save().then(() => {
-          res.render('mostrar_mensaje', {
-            mensaje: "Nueva persona agregada", 
-            tipo: "éxito", 
-            persona: reqBody
-          });
-          console.log('Document saved successfully');
-        }).catch(err => {
-          res.render('mostrar_mensaje', {
-            mensaje: "Error de base de datos", 
-            tipo: "error"
-          });
-          console.error('Error saving document:', err);
-        });
-      }
-    }).catch(err => {
-      // Manejar errores de la búsqueda de usuario
-      res.render('mostrar_mensaje', {
-        mensaje: "Error de base de datos", 
-        tipo: "error"
-      });
-      console.error('Error searching for document:', err);
-    });
-    console.log(reqBody);
-  }
-});
-function checkSignIn(req, res, next){
-  if(req.session.user){
-     next(); //Si la sesión existe, continúa a la página
-  } else {
-     var err = new Error("No has iniciado sesión.");
-     console.log(req.session.user);
-     next(err); //Error, intentando acceder a una página no autorizada
-  }
-}
-app.get('/protected_page', checkSignIn, function(req, res){
-  res.render('protected_page', {
-    id: req.session.user.id,
-    color: req.session.user.preferencias.color
-  })
-});
-app.post('/configurar_color_favorito', checkSignIn, function(req, res){
-  const Usuarios = mongoose.model('Usuarios');
-  Usuarios.findOneAndUpdate({id: req.body.id}, {
-    preferencias: {
-      color: req.body.color
-    },
-  }).then((usuario_actualizado) => {
-    console.log(usuario_actualizado);
-    res.status(200).send("Color favorito configurado correctamente");
-  }).catch((error) => {
-    console.error('Error al actualizar el usuario:', error);
-    res.status(500).send("Error al configurar el color favorito");
-  });
-});
-
-app.get('/login', function(req, res){
-  res.render('login');
-});
-app.post('/login', function(req, res){
-  console.log(Usuarios);
-  if(!req.body.id || !req.body.password){
-     res.render('login', {message: "Por favor, introduce tanto el ID como la contraseña"});
-  } else {
-    Usuarios.findOne({id: req.body.id}).then((resBuscUno) => {
-      if(resBuscUno.id === req.body.id && resBuscUno.password === req.body.password){
-        req.session.user = resBuscUno;
-        res.redirect('/protected_page');
-      } else {
-        res.render('login', {message: "Credenciales no válidas."});
-      }
-      
-    });
-  }
-});
-app.get('/logout', function(req, res){
-  req.session.destroy(function(){
-     console.log("Usuario desconectado.")
-  });
-  res.redirect('/login');
-});
-app.use('/protected_page', function(err, req, res, next){
-console.log(err);
-  //El usuario debe estar autenticado. Redirígelo para iniciar sesión.
-  res.redirect('/login');
-});
 app.get('/contador-de-sesiones', function(req, res){
   if(req.session.page_views){
      req.session.page_views++;
