@@ -47,7 +47,7 @@ function modoNoct(){
   document.body.style.color = "#fff";
   document.body.style.backgroundColor = "#000";
 
-  document.cookie = 'modo=Noct'
+  document.cookie = 'modo=modoNoct()'
 }
 
 function modoDiur(){
@@ -98,7 +98,7 @@ function modoDiur(){
   document.body.style.color = "#000";
   document.body.style.backgroundColor = "#fff";
     
-  document.cookie = 'modo=Diur'
+  document.cookie = 'modo=modoDiur()'
 }
 
 

@@ -4,26 +4,31 @@ const PORT = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
+var cookieParser = require('cookie-parser');
 var router_js_pug = require('./public/javascript/router_js_pug.js');
+var router_reloj_pug = require('./public/mi-reloj-web/router_reloj_pug.js');
 var router_manejo_sesión = require('./router_manejo_sesión.js'); 
 var router_ejemplos_cookies = require('./router_ejemplos_cookies.js');
 
 const app = express();
+app.use(cookieParser());
 
 app.set('view engine', 'pug');
 app.set('views', [
   './views',
-  './public/javascript'
+  './public/javascript',
+  './public/mi-reloj-web'
 ]);
 
 app.get('/test-cookies', function(req, res){
-  const cookies = req.cookies;
+  const cookies = req.cookies.modo;
   res.json(cookies);
 });
 
 app.use('/acceso', router_manejo_sesión);
 app.use('/ejemplos-cookies', router_ejemplos_cookies);
 app.use('/javascript-pug', router_js_pug);
+app.use('/reloj-pug', router_reloj_pug);
 
 // Configura la carpeta estática para tus archivos
 app.use(express.static(path.join(__dirname, 'public')));

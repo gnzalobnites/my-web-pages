@@ -8,12 +8,11 @@ html(lang='es')
       fullscreen
         p#top
         header
-          include ../../views/navbar.pug
-        div#fondo  
-        include ../../public/javascript/main_js.pug            
+          include ../../views/navbar_sin_buscador.pug
+        //div#fondo  
+        include ../mi-reloj-web/main_reloj.pug         
         include ../../views/buscador_inferior.pug
-        include ../../views/pie.pug
+        include ../../views/pie_con_fullscreen.pug
       include ../../views/scripts_final_body.pug
       script
         | #{modo}
-        

@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res){
-  res.render('página_dinámica_común', {
+  res.render('plantilla_sin_main_reloj', {
     title: "Mi reloj web",
     google_site_verification_content:"IlwE29oPx3IJib2qhYUc07f7uJp7SpVM12hd1DnPiqE",
     apple_touch_icon_180_href: 'https://gonzalo-web-pages.onrender.com/mi-reloj-web/apple-touch-icon.png',

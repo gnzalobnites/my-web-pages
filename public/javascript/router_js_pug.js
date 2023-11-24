@@ -22,7 +22,7 @@ router.get('/', function(req, res){
     article_tag_1: 'JavaScript',
     article_tag_2: 'Español',
     article_tag_3: 'Curso',
-    
+    modo: req.cookies.modo
   }); 
   //console.log(req.cookies)
 });
