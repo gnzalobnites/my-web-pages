@@ -3,7 +3,8 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res){
-  res.render('página_dinámica_común', {
+
+  res.render('plantilla_sin_main', {
     title: "JavaScript desde cero",
     google_site_verification_content:"IlwE29oPx3IJib2qhYUc07f7uJp7SpVM12hd1DnPiqE",
     apple_touch_icon_180_href: 'https://gonzalo-web-pages.onrender.com/javascript/apple-touch-icon-js.png',
@@ -21,9 +22,13 @@ router.get('/', function(req, res){
     article_tag_1: 'JavaScript',
     article_tag_2: 'Español',
     article_tag_3: 'Curso',
-    modo: req.cookies.modo
+    
   }); 
-  console.log(req.cookies.modo)
+  //console.log(req.cookies)
+});
+router.get('/test-cookies', function(req, res){
+  const cookies = req.cookies;
+  res.send(cookies);
 });
 
 //exportar este router para usarlo en nuestro index.js 

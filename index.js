@@ -12,8 +12,14 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.set('views', [
-  './views' 
+  './views',
+  './public/javascript'
 ]);
+
+app.get('/test-cookies', function(req, res){
+  const cookies = req.cookies;
+  res.json(cookies);
+});
 
 app.use('/acceso', router_manejo_sesión);
 app.use('/ejemplos-cookies', router_ejemplos_cookies);

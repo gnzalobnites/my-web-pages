@@ -22,15 +22,6 @@ router.use(session({
     secret: "¡Shh, es un secreto!",
     resave: true
 }));
-function checkSignIn(req, res, next){
-  if(req.session.user){
-     next(); //Si la sesión existe, continúa a la página
-  } else {
-     var err = new Error("No has iniciado sesión.");
-     console.log(req.session.user);
-     next(err); //Error, intentando acceder a una página no autorizada
-  }
-}
 router.get('/login', function(req, res){
   res.render('login');
 });
@@ -50,6 +41,15 @@ router.post('/login', function(req, res){
     });
   }
 });
+function checkSignIn(req, res, next){
+  if(req.session.user){
+     next(); //Si la sesión existe, continúa a la página
+  } else {
+     var err = new Error("No has iniciado sesión.");
+     console.log(req.session.user);
+     next(err); //Error, intentando acceder a una página no autorizada
+  }
+}
 router.post('/configurar_color_favorito', checkSignIn, function(req, res){
   const Usuarios = mongoose.model('Usuarios');
   Usuarios.findOneAndUpdate({id: req.body.id}, {
