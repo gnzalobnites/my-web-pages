@@ -15,22 +15,13 @@ var esquemaUsuario = mongoose.Schema({
   }
 });
 var Usuarios = mongoose.model("Usuarios", esquemaUsuario);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(upload.array());
-app.use(session({
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(upload.array());
+router.use(session({
     secret: "¡Shh, es un secreto!",
     resave: true
-  }));
-function checkSignIn(req, res, next){
-  if(req.session.user){
-     next(); //Si la sesión existe, continúa a la página
-  } else {
-     var err = new Error("No has iniciado sesión.");
-     console.log(req.session.user);
-     next(err); //Error, intentando acceder a una página no autorizada
-  }
-}
+}));
 function checkSignIn(req, res, next){
   if(req.session.user){
      next(); //Si la sesión existe, continúa a la página
@@ -143,6 +134,15 @@ router.use('/protected_page', function(err, req, res, next){
     console.log(err);
     //El usuario debe estar autenticado. Redirígelo para iniciar sesión.
     res.redirect('/acceso/login');
+});
+router.get('/contador-de-sesiones', function(req, res){
+  if(req.session.page_views){
+     req.session.page_views++;
+     res.send("Has visitado esta página " + req.session.page_views + " veces");
+  } else {
+     req.session.page_views = 1;
+     res.send("¡Bienvenido a esta página por primera vez!");
+  }
 });
 
 module.exports = router;
