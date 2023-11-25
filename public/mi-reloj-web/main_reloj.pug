@@ -1,9 +1,17 @@
 main
-  div.d-flex.justify-content-center.align-items-center.gap-1(style="height: 55vh;")
-    div.gap-1
+  div#div_ext_reloj.d-flex.justify-content-center.align-items-center.gap-1(style="height: 55vh; padding-top: 25vh")
+    div#div_int_reloj.gap-1.d-none
       p.text-center.p-1(style="font-weight: bold")
         span.fuenteDigital(id="hs_y_mins")
         span#segundos.fuenteDigital
         br
         span#fecha.fuenteFecha
+    div#botones_sesion.gap-1.d-block
+      ul.list-unstyled
+        li.d-flex.justify-content-center
+          a(href='/reloj-pug/login-reloj')
+            button(onclick="") Iniciar sesión
+        li.d-flex.justify-content-center o
+        li.d-flex.justify-content-center 
+          button(onclick="") Registrarse
 script(src="js/test.js")

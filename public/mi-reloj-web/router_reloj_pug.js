@@ -26,5 +26,9 @@ router.get('/', function(req, res){
   //console.log(req.cookies.modo)
 });
 
+router.get('/login-reloj', function (req, res) {
+  res.render("login_reloj_sin_main")
+})
+
 //exportar este router para usarlo en nuestro index.js 
 module.exports = router;
