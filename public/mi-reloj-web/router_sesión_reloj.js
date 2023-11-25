@@ -25,21 +25,23 @@ router.use(session({
 router.get('/login-reloj', function(req, res){
   res.render('login_reloj_sin_main');
 });
-router.post('/login', function(req, res){
+router.post('/login-reloj', function(req, res){
   console.log(req.body.id +' '+ req.body.password);
   if(!req.body.id || !req.body.password){
      res.render('login', {message: "Por favor, introduce tanto el ID como la contraseña"});
   } else {
     Usuarios_reloj.findOne({id: req.body.id}).then((resBuscUno) => {
-        if (!resBuscUno) {
-            res.render('login_reloj_sin_main', {message: "Usuario no encontrado. Regístrese"})
-        }
-      if(resBuscUno.id === req.body.id && resBuscUno.password === req.body.password){
-        req.session.user = resBuscUno;
-        res.redirect('/acceso/protected_page');
+      if (resBuscUno == null) {
+          res.render('signup_reloj_sin_main', {message: "Usuario no encontrado. Regístrese"})
       } else {
-        res.render('login_reloj_sin_main', {message: "Credenciales no válidas."});
+        if(resBuscUno.id === req.body.id && resBuscUno.password === req.body.password){
+          req.session.user = resBuscUno;
+          res.redirect('/acceso-reloj/protected_page');
+        } else {
+          res.render('login_reloj_sin_main', {message: "Credenciales no válidas."});
+        }
       }
+      
       
     });
   }

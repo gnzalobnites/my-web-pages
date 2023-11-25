@@ -30,5 +30,8 @@ router.get('/login-reloj', function (req, res) {
   res.render("login_reloj_sin_main")
 })
 
+router.get('/signup-reloj', function (req, res) {
+  res.render("signup_reloj_sin_main")
+})
 //exportar este router para usarlo en nuestro index.js 
 module.exports = router;

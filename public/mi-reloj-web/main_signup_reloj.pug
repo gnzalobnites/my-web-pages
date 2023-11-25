@@ -3,7 +3,7 @@ main
     div#div_int_reloj.gap-1.d-block
       if(message)
         h4 #{message}
-      form(action = "/acceso-reloj/login-reloj" method = "POST")
+      form(action = "/acceso-reloj/registrarse" method = "POST")
         input(name = "id" type = "text" required placeholder = "ID de usuario")
         br
         br
@@ -11,7 +11,7 @@ main
         br
         br
         div.d-flex.justify-content-center
-          button(type = "Submit") Iniciar sesión
+          button(type = "Submit") Registrarse
         br
         
         div.d-flex.justify-content-center

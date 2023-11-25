@@ -5,10 +5,7 @@ html
     if(tipo == "error")
       h3(style = "color:red") #{mensaje}
     else
-      h3 
-        |#{mensaje}
-        |Persona, 
-        |nombre: #{persona.nombre}, 
-        |edad: #{persona.edad} y 
-        |nacionalidad: #{persona.nacionalidad} 
-        |#{acción}.
+      h3 #{mensaje}
+      ul 
+        li nombre: #{persona.id}
+      
