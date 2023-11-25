@@ -21,9 +21,9 @@ router.get('/', function(req, res){
     article_tag_1: 'Clock',
     article_tag_2: 'Customizable',
     article_tag_3: 'App',
-    modo: req.cookies.modo
+    //modo: req.cookies.modo
   }); 
-  console.log(req.cookies.modo)
+  //console.log(req.cookies.modo)
 });
 
 //exportar este router para usarlo en nuestro index.js 
