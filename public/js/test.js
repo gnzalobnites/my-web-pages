@@ -15,6 +15,10 @@ var tamaHora = localHora == null ? 90 : localHora;
 var tamaSeg = localSegs == null ? 45 : localSegs ;
 var tamaFecha = localFecha == null ? 25 : localFecha; 
 
+function mostrar_botones_sesión(){
+    console.log('hola')
+}
+mostrar_botones_sesión()
 /*function addZero(i) {
   if (i < 10) {i = "0" + i}
   return i;

@@ -36,7 +36,7 @@ router.post('/login-reloj', function(req, res){
       } else {
         if(resBuscUno.id === req.body.id && resBuscUno.password === req.body.password){
           req.session.user = resBuscUno;
-          res.redirect('/acceso-reloj/protected_page');
+          res.redirect('/acceso-reloj/plantilla_sin_main_protegida_reloj');
         } else {
           res.render('login_reloj_sin_main', {message: "Credenciales no válidas."});
         }
@@ -69,8 +69,8 @@ router.post('/configurar_color_favorito', checkSignIn, function(req, res){
     res.status(500).send("Error al configurar el color favorito");
   });
 });
-router.get('/protected_page', checkSignIn, function(req, res){
-    res.render('protected_page', {
+router.get('/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res){
+    res.render('plantilla_sin_main_protegida_reloj', {
       id: req.session.user.id,
       color: req.session.user.preferencias.color
     })
