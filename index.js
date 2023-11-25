@@ -7,11 +7,15 @@ var upload = multer();
 var cookieParser = require('cookie-parser');
 var router_js_pug = require('./public/javascript/router_js_pug.js');
 var router_reloj_pug = require('./public/mi-reloj-web/router_reloj_pug.js');
-var router_manejo_sesión = require('./router_manejo_sesión.js'); 
+var router_manejo_sesión = require('./router_manejo_sesión.js');
+var router_sesión_reloj = require('./public/mi-reloj-web/router_sesión_reloj.js'); 
 var router_ejemplos_cookies = require('./router_ejemplos_cookies.js');
 
 const app = express();
 app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(upload.array());
 
 app.set('view engine', 'pug');
 app.set('views', [
@@ -26,6 +30,7 @@ app.get('/test-cookies', function(req, res){
 });
 
 app.use('/acceso', router_manejo_sesión);
+app.use('/acceso-reloj', router_sesión_reloj);
 app.use('/ejemplos-cookies', router_ejemplos_cookies);
 app.use('/javascript-pug', router_js_pug);
 app.use('/reloj-pug', router_reloj_pug);
