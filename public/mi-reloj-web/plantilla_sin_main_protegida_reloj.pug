@@ -237,20 +237,22 @@ html(lang='es')
 
       function cambiarFondo(val) {
           document.body.style.backgroundColor = val;
-          var xhr = new XMLHttpRequest();
+          let xhr = new XMLHttpRequest();
           xhr.open("POST", "/reloj-pug/editar-fondo/#{id}", true);
           xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.send(JSON.stringify({
-            preferencias: {
-              color_fondo: val
-            },
-          }));
-      }
+          xhr.send(JSON.stringify({color_fondo: val}));
+      };
       function cambiarFuente(val2) {
           document.body.style.color = val2;
           var hamburguesa = document.getElementById("hamburguesa");
           hamburguesa.style.color = val2;
-          localStorage.setItem("fuente", val2);
+          let marca = document.getElementById('marca');
+          marca.style.color = val2;
+          //localStorage.setItem("fuente", val2);
+          let xhr = new XMLHttpRequest();
+          xhr.open("POST", "/reloj-pug/editar-fuente/#{id}", true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.send(JSON.stringify({color_fuente: val2}));
       }
 
       function redimHora(val3) {

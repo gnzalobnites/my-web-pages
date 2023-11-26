@@ -168,7 +168,7 @@ router.post('/editar-fondo/:id', async function(req, res){
   const Usuarios_reloj = mongoose.model('Usuarios_reloj');
   const persona_encontrada = await Usuarios_reloj.findOneAndUpdate({id: req.params.id}, {
     preferencias: {
-      color_fondo: req.body.preferencias.color_fondo
+      color_fondo: req.body.color_fondo
     }
   });
   if (persona_encontrada){
@@ -177,6 +177,18 @@ router.post('/editar-fondo/:id', async function(req, res){
     console.log('Error: no se encontró el usuario');
   }
 });
-
+router.post('/editar-fuente/:id', async function(req, res){
+  const Usuarios_reloj = mongoose.model('Usuarios_reloj');
+  const persona_encontrada = await Usuarios_reloj.findOneAndUpdate({id: req.params.id}, {
+    preferencias: {
+      color_fuente: req.body.color_fuente
+    }
+  });
+  if (persona_encontrada){
+    console.log('Color de fuente guardado correctamente')
+  }else{
+    console.log('Error: no se encontró el usuario');
+  }
+});
 //exportar este router para usarlo en nuestro index.js 
 module.exports = router;
