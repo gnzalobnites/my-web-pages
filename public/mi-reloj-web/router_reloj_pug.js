@@ -163,6 +163,20 @@ router.use('/protected_page', function(err, req, res, next){
 });
 router.get('/signup-reloj', function (req, res) {
   res.render("signup_reloj_sin_main")
-})
+});
+router.post('/editar-fondo/:id', async function(req, res){
+  const Usuarios_reloj = mongoose.model('Usuarios_reloj');
+  const persona_encontrada = await Usuarios_reloj.findOneAndUpdate({id: req.params.id}, {
+    preferencias: {
+      color_fondo: req.body.preferencias.color_fondo
+    }
+  });
+  if (persona_encontrada){
+    console.log('Color de fondo guardado correctamente')
+  }else{
+    console.log('Error: no se encontró el usuario');
+  }
+});
+
 //exportar este router para usarlo en nuestro index.js 
 module.exports = router;

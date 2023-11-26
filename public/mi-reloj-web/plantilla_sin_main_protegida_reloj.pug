@@ -214,8 +214,8 @@ html(lang='es')
 
         document.getElementById("fecha").innerHTML =  fechaCadena; 
 
-          var max_tam_hora = document.getElementById("max_tam_hora");
-          var anchoPantalla = window.innerWidth;
+        var max_tam_hora = document.getElementById("max_tam_hora");
+        var anchoPantalla = window.innerWidth;
         //console.log(anchoPantalla);
         if(anchoPantalla >= 601) {
           max_tam_hora.max = 250;
@@ -224,7 +224,7 @@ html(lang='es')
         }
         
         var max_tam_fecha = document.getElementById("max_tam_fecha");
-          var anchoPantalla = window.innerWidth;
+        var anchoPantalla = window.innerWidth;
         //console.log(anchoPantalla);
         if(anchoPantalla >= 601) {
           max_tam_fecha.max = 60;
@@ -237,8 +237,14 @@ html(lang='es')
 
       function cambiarFondo(val) {
           document.body.style.backgroundColor = val;
-          localStorage.setItem("fondo", val);
-
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/reloj-pug/editar-fondo/#{id}", true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.send(JSON.stringify({
+            preferencias: {
+              color_fondo: val
+            },
+          }));
       }
       function cambiarFuente(val2) {
           document.body.style.color = val2;
