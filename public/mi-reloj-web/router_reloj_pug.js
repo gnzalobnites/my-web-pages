@@ -87,7 +87,7 @@ router.get('/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res
     //id: req.session.user.preferencias.color_fondo,
     color_fondo: req.session.user.preferencias.color_fondo,
     color_fuente: req.session.user.preferencias.color_fuente,
-    tamaño_hora: req.session.user.preferencias.tamaño_hora,
+    tamano_hora: req.session.user.preferencias.tamaño_hora,
     tamaño_segundos: req.session.user.preferencias.tamaño_segundos,
     tamaño_fecha: req.session.user.preferencias.tamaño_fecha,
   })
@@ -172,7 +172,7 @@ router.post('/editar-fondo/:id', async function(req, res){
     }
   });
   if (persona_encontrada){
-    console.log('Color de fondo guardado correctamente')
+    console.log('Color de fondo '+req.body.color_fondo+' guardado correctamente')
   }else{
     console.log('Error: no se encontró el usuario');
   }
@@ -185,7 +185,20 @@ router.post('/editar-fuente/:id', async function(req, res){
     }
   });
   if (persona_encontrada){
-    console.log('Color de fuente guardado correctamente')
+    console.log('Color de fuente '+req.body.color_fuente+ 'guardado correctamente')
+  }else{
+    console.log('Error: no se encontró el usuario');
+  }
+});
+router.post('/editar-hora/:id', async function(req, res){
+  const Usuarios_reloj = mongoose.model('Usuarios_reloj');
+  const persona_encontrada = await Usuarios_reloj.findOneAndUpdate({id: req.params.id}, {
+    preferencias: {
+      color_fuente: req.body.tamano_hora
+    }
+  });
+  if (persona_encontrada){
+    console.log('Color de fuente '+req.body.tamano_hora+ 'guardado correctamente')
   }else{
     console.log('Error: no se encontró el usuario');
   }
