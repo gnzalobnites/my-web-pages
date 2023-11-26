@@ -5,8 +5,6 @@ document.body.style.color = fuenteLocal;
 var hamburguesa = document.getElementById("hamburguesa");
 hamburguesa.style.color = fuenteLocal;
 
-
-
 var localHora = localStorage.getItem("tama_hora");
 var localSegs = localStorage.getItem("tama_segundos");
 var localFecha = localStorage.getItem("tama_fecha"); 
@@ -169,7 +167,3 @@ function reset(){
 /*function valores(){
 	console.log("th = "+tamaHora+"; tf = "+tamaFecha);  
 }*/
-
-
-
-
