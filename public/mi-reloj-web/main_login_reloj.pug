@@ -11,11 +11,11 @@ main
         br
         br
         div.d-flex.justify-content-center
-          button(type = "Submit") Iniciar sesión
+          button.btn.btn-outline-primary(type = "Submit") Iniciar sesión
         br
         
-        div.d-flex.justify-content-center
-          button(onclick="enviarSolicitud()") Enviar datos al servidor
+        div.d-flex.justify-content-center.d-none
+          button.btn.btn-info(onclick="enviarSolicitud()") Enviar datos al servidor
 script
     | function enviarSolicitud() {
     |    var xhr = new XMLHttpRequest();

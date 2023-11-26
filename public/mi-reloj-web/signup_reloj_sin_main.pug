@@ -8,7 +8,7 @@ html(lang='es')
       fullscreen
         p#top
         header
-          include ../../views/navbar_sin_buscador.pug 
+          include ../../views/navbar_sin_buscador_acceso.pug 
         include ../mi-reloj-web/main_signup_reloj.pug         
         include ../../views/pie_con_fullscreen.pug
     //include ../../views/scripts_final_body_reloj.pug
@@ -97,3 +97,38 @@ html(lang='es')
         my_li.removeEventListener("click", cancel);
         my_li.addEventListener("click", launch);
       }
+      //test.js
+        var fondoLocal = localStorage.getItem("fondo");
+        document.body.style.backgroundColor =  fondoLocal;
+        var fuenteLocal = localStorage.getItem("fuente"); 
+        document.body.style.color = fuenteLocal;
+        var hamburguesa = document.getElementById("hamburguesa");
+        hamburguesa.style.color = fuenteLocal;
+        var marca = document.getElementById('marca');
+        marca.style.color = fuenteLocal;
+
+        function cambiarFondo(val) {
+            document.body.style.backgroundColor = val;
+            localStorage.setItem("fondo", val);
+
+        }
+        function cambiarFuente(val2) {
+            document.body.style.color = val2;
+            let hamburguesa = document.getElementById("hamburguesa");
+            hamburguesa.style.color = val2;
+            let marca = document.getElementById('marca');
+            marca.style.color = val2;
+            localStorage.setItem("fuente", val2);
+        }
+
+        function reset(){
+          localStorage.clear();
+          let prompt_valor = confirm("Volver a cargar la página para aplicar los cambios")
+          if(prompt_valor == true) {
+          location.reload()
+          }
+          alert();
+        }
+        /*function valores(){
+          console.log("th = "+tamaHora+"; tf = "+tamaFecha);  
+        }*/

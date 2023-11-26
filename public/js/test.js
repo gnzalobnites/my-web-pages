@@ -4,6 +4,8 @@ var fuenteLocal = localStorage.getItem("fuente");
 document.body.style.color = fuenteLocal;
 var hamburguesa = document.getElementById("hamburguesa");
 hamburguesa.style.color = fuenteLocal;
+var marca = document.getElementById('marca');
+marca.style.color = fuenteLocal;
 
 var localHora = localStorage.getItem("tama_hora");
 var localSegs = localStorage.getItem("tama_segundos");
