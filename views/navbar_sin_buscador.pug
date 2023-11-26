@@ -5,24 +5,27 @@ nav#nav1.navbar.fixed-top(style="padding-left: 5px; padding-right: 5px")
     button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarText", aria-controls="navbarText", aria-expanded="false", aria-label="Toggle navigation")
         span#hamburguesa(style="color: #fff; font-size: 2em;") ≡
     #navbarText.collapse.navbar-collapse
-        ul.navbar-nav.me-auto.mb-2.mb-lg-0
-        li.nav-item
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0.list-unstyled
+          li.dropdown-item
             label Color de fondo: 
             input(type="color", name="color", onchange="cambiarFondo(this.value)")
             // <a class="nav-link active" aria-current="page" href="#">Home</a>
-        li.nav-item
+          li.dropdown-item
             // <a class="nav-link" href="#">Features</a>
             label Color de fuente: 
             input(type="color", name="color", onchange="cambiarFuente(this.value)")
-        li
+          li.dropdown-item
             label Tamaño de la hora: 
             input(id="max_tam_hora", type="range", name="hsize", onchange="redimHora(this.value)")
-        li.nav-item
+          li.dropdown-item
             label Tamaño de la fecha: 
             input(id="max_tam_fecha", type="range", name="fsize", onchange="redimFecha(this.value)")
-        li.nav-item
+          li#boton_acceder.dropdown-item
             label
             button(onclick="mostrar_botones_sesión()") Acceder
-        li.nav-item
+          li#boton_cancelar.dropdown-item.d-none
+            label
+            button(onclick="ocultar_botones_sesión()") Cancelar
+          li.dropdown-item
             label
             button(onclick="reset()") Reiniciar apariencia

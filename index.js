@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var router_js_pug = require('./public/javascript/router_js_pug.js');
 var router_reloj_pug = require('./public/mi-reloj-web/router_reloj_pug.js');
 var router_manejo_sesión = require('./router_manejo_sesión.js');
-var router_sesión_reloj = require('./public/mi-reloj-web/router_sesión_reloj.js'); 
+//var router_sesión_reloj = require('./public/mi-reloj-web/router_sesión_reloj.js'); 
 var router_ejemplos_cookies = require('./router_ejemplos_cookies.js');
 
 const app = express();
@@ -30,7 +30,7 @@ app.get('/test-cookies', function(req, res){
 });
 
 app.use('/acceso', router_manejo_sesión);
-app.use('/acceso-reloj', router_sesión_reloj);
+//app.use('/acceso-reloj', router_sesión_reloj);
 app.use('/ejemplos-cookies', router_ejemplos_cookies);
 app.use('/javascript-pug', router_js_pug);
 app.use('/reloj-pug', router_reloj_pug);
@@ -50,9 +50,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-app.get('*', function(req, res){
+/* app.get('*', function(req, res){
   res.send('<h1>Lo siento, esta es una URL no válida.</h1>');
-});
+}); */
     
 app.listen(PORT, function () {
     console.log(`El servidor está escuchando en el puerto ${PORT}`);
