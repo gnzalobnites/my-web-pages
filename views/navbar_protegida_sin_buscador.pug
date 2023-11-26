@@ -1,7 +1,7 @@
 nav#nav1.navbar.fixed-top(style="padding-left: 5px; padding-right: 5px")
   div.container-fluid
     h1.navbar-brand(href="#")
-        span#marca Mi reloj web
+        span#marca #{id}
     button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarText", aria-controls="navbarText", aria-expanded="false", aria-label="Toggle navigation")
         span#hamburguesa(style="color: #fff; font-size: 2em;") ≡
     div#navbarText.collapse.navbar-collapse
@@ -22,10 +22,8 @@ nav#nav1.navbar.fixed-top(style="padding-left: 5px; padding-right: 5px")
               input(id="max_tam_fecha", type="range", name="fsize", onchange="redimFecha(this.value)")
           li#boton_acceder.dropdown-item
             label
-              buttonbtn.btn.btn-link(onclick="mostrar_botones_sesión()") Acceder
-          li#boton_cancelar.dropdown-item.d-none
-            label
-              button(onclick="ocultar_botones_sesión()") Cancelar
+              a(href="/reloj-pug/logout")
+               buttonbtn.btn.btn-link(onclick="") Cerrar sesión
           li.dropdown-item
             label
               button.btn.btn-secondary.btn-sm(onclick="reset()") Reiniciar apariencia

@@ -10,8 +10,11 @@ var esquemaUsuario = mongoose.Schema({
   id: String,
   password: String,
   preferencias: {
-    color: String,
-    tama_hora: Number
+    color_fondo: String,
+    color_fuente: String,
+    tamaño_hora: Number,
+    tamaño_segundos: Number,
+    tamaño_fecha: Number
   }
 });
 var Usuarios_reloj = mongoose.model("Usuarios_reloj", esquemaUsuario);
@@ -88,7 +91,7 @@ router.get('/logout', function(req, res){
 req.session.destroy(function(){
    console.log("Usuario desconectado.")
 });
-res.redirect('/reloj-pug/login');
+res.redirect('/reloj-pug');
 });
 router.get('/registrarse', function(req, res){
   res.render('signup_reloj_sin_main');

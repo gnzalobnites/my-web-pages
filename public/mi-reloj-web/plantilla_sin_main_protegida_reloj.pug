@@ -8,7 +8,7 @@ html(lang='es')
       fullscreen
         p#top
         header
-          include ../../views/navbar_sin_buscador.pug
+          include ../../views/navbar_protegida_sin_buscador.pug
         include ../mi-reloj-web/main_reloj.pug
         include ../../views/pie_con_fullscreen.pug
     //include ../../views/scripts_final_body_reloj.pug
@@ -16,7 +16,6 @@ html(lang='es')
     script.
       //prueba.js
       function mostrar_botones_sesión(){
-          //alert("Hola desde /public/js")
           let div_int_reloj = document.getElementById('div_int_reloj');
           div_int_reloj.setAttribute('class', 'gap-1 d-none');
           let botones_sesion = document.getElementById('botones_sesion');
@@ -39,7 +38,6 @@ html(lang='es')
       function enviarSolicitud() {
           var id = document.getElementById("id");
           var password = document.getElementById('password');
-
           var xhr = new XMLHttpRequest();
           xhr.open("POST", "/reloj-pug/registrarse", true);
           xhr.setRequestHeader("Content-Type", "application/json");
@@ -48,6 +46,7 @@ html(lang='es')
             password: password.value,
           });
       };
+      //pantalla_completa.js
       let my_use = document.getElementById("my_use");
       let href = my_use.getAttribute("xlink:href");
       href = "#arrows-fullscreen";
@@ -107,11 +106,24 @@ html(lang='es')
 
       var localHora = localStorage.getItem("tama_hora");
       var localSegs = localStorage.getItem("tama_segundos");
-      var localFecha = localStorage.getItem("tama_fecha"); 
+      var localFecha = localStorage.getItem("tama_fecha");
 
-      var tamaHora = localHora == null ? 90 : localHora; 
-      var tamaSeg = localSegs == null ? 45 : localSegs ;
-      var tamaFecha = localFecha == null ? 25 : localFecha; 
+      //Prueba datos usuario en MongoDB
+
+      var color_fondo_usuario = color_fondo;
+      document.body.style.backgroundColor =  color_fondo_usuario;
+      var color_fuente_usuario = color_fuente; 
+      document.body.style.color = color_fuente_usuario;
+      var hamburguesa = document.getElementById("hamburguesa");
+      hamburguesa.style.color = color_fuente_usuario;
+
+      var tamaño_hora_usuario = tamaño_hora;
+      var tamaño_segundos_usuario = tamaño_segundos;
+      var localFecha = tamaño_fecha;
+
+      var tamaHora = tamaño_hora_usuario == null ? 90 : tamaño_hora_usuario; 
+      var tamaSeg = tamaño_segundos_usuario == null ? 45 : tamaño_segundos_usuario;
+      var tamaFecha = tamaño_fecha_usuario == null ? 25 : tamaño_fecha_usuario; 
 
       /*function addZero(i) {
         if (i < 10) {i = "0" + i}
