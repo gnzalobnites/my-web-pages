@@ -22,9 +22,14 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 router.use(session({
+  saveUninitialized: false,
+  resave: true,
+  secret: 'un-secreto-muy-seguro'
+}));
+/* router.use(session({
     secret: "¡Shh, es un secreto!",
     resave: true
-}));
+})); */
 router.get('/', function(req, res){
   res.render('plantilla_sin_main_reloj', {
     title: "Mi reloj web",
