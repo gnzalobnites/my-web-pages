@@ -97,7 +97,7 @@ html(lang='es')
         my_li.addEventListener("click", launch);
       }
       //test.js
-      var fondoLocal = localStorage.getItem("fondo");
+      /*var fondoLocal = localStorage.getItem("fondo");
       document.body.style.backgroundColor =  fondoLocal;
       var fuenteLocal = localStorage.getItem("fuente"); 
       document.body.style.color = fuenteLocal;
@@ -106,29 +106,24 @@ html(lang='es')
 
       var localHora = localStorage.getItem("tama_hora");
       var localSegs = localStorage.getItem("tama_segundos");
-      var localFecha = localStorage.getItem("tama_fecha");
+      var localFecha = localStorage.getItem("tama_fecha");*/
 
       //Prueba datos usuario en MongoDB
 
-      var color_fondo_usuario = color_fondo;
+      var color_fondo_usuario = '#{color_fondo}';
       document.body.style.backgroundColor =  color_fondo_usuario;
-      var color_fuente_usuario = color_fuente; 
+      var color_fuente_usuario = '#{color_fuente}'; 
       document.body.style.color = color_fuente_usuario;
       var hamburguesa = document.getElementById("hamburguesa");
       hamburguesa.style.color = color_fuente_usuario;
 
-      var tamaño_hora_usuario = tamaño_hora;
-      var tamaño_segundos_usuario = tamaño_segundos;
-      var localFecha = tamaño_fecha;
+      var tamaño_hora_usuario = '#{tamaño_hora}';
+      var tamaño_segundos_usuario = '#{tamaño_segundos}';
+      var tamaño_fecha_usuario = '#{tamaño_fecha}';
 
       var tamaHora = tamaño_hora_usuario == null ? 90 : tamaño_hora_usuario; 
       var tamaSeg = tamaño_segundos_usuario == null ? 45 : tamaño_segundos_usuario;
-      var tamaFecha = tamaño_fecha_usuario == null ? 25 : tamaño_fecha_usuario; 
-
-      /*function addZero(i) {
-        if (i < 10) {i = "0" + i}
-        return i;
-      }*/
+      var tamaFecha = tamaño_fecha_usuario == null ? 25 : tamaño_fecha_usuario;
 
       const addZero = i => {
         if (i < 10) {

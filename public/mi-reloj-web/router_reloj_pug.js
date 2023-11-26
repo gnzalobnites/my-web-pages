@@ -84,7 +84,12 @@ function checkSignIn(req, res, next){
 router.get('/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res){
   res.render('plantilla_sin_main_protegida_reloj', {
     id: req.session.user.id,
-    color: req.session.user.preferencias.color
+    //id: req.session.user.preferencias.color_fondo,
+    color_fondo: req.session.user.preferencias.color_fondo,
+    color_fuente: req.session.user.preferencias.color_fuente,
+    tamaño_hora: req.session.user.preferencias.tamaño_hora,
+    tamaño_segundos: req.session.user.preferencias.tamaño_segundos,
+    tamaño_fecha: req.session.user.preferencias.tamaño_fecha,
   })
 });
 router.get('/logout', function(req, res){
@@ -117,13 +122,17 @@ if (!reqBody.id || !reqBody.password) {
         id: reqBody.id,
         password: reqBody.password,
         preferencias: {
-          color: "blanco"
+          color_fondo: '#000',
+          color_fuente: '#00ff00',
+          tamaño_hora: 90,
+          tamaño_segundos: 45,
+          tamaño_fecha: 25
         }
       });
 
       newUser.save().then(() => {
-        res.render('mostrar_mensaje', {
-          mensaje: "Nueva persona agregada", 
+        res.render('login_reloj_sin_main', {
+          mensaje: "Usuario creado correctamente. Inicie sesión", 
           tipo: "éxito", 
           persona: reqBody
         });

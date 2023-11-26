@@ -22,10 +22,10 @@ nav#nav1.navbar.fixed-top(style="padding-left: 5px; padding-right: 5px")
               input(id="max_tam_fecha", type="range", name="fsize", onchange="redimFecha(this.value)")
           li#boton_acceder.dropdown-item
             label
-              buttonbtn.btn.btn-link(onclick="mostrar_botones_sesión()") Acceder
+              buttonbtn.btn.btn-link.btn-sm.m-2(onclick="mostrar_botones_sesión()") Acceder
           li#boton_cancelar.dropdown-item.d-none
             label
-              button(onclick="ocultar_botones_sesión()") Cancelar
+              button.btn.btn-danger.btn-sm.m-2(onclick="ocultar_botones_sesión()") Cancelar
           li.dropdown-item
             label
-              button.btn.btn-secondary.btn-sm(onclick="reset()") Reiniciar apariencia
+              button.btn.btn-secondary.btn-sm.m-2(onclick="reset()") Reiniciar apariencia
