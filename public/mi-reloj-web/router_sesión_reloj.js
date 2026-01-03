@@ -5,7 +5,8 @@ var multer = require('multer');
 var upload = multer();
 var session = require('express-session');
 // var mongoose = require('mongoose');
-const mongoose = require('./db');
+// const mongoose = require('./db');
+const mongoose = require('../../db'); // Dos niveles arriba desde /public/mi-reloj-web/
 // mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 var esquemaUsuario = mongoose.Schema({
   id: String,
