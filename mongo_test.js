@@ -2,7 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
+const mongoose = require('./db');
 //mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mi_db';
 console.log('Conectando a MongoDB con URI:', MONGODB_URI.replace(/\/\/.*@/, '//[CENSURADO]@')); // Oculta la contraseña en los logs
