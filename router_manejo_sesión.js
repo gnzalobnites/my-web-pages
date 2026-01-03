@@ -9,7 +9,8 @@ var mongoose = require('mongoose');
 // ✅ Código corregido en router_manejo_sesión.js
 var mongoose = require('mongoose');
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mi_db';
-mongoose.connect(MONGODB_URI);
+// mongoose.connect(MONGODB_URI);
+const mongoose = require('./db');
 var esquemaUsuario = mongoose.Schema({
   id: String,
   password: String,
