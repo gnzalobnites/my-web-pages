@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var router_js_pug = require('./public/javascript/router_js_pug.js');
 var router_reloj_pug = require('./public/mi-reloj-web/router_reloj_pug.js');
 var router_manejo_sesión = require('./router_manejo_sesión.js');
-//var router_sesión_reloj = require('./public/mi-reloj-web/router_sesión_reloj.js'); 
+var router_sesión_reloj = require('./public/mi-reloj-web/router_sesión_reloj.js'); 
 var router_ejemplos_cookies = require('./router_ejemplos_cookies.js');
 
 const app = express();
@@ -34,7 +34,7 @@ app.use('/acceso', router_manejo_sesión);
 app.use('/ejemplos-cookies', router_ejemplos_cookies);
 app.use('/javascript-pug', router_js_pug);
 app.use('/reloj-pug', router_reloj_pug);
-
+app.use('/reloj-pug', router_sesión_reloj); // ← Agrega esta línea
 // Configura la carpeta estática para tus archivos
 app.use(express.static(path.join(__dirname, 'public')));
 
