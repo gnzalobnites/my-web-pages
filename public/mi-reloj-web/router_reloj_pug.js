@@ -4,8 +4,9 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
 var session = require('express-session');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
+// var mongoose = require('mongoose');
+const mongoose = require('./db');
+// mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 var esquemaUsuario = mongoose.Schema({
   id: String,
   password: String,
