@@ -7,8 +7,8 @@ var session = require('express-session');
 // var mongoose = require('mongoose');
 // mongoose.connect('mongodb://127.0.0.1:27017/mi_db');
 // ✅ Código corregido en router_manejo_sesión.js
-var mongoose = require('mongoose');
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mi_db';
+// var mongoose = require('mongoose');
+// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mi_db';
 // mongoose.connect(MONGODB_URI);
 const mongoose = require('./db');
 var esquemaUsuario = mongoose.Schema({
