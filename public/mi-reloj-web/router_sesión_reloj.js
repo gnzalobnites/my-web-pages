@@ -82,7 +82,7 @@ router.get('/logout', function(req, res){
   res.redirect('/reloj-pug');
 });
 router.get('/registrarse', function(req, res){
-    res.render('signup');
+    res.render('signup_reloj_sin_main');
 });
 router.post('/registrarse', function(req, res){
   var reqBody = req.body;
