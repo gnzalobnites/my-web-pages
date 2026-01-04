@@ -65,7 +65,7 @@ router.post('/login-reloj', function(req, res){
       } else {
         if(resBuscUno.id === req.body.id && resBuscUno.password === req.body.password){
           req.session.user = resBuscUno;
-          res.redirect('/plantilla_sin_main_protegida_reloj');
+          res.redirect('/reloj-pug/plantilla_sin_main_protegida_reloj');
         } else {
           res.render('login_reloj_sin_main', {message: "Credenciales no válidas."});
         }
@@ -89,9 +89,7 @@ router.get('/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res
     color_fuente: req.session.user.preferencias.color_fuente,
     tamaño_hora: req.session.user.preferencias.tamaño_hora,
     tamaño_segundos: req.session.user.preferencias.tamaño_segundos,
-    tamaño_fecha: req.session.user.preferencias.tamaño_fecha,
-  })
-});
+    tamaño_fecha: req.session.user.preferencias.tamaño_login-reloj'});
 router.get('/logout', function(req, res){
 req.session.destroy(function(){
    console.log("Usuario desconectado.")
@@ -158,7 +156,7 @@ if (!reqBody.id || !reqBody.password) {
 router.use('/plantilla_sin_main_protegida_reloj', function(err, req, res, next){
   console.log(err);
   //El usuario debe estar autenticado. Redirígelo para iniciar sesión.
-  res.redirect('/login-reloj');
+  res.redirect('/reloj-pug/login-reloj');
 });
 router.get('/signup-reloj', function (req, res) {
   res.render("signup_reloj_sin_main")
