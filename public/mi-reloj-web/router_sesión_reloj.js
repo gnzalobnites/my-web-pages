@@ -113,7 +113,7 @@ router.get('/logout', function(req, res){
   req.session.destroy(function(){
      console.log("Usuario desconectado.")
   });
-  res.redirect('/acceso/login');
+  res.redirect('/login-reloj');
 });
 router.get('/registrarse', function(req, res){
     res.render('signup');
@@ -173,7 +173,7 @@ router.post('/registrarse', function(req, res){
 router.use('/plantilla_sin_main_protegida_reloj', function(err, req, res, next){
     console.log(err);
     //El usuario debe estar autenticado. Redirígelo para iniciar sesión.
-    res.redirect('/acceso/login');
+    res.redirect('/login-reloj');
 });
 router.get('/contador-de-sesiones', function(req, res){
   if(req.session.page_views){
