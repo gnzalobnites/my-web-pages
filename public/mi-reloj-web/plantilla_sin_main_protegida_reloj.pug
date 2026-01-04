@@ -240,16 +240,16 @@ html(lang='es')
       function redimHora(val3) {
           tamaHora = val3;
           tamaSeg = val3/2;
-          let xhr = new XMLHttpRequest();
-          xhr.open('POST', '/reloj-pug/editar-hora/#{id}', true);
+          let xhr1 = new XMLHttpRequest();
+          xhr1.open('POST', '/reloj-pug/editar-hora/#{id}', true);
           const params = new URLSearchParams();
           params.append('tamaño_hora', val3);
-          xhr.send(params);
-          let xhr = new XMLHttpRequest();
-          xhr.open('POST', '/reloj-pug/editar-segundos/#{id}', true);
+          xhr1.send(params);
+          let xhr2 = new XMLHttpRequest();
+          xhr2.open('POST', '/reloj-pug/editar-segundos/#{id}', true);
           const params = new URLSearchParams();
           params.append('tamaño_hora', val3/2);
-          xhr.send(params);
+          xhr2.send(params);
       };
 
       const redimFecha = (val4) => {
