@@ -208,7 +208,43 @@ router.post('/editar-hora/:id', async function(req, res){
       { new: true }
     );
     if (persona_encontrada) {
-      console.log('Tamaño de hora guardado correctamente:', req.body.tamaño_hora);
+      console.log('Tamaño de la hora guardado correctamente:', req.body.tamaño_hora);
+      res.status(200).send("OK");
+    } else {
+      res.status(404).send("Usuario no encontrado");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error");
+  }
+});
+router.post('/editar-segundos/:id', async function(req, res){
+  try {
+    const persona_encontrada = await Usuarios_reloj.findOneAndUpdate(
+      { id: req.params.id },
+      { $set: { 'preferencias.tamaño_segundos': req.body.tamaño_segundos } },
+      { new: true }
+    );
+    if (persona_encontrada) {
+      console.log('Tamaño de los segundos guardado correctamente:', req.body.tamaño_hora);
+      res.status(200).send("OK");
+    } else {
+      res.status(404).send("Usuario no encontrado");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error");
+  }
+});
+router.post('/editar-fecha/:id', async function(req, res){
+  try {
+    const persona_encontrada = await Usuarios_reloj.findOneAndUpdate(
+      { id: req.params.id },
+      { $set: { 'preferencias.tamaño_fecha': req.body.tamaño_fecha } },
+      { new: true }
+    );
+    if (persona_encontrada) {
+      console.log('Tamaño de la fecha guardado correctamente:', req.body.tamaño_fecha);
       res.status(200).send("OK");
     } else {
       res.status(404).send("Usuario no encontrado");
