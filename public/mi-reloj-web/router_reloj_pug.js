@@ -90,6 +90,7 @@ router.get('/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res
     tamaño_hora: req.session.user.preferencias.tamaño_hora,
     tamaño_segundos: req.session.user.preferencias.tamaño_segundos,
     tamaño_fecha: req.session.user.preferencias.tamaño_fecha,});
+)};
 router.get('/logout', function(req, res){
 req.session.destroy(function(){
    console.log("Usuario desconectado.")
