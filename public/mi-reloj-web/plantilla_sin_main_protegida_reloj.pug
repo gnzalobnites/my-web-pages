@@ -242,14 +242,14 @@ html(lang='es')
           tamaSeg = val3/2;
           let xhr1 = new XMLHttpRequest();
           xhr1.open('POST', '/reloj-pug/editar-hora/#{id}', true);
-          const params = new URLSearchParams();
-          params.append('tamaño_hora', val3);
-          xhr1.send(params);
+          const params1 = new URLSearchParams();
+          params1.append('tamaño_hora', val3);
+          xhr1.send(params1);
           let xhr2 = new XMLHttpRequest();
           xhr2.open('POST', '/reloj-pug/editar-segundos/#{id}', true);
-          const params = new URLSearchParams();
-          params.append('tamaño_hora', val3/2);
-          xhr2.send(params);
+          const params2 = new URLSearchParams();
+          params2.append('tamaño_hora', val3/2);
+          xhr2.send(params2);
       };
 
       const redimFecha = (val4) => {
