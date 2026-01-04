@@ -163,7 +163,7 @@ if (!reqBody.id || !reqBody.password) {
   console.log(reqBody);
 }
 });
-router.use('/protected_page', function(err, req, res, next){
+router.use('/plantilla_sin_main_protegida_reloj', function(err, req, res, next){
   console.log(err);
   //El usuario debe estar autenticado. Redirígelo para iniciar sesión.
   res.redirect('/reloj-pug/login');
