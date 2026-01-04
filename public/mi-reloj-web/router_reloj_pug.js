@@ -70,8 +70,6 @@ router.post('/login-reloj', function(req, res){
           res.render('login_reloj_sin_main', {message: "Credenciales no válidas."});
         }
       }
-      
-      
     });
   }
 });
@@ -131,7 +129,6 @@ if (!reqBody.id || !reqBody.password) {
           tamaño_fecha: 25
         }
       });
-
       newUser.save().then(() => {
         res.render('login_reloj_sin_main', {
           mensaje: "Usuario creado correctamente. Inicie sesión", 
@@ -158,7 +155,7 @@ if (!reqBody.id || !reqBody.password) {
   console.log(reqBody);
 }
 });
-router.use('/plantilla_sin_main_protegida_reloj', function(err, req, res, next){
+router.use('/reloj-pug/plantilla_sin_main_protegida_reloj', function(err, req, res, next){
   console.log(err);
   //El usuario debe estar autenticado. Redirígelo para iniciar sesión.
   res.redirect('/reloj-pug/login');
