@@ -94,7 +94,7 @@ router.get('/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res
     //id: req.session.user.preferencias.color_fondo,
     color_fondo: req.session.user.preferencias.color_fondo,
     color_fuente: req.session.user.preferencias.color_fuente,
-    tamano_hora: req.session.user.preferencias.tamaño_hora,
+    tamaño_hora: req.session.user.preferencias.tamaño_hora,
     tamaño_segundos: req.session.user.preferencias.tamaño_segundos,
     tamaño_fecha: req.session.user.preferencias.tamaño_fecha,
   })
