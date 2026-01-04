@@ -65,7 +65,7 @@ router.post('/login-reloj', function(req, res){
       } else {
         if(resBuscUno.id === req.body.id && resBuscUno.password === req.body.password){
           req.session.user = resBuscUno;
-          res.redirect('/reloj-pug/plantilla_sin_main_protegida_reloj');
+          res.redirect('plantilla_sin_main_protegida_reloj');
         } else {
           res.render('login_reloj_sin_main', {message: "Credenciales no válidas."});
         }
@@ -82,7 +82,7 @@ function checkSignIn(req, res, next){
      next(err); //Error, intentando acceder a una página no autorizada
   }
 }
-router.get('/reloj-pug/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res){
+router.get('plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res){
   res.render('plantilla_sin_main_protegida_reloj', {
     id: req.session.user.id,
     color_fondo: req.session.user.preferencias.color_fondo,
