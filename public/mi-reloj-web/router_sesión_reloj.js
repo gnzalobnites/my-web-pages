@@ -18,11 +18,11 @@ if (mongoose.models.Usuarios_reloj) {
     id: String,
     password: String,
     preferencias: {
-    color_fondo: String,
-    color_fuente: String,
-    tamaño_hora: Number,
-    tamaño_segundos: Number,
-    tamaño_fecha: Number
+      color_fondo: String,
+      color_fuente: String,
+      tamaño_hora: Number,
+      tamaño_segundos: Number,
+      tamaño_fecha: Number
     },
     /*preferencias: {
       color: String,
