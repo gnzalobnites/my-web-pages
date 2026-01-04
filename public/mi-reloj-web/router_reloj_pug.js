@@ -28,10 +28,6 @@ router.use(session({
   resave: true,
   secret: 'un-secreto-muy-seguro'
 }));
-/* router.use(session({
-    secret: "¡Shh, es un secreto!",
-    resave: true
-})); */
 router.get('/', function(req, res){
   res.render('plantilla_sin_main_reloj', {
     title: "Mi reloj web",
@@ -88,10 +84,9 @@ function checkSignIn(req, res, next){
      next(err); //Error, intentando acceder a una página no autorizada
   }
 }
-router.get('/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res){
+router.get('/reloj-pug/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res){
   res.render('plantilla_sin_main_protegida_reloj', {
     id: req.session.user.id,
-    //id: req.session.user.preferencias.color_fondo,
     color_fondo: req.session.user.preferencias.color_fondo,
     color_fuente: req.session.user.preferencias.color_fuente,
     tamaño_hora: req.session.user.preferencias.tamaño_hora,
