@@ -34,7 +34,7 @@ app.use('/acceso', router_manejo_sesión);
 app.use('/ejemplos-cookies', router_ejemplos_cookies);
 app.use('/javascript-pug', router_js_pug);
 app.use('/reloj-pug', router_reloj_pug);
-app.use('/reloj-pug', router_sesión_reloj); // ← Agrega esta línea
+// app.use('/reloj-pug', router_sesión_reloj); // ← Agrega esta línea
 // Configura la carpeta estática para tus archivos
 app.use(express.static(path.join(__dirname, 'public')));
 
