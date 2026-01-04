@@ -181,30 +181,8 @@ router.post('/editar-fondo/:id', async function(req, res){
     console.error(err);
     res.status(500).send("Error");
   }
-  
-  /*const persona_encontrada = await Usuarios_reloj.findOneAndUpdate({id: req.params.id}, {
-    preferencias: {
-      color_fondo: req.body.color_fondo
-    }
-  });
-  if (persona_encontrada){
-    console.log('Color de fondo '+req.body.color_fondo+' guardado correctamente')
-  }else{
-    console.log('Error: no se encontró el usuario');
-  }*/
 });
 router.post('/editar-fuente/:id', async function(req, res){
-  // const Usuarios_reloj = mongoose.model('Usuarios_reloj');
-  /*const persona_encontrada = await Usuarios_reloj.findOneAndUpdate({id: req.params.id}, {
-    preferencias: {
-      color_fuente: req.body.color_fuente
-    }
-  });
-  if (persona_encontrada){
-    console.log('Color de fuente '+req.body.color_fuente+ 'guardado correctamente')
-  }else{
-    console.log('Error: no se encontró el usuario');
-  }*/
   try {
     const persona_encontrada = await Usuarios_reloj.findOneAndUpdate(
       { id: req.params.id },
@@ -223,17 +201,6 @@ router.post('/editar-fuente/:id', async function(req, res){
   }
 });
 router.post('/editar-hora/:id', async function(req, res){
-  // const Usuarios_reloj = mongoose.model('Usuarios_reloj');
-  /*const persona_encontrada = await Usuarios_reloj.findOneAndUpdate({id: req.params.id}, {
-    preferencias: {
-      tamaño_hora: req.body.tamaño_hora
-    }
-  });
-  if (persona_encontrada){
-    console.log('Color de fuente '+req.body.tamaño_hora+ 'guardado correctamente')
-  }else{
-    console.log('Error: no se encontró el usuario');
-  }*/
   try {
     const persona_encontrada = await Usuarios_reloj.findOneAndUpdate(
       { id: req.params.id },
