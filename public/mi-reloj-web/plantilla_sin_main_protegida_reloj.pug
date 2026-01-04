@@ -235,52 +235,39 @@ html(lang='es')
 
       window.onload = setInterval(printTime, 1000);
 
-      /*function cambiarFondo(val) {
-          document.body.style.backgroundColor = val;
-          let xhr = new XMLHttpRequest();
-          xhr.open("POST", "/reloj-pug/editar-fondo/#{id}", true);
-          xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.send(JSON.stringify({color_fondo: val}));
-      };*/
+    function cambiarFondo(val) {
+        document.body.style.backgroundColor = val;
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "/reloj-pug/editar-fondo/#{id}", true);
+        // ✅ Usa URLSearchParams para formato urlencoded
+        const params = new URLSearchParams();
+        params.append('color_fondo', val);
+        xhr.send(params); // El navegador establece automáticamente el Content-Type correcto
+    };
 
-      function cambiarFondo(val) {
-          document.body.style.backgroundColor = val;
-          let xhr = new XMLHttpRequest();
-          xhr.open("POST", "/reloj-pug/editar-fondo/#{id}", true);
-          // ✅ Elimina esta línea:
-          // xhr.setRequestHeader("Content-Type", "application/json");
-          // ✅ Envía datos como FormData (URL-encoded)
-          const formData = new FormData();
-          formData.append('color_fondo', val);
-          xhr.send(formData);
-        };
-
-      function cambiarFuente(val2) {
-          document.body.style.color = val2;
-          var hamburguesa = document.getElementById("hamburguesa");
-          hamburguesa.style.color = val2;
-          let marca = document.getElementById('marca');
-          marca.style.color = val2;
-          let xhr = new XMLHttpRequest();
-          xhr.open("POST", "/reloj-pug/editar-fuente/#{id}", true);
-          // xhr.setRequestHeader("Content-Type", "application/json");
-          // xhr.send(JSON.stringify({color_fuente: val2}));
-          const formData = new FormData();
-          formData.append('color_fuente', val2);
-          xhr.send(formData);
-      }
-
+    function cambiarFuente(val2) {
+        document.body.style.color = val2;
+        var hamburguesa = document.getElementById("hamburguesa");
+        hamburguesa.style.color = val2;
+        let marca = document.getElementById('marca');
+        marca.style.color = val2;
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "/reloj-pug/editar-fuente/#{id}", true);
+        const params = new URLSearchParams();
+        params.append('color_fuente', val2);
+        xhr.send(params);
+    };
+    
       function redimHora(val3) {
           tamaHora = val3;
           tamaSeg = val3/2;
           let xhr = new XMLHttpRequest();
           xhr.open("POST", "/reloj-pug/editar-hora/#{id}", true);
-          // xhr.setRequestHeader("Content-Type", "application/json");
-          // xhr.send(JSON.stringify({tamaño_hora: val3}));
-          const formData = new FormData();
-          formData.append('tamaño_hora', val3);
-          xhr.send(formData);
-      }
+          const params = new URLSearchParams();
+          params.append('tamaño_hora', val3);
+          xhr.send(params);
+      };
+
       const redimFecha = (val4) => {
           tamaFecha = val4;
           localStorage.setItem("tama_fecha", val4);
