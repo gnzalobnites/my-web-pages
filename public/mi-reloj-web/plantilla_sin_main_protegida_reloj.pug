@@ -245,11 +245,21 @@ html(lang='es')
           const params = new URLSearchParams();
           params.append('tamaño_hora', val3);
           xhr.send(params);
+          let xhr = new XMLHttpRequest();
+          xhr.open('POST', '/reloj-pug/editar-segundos/#{id}', true);
+          const params = new URLSearchParams();
+          params.append('tamaño_hora', val3/2);
+          xhr.send(params);
       };
 
       const redimFecha = (val4) => {
           tamaFecha = val4;
-          localStorage.setItem("tama_fecha", val4);
+          // localStorage.setItem("tama_fecha", val4);
+          let xhr = new XMLHttpRequest();
+          xhr.open('POST', '/reloj-pug/editar-fecha/#{id}', true);
+          const params = new URLSearchParams();
+          params.append('tamaño_fecha', val4);
+          xhr.send(params);
       };
 
       function reset(){
