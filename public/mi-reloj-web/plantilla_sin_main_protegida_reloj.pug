@@ -119,11 +119,11 @@ html(lang='es')
       var marca = document.getElementById('marca');
       marca.style.color = color_fuente_usuario;
 
-      var tamano_hora_usuario = '#{tamano_hora}';
+      var tamaño_hora_usuario = '#{tamaño_hora}';
       var tamaño_segundos_usuario = '#{tamaño_segundos}';
       var tamaño_fecha_usuario = '#{tamaño_fecha}';
 
-      var tamaHora = tamano_hora_usuario == null ? 90 : tamano_hora_usuario; 
+      var tamaHora = tamaño_hora_usuario == null ? 90 : tamaño_hora_usuario; 
       var tamaSeg = tamaño_segundos_usuario == null ? 45 : tamaño_segundos_usuario;
       var tamaFecha = tamaño_fecha_usuario == null ? 25 : tamaño_fecha_usuario;
 
@@ -261,7 +261,7 @@ html(lang='es')
           let xhr = new XMLHttpRequest();
           xhr.open("POST", "/reloj-pug/editar-hora/#{id}", true);
           xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.send(JSON.stringify({tamano_hora: val3}));
+          xhr.send(JSON.stringify({tamaño_hora: val3}));
       }
       /*function redimFecha(val4) {
           tamaFecha = val4;
