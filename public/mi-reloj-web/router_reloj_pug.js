@@ -201,11 +201,11 @@ router.post('/editar-hora/:id', async function(req, res){
   const Usuarios_reloj = mongoose.model('Usuarios_reloj');
   const persona_encontrada = await Usuarios_reloj.findOneAndUpdate({id: req.params.id}, {
     preferencias: {
-      tamaño_hora: req.body.tamano_hora
+      tamaño_hora: req.body.tamaño_hora
     }
   });
   if (persona_encontrada){
-    console.log('Color de fuente '+req.body.tamano_hora+ 'guardado correctamente')
+    console.log('Color de fuente '+req.body.tamaño_hora+ 'guardado correctamente')
   }else{
     console.log('Error: no se encontró el usuario');
   }
