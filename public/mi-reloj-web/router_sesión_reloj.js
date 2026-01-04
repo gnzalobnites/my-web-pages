@@ -1,4 +1,4 @@
-var express = require('express');
+acceso-relojo-relojxpress = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var multer = require('multer');
@@ -63,7 +63,7 @@ router.post('/login-reloj', function(req, res){
       } else {
         if(resBuscUno.id === req.body.id && resBuscUno.password === req.body.password){
           req.session.user = resBuscUno;
-          res.redirect('/acceso-reloj/plantilla_sin_main_protegida_reloj');
+          res.redirect('plantilla_sin_main_protegida_reloj');
         } else {
           res.render('login_reloj_sin_main', {message: "Credenciales no válidas."});
         }
