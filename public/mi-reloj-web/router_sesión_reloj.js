@@ -18,9 +18,16 @@ if (mongoose.models.Usuarios_reloj) {
     id: String,
     password: String,
     preferencias: {
+    color_fondo: String,
+    color_fuente: String,
+    tamaño_hora: Number,
+    tamaño_segundos: Number,
+    tamaño_fecha: Number
+    },
+    /*preferencias: {
       color: String,
       tama_hora: Number
-    }
+    }*/
   });
   Usuarios_reloj = mongoose.model("Usuarios_reloj", esquemaUsuario);
 }
@@ -91,8 +98,15 @@ router.post('/configurar_color_favorito', checkSignIn, function(req, res){
 });
 router.get('/plantilla_sin_main_protegida_reloj', checkSignIn, function(req, res){
     res.render('plantilla_sin_main_protegida_reloj', {
+      /*id: req.session.user.id,
+      color: req.session.user.preferencias.color*/
       id: req.session.user.id,
-      color: req.session.user.preferencias.color
+      //id: req.session.user.preferencias.color_fondo,
+      color_fondo: req.session.user.preferencias.color_fondo,
+      color_fuente: req.session.user.preferencias.color_fuente,
+      tamaño_hora: req.session.user.preferencias.tamaño_hora,
+      tamaño_segundos: req.session.user.preferencias.tamaño_segundos,
+      tamaño_fecha: req.session.user.preferencias.tamaño_fecha,
     })
 });
 router.get('/logout', function(req, res){
