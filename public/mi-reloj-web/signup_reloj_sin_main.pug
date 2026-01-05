@@ -51,12 +51,12 @@ html(lang='es')
 
      /*Nueva función de registro*/
 
-     function enviarSolicitud() {
+     /*function enviarSolicitud() {
         var id = document.getElementById("id");
         var password = document.getElementById('password');
-    
+     */
         /*Obtener preferencias de localStorage*/
-        var preferencias = {
+        /*var preferencias = {
         color_fondo: localStorage.getItem("fondo") || '#000',
         color_fuente: localStorage.getItem("fuente") || '#00ff00',
         tamaño_hora: parseInt(localStorage.getItem("tama_hora")) || 90,
@@ -72,7 +72,39 @@ html(lang='es')
           password: password.value,
           preferencias: preferencias
          }));
-      };
+      };*/
+
+      function enviarSolicitud() {
+        var id = document.getElementById("id");
+        var password = document.getElementById('password');
+  
+        // 👇 AGREGA ESTO 👇
+        console.log("Valores en localStorage:");
+        console.log("fondo:", localStorage.getItem("fondo"));
+        console.log("fuente:", localStorage.getItem("fuente"));
+        console.log("tamaño_hora:", localStorage.getItem("tamaño_hora"));
+        console.log("tamaño_segundos:", localStorage.getItem("tamaño_segundos"));
+        console.log("tamaño_fecha:", localStorage.getItem("tamaño_fecha"));
+
+        var preferencias = {
+        color_fondo: localStorage.getItem("fondo") || '#000',
+        color_fuente: localStorage.getItem("fuente") || '#00ff00',
+        tamaño_hora: parseInt(localStorage.getItem("tamaño_hora")) || 90,
+        tamaño_segundos: parseInt(localStorage.getItem("tamaño_segundos")) || 45,
+        tamaño_fecha: parseInt(localStorage.getItem("tamaño_fecha")) || 25
+       };
+
+        console.log("Preferencias a enviar:", preferencias); // 👈 Verifica si tiene valores o por defecto
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/reloj-pug/registrarse", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({
+        id: id.value,
+        password: password.value,
+        preferencias: preferencias
+         }));
+       };
      
       let my_use = document.getElementById("my_use");
       let href = my_use.getAttribute("xlink:href");
