@@ -194,7 +194,6 @@ router.post('/registrarse', function(req, res) {
             tipo: "éxito", 
             persona: reqBody
           }*/
-          );
           console.log('Usuario guardado con preferencias:', preferencias);
         }).catch(err => {
           res.render('mostrar_mensaje', {
