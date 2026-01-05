@@ -32,6 +32,16 @@
     }
 }
 
+.pb-footer {
+    padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+    .pb-footer {
+        padding-bottom: 100px;
+    }
+}
+
 body{
   background-color: black;
   color: #00ff00;
