@@ -3,7 +3,7 @@ main
     div#div_int_reloj.gap-1.d-block
       if(message)
         h4 #{message}
-      form(action = "/reloj-pug/registrarse" method = "POST")
+      form(id="registroForm")
         input(id="id" name = "id" type = "text" required placeholder = "ID de usuario")
         br
         br
@@ -11,10 +11,6 @@ main
         br
         br
         div.d-flex.justify-content-center
-          button(type = "Submit") Registrarse
-        br
-        
-        div.d-flex.justify-content-center
-          button(onclick="enviarSolicitud()") Enviar datos al servidor
+          button(onclick="enviarSolicitud()") Registrarse
     
 
