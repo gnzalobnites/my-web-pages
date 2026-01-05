@@ -36,45 +36,8 @@ html(lang='es')
           let boton_acceder = document.getElementById('boton_acceder');
           boton_acceder.setAttribute('class', 'nav-item d-block');
       };
+      
       /*function enviarSolicitud() {
-          var id = document.getElementById("id");
-          var password = document.getElementById('password');
-
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "/reloj-pug/registrarse", true);
-          xhr.setRequestHeader("Content-Type", "application/json");
-          xhr.send({
-            id: id.value,
-            password: password.value,
-          });
-      };*/
-
-     /*Nueva función de registro*/
-
-     /*function enviarSolicitud() {
-        var id = document.getElementById("id");
-        var password = document.getElementById('password');
-     */
-        /*Obtener preferencias de localStorage*/
-        /*var preferencias = {
-        color_fondo: localStorage.getItem("fondo") || '#000',
-        color_fuente: localStorage.getItem("fuente") || '#00ff00',
-        tamaño_hora: parseInt(localStorage.getItem("tama_hora")) || 90,
-        tamaño_segundos: parseInt(localStorage.getItem("tama_segundos")) || 45,
-        tamaño_fecha: parseInt(localStorage.getItem("tama_fecha")) || 25
-        };
-        console.log("Desde signup reloj sin main");
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/reloj-pug/registrarse", true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify({
-          id: id.value,
-          password: password.value,
-          preferencias: preferencias
-         }));
-      };*/
-
-      function enviarSolicitud() {
         var id = document.getElementById("id");
         var password = document.getElementById('password');
   
@@ -103,7 +66,41 @@ html(lang='es')
         password: password.value,
         preferencias: preferencias
          }));
-       };
+       };*/
+
+      function enviarSolicitud() {
+        var id = document.getElementById("id");
+        var password = document.getElementById('password');
+  
+        var preferencias = {
+        color_fondo: localStorage.getItem("fondo") || '#000',
+        color_fuente: localStorage  .getItem("fuente") || '#00ff00',
+        tamaño_hora: parseInt(localStorage.getItem("tamaño_hora")) || 90,
+        tamaño_segundos: parseInt(localStorage.getItem("tamaño_segundos")) || 45,
+        tamaño_fecha: parseInt(localStorage.getItem("tamaño_fecha")) || 25
+        };
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/reloj-pug/registrarse", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+               // Éxito: redirige al login o muestra mensaje
+              alert("Usuario registrado correctamente. Inicia sesión.");
+              window.location.href = "/reloj-pug/login-reloj";
+            } else {
+              // Error: muestra mensaje de error
+              alert("Error al registrar: " + xhr.responseText);
+            }
+            }
+          };
+        xhr.send(JSON.stringify({
+        id: id.value,
+        password: password.value,
+        preferencias: preferencias
+        }));
+      }
      
       let my_use = document.getElementById("my_use");
       let href = my_use.getAttribute("xlink:href");
