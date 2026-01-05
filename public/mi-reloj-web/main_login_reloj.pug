@@ -27,35 +27,6 @@ script
     |      id: "Miguel",
     |      password: "Miguel1234"
     |    });
-    |
-    |    /*xhr.onreadystatechange = function () {
-    |      if (xhr.readyState == 4) {
-    |       // Verificar si la solicitud fue exitosa (código de estado 200)
-    |        if (xhr.status == 200) {
-    |          // Aquí puedes manejar la respuesta del servidor, si es necesario
-    |          console.log("Respuesta del servidor:", xhr.responseText);
-    |        } else {
-    |          console.error("Error en la solicitud. Código de estado:", xhr.status);
-    |        }
-    |      }
-    |    };*/
-    |
-    |    /*xhr.onreadystatechange = function () {
-    |      if (xhr.readyState == 4) {
-    |        if (xhr.status == 200) {
-    |          // Crear un elemento div para contener la respuesta HTML del servidor
-    |          //var responseContainer = document.createElement('div');
-    |          //responseContainer.innerHTML = xhr.responseText;
-    |
-    |          // Agregar la respuesta al cuerpo del documento
-    |          //document.body.appendChild(responseContainer);
-    |          document.body.innerHTML = xhr.responseText;
-    |        } else {
-    |          console.error("Error en la solicitud. Código de estado:", xhr.status);
-    |        }
-    |      }
-    |    };*/
-    | 
     |    xhr.send(data);
     |  }
 
