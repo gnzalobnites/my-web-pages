@@ -157,7 +157,7 @@ if (!reqBody.id || !reqBody.password) {
 
 /*Nueva ruta de registro*/
 
-router.post('/registrarse', function(req, res) {
+/*router.post('/registrarse', function(req, res) {
   var reqBody = req.body;
   if (!reqBody.id || !reqBody.password) {
     res.render('mostrar_mensaje', {
@@ -188,13 +188,13 @@ router.post('/registrarse', function(req, res) {
         });
 
         newUser.save().then(() => {
-          res.redirect('/reloj-pug/login_reloj_sin_main');
+          res.redirect('/reloj-pug/login_reloj_sin_main');*/
           /*res.render('login_reloj_sin_main', {
             mensaje: "Usuario creado correctamente. Inicie sesión", 
             tipo: "éxito", 
             persona: reqBody
           }*/
-          console.log('Usuario guardado con preferencias:', preferencias);
+          /*console.log('Usuario guardado con preferencias:', preferencias);
         }).catch(err => {
           res.render('mostrar_mensaje', {
             mensaje: "Error de base de datos", 
@@ -211,7 +211,84 @@ router.post('/registrarse', function(req, res) {
       console.error('Error searching for document:', err);
     });
   }
+});*/
+
+router.post('/registrarse', function(req, res) {
+  // Detectar si es una solicitud AJAX (por header común)
+  const isAjax = req.headers['x-requested-with'] === 'XMLHttpRequest';
+
+  var reqBody = req.body;
+  if (!reqBody.id || !reqBody.password) {
+    if (isAjax) {
+      return res.status(400).json({ error: "ID y contraseña son requeridos" });
+    } else {
+      return res.render('mostrar_mensaje', {
+        mensaje: "Lo siento, proporcionaste información incorrecta",
+        tipo: "error"
+      });
+    }
+  }
+
+  Usuarios_reloj.findOne({ id: reqBody.id })
+    .then((resBuscUno) => {
+      if (resBuscUno) {
+        if (isAjax) {
+          return res.status(409).json({ error: "El usuario ya existe" });
+        } else {
+          return res.render('mostrar_mensaje', {
+            mensaje: "El usuario ya existe, inicie sesión",
+            tipo: "error"
+          });
+        }
+      } else {
+        const preferencias = reqBody.preferencias || {
+          color_fondo: '#000',
+          color_fuente: '#00ff00',
+          tamaño_hora: 90,
+          tamaño_segundos: 45,
+          tamaño_fecha: 25
+        };
+
+        var newUser = new Usuarios_reloj({
+          id: reqBody.id,
+          password: reqBody.password,
+          preferencias: preferencias
+        });
+
+        return newUser.save()
+          .then(() => {
+            if (isAjax) {
+              return res.status(201).json({ success: true, message: "Usuario creado correctamente" });
+            } else {
+              return res.redirect('/reloj-pug/login_reloj_sin_main');
+            }
+          })
+          .catch(err => {
+            console.error('Error saving document:', err);
+            if (isAjax) {
+              return res.status(500).json({ error: "Error al guardar el usuario en la base de datos" });
+            } else {
+              return res.render('mostrar_mensaje', {
+                mensaje: "Error de base de datos",
+                tipo: "error"
+              });
+            }
+          });
+      }
+    })
+    .catch(err => {
+      console.error('Error searching for document:', err);
+      if (isAjax) {
+        return res.status(500).json({ error: "Error al buscar el usuario en la base de datos" });
+      } else {
+        return res.render('mostrar_mensaje', {
+          mensaje: "Error de base de datos",
+          tipo: "error"
+        });
+      }
+    });
 });
+
 router.get('/login_reloj_sin_main', function(req,res){
    res.render('login_reloj_sin_main', {
             mensaje: "Usuario creado correctamente. Inicie sesión", 
