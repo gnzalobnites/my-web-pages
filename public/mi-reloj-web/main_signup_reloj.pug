@@ -1,12 +1,16 @@
 main
-    div#div_int_reloj.gap-1.d-block
-      if(message)
-        h4 #{message}
-    div
-      label(for="id") ID de usuario:
-      input#id(type="text" required placeholder="Tu ID")
-    div
-      label(for="password") Contraseña:
-      input#password(type="password" required placeholder="Tu contraseña")
-    div.d-flex.justify-content-center
-      button#btn-registro(type="button") Registrarse
+  .container
+    .row.justify-content-center
+      .col-md-6.col-lg-4
+        #div_int_reloj.gap-1.d-block
+          if mensaje
+            .alert.alert-success= mensaje
+          form
+            .mb-3
+              label.form-label(for="id") ID de usuario:
+              input#id.form-control(type="text" required placeholder="Tu ID")
+            .mb-3
+              label.form-label(for="password") Contraseña:
+              input#password.form-control(type="password" required placeholder="Tu contraseña")
+            .d-grid
+              button#btn-registro.btn.btn-primary(type="button") Registrarse
