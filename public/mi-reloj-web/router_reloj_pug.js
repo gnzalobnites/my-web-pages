@@ -100,7 +100,7 @@ res.redirect('/reloj-pug');
 router.get('/registrarse', function(req, res){
   res.render('signup_reloj_sin_main');
 });
-router.post('/registrarse', function(req, res){
+/*router.post('/registrarse', function(req, res){
 var reqBody = req.body;
 if (!reqBody.id || !reqBody.password) {
   res.render('mostrar_mensaje', {
@@ -153,7 +153,65 @@ if (!reqBody.id || !reqBody.password) {
   });
   console.log(reqBody);
 }
+});*/
+
+/*Nueva ruta de registro*/
+
+router.post('/registrarse', function(req, res) {
+  var reqBody = req.body;
+  if (!reqBody.id || !reqBody.password) {
+    res.render('mostrar_mensaje', {
+      mensaje: "Lo siento, proporcionaste información incorrecta", 
+      tipo: "error"
+    });
+  } else {
+    Usuarios_reloj.findOne({id: reqBody.id}).then((resBuscUno) => {
+      if (resBuscUno) {
+        res.render('mostrar_mensaje', {
+          mensaje: "El usuario ya existe, inicie sesión", 
+          tipo: "error"
+        });
+      } else {
+        // ✅ Usar preferencias del cliente o valores por defecto
+        const preferencias = reqBody.preferencias || {
+          color_fondo: '#000',
+          color_fuente: '#00ff00',
+          tamaño_hora: 90,
+          tamaño_segundos: 45,
+          tamaño_fecha: 25
+        };
+
+        var newUser = new Usuarios_reloj({
+          id: reqBody.id,
+          password: reqBody.password,
+          preferencias: preferencias
+        });
+
+        newUser.save().then(() => {
+          res.render('login_reloj_sin_main', {
+            mensaje: "Usuario creado correctamente. Inicie sesión", 
+            tipo: "éxito", 
+            persona: reqBody
+          });
+          console.log('Usuario guardado con preferencias:', preferencias);
+        }).catch(err => {
+          res.render('mostrar_mensaje', {
+            mensaje: "Error de base de datos", 
+            tipo: "error"
+          });
+          console.error('Error saving document:', err);
+        });
+      }
+    }).catch(err => {
+      res.render('mostrar_mensaje', {
+        mensaje: "Error de base de datos", 
+        tipo: "error"
+      });
+      console.error('Error searching for document:', err);
+    });
+  }
 });
+
 router.use('/plantilla_sin_main_protegida_reloj', function(err, req, res, next){
   console.log(err);
   //El usuario debe estar autenticado. Redirígelo para iniciar sesión.
