@@ -216,7 +216,7 @@ router.get('/login_reloj_sin_main', function(req,res){
    res.render('login_reloj_sin_main', {
             mensaje: "Usuario creado correctamente. Inicie sesión", 
             tipo: "éxito", 
-            persona: reqBody
+            //persona: reqBody
           });
 });
 router.use('/plantilla_sin_main_protegida_reloj', function(err, req, res, next){
