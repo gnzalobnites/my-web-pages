@@ -188,11 +188,13 @@ router.post('/registrarse', function(req, res) {
         });
 
         newUser.save().then(() => {
-          res.render('login_reloj_sin_main', {
+          res.redirect('/reloj-pug/login_reloj_sin_main');
+          /*res.render('login_reloj_sin_main', {
             mensaje: "Usuario creado correctamente. Inicie sesión", 
             tipo: "éxito", 
             persona: reqBody
-          });
+          }*/
+          );
           console.log('Usuario guardado con preferencias:', preferencias);
         }).catch(err => {
           res.render('mostrar_mensaje', {
@@ -211,14 +213,20 @@ router.post('/registrarse', function(req, res) {
     });
   }
 });
-
+router.get('/login_reloj_sin_main', function(req,res){
+   res.render('login_reloj_sin_main', {
+            mensaje: "Usuario creado correctamente. Inicie sesión", 
+            tipo: "éxito", 
+            persona: reqBody
+          });
+});
 router.use('/plantilla_sin_main_protegida_reloj', function(err, req, res, next){
   console.log(err);
   //El usuario debe estar autenticado. Redirígelo para iniciar sesión.
   res.redirect('/reloj-pug/login-reloj');
 });
 router.get('/signup-reloj', function (req, res) {
-  res.render("signup_reloj_sin_main")
+  res.render('signup_reloj_sin_main');
 });
 router.post('/editar-fondo/:id', async function(req, res){
   // const Usuarios_reloj = mongoose.model('Usuarios_reloj');
