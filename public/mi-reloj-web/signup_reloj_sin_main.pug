@@ -99,12 +99,12 @@ html(lang='es')
           }
         }
       };
-    xhr.send(JSON.stringify({
-      id: id.value,
-      password: password.value,
-      preferencias: preferencias
-    }));
-    }
+     xhr.send(JSON.stringify({
+       id: id.value,
+       password: password.value,
+       preferencias: preferencias
+       }))
+     }
 
     /*Asociar el botón al evento*/
       document.getElementById('btn-registro').addEventListener('click', enviarSolicitud);
