@@ -63,7 +63,7 @@ html(lang='es')
         tamaño_segundos: parseInt(localStorage.getItem("tama_segundos")) || 45,
         tamaño_fecha: parseInt(localStorage.getItem("tama_fecha")) || 25
         };
-
+        console.log("Desde signup reloj sin main");
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/reloj-pug/registrarse", true);
         xhr.setRequestHeader("Content-Type", "application/json");
