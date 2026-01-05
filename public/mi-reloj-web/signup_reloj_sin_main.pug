@@ -95,7 +95,7 @@ html(lang='es')
        };
 
         console.log("Preferencias a enviar:", preferencias); // 👈 Verifica si tiene valores o por defecto
-
+        alert(preferencias);
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/reloj-pug/registrarse", true);
         xhr.setRequestHeader("Content-Type", "application/json");
