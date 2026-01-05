@@ -1,16 +1,10 @@
 main
-  div#div_ext_reloj.d-flex.justify-content-center.align-items-center.gap-1(style="height: 55vh; padding-top: 25vh")
-    div#div_int_reloj.gap-1.d-block
-      if(message)
-        h4 #{message}
-      form(id="registroForm")
-        input(id="id" name = "id" type = "text" required placeholder = "ID de usuario")
-        br
-        br
-        input(id="password"  name = "password" type = "password" required placeholder = "Contraseña")
-        br
-        br
-        div.d-flex.justify-content-center
-          button(onclick="enviarSolicitud()") Registrarse
-    
-
+  div(id="div_int_reloj" class="gap-1 d-block")
+    div
+      label(for="id") ID de usuario:
+      input#id(type="text" required placeholder="Tu ID")
+    div
+      label(for="password") Contraseña:
+      input#password(type="password" required placeholder="Tu contraseña")
+    div.d-flex.justify-content-center
+      button#btn-registro(type="button" onclick="enviarSolicitud()") Registrarse
